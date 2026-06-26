@@ -7,16 +7,16 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
-  "https://jsd.onmicrosoft.cn/gh/",   // Extremely stable, optimized China-friendly route
+  "https://jsd.onmicrosoft.cn/gh/",   // Extremely stable, optimized China-friendly route (Microsoft CDN)
   "https://gcore.jsdelivr.net/gh/",    // GCore global Edge, great multi-line routing
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
   "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
+  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
   "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to a highly-resilient, fast, China-friendly mirror
-let selectedMirror = "https://jsd.cdn.zzko.cn/gh/";
+// Default to a highly-resilient, fast, China-friendly mirror (Microsoft CDN)
+let selectedMirror = "https://jsd.onmicrosoft.cn/gh/";
 let useImageProxy = true; // Dynamically verified at startup to avoid proxy timeout delays
 let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
@@ -246,7 +246,38 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  // 3. Intercept Element.prototype.setAttribute to catch manual DOM manipulations or React Virtual DOM updates
+  // 3. Intercept property setter of HTMLVideoElement/HTMLMediaElement.prototype.src (for direct video src updates)
+  const interceptMediaSrc = (proto: any) => {
+    const originalGet = Object.getOwnPropertyDescriptor(proto, 'src')?.get;
+    const originalSet = Object.getOwnPropertyDescriptor(proto, 'src')?.set;
+
+    if (originalSet) {
+      Object.defineProperty(proto, 'src', {
+        get() {
+          return originalGet ? originalGet.call(this) : '';
+        },
+        set(val) {
+          if (typeof val === 'string' && val.includes('cdn.jsdelivr.net/gh/')) {
+            const optimized = val.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+            originalSet.call(this, optimized);
+          } else {
+            originalSet.call(this, val);
+          }
+        },
+        configurable: true,
+        enumerable: true
+      });
+    }
+  };
+
+  if (typeof HTMLVideoElement !== 'undefined') {
+    interceptMediaSrc(HTMLVideoElement.prototype);
+  }
+  if (typeof HTMLMediaElement !== 'undefined') {
+    interceptMediaSrc(HTMLMediaElement.prototype);
+  }
+
+  // 4. Intercept Element.prototype.setAttribute to catch manual DOM manipulations or React Virtual DOM updates
   const originalSetAttribute = Element.prototype.setAttribute;
   Element.prototype.setAttribute = function(name, value) {
     if (
@@ -262,7 +293,9 @@ if (typeof window !== 'undefined') {
     }
 
     if (
-      (this instanceof HTMLImageElement || this instanceof HTMLSourceElement || this.tagName === 'IMG' || this.tagName === 'SOURCE') &&
+      (this instanceof HTMLImageElement || this instanceof HTMLSourceElement || 
+       (typeof HTMLVideoElement !== 'undefined' && this instanceof HTMLVideoElement) ||
+       this.tagName === 'IMG' || this.tagName === 'SOURCE' || this.tagName === 'VIDEO') &&
       name === 'src' &&
       typeof value === 'string' &&
       value.includes('cdn.jsdelivr.net/gh/')
