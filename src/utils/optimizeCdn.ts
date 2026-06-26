@@ -7,16 +7,15 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://jsd.onmicrosoft.cn/gh/",   // Extremely stable, optimized China-friendly route (Microsoft CDN)
+  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
   "https://gcore.jsdelivr.net/gh/",    // GCore global Edge, great multi-line routing
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
   "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
-  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
   "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to a highly-resilient, fast, China-friendly mirror (Microsoft CDN)
-let selectedMirror = "https://jsd.onmicrosoft.cn/gh/";
+// Default to a highly-resilient, fast, China-friendly mirror (ZZKO)
+let selectedMirror = "https://jsd.cdn.zzko.cn/gh/";
 let useImageProxy = true; // Dynamically verified at startup to avoid proxy timeout delays
 let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
