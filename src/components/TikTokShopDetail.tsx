@@ -10,26 +10,34 @@ interface TikTokShopDetailProps {
 export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDetailProps) {
   // Image links for Account 1: CurvyChicHub
   const curvyImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608211657364.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608211730546.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608211836143.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608211914030.png"
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202858799.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202910810.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202923521.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202934022.webp"
   ];
 
   // Image links for Account 2: TheBossMomFits
   const momImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608213834879.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608213901196.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608213923715.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608213944268.png"
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623203034220.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623203043385.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626234018615.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626234030573.webp"
+  ];
+
+  // Image links for Account: CurvySarah
+  const sarahImages = [
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235441857.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235516551.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235532913.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235543533.webp"
   ];
 
   // Image links for Other niche/vertical accounts
   const otherImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215341406.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215312122.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215415444.png",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215435608.png"
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204651953.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204703048.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204714606.webp",
+    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204724294.webp"
   ];
 
   return (
@@ -42,7 +50,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             {t("字节跳动抖音集团 · 实习履历", "ByteDance Douyin Group • Internship Experience")}
           </span>
           <h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide">
-            {t("抖音TikTok Shop AIGC内容设计与运营", "Douyin TikTok Shop AIGC Content Design & Operations")}
+            {t("抖音TikTok Shop AIGC内容运营与设计", "Douyin TikTok Shop AIGC Content Operations & Design")}
           </h4>
         </div>
         
@@ -63,7 +71,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="col-span-1 sm:col-span-3 flex flex-col">
             <span className="text-zinc-500 text-xs uppercase tracking-wider">{t("职位", "Position")}</span>
             <span className="text-zinc-200 font-light mt-0.5">
-              {t("AIGC内容设计与运营（TikTok Shop 美国站服饰品类）", "AIGC Content Design & Operations (TikTok Shop US Apparel)")}
+              {t("AIGC内容运营与设计（TikTok Shop 美国站服饰品类）", "AIGC Content Operations & Design (TikTok Shop US Apparel)")}
             </span>
           </div>
           <div className="col-span-1 sm:col-span-3 flex flex-col">
@@ -86,8 +94,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         <div className="space-y-5 text-sm sm:text-base md:text-lg leading-[1.8] font-light text-justify text-zinc-200">
           <p>
             {t(
-              "作为 TikTok Shop 美国站服饰品类 AIGC内容设计与运营，我深度参与国际电商 AIGC 自运营内容生态建设，独立负责双账号矩阵的全流程运营工作，覆盖从创意策划、AI 视频生成 to 数据复盘的完整链路。",
-              "As a TikTok Shop US Apparel AIGC Content Design & Operations lead, I was deeply involved in establishing the self-operated AIGC content ecosystem for cross-border e-commerce, taking sole responsibility for double-account matrix operations covering creative design, AI video generation, and analytics."
+              "作为 TikTok Shop 美国站服饰品类 AIGC内容运营与设计，我深度参与国际电商 AIGC 自运营内容生态建设，独立负责双账号矩阵的全流程运营工作，覆盖从创意策划、AI 视频生成 to 数据复盘的完整链路。",
+              "As a TikTok Shop US Apparel AIGC Content Operations & Design lead, I was deeply involved in establishing the self-operated AIGC content ecosystem for cross-border e-commerce, taking sole responsibility for double-account matrix operations covering creative design, AI video generation, and analytics."
             )}
           </p>
           <p>
@@ -96,6 +104,25 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               "After setting up the content ecosystem from 1st-month ground zero, my workflow evolved completely: shifting from manual individual video design to leading creative directions for BPO execution and driving AI Agent automation. My core focus was elevated to viral layout templates research, matrix demographic strategies, and cross-team collaborations."
             )}
           </p>
+        </div>
+        
+        <div 
+          onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001230912.webp")}
+          className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full"
+          title={t("点按查看大图", "Click to zoom")}
+        >
+          <img 
+            src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001230912.webp" 
+            alt="Content Production Workflow Upgrade" 
+            className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+            <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
+              <Eye className="w-3.5 h-3.5 text-sky-400" />
+              {t("点按查看清晰大图", "Click to zoom")}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -194,10 +221,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         <div className="flex flex-col gap-4.5 pt-2">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
             {[
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220627549.png",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220715381.png",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220739633.png",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220759341.png"
+              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201724869.webp",
+              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001319249.webp",
+              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201745242.webp",
+              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201804509.webp"
             ].map((url, index) => (
               <div 
                 key={index} 
@@ -225,6 +252,169 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           </p>
         </div>
 
+        {/* 账号：CurvySarah */}
+        <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
+          <div className="flex items-center gap-2 justify-between">
+            <div className="flex items-center gap-1.5">
+              <ShoppingBag className="w-4 h-4 text-sky-400" />
+              <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
+                {t("账号：CurvySarah 白人中年大码女装", "Account: CurvySarah (Mature White Plus-size Apparel)")}
+              </h5>
+            </div>
+          </div>
+
+          {/* Images Display */}
+          <div className="flex flex-col gap-3 mt-1.5">
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-center gap-1 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
+                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                <span>{t("账号主页", "Account Homepage")}</span>
+              </div>
+              <div 
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235423987.webp")}
+                className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                title={t("点按查看大图", "Click to zoom")}
+              >
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235423987.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                  <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
+                    <Eye className="w-3.5 h-3.5 text-sky-400" />
+                    {t("点按查看清晰大图", "Click to zoom")}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-center gap-1 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
+                <TrendingUp className="w-3.5 h-3.5 text-sky-400" />
+                <span>{t("账号日常数据与销售分析", "Account Sales & Conversion Analytics")}</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {sarahImages.map((url, idx) => (
+                  <div 
+                    key={idx}
+                    onClick={() => setLightboxUrl(url)}
+                    className="relative aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                    title={t("点按查看大图", "Click to zoom")}
+                  >
+                    <img src={url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                    <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                      <MousePointerClick className="w-5 h-5 text-white/80 drop-shadow" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {/* 一、账号基础定位 */}
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("1. 账号基础定位", "1. Account Positioning & Niche")}</span>
+              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify">
+                {t(
+                  "本土 40 + 白人成熟大码女装垂类账号，聚焦 2XL/3XL 丰满身材女性，主打度假长裙、休闲通勤套装，人设温柔优雅，贴合中年女性日常 brunch、市集、户外出行场景；账号粉丝 82、总点赞 3665，依托真人户外实景实拍内容撬动海量自然公域流量，精准覆盖追求舒适大气版型的熟龄白人女性。",
+                  "US local 40+ mature white plus-size women's wear vertical account, focusing on 2XL/3XL curvy body shapes. Features resort maxi dresses and casual commuter sets. The persona is warm and elegant, perfectly matching daily brunch, local markets, and outdoor activities of middle-aged women. 82 followers and 3,665 total likes. Leverages real-person outdoor on-site try-on footage to capture massive organic recommendation traffic, precisely covering mature white women seeking comfortable and elegant silhouettes."
+                )}
+              </p>
+            </div>
+
+            {/* 二、整体销售增长数据（6.1-6.24 周期） */}
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("2. 整体销售增长数据（6.1-6.24 周期）", "2. Overall Sales Growth Data (6.1-6.24 Period)")}</span>
+              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify">
+                {t(
+                  "总归因 GMV $4.1K，累计成交 249 件商品，全账号选品评分 4.4 分，版型适配度、用户接受度表现优异；\n流量增速爆发：商品曝光环比 + 848K%、商品点击环比 + 975K%，短视频总观看 183.1K，播放量环比涨幅 916K%，少量短视频即可撬动巨大增量流量，内容算法适配度拉满；\n单日短期数据佐证增长潜力：单日期内 GMV $1.2K、成交 69 件，GMV 环比 + 104%、成交环比 + 130%，短期转化持续走高，增长趋势稳定。",
+                  "Total attributed GMV reached $4.1K with 249 completed product sales and a solid merchandise review rating of 4.4. Outstanding performance in silhouette fit and consumer acceptance.\nExplosive traffic growth: Product impressions MoM +848K%, product clicks MoM +975K%, and short-form video views reaching 183.1K (MoM increase of 916K%). A few targeted videos were able to pull in massive incremental organic traffic, proving high compatibility with the platform's algorithm.\nShort-term performance records: Peak daily GMV hit $1.2K with 69 units sold (daily GMV MoM +104%, unit sales MoM +130%), confirming stable long-term growth and rising conversion potential."
+                ).split('\n').map((line, i) => (
+                  <span key={i} className="block mt-1.5 first:mt-0">{line}</span>
+                ))}
+              </p>
+            </div>
+
+            {/* 三、爆款单品 & 头部视频转化拆解 */}
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("3. 爆款单品 & 头部视频转化拆解", "3. Bestselling Products & Pinned Video Breakdown")}</span>
+              <p className="text-xs text-zinc-450 font-light">
+                {t(
+                  "账号仅 35 条挂车短视频就完成高额 GMV 产出，头部单条视频贡献过半营收，爆款承载力极强：",
+                  "With only 35 shoppable videos, the account yielded high-margin GMV, with top-performing single videos accounting for over half of total revenue:"
+                )}
+              </p>
+              <div className="space-y-2 mt-1">
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("黄色挂脖度假长裙视频：", "Yellow Halterneck Resort Maxi Dress: ")}</strong>
+                    {t(
+                      "播放 111.4K，单条归因 GMV $2.0K，独立成交 109 件，是账号核心爆款，户外市集场景 + 高饱和亮色完美击中度假穿搭需求；",
+                      "111.4K views, attributed GMV $2.0K, 109 orders. Pinned core bestseller, pairing outdoor market backgrounds with bright colors to hit resort wear demand."
+                    )}
+                  </p>
+                </div>
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("镂空两件套休闲套装视频：", "Cutout Two-Piece Casual Set: ")}</strong>
+                    {t(
+                      "播放 41.0K，单条归因 GMV $1.1K，成交 79 件，兼顾日常休闲、户外聚会双重场景，复购潜力高；",
+                      "41.0K views, attributed GMV $1.1K, 79 orders. Versatile for daily leisure and garden parties, carrying high repeat purchase rates."
+                    )}
+                  </p>
+                </div>
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("印花针织连衣裙视频：", "Floral Knit Dress: ")}</strong>
+                    {t(
+                      "归因 GMV $650.02，成交 43 件，通勤居家两用，承接日常刚需穿搭流量。",
+                      "Attributed GMV $650.02, 43 orders. Dual-purpose commute/lounge dress, capturing daily wardrobe replacement traffic."
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 四、流量与转化逻辑优势 */}
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("4. 流量与转化逻辑优势", "4. Traffic & Conversion Logic Advantages")}</span>
+              <div className="space-y-2 mt-1">
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("爆款爆发力极强：", "Exceptional Virality: ")}</strong>
+                    {t(
+                      "单条视频最高播放 251.5K，多条视频稳定十几万曝光，极低粉丝体量下持续收割公域推荐流量，不依赖私域粉丝变现；",
+                      "Peak single video reached 251.5K views, with others consistently drawing 100K+ impressions. Converts organic recommendations on extremely low follower counts."
+                    )}
+                  </p>
+                </div>
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("商品点击转化链路通畅：", "Frictionless Store Funnel: ")}</strong>
+                    {t(
+                      "总商品曝光 211.9K、总点击 9.8K，长款度假裙、休闲套装封面视觉吸引力突出，用户点击进店意愿强；",
+                      "Total impressions 211.9K and 9.8K clicks. Long resort dresses and casual coordinates offer strong cover appeal to drive clicks."
+                    )}
+                  </p>
+                </div>
+                <div className="group flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                  <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                    <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("内容标准化高效产出：", "Standardized Content Loop: ")}</strong>
+                    {t(
+                      "统一 15 秒竖屏实拍，户外生活化场景 + 真人沉浸式上身试穿，弱化硬广推销感，种草说服力更强。",
+                      "Standardized 15s vertical trials in natural outdoor settings, softening sales hooks for higher organic engagement and organic persuasion."
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 账号：Chloe's Try-Ons */}
         <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
           <div className="flex items-center gap-2 justify-between">
@@ -244,11 +434,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015121719.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202221958.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015121719.png" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202221958.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -264,11 +454,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号日常数据", "Account Sales & Engagement Data")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616025321530.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202245179.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616025321530.png" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202245179.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -357,11 +547,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615011044860.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202312570.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615011044860.png" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202312570.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -378,10 +568,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015613564.png",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015738605.png",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015754014.png",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015800624.png"
+                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202344624.webp",
+                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202404022.webp",
+                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202414943.webp",
+                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202426331.webp"
                 ].map((url, idx) => (
                   <div 
                     key={idx}
@@ -448,13 +638,13 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
 
 
 
-        {/* 账号一：CurvyChicHub */}
+        {/* 账号一：TheBossMomFits */}
         <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
           <div className="flex items-center gap-2 justify-between">
             <div className="flex items-center gap-1.5">
-              <ShoppingBag className="w-4 h-4 text-sky-400" />
+              <Users className="w-4 h-4 text-sky-400" />
               <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
-                {t("账号：CurvyChicHub（年轻大码女性自信穿搭）", "Account: CurvyChicHub (Confident Plus-size Clothing)")}
+                {t("账号：TheBossMomFits（45 + 职场妈妈实用穿搭）", "Account: TheBossMomFits (45+ Smart Career Mums Outfits)")}
               </h5>
             </div>
           </div>
@@ -466,248 +656,13 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               <span>{t("账号首页展示", "Account Homepage Display")}</span>
             </div>
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608212354100.png")}
+              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626233903558.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608212354100.png" 
+                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626233903558.webp" 
                 alt="Account 1 overview graph" 
-                className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
-                  <Eye className="w-3.5 h-3.5 text-sky-400" />
-                  {t("点按查看清晰大图", "Click to zoom")}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* 四图并排竖图展示区 */}
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
-              <Eye className="w-3.5 h-3.5 text-sky-400" />
-              <span>{t("成果精选（点击任意图片可放大查看）", "Curated Outfits Display (Click to zoom)")}</span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {curvyImages.map((url, index) => (
-                <div 
-                  key={index} 
-                  onClick={() => setLightboxUrl(url)}
-                  className="relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-                  title={t("点按查看大图", "Click to zoom")}
-                >
-                  <img 
-                    src={url} 
-                    alt={`CurvyChicHub sample ${index + 1}`} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <MousePointerClick className="w-5 h-5 text-white/80 drop-shadow" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* 账号一核心流量与销售指标 */}
-          <div className="p-3 bg-sky-400/[0.01] border border-sky-500/10 rounded-xl flex flex-col gap-2.5">
-            <div className="flex items-center gap-1.5">
-              <TrendingUp className="w-3.5 h-3.5 text-sky-400" />
-              <span className="text-xs font-semibold text-sky-300 tracking-wide">
-                {t("账号一核心流量与销售指标", "Account I Core Metrics")}
-              </span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">Attr. GMV</span>
-                <span className="text-xs md:text-sm font-bold text-white mt-1">$11.8K</span>
-              </div>
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("总播放 / 总销量", "Views & Sold")}</span>
-                <span className="text-xs md:text-sm font-bold text-white mt-1">269.7K / 642 {t("件", "pcs")}</span>
-              </div>
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("环比增长数据", "MoM Growth")}</span>
-                <span className="text-xs md:text-sm font-bold text-emerald-400 mt-1">{t("持续环比爆发式增长", "MoM Explosive Growth")}</span>
-              </div>
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("核心流量指标", "Core Traffic Metrics")}</span>
-                <span className="text-xs md:text-sm font-bold text-sky-300 mt-1">{t("曝光 296.0K / 点击 19.2K", "Imp 296.0K / Clicks 19.2K")}</span>
-              </div>
-            </div>
-            <div className="text-[10px] text-zinc-400 font-light flex flex-wrap gap-x-3 gap-y-1 border-t border-white/5 pt-2">
-              <span>{t("产品总曝光：296.0K", "Product Total Impressions: 296.0K")}</span>
-              <span className="text-zinc-650">•</span>
-              <span>{t("产品总点击：19.2K", "Product Total Clicks: 19.2K")}</span>
-            </div>
-          </div>
-
-          {/* 选品与曝光成果 */}
-          <div className="flex flex-col gap-2 pt-1">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{t("爆款内容与选品表现", "Viral Performance & Products")}</span>
-            <div className="space-y-2">
-              <div className="group flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
-                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
-                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("100% 真人发非洲式短卷发假发视频：", "100% Human Hair Wig Video: ")}</strong>
-                  {t("单条视频归因 GMV $8,400（占该账号总 GMV 71%），播放量 179.7K，售出 451 件，成为 5 月美国站假发类目 TOP3 爆款内容。", "Generated attributed GMV $8,400 (71% of account GMV), viewers 179.7K, sold 451 orders. Reached Top-3 Video for US Wig apparel categorizations in May.")}
-                </p>
-              </div>
-              <div className="group flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
-                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
-                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("大码宽松度假裤视频：", "Loose Plus-size Linen Beach Pants: ")}</strong>
-                  {t("单条视频归因 GMV $788.66，播放量 9.7K，成功售出 43 件商品。", "Attributed GMV $788.66, viewers 9.7K, generating 43 product orders.")}
-                </p>
-              </div>
-              <div className="group flex items-start gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
-                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
-                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("大码纯色挂脖连衣裙视频：", "Solid Color Plus-size Halter Dress: ")}</strong>
-                  {t("单条视频归因 GMV $524.43，播放量 13.4K，成功售出 31 件商品。", "Attributed GMV $524.43, viewers 13.4K, generating 31 product orders.")}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 精准用户画像 */}
-          <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{t("精准用户画像", "Target Demographics")}</span>
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg">
-                <div className="text-zinc-500 text-[10px] uppercase">{t("粉丝性别", "Gender Bias")}</div>
-                <div className="text-zinc-100 font-light mt-0.5">{t("女性占比 74%", "Female Bias (74%)")}</div>
-              </div>
-              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg">
-                <div className="text-zinc-500 text-[10px] uppercase">{t("年龄段分布", "Age Bracket")}</div>
-                <div className="text-zinc-100 font-light mt-0.5">{t("55 岁以上成熟女性占比 42%", "Aged 55+ Mature Women (42%)")}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 账号：MicDropFits */}
-        <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <div className="flex items-center gap-2 justify-between">
-            <div className="flex items-center gap-1.5">
-              <ShoppingBag className="w-4 h-4 text-sky-400" />
-              <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
-                {t("账号：MicDropFits 美式休闲男装账号", "Account: MicDropFits (American Casual Menswear)")}
-              </h5>
-            </div>
-          </div>
-
-          {/* Images Display */}
-          <div className="flex flex-col gap-3 mt-1.5">
-            <div className="flex flex-col gap-1.5">
-              <div className="flex items-center gap-1 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-                <span>{t("账号主页", "Account Homepage")}</span>
-              </div>
-              <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015550598.png")}
-                className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-                title={t("点按查看大图", "Click to zoom")}
-              >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616015550598.png" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
-                  <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5 text-sky-400" />
-                    {t("点按查看清晰大图", "Click to zoom")}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            {/* 一、账号基础定位 */}
-            <div className="flex flex-col gap-2">
-              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("1. 账号基础定位", "1. Account Positioning & Target")}</span>
-              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify text-justify">
-                {t(
-                  "美国本土年轻男生休闲穿搭账号，白人男生真人出镜，主打夏日亚麻衬衫、宽松牛仔、街头基础短袖，面向 Z 世代男性消费人群；粉丝 510、总点赞 5894，男装赛道竞争小，细分蓝海赛道。内容统一 15 秒短信息流，居家 / 户外实景上身，聚焦基础百搭款男装，画面清爽极简。",
-                  "US native young casual menswear creator featuring white male talent, focusing on summer linen shirts, baggy denim, and streetwear basic tees for Gen-Z boys; 510 followers and 5,894 total likes, securing a high-potential blue ocean segment. Structured as standardized 15-second visual feeds shot in real-world indoor/outdoor settings, highlighting clean styling and minimal versatility."
-                )}
-              </p>
-            </div>
-
-            {/* 二、流量 & 转化数据表现 */}
-            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
-              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("2. 流量 & 转化数据表现", "2. Traffic & Conversion Performance")}</span>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("流量端", "Traffic Side")}</span>
-                  <p className="text-xs text-zinc-300 font-light mt-1">
-                    {t(
-                      "爆款视频单条播放 739K，单品点击率区间 0.27%-0.91%；男装受众更精准，泛流量体量小于女装，但目标用户转化意愿强；",
-                      "Top viral piece earned 739K views with product CTR bounds of 0.27%-0.91%. Menswear focuses on precise, high-intent purchasing rather than broad female window-shopping."
-                    )}
-                  </p>
-                </div>
-                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("成交端", "Conversion Side")}</span>
-                  <p className="text-xs text-zinc-300 font-light mt-1">
-                    {t(
-                      "7 天整体归因 GMV 1.8K 欧元，累计成交 104 件商品，商品总曝光 120.8K、点击 3.3K；",
-                      "Total EUR 1.8K attributed GMV over 7 days, successfully capturing 104 completed orders from 120.8K product impressions and 3.3K clicks."
-                    )}
-                  </p>
-                </div>
-                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("矩阵作用", "Matrix Synergy")}</span>
-                  <p className="text-xs text-zinc-300 font-light mt-1">
-                    {t(
-                      "填补矩阵男性消费赛道空白，平衡男女品类结构，覆盖情侣、家庭连带消费，降低仅做女装带来的赛道流量波动风险。",
-                      "Safely fills the menswear gap in our e-commerce matrix to hedge gender biases, unlocking couple and household co-purchases to minimize single-genre volatility."
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 三、账号优化方向 */}
-            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
-              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("3. 账号优化方向", "3. Optimization Direction")}</span>
-              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify text-justify">
-                {t(
-                  "现有爆款模板可批量复制，拉高男装账号稳定曝光，进一步提升男装板块 GMV 占比。",
-                  "Existing viral frameworks can be easily cloned and scaled, stabilizing menswear channel exposure to drive up GMV composition."
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* 账号二：TheBossMomFits */}
-        <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <div className="flex items-center gap-2 justify-between">
-            <div className="flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-sky-400" />
-              <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
-                {t("账号：TheBossMomFits（45 + 职场妈妈实用穿搭）", "Account: TheBossMomFits (45+ Smart Career Mums Outfits)")}
-              </h5>
-            </div>
-          </div>
-
-          {/* 账号二主效果大图/汇总概览图 */}
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
-              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-              <span>{t("账号首页展示", "Account Homepage Display")}</span>
-            </div>
-            <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619212620085.jpg")}
-              className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-              title={t("点按查看大图", "Click to zoom")}
-            >
-              <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619212620085.jpg" 
-                alt="Account 2 overview graph" 
                 className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -748,12 +703,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
           </div>
 
-          {/* 账号二核心流量与销售指标 */}
+          {/* 账号一核心流量与销售指标 */}
           <div className="p-3 bg-sky-400/[0.01] border border-sky-500/10 rounded-xl flex flex-col gap-2.5">
             <div className="flex items-center gap-1.5">
               <TrendingUp className="w-3.5 h-3.5 text-sky-400" />
               <span className="text-xs font-semibold text-sky-300 tracking-wide">
-                {t("账号二核心流量与销售指标", "Account II Core Metrics")}
+                {t("账号一核心流量与销售指标", "Account I Core Metrics")}
               </span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -832,6 +787,241 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           </div>
         </div>
 
+        {/* 账号：MicDropFits */}
+        <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
+          <div className="flex items-center gap-2 justify-between">
+            <div className="flex items-center gap-1.5">
+              <ShoppingBag className="w-4 h-4 text-sky-400" />
+              <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
+                {t("账号：MicDropFits 美式休闲男装账号", "Account: MicDropFits (American Casual Menswear)")}
+              </h5>
+            </div>
+          </div>
+
+          {/* Images Display */}
+          <div className="flex flex-col gap-3 mt-1.5">
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-center gap-1 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
+                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                <span>{t("账号主页", "Account Homepage")}</span>
+              </div>
+              <div 
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202955745.webp")}
+                className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                title={t("点按查看大图", "Click to zoom")}
+              >
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202955745.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                  <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
+                    <Eye className="w-3.5 h-3.5 text-sky-400" />
+                    {t("点按查看清晰大图", "Click to zoom")}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {/* 一、账号基础定位 */}
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("1. 账号基础定位", "1. Account Positioning & Target")}</span>
+              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify text-justify">
+                {t(
+                  "美国本土年轻男生休闲穿搭账号，白人男生真人出镜，主打夏日亚麻衬衫、宽松牛仔、街头基础短袖，面向 Z 世代男性消费人群；粉丝 510、总点赞 5894，男装赛道竞争小，细分蓝海赛道。内容统一 15 秒短信息流，居家 / 户外实景上身，聚焦基础百搭款男装，画面清爽极简。",
+                  "US native young casual menswear creator featuring white male talent, focusing on summer linen shirts, baggy denim, and streetwear basic tees for Gen-Z boys; 510 followers and 5,894 total likes, securing a high-potential blue ocean segment. Structured as standardized 15-second visual feeds shot in real-world indoor/outdoor settings, highlighting clean styling and minimal versatility."
+                )}
+              </p>
+            </div>
+
+            {/* 二、流量 & 转化数据表现 */}
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("2. 流量 & 转化数据表现", "2. Traffic & Conversion Performance")}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("流量端", "Traffic Side")}</span>
+                  <p className="text-xs text-zinc-300 font-light mt-1">
+                    {t(
+                      "爆款视频单条播放 739K，单品点击率区间 0.27%-0.91%；男装受众更精准，泛流量体量小于女装，但目标用户转化意愿强；",
+                      "Top viral piece earned 739K views with product CTR bounds of 0.27%-0.91%. Menswear focuses on precise, high-intent purchasing rather than broad female window-shopping."
+                    )}
+                  </p>
+                </div>
+                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("成交端", "Conversion Side")}</span>
+                  <p className="text-xs text-zinc-300 font-light mt-1">
+                    {t(
+                      "7 天整体归因 GMV 1.8K 欧元，累计成交 104 件商品，商品总曝光 120.8K、点击 3.3K；",
+                      "Total EUR 1.8K attributed GMV over 7 days, successfully capturing 104 completed orders from 120.8K product impressions and 3.3K clicks."
+                    )}
+                  </p>
+                </div>
+                <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider">{t("矩阵作用", "Matrix Synergy")}</span>
+                  <p className="text-xs text-zinc-300 font-light mt-1">
+                    {t(
+                      "填补矩阵男性消费赛道空白，平衡男女品类结构，覆盖情侣、家庭连带消费，降低仅做女装带来的赛道流量波动风险。",
+                      "Safely fills the menswear gap in our e-commerce matrix to hedge gender biases, unlocking couple and household co-purchases to minimize single-genre volatility."
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 三、账号优化方向 */}
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+              <span className="text-xs font-semibold text-sky-300 uppercase tracking-wider">{t("3. 账号优化方向", "3. Optimization Direction")}</span>
+              <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-light text-justify text-justify">
+                {t(
+                  "现有爆款模板可批量复制，拉高男装账号稳定曝光，进一步提升男装板块 GMV 占比。",
+                  "Existing viral frameworks can be easily cloned and scaled, stabilizing menswear channel exposure to drive up GMV composition."
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 账号二：CurvyChicHub */}
+        <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
+          <div className="flex items-center gap-2 justify-between">
+            <div className="flex items-center gap-1.5">
+              <ShoppingBag className="w-4 h-4 text-sky-400" />
+              <h5 className="text-xs md:text-sm font-semibold text-zinc-100">
+                {t("账号：CurvyChicHub（年轻大码女性自信穿搭）", "Account: CurvyChicHub (Confident Plus-size Clothing)")}
+              </h5>
+            </div>
+          </div>
+
+          {/* 账号二主效果大图/汇总概览图 */}
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
+              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+              <span>{t("账号首页展示", "Account Homepage Display")}</span>
+            </div>
+            <div 
+              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202833802.webp")}
+              className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+              title={t("点按查看大图", "Click to zoom")}
+            >
+              <img 
+                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202833802.webp" 
+                alt="Account 2 overview graph" 
+                className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
+                  <Eye className="w-3.5 h-3.5 text-sky-400" />
+                  {t("点按查看清晰大图", "Click to zoom")}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 四图并排竖图展示区 */}
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest leading-none pt-1">
+              <Eye className="w-3.5 h-3.5 text-sky-400" />
+              <span>{t("成果精选（点击任意图片可放大查看）", "Curated Outfits Display (Click to zoom)")}</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {curvyImages.map((url, index) => (
+                <div 
+                  key={index} 
+                  onClick={() => setLightboxUrl(url)}
+                  className="relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                  title={t("点按查看大图", "Click to zoom")}
+                >
+                  <img 
+                    src={url} 
+                    alt={`CurvyChicHub sample ${index + 1}`} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <MousePointerClick className="w-5 h-5 text-white/80 drop-shadow" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 账号二核心流量与销售指标 */}
+          <div className="p-3 bg-sky-400/[0.01] border border-sky-500/10 rounded-xl flex flex-col gap-2.5">
+            <div className="flex items-center gap-1.5">
+              <TrendingUp className="w-3.5 h-3.5 text-sky-400" />
+              <span className="text-xs font-semibold text-sky-300 tracking-wide">
+                {t("账号二核心流量与销售指标", "Account II Core Metrics")}
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">Attr. GMV</span>
+                <span className="text-xs md:text-sm font-bold text-white mt-1">$11.8K</span>
+              </div>
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("总播放 / 总销量", "Views & Sold")}</span>
+                <span className="text-xs md:text-sm font-bold text-white mt-1">269.7K / 642 {t("件", "pcs")}</span>
+              </div>
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("环比增长数据", "MoM Growth")}</span>
+                <span className="text-xs md:text-sm font-bold text-emerald-400 mt-1">{t("持续环比爆发式增长", "MoM Explosive Growth")}</span>
+              </div>
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
+                <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("核心流量指标", "Core Traffic Metrics")}</span>
+                <span className="text-xs md:text-sm font-bold text-sky-300 mt-1">{t("曝光 296.0K / 点击 19.2K", "Imp 296.0K / Clicks 19.2K")}</span>
+              </div>
+            </div>
+            <div className="text-[10px] text-zinc-400 font-light flex flex-wrap gap-x-3 gap-y-1 border-t border-white/5 pt-2">
+              <span>{t("产品总曝光：296.0K", "Product Total Impressions: 296.0K")}</span>
+              <span className="text-zinc-650">•</span>
+              <span>{t("产品总点击：19.2K", "Product Total Clicks: 19.2K")}</span>
+            </div>
+          </div>
+
+          {/* 选品与曝光成果 */}
+          <div className="flex flex-col gap-2 pt-1">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{t("爆款内容与选品表现", "Viral Performance & Products")}</span>
+            <div className="space-y-2">
+              <div className="group flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("100% 真人发非洲式短卷发假发视频：", "100% Human Hair Wig Video: ")}</strong>
+                  {t("单条视频归因 GMV $8,400（占该账号总 GMV 71%），播放量 179.7K，售出 451 件，成为 5 月美国站假发类目 TOP3 爆款内容。", "Generated attributed GMV $8,400 (71% of account GMV), viewers 179.7K, sold 451 orders. Reached Top-3 Video for US Wig apparel categorizations in May.")}
+                </p>
+              </div>
+              <div className="group flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("大码宽松度假裤视频：", "Loose Plus-size Linen Beach Pants: ")}</strong>
+                  {t("单条视频归因 GMV $788.66，播放量 9.7K，成功售出 43 件商品。", "Attributed GMV $788.66, viewers 9.7K, generating 43 product orders.")}
+                </p>
+              </div>
+              <div className="group flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0 transition-colors duration-350 group-hover:bg-sky-300" />
+                <p className="text-xs md:text-sm text-zinc-300 leading-normal group-hover:text-sky-300 transition-colors duration-300 font-light">
+                  <strong className="text-zinc-100 font-medium group-hover:text-sky-200">{t("大码纯色挂脖连衣裙视频：", "Solid Color Plus-size Halter Dress: ")}</strong>
+                  {t("单条视频归因 GMV $524.43，播放量 13.4K，成功售出 31 件商品。", "Attributed GMV $524.43, viewers 13.4K, generating 31 product orders.")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 精准用户画像 */}
+          <div className="flex flex-col gap-2 pt-2 border-t border-white/5">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">{t("精准用户画像", "Target Demographics")}</span>
+            <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg">
+                <div className="text-zinc-500 text-[10px] uppercase">{t("粉丝性别", "Gender Bias")}</div>
+                <div className="text-zinc-100 font-light mt-0.5">{t("女性占比 74%", "Female Bias (74%)")}</div>
+              </div>
+              <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg">
+                <div className="text-zinc-500 text-[10px] uppercase">{t("年龄段分布", "Age Bracket")}</div>
+                <div className="text-zinc-100 font-light mt-0.5">{t("55 岁以上成熟女性占比 42%", "Aged 55+ Mature Women (42%)")}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 其它账号 */}
         <div className="p-4 rounded-xl bg-white/[0.01] border border-white/5 flex flex-col gap-4">
           <div className="flex items-center gap-2 justify-between">
@@ -855,11 +1045,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span className="text-xs md:text-sm font-semibold">{t("穆斯林长袍头巾女装账号", "Muslim Abaya & Hijab Fashion Account")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616020216626.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204411362.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer aspect-video"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616020216626.png" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204411362.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
                     <Eye className="w-3 h-3 text-sky-400" />
@@ -905,11 +1095,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span className="text-xs md:text-sm font-semibold">{t("Clawdia 水果拟人短剧账号", "Clawdia Fruit Anthropomorphic Mini-Drama Account")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616020232998.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204426481.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer aspect-video"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260616020232998.png" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204426481.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
                     <Eye className="w-3 h-3 text-sky-400" />
@@ -957,12 +1147,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619195936428.jpg")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000605226.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619195936428.jpg" 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000605226.webp" 
                   alt="Other account 1 homepage" 
                   className="w-full h-auto object-cover scale-[1.065] group-hover:scale-[1.09] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -975,14 +1165,14 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619194545444.jpg")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204540218.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619194545444.jpg" 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204540218.webp" 
                   alt="Other account 2 homepage" 
-                  className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                  className="w-full h-auto object-cover scale-[1.065] group-hover:scale-[1.09] transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -993,12 +1183,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215908630.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000718003.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215908630.png" 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000718003.webp" 
                   alt="Other account 3 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1011,13 +1201,49 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215930785.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204634340.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608215930785.png" 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204634340.webp" 
                   alt="Other account 4 homepage" 
+                  className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-black/60 text-white text-[10px] px-2.5 py-1.5 rounded-full border border-white/10 flex items-center gap-1">
+                    <Eye className="w-3 h-3 text-sky-400" />
+                    {t("点按查看清晰大图", "Click to zoom")}
+                  </span>
+                </div>
+              </div>
+              <div 
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000743804.webp")}
+                className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
+                title={t("点按查看大图", "Click to zoom")}
+              >
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000743804.webp" 
+                  alt="Other account 5 homepage" 
+                  className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-black/60 text-white text-[10px] px-2.5 py-1.5 rounded-full border border-white/10 flex items-center gap-1">
+                    <Eye className="w-3 h-3 text-sky-400" />
+                    {t("点按查看清晰大图", "Click to zoom")}
+                  </span>
+                </div>
+              </div>
+              <div 
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000754778.webp")}
+                className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
+                title={t("点按查看大图", "Click to zoom")}
+              >
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000754778.webp" 
+                  alt="Other account 6 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -1071,7 +1297,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
               <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
                 <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("CurvySarah 熟龄大码", "CurvySarah Mature plus-size")}</span>
-                <span className="text-xs md:text-sm font-bold text-white mt-1">GMV $1108.65</span>
+                <span className="text-xs md:text-sm font-bold text-white mt-1">GMV $3108.65</span>
                 <span className="text-[9px] text-emerald-400 mt-0.5">+534% MoM</span>
               </div>
               <div className="p-2.5 bg-white/[0.01] border border-white/5 rounded-lg flex flex-col">
@@ -1106,8 +1332,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   </strong>
                   <span className="text-[11px] md:text-xs text-zinc-400 pl-3 leading-relaxed">
                     {t(
-                      "聚焦 40 + 大码白人成熟女性，主打简约通勤、复古日常宽松长裙，单月归因 GMV $1108.65，环比涨幅 534%；受众消费理性、偏好耐穿经典款，客单价稳定，完善矩阵熟龄女性消费覆盖。",
-                      "Targeted 40+ mature plus-size white women, highlighting simple daily commuter styles and retro loose-fit dresses. Achieved an attributed monthly GMV of $1,108.65, a MoM increase of 534%. Rational consumer group with high preference for durable classics and stable order values, expanding coverage for mature-aged female consumer segments."
+                      "聚焦 40 + 大码白人成熟女性，主打简约通勤、复古日常宽松长裙，单月归因 GMV $3108.65，环比涨幅 534%；受众消费理性、偏好耐穿经典款，客单价稳定，完善矩阵熟龄女性消费覆盖。",
+                      "Targeted 40+ mature plus-size white women, highlighting simple daily commuter styles and retro loose-fit dresses. Achieved an attributed monthly GMV of $3,108.65, a MoM increase of 534%. Rational consumer group with high preference for durable classics and stable order values, expanding coverage for mature-aged female consumer segments."
                     )}
                   </span>
                 </li>
@@ -1167,12 +1393,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           {/* 接手前的成果 */}
           <div className="flex flex-col gap-4">
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220439682.png")}
+              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205221309.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220439682.png" 
+                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205221309.webp" 
                 alt="Workflow Deliverable 2" 
                 className="w-full h-auto object-contain max-h-[400px] mx-auto group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -1186,12 +1412,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
 
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260620005822660.png")}
+              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205313213.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260620005822660.png" 
+                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205313213.webp" 
                 alt="Results before taking over 2" 
                 className="w-full h-auto object-contain max-h-[400px] mx-auto group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -1213,10 +1439,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-4">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608220418449.png",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619205434318.jpg",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619205454031.jpg",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619205505518.jpg"
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623224844780.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205352467.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205402719.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205412541.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1284,10 +1510,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="flex flex-col gap-4 mt-1.5">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023117746.jpg",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023131933.png",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023144137.png",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023156476.png"
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205449351.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205459655.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205509107.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205519012.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1321,8 +1547,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="grid grid-cols-2 gap-3 mt-1.5 items-stretch">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023225437.png",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023237594.png"
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205539591.webp",
+                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205549097.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1356,12 +1582,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="flex flex-col gap-1.5 mt-1.5">
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023300216.png")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205608101.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617023300216.png" 
+                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205608101.webp" 
                   alt="Character and Scene Reference assets" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1443,12 +1669,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         {/* 工作模式升级与效率提升图片 */}
         <div className="flex flex-col gap-1.5 mt-2">
           <div 
-            onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615011653259.png")}
+            onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205620823.webp")}
             className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
             title={t("点按查看大图", "Click to zoom")}
           >
             <img 
-              src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615011653259.png" 
+              src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205620823.webp" 
               alt="Workflow optimization diagram" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
               referrerPolicy="no-referrer"

@@ -10,16 +10,19 @@ interface HlsPlayerProps {
 export function HlsPlayer({ url, className, id }: HlsPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const hlsRef = useRef<Hls | null>(null);
 
+  // 1. Intersection Observer to control playing and pausing only
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
+    // Use a wider margin (600px) to trigger play/pause well ahead of arrival
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { rootMargin: '150px' } // Load slightly before coming into view
+      { rootMargin: '600px' }
     );
 
     observer.observe(video);
@@ -28,95 +31,80 @@ export function HlsPlayer({ url, className, id }: HlsPlayerProps) {
     };
   }, []);
 
+  // 2. Play/Pause toggle based on visibility (preserves background buffers)
   useEffect(() => {
-    let active = true;
+    const video = videoRef.current;
+    if (!video) return;
 
-    if (!isInView) {
-      if (videoRef.current) {
+    if (isInView) {
+      const playVideo = async () => {
         try {
-          videoRef.current.pause();
-        } catch (e) {
-          // Ignored
+          video.muted = true;
+          await video.play();
+        } catch (err: any) {
+          if (err && err.name !== 'AbortError') {
+            console.warn("HlsPlayer play failed:", err);
+          }
         }
+      };
+      playVideo();
+    } else {
+      try {
+        video.pause();
+      } catch (e) {
+        // Ignored
       }
-      return;
     }
+  }, [isInView]);
 
+  // 3. Initialize HLS once on mount and keep preloading in the background
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     let hls: Hls | null = null;
 
-    const playVideo = async () => {
-      try {
-        if (!active) return;
-        await video.play();
-      } catch (err: any) {
-        if (err && err.name === 'AbortError') {
-          // Play request was safely interrupted by a new load/pause, silent discard.
-          return;
-        }
-        // Retrying with explicit mute
-        if (active) {
-          video.muted = true;
-          try {
-            await video.play();
-          } catch (e: any) {
-            if (e && e.name !== 'AbortError') {
-              console.warn("HlsJS play failed:", e);
-            }
-          }
-        }
+    const initHls = () => {
+      if (Hls.isSupported()) {
+        hls = new Hls({
+          maxMaxBufferLength: 40, // Increased buffer length to handle high-fidelity streams smoothly
+          enableWorker: true,
+          lowLatencyMode: false,
+          backBufferLength: 20,
+          fragLoadingRetryDelay: 1000,
+          fragLoadingMaxRetry: 8,
+          manifestLoadingRetryDelay: 1000,
+          manifestLoadingMaxRetry: 8,
+        });
+        hlsRef.current = hls;
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        video.preload = "auto";
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.preload = "auto";
       }
     };
 
-    if (Hls.isSupported()) {
-      hls = new Hls({
-        maxMaxBufferLength: 20, // Increase buffer length to allow smoother playback over fluctuating pipelines
-        enableWorker: true,
-        lowLatencyMode: false,  // Buffer more advance segments rather than favoring minimum lag
-        backBufferLength: 10,
-        fragLoadingRetryDelay: 1000,
-        fragLoadingMaxRetry: 6,
-        manifestLoadingRetryDelay: 1000,
-        manifestLoadingMaxRetry: 6,
-      });
-      hls.loadSource(url);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        if (active) {
-          playVideo();
-        }
-      });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = url;
-      const onLoadedMetadata = () => {
-        if (active) {
-          playVideo();
-        }
-      };
-      video.addEventListener('loadedmetadata', onLoadedMetadata);
+    // Delay initialization by 500ms so initial critical layout paint is prioritized
+    const timer = setTimeout(initHls, 500);
 
-      return () => {
-        active = false;
-        video.removeEventListener('loadedmetadata', onLoadedMetadata);
+    return () => {
+      clearTimeout(timer);
+      if (hlsRef.current) {
         try {
-          video.pause();
+          hlsRef.current.destroy();
+          hlsRef.current = null;
+        } catch (err) {}
+      }
+      if (video) {
+        try {
           video.src = "";
           video.load();
         } catch (e) {}
-      };
-    }
-
-    return () => {
-      active = false;
-      if (hls) {
-        try {
-          hls.destroy();
-        } catch (err) {}
       }
     };
-  }, [url, isInView]);
+  }, [url]);
 
   return (
     <video
@@ -126,6 +114,7 @@ export function HlsPlayer({ url, className, id }: HlsPlayerProps) {
       muted
       loop
       playsInline
+      preload="auto"
     />
   );
 }

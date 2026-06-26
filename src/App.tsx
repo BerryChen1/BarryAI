@@ -41,7 +41,8 @@ const PORTFOLIO_DETAILS = [
     enSubtitle: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibLib",
     tagline: "新片场AI平台Shotlab签约创作人\n即梦/可灵/LibLib等AI平台扶持计划优质创作者",
     enTagline: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibLib",
-    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260607215855060.jpg",
+    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623215213891.webp",
+    innerBgImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623220043652.webp",
     stats: [
       { label: "毕业时间", enLabel: "GRADUATION YEAR", value: "2027届毕业生", enValue: "Class of 2027" },
       { label: "荣誉获奖", enLabel: "AWARDS & HONORS", value: "一等研究生奖学金" },
@@ -72,7 +73,7 @@ const PORTFOLIO_DETAILS = [
       "第13届未来设计师·全国高校数字艺术设计大赛(NCDA)国赛总决赛三等奖（插画赛道）",
       "即梦AI放映厅「阿那亚海浪电影周」入选",
       "2025首届硅谷AI电影节北京赛区入围",
-      "2025古剑山·大学生A影像创作大赛",
+      "2025古剑山·大学生AI影像创作大赛",
       "2023CGDA平面设计学院奖入围",
       "2022国际大学生手绘艺术与设计大赛银奖"
     ],
@@ -81,7 +82,7 @@ const PORTFOLIO_DETAILS = [
       "13th Future Designer • National College Digital Art Design Competition (NCDA) National Finals - Third Prize (Illustration Track)",
       "Selected for Dreamina AI Screening • Aranya Wave Film Week",
       "Shortlisted for 2025 Silicon Valley AI Film Festival (Beijing Division)",
-      "2025 Gujianshan • College Student A-Video Creation Competition",
+      "2025 Gujianshan • College Student AI-Video Creation Competition",
       "Shortlisted for 2023 CGDA Graphic Design Academy Award",
       "Silver Award in 2022 International College Student Hand-painted Art & Design Competition"
     ],
@@ -106,28 +107,31 @@ const PORTFOLIO_DETAILS = [
     achievementsTitle: "成果展示：",
     achievementsEnTitle: "Achievements Showcase: ",
     achievements: [
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619210855158.png",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260619210907096.png",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614024116415.jpg",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614025159390.jpg",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614024141791.jpg",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614024712779.png"
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001532892.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001545562.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001629051.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001654388.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001754015.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002317904.webp"
     ],
     achievementsRow2: [
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614031847742.png",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614031905279.png",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614031951578.jpg",
-      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614032004487.jpg"
-    ]
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001817374.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001921888.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001938273.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001958265.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002011724.webp"
+    ],
+    largeAchievementImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626222446052.webp"
   },
   {
     title: "字节跳动·抖音TikTok Shop",
     enTitle: "ByteDance • Douyin TikTok Shop",
-    subtitle: "TikTok Shop AIGC内容设计与运营",
-    enSubtitle: "TikTok Shop AIGC Content Production Intern",
+    subtitle: "TikTok Shop AIGC内容运营与设计",
+    enSubtitle: "TikTok Shop AIGC Content Operations & Design",
     tagline: "深度参与国际电商 AIGC 自运营内容生态建设，全周期驱动双账号矩阵产能增长",
     enTagline: "Deeply involved in cross-border E-commerce self-developed AIGC systems, driving matrix volumetric growth",
-    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260607215719935.png",
+    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623215238563.webp",
+    innerBgImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201318986.webp",
     stats: [
       { label: "爆款点赞", enLabel: "VIRAL LIKES", value: "10,000+" },
       { label: "先锋履历", enLabel: "BETA STATUS", value: "即梦/可灵内测创作者" },
@@ -142,9 +146,24 @@ const PORTFOLIO_DETAILS = [
       "Focusing on neo-Chinese myths and surreal fluid simulations, I direct and script original videos that have garnered tens of thousands of likes and saves. This established a fast-turnaround, high-aesthetic model for commercial video generation."
     ],
     features: [
-      { title: "顶级 AIGC 模型核心内测官", enTitle: "Top-Tier Model Beta Tester", desc: "作为字节跳动即梦与快手可灵 AI 先锋共创计划成员，参与产品功能内测反馈，能第一时间利用新升级节点的算力大片形成传播先发优势。", enDesc: "As a member of ByteDance Dreamina & Kuaishou KLING AI development groups, feeding early feedback and utilizing model upgrades for instant viral reach." },
-      { title: "网感主导极速内容运营", enTitle: "Fast-Paced Content Operation", desc: "对网络前沿潮流 and 视觉审美趋势有着天然的警觉性，懂得通过宏大叙事、声波卡点及光影设计捕捉核心情绪流，提高受众留存率。", enDesc: "Highly alert to internet visuals and aesthetic shifts, capturing core emotions via deep optics to boost viewer retention." },
-      { title: "品牌跨界 AIGC 案例共创", enTitle: "Commercial Cross-Over Collaborations", desc: "为多家新锐国潮汉服、国风配饰及潮流消费电子大厂提供高精度的 AIGC 视听概念视频 and 静态宣发绘卷，极大节约了客户前中期制片周期成本。", enDesc: "Providing premium AIGC promo reels and visuals for modern Hanfu brands, luxury accessories, and consumer tech, cutting production cycles by up to 40%." }
+      { 
+        title: "顶级 AIGC 模型核心内测官", 
+        enTitle: "Top-Tier Model Beta Tester", 
+        desc: "作为字节跳动即梦与快手可灵 AI 先锋共创计划成员，参与产品功能内测反馈，能第一时间利用新升级节点的算力大片形成传播先发优势。", 
+        enDesc: "As a member of ByteDance Dreamina & Kuaishou KLING AI development groups, feeding early feedback and utilizing model upgrades for instant viral reach." 
+      },
+      { 
+        title: "网感主导极速内容运营", 
+        enTitle: "Fast-Paced Content Operation", 
+        desc: "对网络前沿潮流与视觉审美趋势有着天然的警觉性，懂得通过宏大叙事、声波卡点及光影设计捕捉核心情绪流，提高受众留存率。", 
+        enDesc: "Highly alert to internet visuals and aesthetic shifts, capturing core emotions via deep optics to boost viewer retention." 
+      },
+      { 
+        title: "品牌跨界 AIGC 案例共创", 
+        enTitle: "Commercial Cross-Over Collaborations", 
+        desc: "为多家新锐国潮汉服、国风配饰及潮流消费电子大厂提供高精度的 AIGC 视听概念视频与静态宣发绘卷，极大节约了客户前中期制片周期成本。", 
+        enDesc: "Providing premium AIGC promo reels and visuals for modern Hanfu brands, luxury accessories, and consumer tech, cutting production cycles by up to 40%." 
+      }
     ],
     works: [
       "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=600",
@@ -159,7 +178,8 @@ const PORTFOLIO_DETAILS = [
     enSubtitle: "Visual Design & AIGC Exploration",
     tagline: "深度参与两大核心版本品牌视觉体系搭建，以 AIGC 技术探索游戏美术全链路提效",
     enTagline: "Deeply involved in building brand visual systems, exploring full-cycle AIGC workflows to accelerate game art",
-    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614190520889.png",
+    coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623215308377.webp",
+    innerBgImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623211627790.webp",
     stats: [
       { label: "实习期间", enLabel: "INTERN PERIOD", value: "2024.03 - 2024.09" },
       { label: "主导板块", enLabel: "CORE DOMAIN", value: "AI 视觉设计" },
@@ -167,21 +187,36 @@ const PORTFOLIO_DETAILS = [
     ],
     paragraphs: [
       "作为腾讯 IEG 国内发行线视觉设计实习生，我深度参与《地下城与勇士：起源》两大核心版本的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
-      "在此期间，我不断优化 AIGC 的生图和创意分镜插画设计工作流，用顶尖 of AI 工具赋能商业视觉体系搭建。我积极协助打通超级创意视听管线，推动海量自适应素材的高质量、高一致度输出，并在品牌宣传册和社交平台预热中实现高达 40% 的执行时长提效。"
+      "在此期间，我不断优化 AIGC 的生图和创意分镜插画设计工作流，用顶尖的 AI 工具赋能商业视觉体系搭建。我积极协助打通超级创意视听管线，推动海量自适应素材的高质量、高一致度输出，并在品牌宣传册 and 社交平台预热中实现高达 40% 的执行时长提效。"
     ],
     enParagraphs: [
       "As a Visual Design Intern at Tencent IEG, I deeply engaged in scaffolding two core seasonal packages for Dungeon & Fighter (DNF) Mobile while supporting cross-IP projects.",
       "During this internship, I optimized stable AIGC and prompt generation workstreams to empower commercial projects with robust visuals. I helped establish standard visual asset templates, ensuring design alignment across high-throughput social/advertising deliverables, lowering processing periods."
     ],
     features: [
-      { title: "跨品类与版本视觉方案共创", enTitle: "Cross-IP Visual Scaffolding", desc: "完整主导及配合多套 DNF 春节/安徒恩特色等运营版本 KV 延展与创意排版，并产出高质量 AI 集卡周边图形物料。", enDesc: "Spearheaded adaptational layouts on seasonal high-impact DNF events, delivering robust, cohesive graphic sets across diverse assets." },
-      { title: "中式美感与 AIGC 精准控制", enTitle: "Empowering Neo-Chinese Style", desc: "运用多重控制节点精控中式山水与角色，形成多套兼备传统神采与先锋质感的大气宣传海报规范底图。", enDesc: "Used advanced semantic layouts to pair delicate, ink-wash aesthetics with rugged modern styling for massive layout consistency." },
-      { title: "高情商与高效率的企业沉淀", enTitle: "Agility in Corporate Ecosystems", desc: "在腾讯 IEG 大型工业创意链条中，积极发挥协调沟通优势，秒懂产品经理和研运总监的核心痛点并极速闭环产出。", enDesc: "Excelled in fast-cycle commercial pipelines, maintaining open feedback channels to deliver polished vectors under strict timelines." }
+      { 
+        title: "跨品类与版本视觉方案共创", 
+        enTitle: "Cross-IP Visual Scaffolding", 
+        desc: "完整主导及配合多套 DNF 春节/安徒恩特色等运营版本 KV 延展与创意排版，并产出高质量 AI 集卡周边图形物料。", 
+        enDesc: "Spearheaded adaptational layouts on seasonal high-impact DNF events, delivering robust, cohesive graphic sets across diverse assets." 
+      },
+      { 
+        title: "中式美感与 AIGC 精准控制", 
+        enTitle: "Empowering Neo-Chinese Style", 
+        desc: "运用多重控制节点精控中式山水与角色，形成多套兼备传统神采与先锋质感的大气宣传海报规范底图。", 
+        enDesc: "Used advanced semantic layouts to pair delicate, ink-wash aesthetics with rugged modern styling for massive layout consistency." 
+      },
+      { 
+        title: "高情商与高效率的企业沉淀", 
+        enTitle: "Agility in Corporate Ecosystems", 
+        desc: "在腾讯 IEG 大型工业创意链条中，积极发挥协调沟通优势，秒懂产品经理 and 研运总监的核心痛点并极速闭环产出。", 
+        enDesc: "Excelled in fast-cycle commercial pipelines, maintaining open feedback channels to deliver polished vectors under strict timelines." 
+      }
     ],
     works: [
-      "https://cdn.jsdelivr.gh/gh/BerryChen1/img-bed/images/20260607215915444.jpg",
-      "https://cdn.jsdelivr.gh/gh/BerryChen1/img-bed/images/20260607215949168.png",
-      "https://cdn.jsdelivr.gh/gh/BerryChen1/img-bed/images/20260607220023114.png"
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260607215915444.jpg",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260607215949168.png",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260607220023114.png"
     ]
   }
 ];
@@ -225,7 +260,7 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         id: "vid-1",
         title: "《The Last》",
         subtitle: "赛博朋克AIGC动画短片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612215112081.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002718644.webp",
         tags: ["独立制片", "AIGC流体", "声画联觉"],
         tools: ["Runway Gen-3", "可灵 AI", "Suno", "Premiere"],
         year: "2025",
@@ -234,23 +269,23 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         description: "“死亡不是我们的终点，遗忘才是”",
         story: [
           "霓虹流彩的赛博街巷里，一对恋人从温柔日常并肩走向末世烽烟。当机甲压境、城市崩塌，他们以血肉换机械义体，用牺牲守住彼此，让爱在钢铁废墟里成为永不熄灭的火种。",
-          "本片模型选用 Seedance 2.0、Midjourney 与 Nano Banana Pro等，以赛博朋克为底色铺陈爱与牺牲的内核。从牵手漫步的安宁岁月到末日绝境的双向奔赴，二人以自身为代价完成蜕变，在崩坏的世界里共赴一场以爱为名的坚守。"
+          "本片模型选用 Seedance 2.0、Midjourney 与 Nano Banana Pro等，以赛博朋克为底色铺陈爱与牺牲的内核。从牵手漫步的安宁岁月中到末日绝境的双向奔赴，二人以自身为代价完成蜕变，在崩坏的世界里共赴一场以爱为名的坚守。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002649528.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002705426.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002716882.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002728530.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002738304.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614002753795.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002835096.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002909540.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002923337.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002936574.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002947032.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003000623.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/cyber-love.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/one.mp4"
       },
       {
         id: "vid-2",
         title: "《致命节奏》",
         subtitle: "AIMV合作曲先导片 & MVLAND平台",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612220023113.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003438855.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Houdini", "After Effects", "Midjourney"],
         year: "2024",
@@ -262,53 +297,54 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片为与 MVLAND 平台合作打造的推广向 AIMV 短片，选用 Seedance 2.0、Kling 与 NanoBanana Pro 模型制作，以鲜明的美式动漫画风搭配炫彩故障视效，镜头节奏贴合音乐叙事，完成从日常松弛到战场热血的氛围跃迁，视觉记忆点突出。"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/MVLAND.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/two.mp4"
       },
       {
         id: "vid-3",
         title: "《明天的前夜》",
-        subtitle: "AIGC悬疑叙事短片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612220239061.png",
-        tags: ["AI悬疑", "脑机界面", "叙事美学"],
-        tools: ["Runway Gen-3", "Midjourney", "Premiere"],
+        subtitle: "AIGC未来叙事短片",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003834136.webp",
+        tags: ["科幻叙事", "情感共振", "末日美学"],
+        tools: ["Midjourney", "Runway Gen-3", "Premiere"],
         year: "2025",
-        client: "独立数字艺术展",
+        client: "独立短片计划",
         role: "导演 / 视觉概念 / 剪辑",
-        description: "“你会温和的走入那一夜吗？”",
+        description: "“你会温和的走入那一夜吗?\"",
         story: [
+          "“你会温和的走入那一夜吗?\"",
           "冷调压抑的房间中，女孩的平静被录音机传来的诡异声响击碎。她循声踏入幽暗无尽的长廊，一件件残破旧物接连浮现，录音里双胞胎的情感纠葛之下，暗涌着一场关于自我分裂与拉扯的精神迷局，长廊尽头的门后，藏着自我认同的终极真相。",
-          "本片为个人独立全流程创作的 AI 动画短片，以黑塞的文字开启叙事，通过镜面构图、极速倒放蒙太奇等视听手法营造压抑诡谲的超现实质感。影片选用 Seedance 2.0、Kling 与 NanoBanana Pro 模型制作，借悬疑化的影像叙事，深入探讨自我认同的深层精神内核。"
+          "本片为个人独立全流程创作的AI动画短片，以黑塞的文字开启叙事，通过镜面构图、极速倒放蒙太奇等视听手法营造压抑诡谲的超现实质感。影片选用Seedance 2.0、Kling与 NanoBanana Pro 模型制作，借悬疑化的影像叙事，深入探讨自我认同的深层精神内核。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614005958790.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614010013745.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614010025354.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003924128.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003934322.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003945977.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/twins.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4"
       },
       {
         id: "vid-4",
         title: "《CyberpunkGO》",
-        subtitle: "AIGC赛博朋克动画短片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612215701764.png",
-        tags: ["概念短片", "赛博朋克", "AI 视频重塑"],
-        tools: ["Sora", "可灵 AI", "Runway Gen-3", "Premiere"],
+        subtitle: "AIGC未来都市概念片",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004019826.webp",
+        tags: ["赛博朋克", "夜景霓虹", "故障美学"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
         year: "2025",
-        client: "CG 概念艺术周展",
-        role: "独立制作人 / 视觉导演",
-        description: "“嘿，你会想念夜之城吗？”",
+        client: "个人创意实验",
+        role: "导演 / 视觉设计 / 剪辑",
+        description: "“报告！发现赛博精神病！”",
         story: [
           "雨幕笼罩的街巷暗流涌动，过度义体改造催生的赛博精神病潜藏在城市暗角。猎手穿行于霓虹路口与潮湿巷道，在人性与机械的边界展开追缉，每一次生死交锋，都是对夜之城秩序与底线的叩问。",
           "短片选用 Seedance 2.0、Midjourney 与 NanoBanana Pro 模型制作，以浓烈的色彩笔触渲染追缉行动的紧张氛围，通过独处沉思与街巷穿行的画面切换，刻画出赛博世界里猎手的生存状态与使命。"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/asd.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-5",
         title: "《重返地球：42号远航队》",
         subtitle: "AIGC散文影像集",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612221023112.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004140742.webp",
         tags: ["太空探索", "硬核科幻", "电影级CG"],
         tools: ["Midjourney", "Runway Gen-3", "After Effects"],
         year: "2025",
@@ -320,13 +356,13 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片为全流程个人独立创作的 AI 影像作品，选用 Seedance 2.0、Kling、Midjourney 与 NanoBanana Pro 模型制作，以沉郁细腻的东方废土质感铺陈画面，用极简克制的叙事节奏，承载对文明与情感的深层探讨。"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/earth1.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-6",
         title: "《信》",
         subtitle: "AIGC中式动画短片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612221959487.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004412687.webp",
         tags: ["情感叙事", "超现实意象", "胶片美学"],
         tools: ["Midjourney", "Runway Gen-3", "Premiere"],
         year: "2025",
@@ -338,16 +374,16 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片基于 ComfyUI 搭建全流程工作流创作，以冷冽沉郁的画面基调铺陈寒冬氛围感，借灯火微光与苍茫夜色的视觉反差，勾勒出关于信念与传递的东方诗意叙事，让平凡的人间祈愿拥有治愈人心的温度。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013046319.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013035481.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004624136.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004609678.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/letter.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/six.mp4"
       },
       {
         id: "vid-7",
         title: "《灵狐夜游》",
         subtitle: "AIGC东方奇幻叙事短片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613233621904.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005318193.webp",
         tags: ["国风奇幻", "夜景渲染", "光影粒子"],
         tools: ["Midjourney", "Runway Gen-3", "After Effects"],
         year: "2025",
@@ -359,16 +395,16 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片为个人独立全流程创作的 AI 动画短片，以中国传统绘画美学为创作基底，配音与歌曲改编均借助 AI 工具完成，背景音乐出处标注于片末。作品借灵狐夜游的意象寄寓东方哲思，传递心诚念正、行善福至的处世之道，以现代科技重焕传统民俗与东方美学的生命力。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013356813.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013416251.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005430012.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005446033.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/fox.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/seven.mp4"
       },
       {
         id: "vid-8",
         title: "《赤壁·新年篇》",
         subtitle: "王者荣耀AIGC新春短片 & 红薯游戏制片厂",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612223427163.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005548580.webp",
         tags: ["史诗国风", "历史重构", "战争美学"],
         tools: ["Midjourney", "Runway Gen-3", "After Effects"],
         year: "2026",
@@ -380,15 +416,15 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片为与小红书「红薯游戏制片厂」合作打造的王者荣耀春节贺岁 AIGC 动画短片，以软萌 Q 版画风重塑三国经典角色，将家国豪情与新春暖意相融，在烽火叙事的底色里，铺陈出充满烟火温度的新年团圆内核。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013728364.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005625667.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/sanguo.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/eight.mp4"
       },
       {
         id: "vid-9",
         title: "《归雁·春》",
         subtitle: "AIGC新春贺岁短片 & Seko平台",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613233955832.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005648666.webp",
         tags: ["东方意象", "国风美学", "诗意镜头"],
         tools: ["Midjourney", "Runway Gen-3", "Premiere"],
         year: "2025",
@@ -400,15 +436,19 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本片为新年国风动画短片，以温润雅致的东方插画笔触铺陈年俗盛景，以浓醇正红底色晕染新春氛围，将归雁、舞龙、白马等传统祥瑞意象融入阖家团圆的叙事，尽显中式新年的温情底蕴与诗意浪漫。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614013932668.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005708947.webp"
         ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/spring.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nine.mp4"
       },
+
+
+
+
       {
         id: "vid-11",
         title: "《聊斋·罗刹梦回》",
         subtitle: "创作中...",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615003029223.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005750487.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Houdini", "After Effects", "Midjourney"],
         year: "2024",
@@ -419,13 +459,13 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "敬请期待"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/1.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-12",
         title: "《炁》",
         subtitle: "创作中...",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615004908688.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010000605.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Houdini", "After Effects", "Midjourney"],
         year: "2024",
@@ -436,13 +476,13 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "敬请期待"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/5.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-13",
         title: "《三国一梦》",
         subtitle: "创作中...",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235426341.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010210369.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Houdini", "After Effects", "Midjourney"],
         year: "2024",
@@ -453,7 +493,7 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "敬请期待"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/three1.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4"
       }
     ]
   },
@@ -469,7 +509,7 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         id: "comm-3",
         title: "《五音傩神》：铜仁傩戏文化节主题视觉作品",
         subtitle: "基于即梦三维重组算法的硬核国风机甲大片",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613013950513.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010433256.webp",
         tags: ["潮玩跨界", "未来机械", "非遗重塑"],
         tools: ["即梦 AI", "C4D", "Photoshop"],
         year: "2024",
@@ -479,34 +519,34 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         story: [
           "本次铜仁傩戏文化艺术节以「五音傩神」全套主题视觉设计为核心，五位拟人化傩神形象次第登场，揭开扎根民间、流传千载的傩文化秘事，为观者打造沉浸式祈福祷告的完整视听体验。",
           "设计体系深度融合唢呐、长笛、古筝、铜锣、大鼓五大传统乐器、经典傩戏面具图腾，锚定五音五行传统哲学内核，以现代化国风插画设计语言重构非遗形象，在保留传统祭祀仪式感的同时活化千年傩戏非遗，尽显音律相生、五行共振的东方民俗独特魅力。",
-          "夜幕幻境之中五音傩神齐聚亮相，娓娓诉说古老傩戏动人的民间传说，邀观众共赴祈福祈祥的视听盛会。作品将五样传统民乐、傩戏面具图腾与五行音律哲学相融，依托全新原创视觉设计创新表达，让沉淀千年的傩戏非遗焕发新生，完整展现传统祭祀文化独有的震撼感染力。"
+          "夜幕幻境之中五音傩神齐聚亮相，娓娓诉说古老傩戏动人的民间传说，邀观众共赴祈福祈祥的视听盛会。作品将五样传统民乐、傩戏面具图腾与五行音律哲学相融，依托全新创意视觉设计创新表达，让沉淀千年的傩戏非遗焕发新生，完整展现传统祭祀文化独有的震撼感染力。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154658690.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154714388.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154732276.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154746928.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154802197.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154816044.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154837543.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154849640.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154903176.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154915303.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154928014.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613154947009.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155000926.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155014824.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155029167.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155052054.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155111800.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613155126436.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010501730.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010520107.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010537197.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010552993.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010608924.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010623861.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010636520.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010649901.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010705815.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010715083.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010726862.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010742554.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010758782.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010811301.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010821407.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010834738.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010848717.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010901342.webp"
         ]
       },
       {
         id: "comm-4",
         title: "《云祈六星》：南斗神仙文化主题插画视觉",
         subtitle: "线上艺术主题展演主KV及全案动态预热视觉",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613014237805.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010922651.webp",
         tags: ["全案宣发", "流体招贴", "中式几何"],
         tools: ["Stable Diffusion", "可灵 AI", "Illustrator"],
         year: "2025",
@@ -518,36 +558,36 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "作品以南斗六星君为创作原型，将传统神话底蕴与现代插画表现手法相融，塑造出典雅又充满神秘感的视觉气质。设计紧扣六位星君分管寿命、福禄、命途的神职职能，以多元视觉符号细化人物人设；流云环绕的画面意象打通仙境与人间，配色温润肃穆，既凸显神明的威仪祥瑞，也生动诠释了传统文化里祈愿安康、盼守福运的精神内核。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613161958316.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162013725.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162029596.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162048199.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162108967.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162123434.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162135444.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162154560.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162209951.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162226581.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162241884.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162305694.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162318802.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162333636.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162348228.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162404812.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162421574.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162438600.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162453253.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162511539.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162752001.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162908490.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613162924513.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011012066.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011028442.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011043402.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011059710.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011112439.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011126802.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011140163.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011154508.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011207327.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011220854.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011231156.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011243240.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011254200.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011306460.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011319442.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011332536.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011344842.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011358993.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011412173.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011424306.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011438213.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011451363.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011504211.webp"
         ]
       },
       {
         id: "comm-1",
         title: "《地下城与勇士：起源》马年春节主题视觉",
         subtitle: "千万级流量新媒体平台的 AIGC 视觉体系升级与资产设计",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260612233100750.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011625825.webp",
         tags: ["先锋视听", "AIGC 视觉", "数字资产"],
         tools: ["Stable Diffusion", "Midjourney", "Photoshop"],
         year: "2024",
@@ -559,23 +599,23 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "整套视觉完整落地主 KV、游戏弹窗、拍脸 UI、线下游园会场布置、实体周边礼盒多场景应用，将盛唐国风美学与游戏二次元画风相融，落地西安大唐芙蓉园线下实景活动，实现传统纹样数字化转译、线上线下视觉体系统一，让国风古韵赋能游戏新春运营活动。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164641725.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164845190.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164701162.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164716204.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164730085.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164748486.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164801189.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164814557.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164830821.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613164908911.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011642952.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011656127.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011708732.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011722133.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011733357.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011744567.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011803663.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011823491.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011814723.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011834154.webp"
         ]
       },
       {
         id: "comm-2",
         title: "《地下城与勇士：起源》安徒恩主题视觉",
         subtitle: "汉服美学与几何超现实流体时装画卷",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613172027333.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011912121.webp",
         tags: ["品牌策划", "国风美学", "三维空间"],
         tools: ["即梦 AI", "可灵 AI", "C4D"],
         year: "2025",
@@ -587,27 +627,27 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "整套设计覆盖版本主 KV、角色分镜海报、团本场景界面等多类应用画面，以高张力暗黑硬核视觉，还原安徒恩 raid 热血攻坚的史诗对抗氛围，完整打通 AIGC 辅助静态设计、动态视效迭代的完整落地流程。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171505650.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613172027333.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171524424.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171539701.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171554902.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171658266.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171751738.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171815672.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171832972.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171907538.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171925891.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171949105.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613172009774.png"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011927201.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011940701.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011956485.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012009431.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012029033.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012041670.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012052858.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012104912.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012120004.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012130079.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012140977.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012153870.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012206751.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012216515.webp"
         ]
       },
       {
         id: "illus-1",
         title: "“开吃啦！野餐日”主题视觉插画作品",
         subtitle: "多色温高强反差大色块情感构成画集",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613030203803.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012234708.webp",
         tags: ["概念绘卷", "扁平构成", "版式设计"],
         tools: ["Procreate", "Photoshop", "Illustrator"],
         year: "2023",
@@ -615,21 +655,21 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         role: "核心概念画师",
         description: "“开吃啦！野餐日”",
         story: [
-          "该潮流插画作品采用复古橡胶软管卡通画风，将汉堡、薯条、芝士、饮品等经典快餐食材拟人化，塑造出个性鲜活的卡通角色，构建了郊外河畔热闹欢乐的野餐派对场景。整套设计包含主场景长插画、角色海报、贴纸素材，并且完整落地帆布包、拼图、台历、礼盒等多款实体衍生周边，把复古美式卡通趣味插画和文创产品结合，画风明快活泼、色彩鲜亮饱满，兼具潮流装饰性与实用落地价值。"
+          "该潮流插画作品采用复古橡胶软管卡通画风，将汉堡、薯条、芝士、饮品等经典快餐食材拟人化，塑造出个性鲜活的卡通角色，构建了郊外河畔热闹欢乐的野餐派对场景。整套设计包含主场景长插画、角色海报、贴纸素材，并且完整落地帆布包、拼图、台历、礼盒等多款实体衍生周边，把复古美式卡通趣味插画 and 文创产品结合，画风明快活泼、色彩鲜亮饱满，兼具潮流装饰性与实用落地价值。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170637899.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170652282.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170707117.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170722165.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170736460.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170748701.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170802079.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170814354.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170828443.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170840882.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170851002.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613170905007.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012249939.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012302494.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012314994.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012327175.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012339202.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012350611.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012401116.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012412257.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012431107.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012440482.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012451656.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012511481.webp"
         ]
       }
     ]
@@ -646,7 +686,7 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         id: "oth-1",
         title: "AIGC卡通IP形象“究究”主题作品",
         subtitle: "极高质量微观金属、玻璃材质演替渲染",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613020332811.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012602214.webp",
         tags: ["三维写实", "Octane 渲染", "重力模拟"],
         tools: ["Cinema 4D", "Octane Render", "RealFlow"],
         year: "2024",
@@ -657,31 +697,31 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本项目为山东工艺美术学院研究生学会 AIGC 卡通 IP 形象「究究」完整设计方案。IP 定位热爱艺术、善于观察采风的研究生学子形象，圆脸蛋 + 眼镜 + 贝雷帽塑造亲和软萌的 3D 卡通造型，规范专属橙黄视觉配色与标准四视图。围绕四季踏青、林间采风等场景延展系列插画，同步配套多套表情包、手机壁纸等衍生视觉物料，依托 AIGC 完成形象迭代与场景拓展。IP 贴合美院研究生群体人设，兼具辨识度、情感亲和力与完整落地应用性，可用于学会宣传、文创延展、线上传播等多场景使用。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173225927.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173240134.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173259345.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173319374.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173331829.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173347831.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173403068.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173414790.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173429194.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173442891.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173454237.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173507303.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173522518.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173535812.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173556049.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173702303.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613174240626.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613173803927.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012618637.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012629055.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012641761.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012654321.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012706355.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012718058.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012731079.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012744277.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012756278.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012808186.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012818261.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012832344.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012843422.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012859626.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012909740.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012919487.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012930401.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623012947419.webp"
         ]
       },
       {
         id: "oth-2",
         title: "AIGC“六一欢乐行”主题活动作品",
         subtitle: "脑电呼吸触控交互与宏观流体视觉演绎",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613020652061.png",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013007022.webp",
         tags: ["新媒体交互", "粒子算法", "跨界实验"],
         tools: ["TouchDesigner", "Kinect", "Ableton Live"],
         year: "2025",
@@ -692,21 +732,21 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本项目是「六一欢乐行」儿童节线上运营全套视觉设计，依托 MJ、SD、GPT4o 等 AIGC 工具，搭配盲盒 LoRA 模型完成 3D 黏土卡通风格主视觉创作。画面以云端飞机、旋转木马构建梦幻童话场景，同步规划糖果巡游、矿车竞速四大趣味活动板块。整套视觉完整落地活动主 KV、多版本分支海报、APP 开屏页、弹窗、信息流 Banner、H5 活动页面等全渠道运营物料，色彩梦幻柔和、童趣氛围感饱满，适配儿童节全平台线上宣传推广需求，完整实现 AIGC 辅助商业运营视觉从创意生成、迭代筛选到落地应用的全流程闭环。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613175848367.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613175906922.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613175922378.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613175934137.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613175948026.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180001065.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180019511.png",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180034034.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013007022.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013030326.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013043292.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013140776.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013152572.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013203732.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013214300.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013300353.webp"
         ]
       },
       {
         id: "brand-3",
         title: "“Meow Tomorrow”爱心猫舍品牌作品",
         subtitle: "青岛珍稀手艺贝雕与国风刺绣的现代化平面重组全案",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613021059555.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013335975.webp",
         tags: ["非遗再造", "偏光仿真", "品牌全案"],
         tools: ["Stable Diffusion", "Photoshop", "Illustrator"],
         year: "2024",
@@ -717,33 +757,33 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本项目是「喵的明天（Meow Tomorrow）」流浪猫救助公益品牌全案 VI 与衍生品设计。项目先梳理流浪猫生存困境、救助资金缺口、人宠矛盾等真实痛点，以此为出发点搭建完整公益品牌体系。手绘猫咪小屋线条作为核心视觉符号，选用暖黄、浅蓝、柔粉柔和三色搭建规范色彩系统，完成品牌 LOGO、标准字体、吊牌、菜单、打包杯袋、围裙等全套视觉物料设计；同时延伸宠物洗护套装、牵引绳、便携外出包、食碗、猫粮包装等完整救助配套产品，兼顾救助站分阶段管理标识、公益周边落地应用，以年轻化温柔视觉降低大众抵触情绪，用商业化产品收益反哺流浪猫救助，实现公益品牌可持续运营。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180423038.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180453721.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180507899.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180521244.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180534262.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180551751.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180605497.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180618129.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180634449.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180647631.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180659217.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180712261.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180724633.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180737137.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180749333.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180800424.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180817590.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180840724.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180851392.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613180907605.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013353792.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013404756.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013417653.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013428313.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013439247.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013450847.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013504107.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013514388.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013525945.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013537626.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013547490.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013556784.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013608118.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013620583.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013630575.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013640878.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013650209.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013702509.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013713343.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013724982.webp"
         ]
       },
       {
         id: "brand-4",
         title: "“上海老城隍庙梨膏糖”品牌设计作品",
         subtitle: "潮流沙龙三维动态招贴、偏光字体与网页前端视觉",
-        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613021544026.jpg",
+        coverImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013753065.webp",
         tags: ["多语种排版", "真空玻璃动态", "线上快闪"],
         tools: ["Cinema 4D", "Photoshop", "TouchDesigner"],
         year: "2024",
@@ -754,16 +794,16 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "本项目为上海老字号老城隍庙梨膏糖礼盒包装升级设计，依托豫园古建筑风貌提取屋檐轮廓作为核心视觉符号，将庙宇门楼造型转化为可开合解构式盒型，开盒模拟推开庙门的仪式感。采用金、绿、红三色区分原味、薄荷、玫瑰三款口味，外盒辅以传统暗纹肌理，内袋沿用建筑线稿细节，兼顾独立分装便携实用性。设计立足非遗梨膏糖药食同源属性，融合老上海地域文化与现代国潮审美，完成老字号包装年轻化迭代，适配旅游伴手礼、日常送礼多场景，实现传统文化载体的全新视觉表达。"
         ],
         gallery: [
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181442630.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181458800.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181522640.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181546577.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181600037.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181626513.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181647351.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181708513.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181733991.jpg",
-          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613181812821.jpg"
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013753065.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013813966.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013825915.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013837666.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013850636.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013901670.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013912354.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013924315.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013937450.webp",
+          "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623013953516.webp"
         ]
       }
     ]
@@ -808,6 +848,29 @@ export default function App() {
   
   // Interactive state for suggestions and messaging
   const [suggestionMessage, setSuggestionMessage] = useState("");
+
+  // Background idle warm-up queue for project cover images
+  useEffect(() => {
+    const idleTimer = setTimeout(() => {
+      import('./utils/optimizeCdn').then(({ warmUpImage, detectFastestCDN }) => {
+        // Run latency detection to ensure useImageProxy & selectedMirror are fully aligned
+        detectFastestCDN().then(() => {
+          // Progressively warm up cover images block by block to not block the main thread
+          CATALOG_PORTFOLIO_DATA.forEach((category, catIdx) => {
+            category.projects.forEach((proj, projIdx) => {
+              setTimeout(() => {
+                if (proj.coverImage) {
+                  warmUpImage(proj.coverImage);
+                }
+              }, (catIdx * 150) + (projIdx * 40));
+            });
+          });
+        });
+      });
+    }, 1500);
+
+    return () => clearTimeout(idleTimer);
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -981,7 +1044,7 @@ export default function App() {
           muted 
           loop 
           playsInline
-          preload="metadata"
+          preload="auto"
         />
 
         {/* Very subtle vignette shade to keep top text clear without darkening the central main art */}
@@ -1136,10 +1199,10 @@ export default function App() {
             )}
             {t(
               <p className="tracking-wide">
-                专注AIGC创意视听内容创作，凭借兼具设计审美、情感温度与个人风格的原创作品收获上万点赞，<strong className="text-sky-400 font-medium font-sans">新片场AI平台Shotlab签约创作人</strong>、<strong className="text-sky-400 font-medium font-sans">即梦/可灵/LibLib等AI平台扶持计划优质创作者</strong>，与众多平台展开合作，具备成熟的 AIGC 创作、内容运营、品牌合作及商业落地能力。
+                专注<strong className="text-sky-400 font-medium">AIGC</strong>创意视听内容创作，作品获得众多比赛奖项，入选<strong className="text-sky-400 font-medium">小红书精选</strong>、入选<strong className="text-sky-400 font-medium">新片场·精选周榜</strong>TOP10，凭借兼具设计审美、情感温度与个人风格的原创作品收获上万点赞，<strong className="text-sky-400 font-medium font-sans">新片场AI平台Shotlab签约创作人</strong>、<strong className="text-sky-400 font-medium font-sans">即梦/可灵/LibLib等AI平台扶持计划优质创作者</strong>，与众多平台展开合作，具备成熟的 AIGC 创作、内容运营、品牌合作及商业落地能力。
               </p>,
               <p className="tracking-wide leading-relaxed font-sans font-light">
-                Specializing in creative AIGC audiovisual creation, my original content blends exquisite aesthetic design, emotional warmth, and distinct personal styles which has garnered tens of thousands of likes. As a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator of Xinpianchang AI Platform Shotlab & Featured Creator of Dreamina/Kling/LibLib</strong>, I collaborate with numerous platforms, possessing mature capabilities in AIGC creation, content operation, brand collaboration, and commercial implementation.
+                Specializing in creative <strong className="text-sky-400 font-semibold font-sans">AIGC</strong> audiovisual creation, with works winning multiple contest awards, featured on <strong className="text-sky-400 font-semibold font-sans">Xiaohongshu</strong>, and selected for <strong className="text-sky-400 font-semibold font-sans">Xinpianchang Weekly Best Chart</strong> TOP 10. My original content blends exquisite aesthetic design, emotional warmth, and distinct personal styles which has garnered tens of thousands of likes. As a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator of Xinpianchang AI Platform Shotlab & Featured Creator of Dreamina/Kling/LibLib</strong>, I collaborate with numerous platforms, possessing mature capabilities in AIGC creation, content operation, brand collaboration, and commercial implementation.
               </p>
             )}
           </div>
@@ -1301,7 +1364,7 @@ export default function App() {
                   {t("字节跳动·抖音TikTok Shop", "ByteDance • Douyin TikTok Shop")}
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-sans tracking-wider mb-4 font-light select-none">
-                  {t("AIGC内容设计与运营", "AIGC Content Design & Operations")}
+                  {t("AIGC内容运营与设计", "AIGC Content Operations & Design")}
                 </p>
 
                 {/* Hidden details shown on card interaction */}
@@ -1428,7 +1491,7 @@ export default function App() {
             muted 
             loop 
             playsInline
-            preload="metadata"
+            preload="auto"
           />
           {/* Subtle fade overlay to keep edges clean without darkening the central art */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/25" />
@@ -1464,7 +1527,7 @@ export default function App() {
               muted 
               loop 
               playsInline
-              preload="metadata"
+              preload="auto"
             />
             {/* Subtle color mask */}
             <div className="absolute inset-0 bg-transparent z-0" />
@@ -1595,6 +1658,33 @@ export default function App() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: pIdx * 0.08, duration: 0.55, ease: "easeOut" }}
                                 onClick={() => setSelectedProject(proj)}
+                                onMouseEnter={() => {
+                                  import('./utils/optimizeCdn').then(({ warmUpImage, warmUpVideo }) => {
+                                    if (proj.coverImage) {
+                                      warmUpImage(proj.coverImage);
+                                    }
+                                    if (proj.gallery && proj.gallery.length > 0) {
+                                      proj.gallery.forEach(imgUrl => warmUpImage(imgUrl));
+                                    }
+                                    if (proj.videoUrl) {
+                                      warmUpVideo(proj.videoUrl);
+                                    }
+                                  });
+                                  if (proj.id === "vid-11" || proj.id === "vid-12" || proj.id === "vid-13") {
+                                    import('./utils/optimizeCdn').then(({ warmUpVideo }) => {
+                                      const primaryUrl = proj.id === "vid-11" ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4" : proj.id === "vid-13" ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4" : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4";
+                                      const secUrl = proj.id === "vid-11" ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4" : proj.id === "vid-13" ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%882%EF%BC%89.mp4" : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4";
+                                      warmUpVideo(primaryUrl);
+                                      warmUpVideo(secUrl);
+                                    });
+                                  }
+                                  if (proj.id === "vid-4") {
+                                    import('./utils/optimizeCdn').then(({ warmUpVideo }) => warmUpVideo("https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/night2.mp4"));
+                                  }
+                                  if (proj.id === "vid-5") {
+                                    import('./utils/optimizeCdn').then(({ warmUpVideo }) => warmUpVideo("https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/earth2.mp4"));
+                                  }
+                                }}
                                 className={`group flex flex-col ${item.id === 'video' ? 'w-[185px] sm:w-[215px] md:w-[235px]' : 'w-[280px] sm:w-[330px] md:w-[360px]'} shrink-0 snap-start rounded-2xl border border-white/[0.04] bg-neutral-950/60 hover:border-sky-450/40 overflow-hidden transition-all duration-300 cursor-pointer shadow-[0_12px_40px_rgba(0,0,0,0.65)] hover:shadow-[0_12px_45px_rgba(56,189,248,0.06)]`}
                               >
                                 {/* Card Image Cover with Zoom */}
@@ -1828,7 +1918,7 @@ export default function App() {
                   {/* Header Cover Banner */}
                   <div className="relative w-full h-48 sm:h-64 md:h-80 shrink-0 overflow-hidden">
                     <img
-                      src={detail.coverImage}
+                      src={(detail as any).innerBgImage || detail.coverImage}
                       alt={detail.title}
                       className="w-full h-full object-cover select-none"
                       referrerPolicy="no-referrer"
@@ -1951,31 +2041,38 @@ export default function App() {
                         </div>
 
                         {/* Achievements Gallery */}
-                        {(detail as any).achievements && (
-                          <div className="flex flex-col gap-6 mt-4">
-                            <div className="flex items-center gap-2.5 border-b border-white/5 pb-3">
-                              <span className="w-2 h-2 rounded-full bg-sky-300" />
-                              <h4 className="text-base md:text-lg uppercase tracking-[0.1em] font-bold text-white/90">
-                                {t((detail as any).achievementsTitle || "成果展示：", (detail as any).achievementsEnTitle || "Achievements Showcase: ")}
-                              </h4>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                              {(detail as any).achievements.map((url: string, i: number, arr: string[]) => (
-                                <div key={i} className="relative w-full h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer" onClick={() => setLightboxState({images: ((detail as any).achievementsRow2 ? [...arr, ...(detail as any).achievementsRow2] : arr), index: i})}>
-                                  <img 
-                                    src={url} 
-                                    alt="Achievement sample" 
-                                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 brightness-95 group-hover:brightness-100"
-                                    referrerPolicy="no-referrer"
-                                  />
-                                  <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors" />
+                        {(detail as any).achievements && (() => {
+                          const allAchievementImages = [
+                            ...((detail as any).achievementsRow2 || []),
+                            ...((detail as any).achievements || []),
+                            ...((detail as any).largeAchievementImage ? [(detail as any).largeAchievementImage] : [])
+                          ];
+                          return (
+                            <div className="flex flex-col gap-6 mt-4">
+                              <div className="flex items-center gap-2.5 border-b border-white/5 pb-3">
+                                <span className="w-2 h-2 rounded-full bg-sky-300" />
+                                <h4 className="text-base md:text-lg uppercase tracking-[0.1em] font-bold text-white/90">
+                                  {t((detail as any).achievementsTitle || "成果展示：", (detail as any).achievementsEnTitle || "Achievements Showcase: ")}
+                                </h4>
+                              </div>
+                              {(detail as any).achievementsRow2 && (
+                                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full">
+                                  {(detail as any).achievementsRow2.map((url: string, i: number) => (
+                                    <div key={`row2-${i}`} className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer" onClick={() => setLightboxState({images: allAchievementImages, index: i})}>
+                                      <img 
+                                        src={url} 
+                                        alt="Achievement sample" 
+                                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                                        referrerPolicy="no-referrer"
+                                      />
+                                      <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors" />
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
-                            {(detail as any).achievementsRow2 && (
-                              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
-                                {(detail as any).achievementsRow2.map((url: string, i: number, arr: string[]) => (
-                                  <div key={`row2-${i}`} className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer" onClick={() => setLightboxState({images: [...(detail as any).achievements, ...arr], index: (detail as any).achievements.length + i})}>
+                              )}
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                                {(detail as any).achievements.map((url: string, i: number) => (
+                                  <div key={i} className="relative w-full h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer" onClick={() => setLightboxState({images: allAchievementImages, index: ((detail as any).achievementsRow2 ? (detail as any).achievementsRow2.length : 0) + i})}>
                                     <img 
                                       src={url} 
                                       alt="Achievement sample" 
@@ -1986,9 +2083,22 @@ export default function App() {
                                   </div>
                                 ))}
                               </div>
-                            )}
-                          </div>
-                        )}
+
+                              {/* Large Achievement Image at the very bottom */}
+                              {(detail as any).largeAchievementImage && (
+                                <div className="relative w-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer mt-2" onClick={() => setLightboxState({images: allAchievementImages, index: allAchievementImages.length - 1})}>
+                                  <img 
+                                    src={(detail as any).largeAchievementImage} 
+                                    alt="Large Achievement sample" 
+                                    className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                                    referrerPolicy="no-referrer"
+                                  />
+                                  <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors" />
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })()}
                       </>
                     )}
                   </div>
@@ -2095,17 +2205,17 @@ export default function App() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                           <CustomVideoPlayer src={
                             selectedProject.id === "vid-11" 
-                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/1.mp4" 
+                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4" 
                               : selectedProject.id === "vid-13"
-                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/three1.mp4"
-                              : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/5.mp4"
+                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4"
+                              : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
                           } language={language} />
                           <CustomVideoPlayer src={
                             selectedProject.id === "vid-11" 
-                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/kkk.mp4" 
+                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4" 
                               : selectedProject.id === "vid-13"
-                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/three2.mp4"
-                              : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/1.01.mp4"
+                              ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%882%EF%BC%89.mp4"
+                              : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4"
                           } language={language} />
                         </div>
                       ) : (
@@ -2133,17 +2243,39 @@ export default function App() {
                       {selectedProject.story.map((para, pIdx) => {
                         const isWuyinPara = para.includes("夜幕幻境之中五音傩神齐聚亮相");
                         const isNandouPara = para.includes("作品以南斗六星君为创作原型");
+                        const isDnfPara = para.includes("整套设计覆盖版本主 KV、角色分镜海报、团本场景界面等多类应用画面");
+                        const isJiujiuPara = para.includes("山东工艺美术学院研究生学会 AIGC 卡通 IP 形象「究究」完整设计方案");
                         return (
                           <Fragment key={pIdx}>
                             <p className="tracking-wide">{para}</p>
                             {isWuyinPara && (
                               <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/wuyin-vide.mp4" language={language} />
+                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4" language={language} />
                               </div>
                             )}
                             {isNandouPara && (
                               <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/nandou-video.mp4" language={language} />
+                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4" language={language} />
+                              </div>
+                            )}
+                            {isDnfPara && (
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                                <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
+                                </div>
+                                <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
+                                </div>
+                              </div>
+                            )}
+                            {isJiujiuPara && (
+                              <div className="my-6 flex flex-col items-center">
+                                <div className="w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4" language={language} />
+                                </div>
+                                <p className="text-xs md:text-sm text-zinc-400 mt-3 font-sans tracking-wide text-center">
+                                  “究究”成为山东工艺美术学院“橙芽同学”绘画工作室品牌IP代言人
+                                </p>
                               </div>
                             )}
                           </Fragment>
@@ -2155,22 +2287,51 @@ export default function App() {
                   {/* Curated Media Showcase/Gallery */}
                   <div className="space-y-8">
                     {selectedProject.id === "vid-1" && (
-                        <div className="space-y-6">
+                        <div className="space-y-8">
                             <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                               <span className="w-2 h-2 rounded-full bg-sky-300" />
                               <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
                                 {t("自媒体收获 / MEDIA ACHIEVEMENTS", "MEDIA ACHIEVEMENTS")}
                               </h2>
                             </div>
-                            <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({ images: ["https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614020827368.jpg"], index: 0 })}>
-                                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614020827368.jpg" alt="Media Achievements" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
-                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                                <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
-                                  {t("点击查看大图", "Click to Zoom")}
-                                </div>
+                            
+                            {/* Card 1: Xiaohongshu */}
+                            <div className="space-y-3">
+                              <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({ images: ["https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003203649.webp"], index: 0 })}>
+                                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003203649.webp" alt="Media Achievements" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                              </div>
+                              <div className="text-center text-zinc-400 text-sm tracking-widest font-light">
+                                {t("入选小红书精选", "Featured on Xiaohongshu")}
+                              </div>
                             </div>
-                            <div className="text-center text-zinc-400 text-sm mt-3 tracking-widest font-light">
-                              {t("入选小红书精选", "Featured on Xiaohongshu")}
+
+                            {/* Card 2: Xinpianchang */}
+                            <div className="space-y-3 pt-4 border-t border-white/5">
+                              <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({ images: ["https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626222446052.webp"], index: 0 })}>
+                                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626222446052.webp" alt="Xinpianchang Achievements" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                              </div>
+                              <div className="text-center text-zinc-400 text-sm tracking-widest font-light">
+                                {t("入选新片场·精选周榜 2026年第25期 TOP10", "Selected for Xinpianchang Weekly Best Chart (2026, Issue 25) TOP 10")}
+                              </div>
+                              <div className="flex justify-center pt-1">
+                                <a 
+                                  href="https://www.xinpianchang.com/a13719369?from=rankWeekList" 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-sans tracking-wider transition-colors hover:underline decoration-sky-400/30 underline-offset-4"
+                                >
+                                  <span>{t("在新片场查看作品", "View on Xinpianchang")}</span>
+                                  <ArrowUpRight className="w-3.5 h-3.5" />
+                                </a>
+                              </div>
                             </div>
                         </div>
                     )}
@@ -2187,15 +2348,15 @@ export default function App() {
                         {/* Row of 2 images */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                           {[
-                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000848837.jpg",
-                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000902854.jpg"
+                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003245431.webp",
+                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003258200.webp"
                           ].map((imgUrl, idx) => {
                             const arr = [
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000848837.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000902854.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000935013.png",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000945803.png",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000959374.png"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003245431.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003258200.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003324908.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003337365.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003348195.webp"
                             ];
                             return (
                               <div key={`vid-1-art-r1-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
@@ -2212,16 +2373,16 @@ export default function App() {
                         {/* Row of 3 images */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                           {[
-                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000935013.png",
-                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000945803.png",
-                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000959374.png"
+                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003324908.webp",
+                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003337365.webp",
+                            "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003348195.webp"
                           ].map((imgUrl, idx) => {
                             const arr = [
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000848837.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000902854.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000935013.png",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000945803.png",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618000959374.png"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003245431.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003258200.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003324908.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003337365.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003348195.webp"
                             ];
                             return (
                               <div key={`vid-1-art-r2-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: 2 + idx})}>
@@ -2246,16 +2407,16 @@ export default function App() {
 
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001319750.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001329632.png",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001345427.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001357524.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003038385.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003057911.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003111222.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003122761.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001319750.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001329632.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001345427.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260618001357524.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003038385.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003057911.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003111222.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003122761.webp"
                               ];
                               return (
                                 <div key={`vid-1-prompt-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
@@ -2280,8 +2441,8 @@ export default function App() {
                                 {t("自媒体收获 / MEDIA ACHIEVEMENTS", "MEDIA ACHIEVEMENTS")}
                               </h2>
                             </div>
-                            <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({ images: ["https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614022205091.jpg"], index: 0 })}>
-                                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614022205091.jpg" alt="Media Achievements" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                            <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({ images: ["https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003847949.webp"], index: 0 })}>
+                                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003847949.webp" alt="Media Achievements" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                                   {t("点击查看大图", "Click to Zoom")}
@@ -2313,7 +2474,7 @@ export default function App() {
                     {/* Conditional video for CyberpunkGO project (id: vid-4) placed ABOVE the two images */}
                     {selectedProject.id === "vid-4" && (
                       <div className="space-y-6">
-                        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/night2.mp4" language={language} />
+                        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%882%EF%BC%89.mp4" language={language} />
                         <div className="space-y-4">
                           <div className="pl-5 border-l-3 border-sky-400/80 italic text-zinc-250 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed py-2.5 bg-sky-400/[0.02]">
                             “报告！发现赛博精神病！”
@@ -2334,9 +2495,9 @@ export default function App() {
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                               {[
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614011115797.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614011136470.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614011152593.png"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004032798.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004044178.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004055288.webp"
                               ].map((imgUrl, gIdx, arr) => (
                                 <div key={gIdx} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: gIdx})}>
                                   <img src={imgUrl} alt="Visual Scene Asset" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
@@ -2354,7 +2515,7 @@ export default function App() {
                     {/* Conditional video for Return to Earth (id: vid-5) placed ABOVE the two images */}
                     {selectedProject.id === "vid-5" && (
                       <div className="space-y-6">
-                        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/earth2.mp4" language={language} />
+                        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%882%EF%BC%89.mp4" language={language} />
                         <div className="space-y-4">
                           <div className="pl-5 border-l-3 border-sky-400/80 italic text-zinc-250 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed py-2.5 bg-sky-400/[0.02]">
                             “谁又会为太阳的西坠而感到哀伤呢？”
@@ -2375,11 +2536,11 @@ export default function App() {
                             </div>
                             <div className="flex flex-col gap-6 w-full">
                               {[
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614012238860.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614012253004.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614012303480.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614012314967.png",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614012325064.png"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004154038.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004204584.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004217131.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004230317.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623004306129.webp"
                               ].map((imgUrl, gIdx, arr) => (
                                 <div key={gIdx} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/5" onClick={() => setLightboxState({images: arr, index: gIdx})}>
                                   <img src={imgUrl} alt="Workflow Breakdown" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
@@ -2428,12 +2589,12 @@ export default function App() {
                               </div>
                               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                                 {[
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014602510.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014614028.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014625486.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014638466.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014650509.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014701169.png"
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003528472.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003541296.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003553176.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003608886.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003620460.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003632706.webp"
                                 ].map((imgUrl, gIdx, arr) => (
                                   <div key={gIdx} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: gIdx})}>
                                     <img src={imgUrl} alt="Character & Scene Asset" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
@@ -2455,12 +2616,12 @@ export default function App() {
                               </div>
                               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                                 {[
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014800019.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014814966.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014826623.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014839028.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014850004.png",
-                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260614014902644.png"
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003649063.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003702549.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003730234.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003740707.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003752421.webp",
+                                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623003802637.webp"
                                 ].map((imgUrl, gIdx, arr) => (
                                   <div key={gIdx} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: gIdx})}>
                                     <img src={imgUrl} alt="Conceptual Storyboards" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
@@ -2488,17 +2649,17 @@ export default function App() {
                           {/* Row 1: 3 cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005422318.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005432831.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005444452.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010015651.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010030727.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010043783.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005422318.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005432831.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005444452.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005514100.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005523151.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005536509.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010015651.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010030727.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010043783.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010058475.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010111949.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010125471.webp"
                               ];
                               return (
                                 <div key={`${selectedProject.id}-r1-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
@@ -2515,17 +2676,17 @@ export default function App() {
                           {/* Row 2: 3 cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005514100.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005523151.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005536509.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010058475.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010111949.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010125471.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005422318.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005432831.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005444452.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005514100.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005523151.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615005536509.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010015651.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010030727.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010043783.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010058475.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010111949.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010125471.webp"
                               ];
                               return (
                                 <div key={`${selectedProject.id}-r2-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: 3 + idx})}>
@@ -2555,14 +2716,14 @@ export default function App() {
                           {/* Row 1: 3 cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235255619.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235311104.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235321702.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010226522.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010302570.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010317896.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235255619.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235311104.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260617235321702.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010226522.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010302570.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623010317896.webp"
                               ];
                               return (
                                 <div key={`${selectedProject.id}-r1-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
@@ -2592,15 +2753,15 @@ export default function App() {
                           {/* Row 1: 2 cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002848639.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002902601.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005816069.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005827860.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002848639.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002902601.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002945378.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002931921.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615003003740.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005816069.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005827860.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005841087.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005852169.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005906818.webp"
                               ];
                               return (
                                 <div key={`vid-11-r1-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
@@ -2617,16 +2778,16 @@ export default function App() {
                           {/* Row 2: 3 cards */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                             {[
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002945378.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002931921.jpg",
-                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615003003740.jpg"
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005841087.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005852169.webp",
+                              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005906818.webp"
                             ].map((imgUrl, idx) => {
                               const arr = [
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002848639.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002902601.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002945378.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615002931921.jpg",
-                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260615003003740.jpg"
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005816069.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005827860.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005841087.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005852169.webp",
+                                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623005906818.webp"
                               ];
                               return (
                                 <div key={`vid-11-r2-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: 2 + idx})}>

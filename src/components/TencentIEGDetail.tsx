@@ -11,22 +11,22 @@ interface TencentIEGDetailProps {
 export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDetailProps) {
   // Beautiful high-quality Unsplash image presets representing the game visuals & design workflows
   const images = {
-    kvChineseNewYear: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608230350558.png", // Festival visual style - Horse Year KV
-    tradPattern: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608230441444.png", // Antique traditional art - Tang Dynasty
-    aigcPatternWorkflow: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608230510140.png", // AI node & dynamic AIGC creative workflow
-    popInGame1: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608231151303.png", // 【图 4：拍脸展示 1】
-    popInGame2: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608231236579.png", // 【图 5：拍脸展示 2】
-    gamePopupUI: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608231303401.png", // 【图 6：UI与弹窗界面】
-    exhibitionXiAn: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233119510.png", // Grand red lanterns / Tang garden setting
-    giftBoxAI: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233149042.png", // Multi-layer creative luxury package
-    visualManualCover: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233417487.png", // Editorial design style bookcover
-    kvAnton: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233553678.png", // Epic volcano lava, dark red & black atmosphere
-    antonAIGCStatic: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233637082.png", // Dark rocky volcano cracks
-    comfyUIWorkflow: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608233719443.png", // Node-based computing screen mockup
+    kvChineseNewYear: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623011642952.webp", // Festival visual style - Horse Year KV
+    tradPattern: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212412611.webp", // Antique traditional art - Tang Dynasty
+    aigcPatternWorkflow: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212431006.webp", // AI node & dynamic AIGC creative workflow
+    popInGame1: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212447253.webp", // 【图 4：AIGC 提效工作流】
+    popInGame2: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212525354.webp", // 【图 5：拍脸展示 1】
+    gamePopupUI: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212504966.webp", // 【图 6：拍脸展示 2】
+    exhibitionXiAn: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212920340.webp", // Grand red lanterns / Tang garden setting
+    giftBoxAI: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623212942475.webp", // Multi-layer creative luxury package
+    visualManualCover: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213001654.webp", // Editorial design style bookcover
+    kvAnton: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213232521.webp", // Epic volcano lava, dark red & black atmosphere
+    antonAIGCStatic: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213302775.webp", // Dark rocky volcano cracks
+    comfyUIWorkflow: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213611261.webp", // Node-based computing screen mockup
     antonOtherStatic: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600", // Abstract premium render
     lavaVolcanoTheme: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600", // Threatening volcano glowing
-    qqDanceCards: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608234034497.png", // Cute anime card-styled illusts
-    internCollage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260608234139411.png" // Interactive UX boards collage
+    qqDanceCards: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214008126.webp", // Cute anime card-styled illusts
+    internCollage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214026601.webp" // Interactive UX boards collage
   };
 
   return (
@@ -133,7 +133,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                 <img src={images.tradPattern} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="relis" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 2：唐代文物及纹样提炼】", "Image 2: Tang Dynasty Relics Concept")}</span>
+              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 1：MDNF马年春节视觉大图】", "Img 1: MDNF Horse Lunar New Year Main Visual Map")}</span>
             </div>
             <div className="flex flex-col gap-1.5">
               <div 
@@ -199,7 +199,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                   </span>
                 </div>
               </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 4：拍脸展示 1】", "Img 4: In-Game Pop 1")}</span>
+              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 4：AIGC 提效工作流】", "Img 4: AIGC Efficiency Workflow")}</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3.5">
@@ -222,7 +222,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                     </span>
                   </div>
                 </div>
-                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 5：拍脸展示 2】", "Img 5: In-Game Pop 2")}</span>
+                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 5：拍脸展示 1】", "Img 5: In-Game Pop 1")}</span>
               </div>
 
               <div className="flex flex-col gap-1.5">
@@ -244,7 +244,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                     </span>
                   </div>
                 </div>
-                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 6：UI与弹窗界面】", "Img 6: In-Game UI Component")}</span>
+                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 6：拍脸展示 2】", "Img 6: In-Game Pop 2")}</span>
               </div>
             </div>
           </div>
@@ -283,14 +283,14 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                 <img src={images.exhibitionXiAn} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="offline" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
               </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 7：西安大唐芙蓉园会现场】", "Img 7: Offline Lantern Festival Event Site")}</span>
+              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 7：UI与弹窗界面】", "Img 7: In-Game UI and Popups")}</span>
             </div>
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 font-sans">
               <div 
-                onClick={() => setLightboxUrl(images.giftBoxAI)}
+                onClick={() => setLightboxUrl(images.visualManualCover)}
                 className="relative aspect-video rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               >
-                <img src={images.giftBoxAI} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="product box" referrerPolicy="no-referrer" />
+                <img src={images.visualManualCover} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="product box" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
               </div>
               <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 8：新春礼盒包装设计（AI 辅助）】", "Img 8: AI-assisted Packaging Concept")}</span>
@@ -324,14 +324,14 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
           <div className="flex flex-col gap-4 w-full">
             <div className="w-full flex flex-col gap-1.5">
               <div 
-                onClick={() => setLightboxUrl(images.visualManualCover)}
+                onClick={() => setLightboxUrl(images.giftBoxAI)}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center p-1"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src={images.visualManualCover} 
+                  src={images.giftBoxAI} 
                   className="w-full h-auto object-cover rounded-lg group-hover:scale-[1.01] transition-transform duration-500 mx-auto" 
-                  alt="manual" 
+                  alt="giftbox" 
                   referrerPolicy="no-referrer" 
                 />
                 <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -341,7 +341,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
                   </span>
                 </div>
               </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 9：视觉效果展示】", "Img 9: Visual Effect Display")}</span>
+              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 9：西安“大唐游园会”活动现场】", "Img 9: Xi'an 'Tang Dynasty Fair' Event Site")}</span>
             </div>
             <div className="text-[11px] md:text-xs leading-relaxed text-zinc-400 font-light flex flex-col justify-center">
               <p className="border-l-2 border-sky-400/50 pl-3 md:pl-4 py-1.5 bg-white/[0.005]">
@@ -429,30 +429,30 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171658266.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213321460.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171658266.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="安徒恩 BOSS 正面压迫感主 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213321460.webp" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="安徒恩 BOSS 正面压迫感主 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 12：安徒恩 BOSS 主 KV】", "Img 12: Anton BOSS KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171815672.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213337408.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171815672.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="玛特伽使徒降临单人主题 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213337408.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="玛特伽使徒降临单人主题 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 13：玛特伽使徒主题 KV】", "Img 13: Mateka Apostle KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171751738.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213359001.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171751738.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="危机火山分区模块化故障 UI 版式稿" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213359001.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="危机火山分区模块化故障 UI 版式稿" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 14：危机火山故障 UI 版式】", "Img 14: Crisis Volcano Glitch UI")}</span>
@@ -468,20 +468,20 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171925891.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213419345.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171925891.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="男枪手单人角色宣传 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213419345.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="男枪手单人角色宣传 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 15：男枪手单人宣传 KV】", "Img 15: Male Gunner Solo KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171949105.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213435866.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171949105.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="双枪手组队攻坚拼贴版式海报" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213435866.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="双枪手组队攻坚拼贴版式海报" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 16：双枪手组队拼贴海报】", "Img 16: Duo Squad Collage Poster")}</span>
@@ -497,30 +497,30 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171832972.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213457522.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171832972.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="分镜连续动作海报" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213457522.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="分镜连续动作海报" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 17：分镜连续动作海报】", "Img 17: Class Storyboard Poster")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171907538.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213514005.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171907538.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="克罗战斧 BOSS 独立宣传 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213514005.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="克罗战斧 BOSS 独立宣传 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 18：克罗 BOSS 独立宣传稿】", "Img 18: Kuro BOSS Promo KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213533022.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="舰船失事剧情场景氛围版式图" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623213533022.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="舰船失事剧情场景氛围版式图" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 19：舰船失事场景氛围稿】", "Img 19: Shipwreck Scene Mood Layout")}</span>
@@ -576,13 +576,13 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
           <div className="grid grid-cols-2 gap-3.5 mt-2">
             <div className="flex flex-col gap-1.5">
               <CustomVideoPlayer 
-                src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/a.mp4" 
+                src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" 
                 language={language} 
               />
             </div>
             <div className="flex flex-col gap-1.5">
               <CustomVideoPlayer 
-                src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/b.mp4" 
+                src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" 
                 language={language} 
               />
             </div>
@@ -672,20 +672,20 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211037523.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214323111.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211037523.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="重火器转职・大枪炮手 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214323111.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="重火器转职・大枪炮手 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 25：重火器转职・大枪炮手 KV】", "Img 25: Heavy Firearm Gunner KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211107427.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214342995.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211107427.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="左轮转职・沾血蔷薇 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214342995.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="左轮转职・沾血蔷薇 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 26：左轮转职・沾血蔷薇 KV】", "Img 26: Blood Rose Revolver KV")}</span>
@@ -701,30 +701,30 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211144813.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214400307.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211144813.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="维什戴尔干员战斗 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214400307.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="维什戴尔干员战斗 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 27：维什戴尔干员战斗 KV】", "Img 27: Wis'adel Operator Combat KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211637375.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214418138.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211637375.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="限定「余」国风KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214418138.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="限定「余」国风KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 28：限定「余」国风KV】", "Img 28: Shu Sino-Style Layout KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211700911.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214434057.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211700911.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="MON3TR 近战干员 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214434057.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="MON3TR 近战干员 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 29：MON3TR 近战干员 KV】", "Img 29: Mon3tr Melee Operator KV")}</span>
@@ -740,30 +740,30 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211740890.jpg")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214452177.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211740890.jpg" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="狼魂独奏主题角色 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214452177.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="狼魂独奏主题角色 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 30：狼魂独奏主题角色 KV】", "Img 30: Wolf Spirit Solo Theme KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211800684.png")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214507440.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211800684.png" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="花火古风氛围感 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214507440.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="花火古风氛围感 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 31：花火古风氛围感 KV】", "Img 31: Fireworks Classical Mood KV")}</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 <div 
-                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211821060.jpg")}
+                  onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214522000.webp")}
                   className="relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613211821060.jpg" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="流明水环境诗意 KV" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623214522000.webp" className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" alt="流明水环境诗意 KV" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
                 </div>
                 <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 32：流明水环境诗意 KV】", "Img 32: Lumen Aquatic Poetic KV")}</span>

@@ -1,18 +1,24 @@
 /**
- * CDN mirror speed optimization for Mainland China networks.
+ * CDN mirror speed optimization for Mainland China and Global networks.
  * Automatically resolves and reroutes requests of un-routed jsDelivr nodes to high-speed CDN mirrors
- * like GCore, Fastly, and Cloudflare-backed endpoints dynamically based on latency tests.
+ * like GCore, Fastly, and high-speed China-friendly endpoints dynamically based on real-time latency tests.
  */
 
+import { PRELOAD_IMAGES_LIST } from './preloadList';
+
 export const JSDELIVR_MIRRORS = [
-  "https://gcore.jsdelivr.net/gh/",
-  "https://fastly.jsdelivr.net/gh/",
-  "https://testingcf.jsdelivr.net/gh/",
-  "https://cdn.jsdelivr.net/gh/"
+  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
+  "https://jsd.onmicrosoft.cn/gh/",   // Extremely stable, optimized China-friendly route
+  "https://gcore.jsdelivr.net/gh/",    // GCore global Edge, great multi-line routing
+  "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
+  "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
+  "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to GCore (extremely fast in mainland China due to optimized multi-line routing)
-let selectedMirror = "https://gcore.jsdelivr.net/gh/";
+// Default to a highly-resilient, fast, China-friendly mirror
+let selectedMirror = "https://jsd.cdn.zzko.cn/gh/";
+let useImageProxy = true; // Dynamically verified at startup to avoid proxy timeout delays
+let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
 export function getOptimizedUrl(url: string | null | undefined): string {
   if (!url || typeof url !== 'string') return url || '';
@@ -22,16 +28,27 @@ export function getOptimizedUrl(url: string | null | undefined): string {
   return url;
 }
 
-// Fast asynchronous CDN latency test to automatically select the optimal route
+// Low-overhead background latency test to find the mathematically fastest connection path
 export async function detectFastestCDN() {
-  const testPath = "BerryChen1/img-bed/images/20260613171852678.png"; // Tiny reference image
+  const testPath = "BerryChen1/img-bed/images/20260613171852678.png"; // Tiny reference image (under 5KB)
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 2000); // 2sec max timeout
+  const timeoutId = setTimeout(() => controller.abort(), 2000); // Strict 2sec cap
 
+  // 1. Immediately inject preconnect links to speed up initial TCP handshakes
+  try {
+    ["https://jsd.cdn.zzko.cn", "https://jsd.onmicrosoft.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'preconnect';
+      link.href = domain;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+  } catch (e) {}
+
+  // 2. Measure latency to determine fastest mirror
   const promises = JSDELIVR_MIRRORS.map(async (mirror) => {
     const startTime = performance.now();
     try {
-      // Use standard fetch HEAD with no-cors to prevent CORS blocks on simple ping
       await fetch(`${mirror}${testPath}`, {
         method: "HEAD",
         mode: "no-cors",
@@ -45,19 +62,64 @@ export async function detectFastestCDN() {
     }
   });
 
+  // 3. Measure latency of the WebP image compressors (wsrv.nl vs images.weserv.nl vs Direct load)
+  const proxyPromise = (async () => {
+    const testProxyStart = performance.now();
+    try {
+      // Use wsrv.nl to load a tiny image asset from a global CDN backbone to verify proxy speed
+      const testUrl = "https://fastly.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png";
+      await fetch(`https://wsrv.nl/?url=${encodeURIComponent(testUrl)}&w=16`, {
+        method: "HEAD",
+        mode: "no-cors",
+        signal: controller.signal,
+        cache: "no-store"
+      });
+      const duration = performance.now() - testProxyStart;
+      return { ok: true, duration, url: "https://wsrv.nl/" };
+    } catch (e) {
+      // Inline alternate fallback
+      try {
+        const testUrlFallback = "https://fastly.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png";
+        await fetch(`https://images.weserv.nl/?url=${encodeURIComponent(testUrlFallback)}&w=16`, {
+          method: "HEAD",
+          mode: "no-cors",
+          signal: controller.signal,
+          cache: "no-store"
+        });
+        return { ok: true, duration: 800, url: "https://images.weserv.nl/" };
+      } catch (e2) {
+        return { ok: false, duration: 9999, url: "" };
+      }
+    }
+  })();
+
   try {
-    const results = await Promise.all(promises);
+    const [results, proxyResult] = await Promise.all([
+      Promise.all(promises),
+      proxyPromise
+    ]);
     clearTimeout(timeoutId);
     
-    // Filter out failed ones
+    // Choose fastest CDN mirror
     const activeResults = results.filter(r => r.duration < 9999);
     if (activeResults.length > 0) {
       activeResults.sort((a, b) => a.duration - b.duration);
       selectedMirror = activeResults[0].mirror;
       console.log(`[CDN Optimizer] Dynamic fastest mirror selected: ${selectedMirror} with latency ${activeResults[0].duration.toFixed(1)}ms`);
     }
+
+    // Set fallback rules if the compression proxy is unreachable/throttled
+    if (proxyResult.ok && proxyResult.duration < 1500) {
+      useImageProxy = true;
+      proxyBaseUrl = proxyResult.url;
+      console.log(`[CDN Optimizer] Image compression proxy OK: ${proxyBaseUrl} (${proxyResult.duration.toFixed(1)}ms)`);
+    } else {
+      useImageProxy = false;
+      console.warn("[CDN Optimizer] Image compression proxy unavailable or slow, falling back to direct ultra-high-speed CDN mirror loaded natively.");
+    }
   } catch (err) {
-    console.warn("[CDN Optimizer] Latency check failed or timed out, remaining on default high-speed GCore mirror:", selectedMirror);
+    clearTimeout(timeoutId);
+    console.warn("[CDN Optimizer] Dynamic checks completed with errors, utilizing highly-resilient GCore/China-hybrid defaults.");
   }
 }
 
@@ -73,35 +135,86 @@ if (typeof window !== 'undefined') {
         return originalImgGet ? originalImgGet.call(this) : '';
       },
       set(val) {
-        if (typeof val === 'string' && val.includes('cdn.jsdelivr.net/gh/')) {
-          const directMirrorUrl = val.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
-          const isImageFile = /\.(jpg|jpeg|png|webp|gif|bmp)(\?.*)?$/i.test(val);
-
-          if (isImageFile) {
-            // Convert to high-performance, globally geo-distributed WebP format on-the-fly.
-            // Downscale extremely large assets to a maximum width of 1450px, compression quality 80%.
-            // This compresses assets from megabytes into kilobytes (90%+ size reduction) with indistinguishable visual difference!
-            const compressedUrl = `https://images.weserv.nl/?url=${encodeURIComponent(directMirrorUrl)}&w=1450&output=webp&q=80`;
-
-            const elem = this as any;
-            if (elem._cdnFallbackHandler) {
-              this.removeEventListener('error', elem._cdnFallbackHandler);
+        if (typeof val === 'string' && (val.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => val.includes(m)))) {
+          // Normalize back to base jsdelivr URL first
+          let normalizedVal = val;
+          for (const mirror of JSDELIVR_MIRRORS) {
+            if (val.includes(mirror)) {
+              normalizedVal = val.replace(mirror, 'https://cdn.jsdelivr.net/gh/');
+              break;
             }
-
-            const fallbackHandler = () => {
-              this.removeEventListener('error', fallbackHandler);
-              elem._cdnFallbackHandler = null;
-              originalImgSet.call(this, directMirrorUrl);
-              console.log(`[CDN Optimizer] Image proxy failed, gracefully falling back to native CDN: ${directMirrorUrl}`);
-            };
-
-            elem._cdnFallbackHandler = fallbackHandler;
-            this.addEventListener('error', fallbackHandler);
-
-            originalImgSet.call(this, compressedUrl);
-          } else {
-            originalImgSet.call(this, directMirrorUrl);
           }
+
+          const directMirrorUrl = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+          const isImageFile = /\.(jpg|jpeg|png|webp|gif|bmp)(\?.*)?$/i.test(normalizedVal);
+          const isWebp = /\.webp(\?.*)?$/i.test(normalizedVal);
+
+          const elem = this as any;
+          if (elem._cleanupCdnListeners) {
+            elem._cleanupCdnListeners();
+          }
+
+          // Gather unique fallback strategies/URLs
+          const triedUrls = new Set<string>();
+          const fallbackUrls: string[] = [];
+
+          // 1. Try Image compression proxy if available (skip WebP files as they are already fully compressed)
+          if (isImageFile && useImageProxy && !isWebp) {
+            const sourceUrlForProxy = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
+            const compressedUrl = `${proxyBaseUrl}?url=${encodeURIComponent(sourceUrlForProxy)}&w=1200&output=webp&q=80`;
+            fallbackUrls.push(compressedUrl);
+            triedUrls.add(compressedUrl);
+          }
+
+          // 2. Try the preferred mirror selected by our latency test
+          if (!triedUrls.has(directMirrorUrl)) {
+            fallbackUrls.push(directMirrorUrl);
+            triedUrls.add(directMirrorUrl);
+          }
+
+          // 3. Try other mirrors in priority order
+          JSDELIVR_MIRRORS.forEach(mirror => {
+            const mirrorUrl = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', mirror);
+            if (!triedUrls.has(mirrorUrl)) {
+              fallbackUrls.push(mirrorUrl);
+              triedUrls.add(mirrorUrl);
+            }
+          });
+
+          let currentAttemptIndex = 0;
+
+          const loadNextUrl = () => {
+            if (currentAttemptIndex < fallbackUrls.length) {
+              const nextUrl = fallbackUrls[currentAttemptIndex];
+              currentAttemptIndex++;
+              originalImgSet.call(this, nextUrl);
+            } else {
+              console.error(`[CDN Optimizer] All image loading strategies failed for: ${normalizedVal}`);
+              cleanup();
+            }
+          };
+
+          const cleanup = () => {
+            this.removeEventListener('error', errorHandler);
+            this.removeEventListener('load', successHandler);
+            elem._cleanupCdnListeners = null;
+          };
+
+          const errorHandler = () => {
+            // Log as debug to keep console clean for recoverable fallback attempts
+            console.debug(`[CDN Optimizer] Image load failed for: ${this.src}. Trying next fallback.`);
+            loadNextUrl();
+          };
+
+          const successHandler = () => {
+            cleanup();
+          };
+
+          elem._cleanupCdnListeners = cleanup;
+          this.addEventListener('error', errorHandler);
+          this.addEventListener('load', successHandler);
+
+          loadNextUrl();
         } else {
           originalImgSet.call(this, val);
         }
@@ -158,4 +271,116 @@ if (typeof window !== 'undefined') {
     }
     return originalSetAttribute.call(this, name, value);
   };
+}
+
+// Keep a tracking Set of preloaded video URLs to avoid duplicate fetches
+const preloadedVideos = new Set<string>();
+const preloadedImages = new Set<string>();
+
+/**
+ * Highly optimized background warm-up of video assets to pre-resolve sockets 
+ * and pre-buffer stream chunks into the browser's persistent cache.
+ */
+export function warmUpVideo(url: string | null | undefined): void {
+  if (!url || typeof url !== 'string' || !url.startsWith('http')) return;
+  if (preloadedVideos.has(url)) return;
+  
+  preloadedVideos.add(url);
+  
+  // 1. Instantly perform speed warming by creating a link relation mapping the remote origin
+  try {
+    const origin = new URL(url).origin;
+    const existingLink = document.querySelector(`link[href^="${origin}"]`);
+    if (!existingLink) {
+      const link = document.createElement('link');
+      link.rel = 'preconnect';
+      link.href = origin;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    }
+  } catch (e) {}
+
+  // 2. Perform background pre-fetching / buffering of video chunks
+  try {
+    // Try modern HTML5 prefetch mechanism
+    const prefetchLink = document.createElement('link');
+    prefetchLink.rel = 'prefetch';
+    prefetchLink.as = 'video';
+    prefetchLink.href = url;
+    document.head.appendChild(prefetchLink);
+  } catch (e) {
+    // Elegant fallback: Spawn a silent lightweight HTML5 video tag to preload chunks off-screen
+    try {
+      const helperVideo = document.createElement('video');
+      helperVideo.src = url;
+      helperVideo.preload = 'auto';
+      helperVideo.muted = true;
+      helperVideo.load();
+    } catch (err) {}
+  }
+}
+
+/**
+ * Highly optimized background pre-warming for images.
+ * Downloads the optimized image format directly into browser HTTP cache ahead of use.
+ */
+export function warmUpImage(url: string | null | undefined): void {
+  if (!url || typeof url !== 'string' || !url.startsWith('http')) return;
+  if (preloadedImages.has(url)) return;
+
+  preloadedImages.add(url);
+
+  try {
+    let finalUrl = url;
+    if (url.includes('cdn.jsdelivr.net/gh/')) {
+      const directMirrorUrl = url.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+      const isWebp = /\.webp(\?.*)?$/i.test(url);
+      if (useImageProxy && !isWebp) {
+        const sourceUrlForProxy = url.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
+        finalUrl = `${proxyBaseUrl}?url=${encodeURIComponent(sourceUrlForProxy)}&w=1200&output=webp&q=80`;
+      } else {
+        finalUrl = directMirrorUrl;
+      }
+    }
+
+    const img = new Image();
+    img.src = finalUrl;
+  } catch (e) {}
+}
+
+let preloadingStarted = false;
+
+/**
+ * Highly optimized background crawler that preloads all images in the portfolio
+ * progressively when the browser is idle to guarantee 0ms local cache hits.
+ */
+export function startProgressiveImagePreload(): void {
+  if (preloadingStarted) return;
+  preloadingStarted = true;
+
+  // Wait 3 seconds after boot before kicking off, to ensure standard resources load first
+  setTimeout(() => {
+    let index = 0;
+    const preloadNext = () => {
+      if (index >= PRELOAD_IMAGES_LIST.length) {
+        console.log('[CDN Optimizer] Background progressive image preloading fully completed.');
+        return;
+      }
+
+      const url = PRELOAD_IMAGES_LIST[index];
+      index++;
+
+      if (typeof window !== 'undefined') {
+        const scheduler = (window as any).requestIdleCallback || (window as any).requestAnimationFrame || ((cb: any) => setTimeout(cb, 50));
+        scheduler(() => {
+          warmUpImage(url);
+          // 80ms interval to stream but keep network pipe highly responsive
+          setTimeout(preloadNext, 80);
+        });
+      }
+    };
+
+    console.log(`[CDN Optimizer] Booting background progressive preloader with ${PRELOAD_IMAGES_LIST.length} assets...`);
+    preloadNext();
+  }, 3000);
 }

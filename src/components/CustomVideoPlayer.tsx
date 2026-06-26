@@ -47,7 +47,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
           }
         });
       },
-      { rootMargin: '350px' } // Preload when video player is within 350px of visible viewport
+      { rootMargin: '800px' } // Preload when video player is within 800px of visible viewport
     );
 
     observer.observe(container);
@@ -234,7 +234,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onClick={togglePlay}
         onDoubleClick={toggleFullscreen}
         playsInline
-        preload={hasBeenInView ? "metadata" : "none"}
+        preload={hasBeenInView ? "auto" : "none"}
         controlsList="nodownload"
         className={`w-full h-full object-cover transition-all duration-500 will-change-transform transform-gpu ${
           isPlaying ? 'brightness-100' : 'brightness-[0.7]'

@@ -233,6 +233,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
               controlsList="nodownload"
               onContextMenu={(e) => e.preventDefault()}
               autoPlay
+              preload="auto"
               loop
               playsInline
               className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/5"
