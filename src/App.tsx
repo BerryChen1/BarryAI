@@ -2248,30 +2248,30 @@ export default function App() {
                         return (
                           <Fragment key={pIdx}>
                             <p className="tracking-wide">{para}</p>
-                            {isWuyinPara && (
+                             {isWuyinPara && (
                               <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4" language={language} />
+                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4" language={language} preload="none" />
                               </div>
                             )}
                             {isNandouPara && (
                               <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4" language={language} />
+                                <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4" language={language} preload="none" />
                               </div>
                             )}
                             {isDnfPara && (
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                                 <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} preload="none" />
                                 </div>
                                 <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} preload="none" />
                                 </div>
                               </div>
                             )}
                             {isJiujiuPara && (
                               <div className="my-6 flex flex-col items-center">
                                 <div className="w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4" language={language} />
+                                  <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4" language={language} preload="none" />
                                 </div>
                                 <p className="text-xs md:text-sm text-zinc-400 mt-3 font-sans tracking-wide text-center">
                                   “究究”成为山东工艺美术学院“橙芽同学”绘画工作室品牌IP代言人

@@ -7,11 +7,11 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
-  "https://gcore.jsdelivr.net/gh/",    // GCore global Edge, great multi-line routing
-  "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
-  "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
-  "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
+  "https://jsd.cdn.zzko.cn/gh/",       // High-speed China-friendly hybrid node (Tencent/Alibaba Cloud BGP)
+  "https://fastly.jsdelivr.net/gh/",   // Official Fastly global Edge - premium multi-line routing (completely safe from blocks)
+  "https://gcore.jsdelivr.net/gh/",    // Official GCore Edge - great multi-line routing
+  "https://testingcf.jsdelivr.net/gh/",// Official Cloudflare-backed routing
+  "https://cdn.jsdelivr.net/gh/"       // Native default fallback
 ];
 
 // Default to a highly-resilient, fast, China-friendly mirror (ZZKO)
@@ -35,7 +35,7 @@ export async function detectFastestCDN() {
 
   // 1. Immediately inject preconnect links to speed up initial TCP handshakes
   try {
-    ["https://jsd.cdn.zzko.cn", "https://jsd.onmicrosoft.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
+    ["https://jsd.cdn.zzko.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
       const link = document.createElement('link');
       link.rel = 'preconnect';
       link.href = domain;

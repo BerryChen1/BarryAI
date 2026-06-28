@@ -183,6 +183,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok1.mp4" 
               language={language}
               aspectRatio="aspect-[9/16]"
+              preload="none"
             />
           </div>
           <div className="flex flex-col gap-1.5">
@@ -190,6 +191,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok2.mp4" 
               language={language}
               aspectRatio="aspect-[9/16]"
+              preload="none"
             />
           </div>
           <div className="flex flex-col gap-1.5">
@@ -197,6 +199,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok3.mp4" 
               language={language}
               aspectRatio="aspect-[9/16]"
+              preload="none"
             />
           </div>
           <div className="flex flex-col gap-1.5">
@@ -204,6 +207,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok4.mp4" 
               language={language}
               aspectRatio="aspect-[9/16]"
+              preload="none"
             />
           </div>
         </div>

@@ -578,12 +578,14 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
               <CustomVideoPlayer 
                 src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" 
                 language={language} 
+                preload="none"
               />
             </div>
             <div className="flex flex-col gap-1.5">
               <CustomVideoPlayer 
                 src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" 
                 language={language} 
+                preload="none"
               />
             </div>
           </div>
