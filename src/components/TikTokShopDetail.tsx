@@ -101,8 +101,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           </p>
           <p>
             {t(
-              "入职第一个月完成矩阵账号单日 1000+ 美元 GMV，内容产能与商品转化效率同步显著提升。参与 0 到 1 的内容生产体系搭建，工作模式全面升级：从手动制作单条视频转向创意类指导 BPO 团队 + 搭配 AI Agent 自动化生产，个人核心聚焦于爆款内容Prompt模板研发、持续迭代优化视频脚本、账号差异化策略规划与跨部门协同，实现了内容",
-              "During the first month, achieved single-day GMV of $1,000+ across matrix accounts, with content capacity and product conversion efficiency significantly enhanced. Participated in building the content production workflow from 0 to 1, upgrading the workflow completely: shifting from manual individual video design to leading creative directions for BPO execution and driving AI Agent automation. Focused core energy on viral prompt templates research, continuous iteration of scripts, matrix demographic strategies, and cross-team collaborations, achieving content"
+              "入职第一个月完成矩阵账号单日 1000+ 美元 GMV，内容产能与商品转化效率同步显著提升。参与 0 到 1 的内容生产体系搭建，工作模式全面升级：从手动制作单条视频转向创意类指导 BPO 团队 + 搭配 AI Agent 自动化生产，个人核心聚焦于爆款内容Prompt模板研发、持续迭代优化视频脚本、账号差异化策略规划与跨部门协同，实现了内容产能、商品点击转化效率双重大幅突破。",
+              "In the first month, achieved single-day GMV of $1,000+ across matrix accounts, significantly boosting both content productivity and product conversion rates. Participated in the 0-to-1 content production system setup, leading to a fully upgraded workflow: shifting from manual individual video design to directing the creative BPO team and integrating AI Agent automated production. Core focus was placed on viral content Prompt template research, video script iteration, account demographic planning, and cross-team collaborations, achieving dual major breakthroughs in content volume and product click-to-order conversion efficiency."
             )}
           </p>
         </div>
@@ -171,9 +171,9 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
 
       {/* 爆款视频展示 */}
       <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-2.5 border-b border-white/5 pb-3">
-          <span className="w-2 h-2 rounded-full bg-sky-300" />
-          <h4 className="text-base md:text-lg lg:text-xl uppercase tracking-[0.1em] font-bold text-white/95">
+        <div className="flex items-center gap-2 border-b border-white/5 pb-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-sky-300" />
+          <h4 className="text-sm md:text-base uppercase tracking-[0.1em] font-bold text-white/95">
             {t("爆款视频展示", "Viral Video Showcase")}
           </h4>
         </div>
@@ -184,12 +184,15 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok3.mp4",
             "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok4.mp4"
           ].map((url, idx) => (
-            <div key={idx} className="flex flex-col gap-1.5">
+            <div key={idx} className="flex flex-col gap-2">
               <CustomVideoPlayer 
                 src={url} 
                 language={language} 
-                aspectRatio="portrait"
+                aspectRatio="aspect-[9/16]" 
               />
+              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider font-mono">
+                {t(`爆款视频 0${idx + 1}`, `Viral Video 0${idx + 1}`)}
+              </span>
             </div>
           ))}
         </div>
