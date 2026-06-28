@@ -35,7 +35,7 @@ export async function detectFastestCDN() {
 
   // 1. Immediately inject preconnect links to speed up initial TCP handshakes
   try {
-    ["https://jsd.cdn.zzko.cn", "https://jsd.onmicrosoft.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
+    ["https://jsd.cdn.zzko.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
       const link = document.createElement('link');
       link.rel = 'preconnect';
       link.href = domain;
