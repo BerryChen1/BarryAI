@@ -5,12 +5,14 @@ interface CustomVideoPlayerProps {
   src: string;
   language?: 'zh' | 'en';
   aspectRatio?: string;
+  preload?: 'auto' | 'metadata' | 'none';
 }
 
 export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ 
   src, 
   language = 'zh',
-  aspectRatio = 'aspect-video'
+  aspectRatio = 'aspect-video',
+  preload = 'metadata'
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -236,7 +238,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onClick={togglePlay}
         onDoubleClick={toggleFullscreen}
         playsInline
-        preload={hasBeenInView ? "auto" : "none"}
+        preload={hasBeenInView ? preload : "none"}
         controlsList="nodownload"
         className={`w-full h-full object-cover transition-all duration-500 will-change-transform transform-gpu ${
           isPlaying ? 'brightness-100' : 'brightness-[0.7]'
