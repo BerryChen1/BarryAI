@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, TrendingUp, Users, ShoppingBag, Eye, MousePointerClick, ShieldCheck, Zap } from 'lucide-react';
+import { CustomVideoPlayer } from './CustomVideoPlayer';
 
 interface TikTokShopDetailProps {
   language: 'zh' | 'en';
@@ -100,8 +101,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           </p>
           <p>
             {t(
-              "入职第一个月完成从 0 到 1 的内容生产体系搭建后，工作模式全面升级：从手动制作单条视频转向创意类指导 BPO 团队 + 搭配 AI Agent 自动化生产，个人核心精力聚焦于爆款内容模板研发、双账号差异化策略规划与跨部门协同，实现了内容产能与转化效率的双重突破。",
-              "After setting up the content ecosystem from 1st-month ground zero, my workflow evolved completely: shifting from manual individual video design to leading creative directions for BPO execution and driving AI Agent automation. My core focus was elevated to viral layout templates research, matrix demographic strategies, and cross-team collaborations."
+              "入职第一个月完成矩阵账号单日 1000+ 美元 GMV，内容产能与商品转化效率同步显著提升。参与 0 到 1 的内容生产体系搭建，工作模式全面升级：从手动制作单条视频转向创意类指导 BPO 团队 + 搭配 AI Agent 自动化生产，个人核心聚焦于爆款内容Prompt模板研发、持续迭代优化视频脚本、账号差异化策略规划与跨部门协同，实现了内容",
+              "During the first month, achieved single-day GMV of $1,000+ across matrix accounts, with content capacity and product conversion efficiency significantly enhanced. Participated in building the content production workflow from 0 to 1, upgrading the workflow completely: shifting from manual individual video design to leading creative directions for BPO execution and driving AI Agent automation. Focused core energy on viral prompt templates research, continuous iteration of scripts, matrix demographic strategies, and cross-team collaborations, achieving content"
             )}
           </p>
         </div>
@@ -166,6 +167,32 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 爆款视频展示 */}
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-2.5 border-b border-white/5 pb-3">
+          <span className="w-2 h-2 rounded-full bg-sky-300" />
+          <h4 className="text-base md:text-lg lg:text-xl uppercase tracking-[0.1em] font-bold text-white/95">
+            {t("爆款视频展示", "Viral Video Showcase")}
+          </h4>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok1.mp4",
+            "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok2.mp4",
+            "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok3.mp4",
+            "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok4.mp4"
+          ].map((url, idx) => (
+            <div key={idx} className="flex flex-col gap-1.5">
+              <CustomVideoPlayer 
+                src={url} 
+                language={language} 
+                aspectRatio="portrait"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* 二、核心数据成果 */}
