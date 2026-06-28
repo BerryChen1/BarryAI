@@ -4,13 +4,11 @@ import { Play, Pause, Volume2, VolumeX, Maximize, Minimize, Settings, FastForwar
 interface CustomVideoPlayerProps {
   src: string;
   language?: 'zh' | 'en';
-  aspectRatio?: string;
 }
 
 export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({ 
   src, 
-  language = 'zh',
-  aspectRatio = 'aspect-video'
+  language = 'zh' 
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -214,7 +212,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   return (
     <div 
       ref={containerRef}
-      className={`group/player relative w-full ${aspectRatio} rounded-3xl overflow-hidden border border-white/10 bg-black shadow-[0_0_50px_rgba(0,0,0,0.85)] select-none transition-all duration-300 ${
+      className={`group/player relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black shadow-[0_0_50px_rgba(0,0,0,0.85)] select-none transition-all duration-300 ${
         isFullscreen ? 'rounded-none border-none' : 'hover:border-sky-500/30'
       }`}
       onContextMenu={(e) => e.preventDefault()}
