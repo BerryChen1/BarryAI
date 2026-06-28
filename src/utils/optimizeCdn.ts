@@ -7,16 +7,16 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://jsd.cdn.zzko.cn/gh/",      // Blazing fast inside China (backed by hybrid Tencent/Alibaba Cloud nodes)
-  "https://gcore.jsdelivr.net/gh/",    // GCore global Edge, great multi-line routing
+  "https://jsdelivr.b-cdn.net/gh/",    // Bunny.net premium corporate CDN, clean & blazing fast inside China
+  "https://gcore.jsdelivr.net/gh/",    // GCore premium global CDN, exceptional China direct routing
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
   "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
   "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to a highly-resilient, fast, China-friendly mirror (ZZKO)
-let selectedMirror = "https://jsd.cdn.zzko.cn/gh/";
-let useImageProxy = true; // Dynamically verified at startup to avoid proxy timeout delays
+// Default to a highly-resilient, fast, China-friendly mirror (GCore)
+let selectedMirror = "https://gcore.jsdelivr.net/gh/";
+let useImageProxy = false; // Disable image proxy by default to prevent slow loads inside China
 let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
 export function getOptimizedUrl(url: string | null | undefined): string {
@@ -35,7 +35,14 @@ export async function detectFastestCDN() {
 
   // 1. Immediately inject preconnect links to speed up initial TCP handshakes
   try {
-    ["https://jsd.cdn.zzko.cn", "https://wsrv.nl", "https://images.weserv.nl"].forEach(domain => {
+    [
+      "https://jsdelivr.b-cdn.net",
+      "https://gcore.jsdelivr.net",
+      "https://fastly.jsdelivr.net",
+      "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev", // Preconnect directly to R2 for instant video streams!
+      "https://wsrv.nl",
+      "https://images.weserv.nl"
+    ].forEach(domain => {
       const link = document.createElement('link');
       link.rel = 'preconnect';
       link.href = domain;
@@ -104,21 +111,17 @@ export async function detectFastestCDN() {
     if (activeResults.length > 0) {
       activeResults.sort((a, b) => a.duration - b.duration);
       selectedMirror = activeResults[0].mirror;
-      console.log(`[CDN Optimizer] Dynamic fastest mirror selected: ${selectedMirror} with latency ${activeResults[0].duration.toFixed(1)}ms`);
     }
 
     // Set fallback rules if the compression proxy is unreachable/throttled
-    if (proxyResult.ok && proxyResult.duration < 1500) {
+    if (proxyResult.ok && proxyResult.duration < 350) { // require < 350ms to enable proxy, avoiding slow connections inside China
       useImageProxy = true;
       proxyBaseUrl = proxyResult.url;
-      console.log(`[CDN Optimizer] Image compression proxy OK: ${proxyBaseUrl} (${proxyResult.duration.toFixed(1)}ms)`);
     } else {
       useImageProxy = false;
-      console.warn("[CDN Optimizer] Image compression proxy unavailable or slow, falling back to direct ultra-high-speed CDN mirror loaded natively.");
     }
   } catch (err) {
     clearTimeout(timeoutId);
-    console.warn("[CDN Optimizer] Dynamic checks completed with errors, utilizing highly-resilient GCore/China-hybrid defaults.");
   }
 }
 
