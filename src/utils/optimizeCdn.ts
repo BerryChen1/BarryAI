@@ -7,6 +7,8 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
+  "https://jsd.onmicrosoft.cn/gh/",    // Miaoruan Public CDN - clean, unblocked and extremely fast in China (No jsdelivr in domain!)
+  "https://cdn.jsdmirror.com/gh/",     // Jsdmirror CDN - stable and extremely fast in China (No jsdelivr in domain!)
   "https://jsdelivr.b-cdn.net/gh/",    // Bunny.net premium corporate CDN, clean & blazing fast inside China
   "https://gcore.jsdelivr.net/gh/",    // GCore premium global CDN, exceptional China direct routing
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
@@ -14,8 +16,8 @@ export const JSDELIVR_MIRRORS = [
   "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to a highly-resilient, fast, China-friendly mirror (GCore)
-let selectedMirror = "https://gcore.jsdelivr.net/gh/";
+// Default to a highly-resilient, fast, China-friendly mirror (Miaoruan onmicrosoft.cn)
+let selectedMirror = "https://jsd.onmicrosoft.cn/gh/";
 let useImageProxy = false; // Disable image proxy by default to prevent slow loads inside China
 let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
@@ -36,6 +38,8 @@ export async function detectFastestCDN() {
   // 1. Immediately inject preconnect links to speed up initial TCP handshakes
   try {
     [
+      "https://jsd.onmicrosoft.cn",
+      "https://cdn.jsdmirror.com",
       "https://jsdelivr.b-cdn.net",
       "https://gcore.jsdelivr.net",
       "https://fastly.jsdelivr.net",
