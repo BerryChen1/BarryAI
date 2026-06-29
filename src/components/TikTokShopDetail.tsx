@@ -220,14 +220,14 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div className="p-3 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col">
               <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("成交规模 (GMV)", "GMV Outflow")}</span>
-              <span className="text-base font-bold text-white mt-1">$15,000+</span>
+              <span className="text-base font-bold text-white mt-1">$40,000+</span>
               <span className="text-[9px] text-zinc-400 shrink-0 font-light mt-1">{t("服饰品类归因", "Apparel Attributed")}</span>
             </div>
             
             <div className="p-3 bg-white/[0.01] border border-white/5 rounded-xl flex flex-col">
-              <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("总销量", "Units Sold")}</span>
-              <span className="text-base font-bold text-white mt-1">1100+ 件</span>
-              <span className="text-[9px] text-zinc-400 shrink-0 font-light mt-1">{t("订单量累计", "Attributed Sale Orders")}</span>
+              <span className="text-[9px] text-zinc-500 uppercase tracking-wider">{t("单日GMV", "Single-day GMV")}</span>
+              <span className="text-base font-bold text-white mt-1">{t("突破$2000+", "Breakthrough $2000+")}</span>
+              <span className="text-[9px] text-zinc-400 shrink-0 font-light mt-1">{t("成交峰值记录", "Peak Single-day Record")}</span>
             </div>
 
             <div className="p-3 bg-white/[0.01] border border-white/5 rounded-xl col-span-2 md:col-span-1 flex flex-col">
@@ -249,6 +249,31 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
 
         {/* 四个排成一排的缩略图 */}
         <div className="flex flex-col gap-4.5 pt-2">
+          {/* 数据分析可视化图表 */}
+          <div className="flex flex-col gap-1.5 pb-2">
+            <div 
+              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp")}
+              className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-950 group cursor-pointer flex justify-center w-full"
+              title={t("点按查看大图", "Click to zoom")}
+            >
+              <img 
+                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp" 
+                alt="Data analysis visualization chart" 
+                className="w-full h-auto object-contain max-h-[750px] md:max-h-[950px] group-hover:scale-[1.01] transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
+                  <Eye className="w-3.5 h-3.5 text-sky-400" />
+                  {t("点按查看清晰大图", "Click to zoom")}
+                </span>
+              </div>
+            </div>
+            <p className="text-[11px] text-zinc-400 font-sans tracking-wide text-center font-light mt-0.5">
+              {t("数据分析可视化图表", "Data analysis visualization chart")}
+            </p>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
             {[
               "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201724869.webp",
@@ -301,11 +326,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235423987.webp")}
+                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214547440.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235423987.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214547440.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
