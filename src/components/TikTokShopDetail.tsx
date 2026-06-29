@@ -253,13 +253,13 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="flex flex-col gap-1.5 pb-2">
             <div 
               onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp")}
-              className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-950 group cursor-pointer flex justify-center w-full"
+              className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-950 group cursor-pointer flex justify-center"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
                 src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp" 
                 alt="Data analysis visualization chart" 
-                className="w-full h-auto object-contain max-h-[750px] md:max-h-[950px] group-hover:scale-[1.01] transition-transform duration-500"
+                className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">

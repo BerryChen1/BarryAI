@@ -121,6 +121,10 @@ const PORTFOLIO_DETAILS = [
       "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623001958265.webp",
       "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623002011724.webp"
     ],
+    achievementsRow3: [
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629225435743.webp",
+      "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629225545097.webp"
+    ],
     largeAchievementImage: "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626222446052.webp"
   },
   {
@@ -2045,6 +2049,7 @@ export default function App() {
                           const allAchievementImages = [
                             ...((detail as any).achievementsRow2 || []),
                             ...((detail as any).achievements || []),
+                            ...((detail as any).achievementsRow3 || []),
                             ...((detail as any).largeAchievementImage ? [(detail as any).largeAchievementImage] : [])
                           ];
                           return (
@@ -2083,6 +2088,22 @@ export default function App() {
                                   </div>
                                 ))}
                               </div>
+
+                              {(detail as any).achievementsRow3 && (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                                  {(detail as any).achievementsRow3.map((url: string, i: number) => (
+                                    <div key={`row3-${i}`} className="relative w-full h-full rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer" onClick={() => setLightboxState({images: allAchievementImages, index: ((detail as any).achievementsRow2 ? (detail as any).achievementsRow2.length : 0) + ((detail as any).achievements ? (detail as any).achievements.length : 0) + i})}>
+                                      <img 
+                                        src={url} 
+                                        alt="Achievement sample" 
+                                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                                        referrerPolicy="no-referrer"
+                                      />
+                                      <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors" />
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
 
                               {/* Large Achievement Image at the very bottom */}
                               {(detail as any).largeAchievementImage && (

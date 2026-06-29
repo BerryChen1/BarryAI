@@ -319,5 +319,7 @@ export const PRELOAD_IMAGES_LIST = [
   "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235543533.webp",
   "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001230912.webp",
   "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001319249.webp",
-  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp"
+  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp",
+  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629225435743.webp",
+  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629225545097.webp"
 ];
