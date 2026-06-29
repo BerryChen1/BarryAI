@@ -223,7 +223,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
       {/* Actual HTML Video Tag - Standard configurations applied natively */}
       <video
         ref={videoRef}
-        src={hasBeenInView ? src : undefined}
+        src={src}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onPlay={handlePlayStateChange}
@@ -236,7 +236,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onClick={togglePlay}
         onDoubleClick={toggleFullscreen}
         playsInline
-        preload={hasBeenInView ? "auto" : "none"}
+        preload="auto"
         controlsList="nodownload"
         className={`w-full h-full object-cover transition-all duration-500 will-change-transform transform-gpu ${
           isPlaying ? 'brightness-100' : 'brightness-[0.7]'

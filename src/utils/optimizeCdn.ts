@@ -370,12 +370,20 @@ export function warmUpImage(url: string | null | undefined): void {
   preloadedImages.add(url);
 
   try {
-    let finalUrl = url;
-    if (url.includes('cdn.jsdelivr.net/gh/')) {
-      const directMirrorUrl = url.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
-      const isWebp = /\.webp(\?.*)?$/i.test(url);
+    let normalizedUrl = url;
+    for (const mirror of JSDELIVR_MIRRORS) {
+      if (url.includes(mirror)) {
+        normalizedUrl = url.replace(mirror, 'https://cdn.jsdelivr.net/gh/');
+        break;
+      }
+    }
+
+    let finalUrl = normalizedUrl;
+    if (normalizedUrl.includes('cdn.jsdelivr.net/gh/')) {
+      const directMirrorUrl = normalizedUrl.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+      const isWebp = /\.webp(\?.*)?$/i.test(normalizedUrl);
       if (useImageProxy && !isWebp) {
-        const sourceUrlForProxy = url.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
+        const sourceUrlForProxy = normalizedUrl.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
         finalUrl = `${proxyBaseUrl}?url=${encodeURIComponent(sourceUrlForProxy)}&w=1200&output=webp&q=80`;
       } else {
         finalUrl = directMirrorUrl;
@@ -400,9 +408,10 @@ export function startProgressiveImagePreload(): void {
   // Wait 3 seconds after boot before kicking off, to ensure standard resources load first
   setTimeout(() => {
     let index = 0;
+    const MAX_PRELOAD_ITEMS = 35; // Preload only critical initial layout images to prevent connection congestion
     const preloadNext = () => {
-      if (index >= PRELOAD_IMAGES_LIST.length) {
-        console.log('[CDN Optimizer] Background progressive image preloading fully completed.');
+      if (index >= PRELOAD_IMAGES_LIST.length || index >= MAX_PRELOAD_ITEMS) {
+        console.log('[CDN Optimizer] Background progressive image preloading of critical assets completed.');
         return;
       }
 
@@ -413,13 +422,13 @@ export function startProgressiveImagePreload(): void {
         const scheduler = (window as any).requestIdleCallback || (window as any).requestAnimationFrame || ((cb: any) => setTimeout(cb, 50));
         scheduler(() => {
           warmUpImage(url);
-          // 80ms interval to stream but keep network pipe highly responsive
-          setTimeout(preloadNext, 80);
+          // 450ms interval to stream but keep network pipe completely free and responsive
+          setTimeout(preloadNext, 450);
         });
       }
     };
 
-    console.log(`[CDN Optimizer] Booting background progressive preloader with ${PRELOAD_IMAGES_LIST.length} assets...`);
+    console.log(`[CDN Optimizer] Booting background progressive preloader for first ${Math.min(PRELOAD_IMAGES_LIST.length, MAX_PRELOAD_ITEMS)} critical assets...`);
     preloadNext();
   }, 3000);
 }

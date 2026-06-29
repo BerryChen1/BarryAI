@@ -11,34 +11,34 @@ interface TikTokShopDetailProps {
 export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDetailProps) {
   // Image links for Account 1: CurvyChicHub
   const curvyImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202858799.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202910810.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202923521.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202934022.webp"
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202858799.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202910810.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202923521.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202934022.webp"
   ];
 
   // Image links for Account 2: TheBossMomFits
   const momImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623203034220.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623203043385.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626234018615.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626234030573.webp"
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623203034220.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623203043385.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626234018615.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626234030573.webp"
   ];
 
   // Image links for Account: CurvySarah
   const sarahImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235441857.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235516551.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235532913.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626235543533.webp"
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626235441857.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626235516551.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626235532913.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626235543533.webp"
   ];
 
   // Image links for Other niche/vertical accounts
   const otherImages = [
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204651953.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204703048.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204714606.webp",
-    "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204724294.webp"
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204651953.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204703048.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204714606.webp",
+    "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204724294.webp"
   ];
 
   return (
@@ -108,12 +108,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         </div>
         
         <div 
-          onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001230912.webp")}
+          onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627001230912.webp")}
           className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full"
           title={t("点按查看大图", "Click to zoom")}
         >
           <img 
-            src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001230912.webp" 
+            src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627001230912.webp" 
             alt="Content Production Workflow Upgrade" 
             className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
             referrerPolicy="no-referrer"
@@ -252,12 +252,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           {/* 数据分析可视化图表 */}
           <div className="flex flex-col gap-1.5 pb-2">
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp")}
+              onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260629214145260.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-950 group cursor-pointer flex justify-center"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214145260.webp" 
+                src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260629214145260.webp" 
                 alt="Data analysis visualization chart" 
                 className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -276,10 +276,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
             {[
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201724869.webp",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627001319249.webp",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201745242.webp",
-              "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623201804509.webp"
+              "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623201724869.webp",
+              "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627001319249.webp",
+              "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623201745242.webp",
+              "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623201804509.webp"
             ].map((url, index) => (
               <div 
                 key={index} 
@@ -326,11 +326,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214547440.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260629214547440.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260629214547440.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260629214547440.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -489,11 +489,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202221958.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202221958.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202221958.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202221958.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -509,11 +509,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号日常数据", "Account Sales & Engagement Data")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202245179.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202245179.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202245179.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202245179.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -602,11 +602,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202312570.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202312570.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202312570.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202312570.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -623,10 +623,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202344624.webp",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202404022.webp",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202414943.webp",
-                  "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202426331.webp"
+                  "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202344624.webp",
+                  "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202404022.webp",
+                  "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202414943.webp",
+                  "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202426331.webp"
                 ].map((url, idx) => (
                   <div 
                     key={idx}
@@ -711,12 +711,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               <span>{t("账号首页展示", "Account Homepage Display")}</span>
             </div>
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626233903558.webp")}
+              onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626233903558.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260626233903558.webp" 
+                src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260626233903558.webp" 
                 alt="Account 1 overview graph" 
                 className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -861,11 +861,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span>{t("账号主页", "Account Homepage")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202955745.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202955745.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202955745.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202955745.webp" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-sky-400" />
@@ -953,12 +953,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               <span>{t("账号首页展示", "Account Homepage Display")}</span>
             </div>
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202833802.webp")}
+              onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202833802.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623202833802.webp" 
+                src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623202833802.webp" 
                 alt="Account 2 overview graph" 
                 className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -1100,11 +1100,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span className="text-xs md:text-sm font-semibold">{t("穆斯林长袍头巾女装账号", "Muslim Abaya & Hijab Fashion Account")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204411362.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204411362.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer aspect-video"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204411362.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204411362.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
                     <Eye className="w-3 h-3 text-sky-400" />
@@ -1150,11 +1150,11 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <span className="text-xs md:text-sm font-semibold">{t("Clawdia 水果拟人短剧账号", "Clawdia Fruit Anthropomorphic Mini-Drama Account")}</span>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204426481.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204426481.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer aspect-video"
                 title={t("点按查看大图", "Click to zoom")}
               >
-                <img src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204426481.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204426481.webp" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-transparent group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                   <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
                     <Eye className="w-3 h-3 text-sky-400" />
@@ -1202,12 +1202,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000605226.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000605226.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000605226.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000605226.webp" 
                   alt="Other account 1 homepage" 
                   className="w-full h-auto object-cover scale-[1.065] group-hover:scale-[1.09] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1220,12 +1220,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204540218.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204540218.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204540218.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204540218.webp" 
                   alt="Other account 2 homepage" 
                   className="w-full h-auto object-cover scale-[1.065] group-hover:scale-[1.09] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1238,12 +1238,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000718003.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000718003.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000718003.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000718003.webp" 
                   alt="Other account 3 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1256,12 +1256,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204634340.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204634340.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623204634340.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623204634340.webp" 
                   alt="Other account 4 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1274,12 +1274,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000743804.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000743804.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000743804.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000743804.webp" 
                   alt="Other account 5 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1292,12 +1292,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 </div>
               </div>
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000754778.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000754778.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260627000754778.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260627000754778.webp" 
                   alt="Other account 6 homepage" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1448,12 +1448,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           {/* 接手前的成果 */}
           <div className="flex flex-col gap-4">
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205221309.webp")}
+              onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205221309.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205221309.webp" 
+                src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205221309.webp" 
                 alt="Workflow Deliverable 2" 
                 className="w-full h-auto object-contain max-h-[400px] mx-auto group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -1467,12 +1467,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
 
             <div 
-              onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205313213.webp")}
+              onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205313213.webp")}
               className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
               title={t("点按查看大图", "Click to zoom")}
             >
               <img 
-                src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205313213.webp" 
+                src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205313213.webp" 
                 alt="Results before taking over 2" 
                 className="w-full h-auto object-contain max-h-[400px] mx-auto group-hover:scale-[1.01] transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -1494,10 +1494,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-4">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623224844780.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205352467.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205402719.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205412541.webp"
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623224844780.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205352467.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205402719.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205412541.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1565,10 +1565,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="flex flex-col gap-4 mt-1.5">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205449351.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205459655.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205509107.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205519012.webp"
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205449351.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205459655.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205509107.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205519012.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1602,8 +1602,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="grid grid-cols-2 gap-3 mt-1.5 items-stretch">
               {[
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205539591.webp",
-                "https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205549097.webp"
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205539591.webp",
+                "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205549097.webp"
               ].map((url, idx) => (
                 <div 
                   key={idx}
@@ -1637,12 +1637,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="flex flex-col gap-1.5 mt-1.5">
               <div 
-                onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205608101.webp")}
+                onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205608101.webp")}
                 className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full"
                 title={t("点按查看大图", "Click to zoom")}
               >
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205608101.webp" 
+                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205608101.webp" 
                   alt="Character and Scene Reference assets" 
                   className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -1724,12 +1724,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         {/* 工作模式升级与效率提升图片 */}
         <div className="flex flex-col gap-1.5 mt-2">
           <div 
-            onClick={() => setLightboxUrl("https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205620823.webp")}
+            onClick={() => setLightboxUrl("https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205620823.webp")}
             className="relative rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
             title={t("点按查看大图", "Click to zoom")}
           >
             <img 
-              src="https://cdn.jsdelivr.net/gh/BerryChen1/img-bed/images/20260623205620823.webp" 
+              src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260623205620823.webp" 
               alt="Workflow optimization diagram" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
               referrerPolicy="no-referrer"
