@@ -216,9 +216,9 @@ const PORTFOLIO_DETAILS = [
       }
     ],
     works: [
-      "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607215915444.jpg",
-      "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607215949168.png",
-      "https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607220023114.png"
+      "https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607215915444.jpg&w=650&output=webp&q=80",
+      "https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607215949168.png&w=650&output=webp&q=80",
+      "https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607220023114.png&w=650&output=webp&q=80"
     ]
   }
 ];
@@ -1275,11 +1275,11 @@ export default function App() {
               {/* Background portrait/stylized image */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607215912805.jpg"
+                  src="https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607215912805.jpg&w=600&output=webp&q=80"
                   alt="董柏辰 - 艺术设计专业硕士"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95 opacity-85 contrast-[1.05]"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/40 to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
@@ -1348,11 +1348,11 @@ export default function App() {
               {/* Background conceptual AIGC workspace image */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607215410483.png"
+                  src="https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607215410483.png&w=600&output=webp&q=80"
                   alt="AIGC 头部平台合作"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] opacity-70 contrast-[1.1]"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/40 to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
@@ -1421,11 +1421,11 @@ export default function App() {
               {/* Background cinematic media vortex image */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://jsd.onmicrosoft.cn/gh/BerryChen1/img-bed/images/20260607215707204.png"
+                  src="https://wsrv.nl/?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2FBerryChen1%2Fimg-bed%2Fimages%2F20260607215707204.png&w=600&output=webp&q=80"
                   alt="新媒体创意视听"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] opacity-70 contrast-[1.1]"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/40 to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
