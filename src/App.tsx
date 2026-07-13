@@ -1927,6 +1927,8 @@ export default function App() {
                       alt={detail.title}
                       className="w-full h-full object-cover select-none"
                       referrerPolicy="no-referrer"
+                      loading="eager"
+                      fetchPriority="high"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/35 to-transparent" />
                     <div className="absolute bottom-4 left-5 right-5 sm:bottom-6 sm:left-8 sm:right-8">
@@ -2186,6 +2188,8 @@ export default function App() {
                     alt={selectedProject.title}
                     className="absolute inset-0 w-full h-full object-cover brightness-[0.75] select-none"
                     referrerPolicy="no-referrer"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                   
                   {/* Visual mask shades for text readability */}

@@ -23,8 +23,17 @@ let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for imag
 
 export function getOptimizedUrl(url: string | null | undefined): string {
   if (!url || typeof url !== 'string') return url || '';
-  if (url.includes('cdn.jsdelivr.net/gh/')) {
-    return url.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+  
+  let normalizedVal = url;
+  for (const mirror of JSDELIVR_MIRRORS) {
+    if (url.includes(mirror)) {
+      normalizedVal = url.replace(mirror, 'https://cdn.jsdelivr.net/gh/');
+      break;
+    }
+  }
+
+  if (normalizedVal.includes('cdn.jsdelivr.net/gh/')) {
+    return normalizedVal.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
   }
   return url;
 }
@@ -38,7 +47,6 @@ export async function detectFastestCDN() {
   // 1. Immediately inject preconnect links to speed up initial TCP handshakes
   try {
     [
-      "https://jsd.onmicrosoft.cn",
       "https://cdn.jsdmirror.com",
       "https://jsdelivr.b-cdn.net",
       "https://gcore.jsdelivr.net",
@@ -290,7 +298,7 @@ if (typeof window !== 'undefined') {
       name === 'src' &&
       (this instanceof HTMLImageElement || this.tagName === 'IMG') &&
       typeof value === 'string' &&
-      value.includes('cdn.jsdelivr.net/gh/')
+      (value.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => value.includes(m)))
     ) {
       // Dispatch to the customized property setter above.
       // This ensures it gets optimized to WebP and has the fallback error handler correctly mounted!
@@ -304,9 +312,16 @@ if (typeof window !== 'undefined') {
        this.tagName === 'IMG' || this.tagName === 'SOURCE' || this.tagName === 'VIDEO') &&
       name === 'src' &&
       typeof value === 'string' &&
-      value.includes('cdn.jsdelivr.net/gh/')
+      (value.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => value.includes(m)))
     ) {
-      value = value.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+      let normalizedVal = value;
+      for (const mirror of JSDELIVR_MIRRORS) {
+        if (value.includes(mirror)) {
+          normalizedVal = value.replace(mirror, 'https://cdn.jsdelivr.net/gh/');
+          break;
+        }
+      }
+      value = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
     }
     return originalSetAttribute.call(this, name, value);
   };
