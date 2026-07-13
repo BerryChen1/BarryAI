@@ -372,6 +372,30 @@ export function warmUpVideo(url: string | null | undefined): void {
       helperVideo.load();
     } catch (err) {}
   }
+
+  // 3. Advanced stream pre-buffering via partial body chunk retrieval
+  // This downloads the first 1.5MB containing video metadata (moov atom) and start frames
+  // directly into the browser's HTTP disk/memory cache.
+  if (typeof fetch !== 'undefined') {
+    fetch(url, { mode: 'cors', credentials: 'omit' })
+      .then(async (response) => {
+        if (!response.ok || !response.body) return;
+        const reader = response.body.getReader();
+        let bytesLoaded = 0;
+        const maxBytes = 1.5 * 1024 * 1024; // 1.5MB
+        
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done || !value) break;
+          bytesLoaded += value.byteLength;
+          if (bytesLoaded >= maxBytes) {
+            await reader.cancel();
+            break;
+          }
+        }
+      })
+      .catch(() => {});
+  }
 }
 
 /**
@@ -446,4 +470,75 @@ export function startProgressiveImagePreload(): void {
     console.log(`[CDN Optimizer] Booting background progressive preloader for first ${Math.min(PRELOAD_IMAGES_LIST.length, MAX_PRELOAD_ITEMS)} critical assets...`);
     preloadNext();
   }, 3000);
+}
+
+// Highly optimized list of critical video portfolio assets to warm up during idle browser state
+export const PRELOAD_VIDEOS_LIST = [
+  // Core works / critical portfolio pieces
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/one.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/two.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/six.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/seven.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/eight.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nine.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%882%EF%BC%89.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4",
+  // Cloudfront high quality videos
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_120549_0cd82c36-56b3-4dd9-b190-069cfc3a623f.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_132944_a0d124bb-eaa1-4082-aa30-2310efb42b4b.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_125119_8e5ae31c-0021-4396-bc08-f7aebeb877a2.mp4",
+  // TikTok specific videos
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok1.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok2.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok3.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok4.mp4"
+];
+
+let videoPreloadingStarted = false;
+
+/**
+ * Highly optimized background crawler that preloads and caches video headers
+ * progressively when the browser is idle to guarantee lag-free start times.
+ */
+export function startProgressiveVideoPreload(): void {
+  if (videoPreloadingStarted) return;
+  videoPreloadingStarted = true;
+
+  // Wait 4.5 seconds after boot (staggered after image preloader) to prevent thread/network contention
+  setTimeout(() => {
+    let index = 0;
+    const preloadNextVideo = () => {
+      if (index >= PRELOAD_VIDEOS_LIST.length) {
+        console.log('[CDN Optimizer] Background progressive video preloading completed.');
+        return;
+      }
+
+      const url = PRELOAD_VIDEOS_LIST[index];
+      index++;
+
+      if (typeof window !== 'undefined') {
+        const scheduler = (window as any).requestIdleCallback || (window as any).requestAnimationFrame || ((cb: any) => setTimeout(cb, 50));
+        scheduler(() => {
+          warmUpVideo(url);
+          // Wait 1.5 seconds between each video pre-buffering to keep network completely free and responsive
+          setTimeout(preloadNextVideo, 1500);
+        });
+      }
+    };
+
+    console.log(`[CDN Optimizer] Booting background progressive video preloader for ${PRELOAD_VIDEOS_LIST.length} assets...`);
+    preloadNextVideo();
+  }, 4500);
 }

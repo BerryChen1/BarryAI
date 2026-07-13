@@ -216,9 +216,9 @@ const PORTFOLIO_DETAILS = [
       }
     ],
     works: [
-      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260607215915444.jpg",
-      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260607215949168.png",
-      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260607220023114.png"
+      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623212412611.webp",
+      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623212431006.webp",
+      "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623212447253.webp"
     ]
   }
 ];
