@@ -26,6 +26,23 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   const [showControls, setShowControls] = useState(true);
   const [playbackRate, setPlaybackRate] = useState(1.0);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
+  const [activeVideoSrc, setActiveVideoSrc] = useState(src);
+  const [hasFailedDirect, setHasFailedDirect] = useState(false);
+
+  // Keep active video source in sync if prop changes
+  useEffect(() => {
+    setActiveVideoSrc(src);
+    setHasFailedDirect(false);
+  }, [src]);
+
+  // Handle video loading failure (e.g. Mainland China direct network blocking r2.dev)
+  const handleVideoError = () => {
+    if (!hasFailedDirect && activeVideoSrc && !activeVideoSrc.includes('/api/video-proxy')) {
+      setHasFailedDirect(true);
+      const proxyUrl = `/api/video-proxy?url=${encodeURIComponent(src)}`;
+      setActiveVideoSrc(proxyUrl);
+    }
+  };
 
   // Localization translator helper
   const t = (zh: string, en: string) => (language === 'zh' ? zh : en);
@@ -223,7 +240,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
       {/* Actual HTML Video Tag - Standard configurations applied natively */}
       <video
         ref={videoRef}
-        src={hasBeenInView ? src : undefined}
+        src={hasBeenInView ? activeVideoSrc : undefined}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onPlay={handlePlayStateChange}
@@ -233,6 +250,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onSeeking={() => setIsBuffering(true)}
         onSeeked={() => setIsBuffering(false)}
         onCanPlay={() => setIsBuffering(false)}
+        onError={handleVideoError}
         onClick={togglePlay}
         onDoubleClick={toggleFullscreen}
         playsInline

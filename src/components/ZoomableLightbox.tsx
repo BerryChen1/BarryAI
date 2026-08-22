@@ -17,15 +17,30 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
   const [scale, setScale] = useState<number>(1);
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [activeMediaUrl, setActiveMediaUrl] = useState<string>(url);
+  const [hasFailedDirect, setHasFailedDirect] = useState<boolean>(false);
   const dragStart = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Reset scale and position when url changes
+  // Reset scale, position, and media url when url changes
   useEffect(() => {
     setScale(1);
     setPosition({ x: 0, y: 0 });
+    setActiveMediaUrl(url);
+    setHasFailedDirect(false);
   }, [url]);
+
+  const handleMediaError = () => {
+    if (!hasFailedDirect && activeMediaUrl && !activeMediaUrl.includes('/api/video-proxy') && !activeMediaUrl.includes('/api/image-proxy')) {
+      setHasFailedDirect(true);
+      const isVideo = activeMediaUrl.toLowerCase().endsWith('.mp4') || activeMediaUrl.toLowerCase().endsWith('.webm') || activeMediaUrl.toLowerCase().endsWith('.mov');
+      const proxyUrl = isVideo 
+        ? `/api/video-proxy?url=${encodeURIComponent(url)}` 
+        : `/api/image-proxy?url=${encodeURIComponent(url)}`;
+      setActiveMediaUrl(proxyUrl);
+    }
+  };
 
   // Handle keyboard shortcuts (Esc, Arrows)
   useEffect(() => {
@@ -228,7 +243,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
         >
           {url.toLowerCase().endsWith('.mp4') || url.toLowerCase().endsWith('.webm') || url.toLowerCase().endsWith('.mov') ? (
             <video
-              src={url}
+              src={activeMediaUrl}
               controls
               controlsList="nodownload"
               onContextMenu={(e) => e.preventDefault()}
@@ -236,16 +251,18 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
               preload="auto"
               loop
               playsInline
+              onError={handleMediaError}
               className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/5"
               onClick={(e) => e.stopPropagation()}
             />
           ) : (
             <img
               ref={imageRef}
-              src={url}
+              src={activeMediaUrl}
               alt="Large detailed zoomable view"
               className="max-w-full max-h-[80vh] object-contain rounded-lg select-none shadow-2xl border border-white/5"
               draggable={false}
+              onError={handleMediaError}
               referrerPolicy="no-referrer"
             />
           )}

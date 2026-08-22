@@ -7,10 +7,11 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://cdn.jsdmirror.com/gh/",     // Jsdmirror CDN - stable and extremely fast in China & globally
+  "https://cdn.jsdmirror.com/gh/",     // Jsdmirror CDN - ultra-fast in China & globally
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
   "https://gcore.jsdelivr.net/gh/",    // GCore premium global CDN
   "https://jsdelivr.b-cdn.net/gh/",    // Bunny.net corporate CDN
+  "https://jsd.onmicrosoft.cn/gh/",    // Miaoruan mirror for China
   "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
   "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
@@ -35,6 +36,11 @@ export function getOptimizedUrl(url: string | null | undefined): string {
   return url;
 }
 
+export function getVideoStreamUrl(url: string | null | undefined): string {
+  if (!url || typeof url !== 'string') return url || '';
+  return url;
+}
+
 // Low-overhead background check to ensure mirror is alive without blocking
 export async function detectFastestCDN() {
   const testPath = "BerryChen1/img-bed/images/20260613171852678.png";
@@ -47,6 +53,7 @@ export async function detectFastestCDN() {
       "https://cdn.jsdmirror.com",
       "https://fastly.jsdelivr.net",
       "https://gcore.jsdelivr.net",
+      "https://jsd.onmicrosoft.cn",
       "https://jsdelivr.b-cdn.net",
       "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev",
       "https://d8j0ntlcm91z4.cloudfront.net"
@@ -63,7 +70,8 @@ export async function detectFastestCDN() {
     const promises = [
       "https://cdn.jsdmirror.com/gh/",
       "https://fastly.jsdelivr.net/gh/",
-      "https://gcore.jsdelivr.net/gh/"
+      "https://gcore.jsdelivr.net/gh/",
+      "https://jsd.onmicrosoft.cn/gh/"
     ].map(async (mirror) => {
       const startTime = performance.now();
       try {
@@ -108,6 +116,9 @@ if (typeof window !== 'undefined') {
         return originalImgGet ? originalImgGet.call(this) : '';
       },
       set(val) {
+        if (!this.decoding) {
+          this.decoding = 'async';
+        }
         if (typeof val === 'string' && (val.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => val.includes(m)))) {
           let normalizedVal = val;
           for (const mirror of JSDELIVR_MIRRORS) {
@@ -124,7 +135,7 @@ if (typeof window !== 'undefined') {
             elem._cleanupCdnListeners();
           }
 
-          // Build clean list of fast direct CDN mirrors without slow proxy resizers
+          // Build clean list of fast direct CDN mirrors + backend image proxy fallback
           const triedUrls = new Set<string>();
           const fallbackUrls: string[] = [];
 
@@ -140,6 +151,13 @@ if (typeof window !== 'undefined') {
               triedUrls.add(mirrorUrl);
             }
           });
+
+          // Final safety net: server-side image proxy
+          const proxyFallback = `/api/image-proxy?url=${encodeURIComponent(normalizedVal)}`;
+          if (!triedUrls.has(proxyFallback)) {
+            fallbackUrls.push(proxyFallback);
+            triedUrls.add(proxyFallback);
+          }
 
           let currentAttemptIndex = 0;
 
@@ -203,7 +221,7 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  // 3. Intercept property setter of HTMLVideoElement/HTMLMediaElement.prototype.src
+  // 3. Intercept property setter of HTMLVideoElement/HTMLMediaElement.prototype.src with video proxy failover
   const interceptMediaSrc = (proto: any) => {
     const originalGet = Object.getOwnPropertyDescriptor(proto, 'src')?.get;
     const originalSet = Object.getOwnPropertyDescriptor(proto, 'src')?.set;
@@ -214,7 +232,41 @@ if (typeof window !== 'undefined') {
           return originalGet ? originalGet.call(this) : '';
         },
         set(val) {
-          if (typeof val === 'string' && val.includes('cdn.jsdelivr.net/gh/')) {
+          if (typeof val === 'string' && (val.includes('pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev') || val.includes('d8j0ntlcm91z4.cloudfront.net'))) {
+            const elem = this as any;
+            if (elem._cleanupVideoCdnListeners) {
+              elem._cleanupVideoCdnListeners();
+            }
+
+            const directUrl = val;
+            const proxyUrl = `/api/video-proxy?url=${encodeURIComponent(val)}`;
+
+            const fallbackUrls = [directUrl, proxyUrl];
+            let currentAttempt = 0;
+
+            const tryNext = () => {
+              if (currentAttempt < fallbackUrls.length) {
+                const nextSrc = fallbackUrls[currentAttempt];
+                currentAttempt++;
+                originalSet.call(this, nextSrc);
+              } else {
+                cleanup();
+              }
+            };
+
+            const cleanup = () => {
+              this.removeEventListener('error', errorHandler);
+              elem._cleanupVideoCdnListeners = null;
+            };
+
+            const errorHandler = () => {
+              tryNext();
+            };
+
+            elem._cleanupVideoCdnListeners = cleanup;
+            this.addEventListener('error', errorHandler);
+            tryNext();
+          } else if (typeof val === 'string' && val.includes('cdn.jsdelivr.net/gh/')) {
             const optimized = val.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
             originalSet.call(this, optimized);
           } else {
@@ -248,22 +300,15 @@ if (typeof window !== 'undefined') {
     }
 
     if (
-      (this instanceof HTMLImageElement || this instanceof HTMLSourceElement || 
-       (typeof HTMLVideoElement !== 'undefined' && this instanceof HTMLVideoElement) ||
-       this.tagName === 'IMG' || this.tagName === 'SOURCE' || this.tagName === 'VIDEO') &&
       name === 'src' &&
+      (this instanceof HTMLVideoElement || this.tagName === 'VIDEO') &&
       typeof value === 'string' &&
-      (value.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => value.includes(m)))
+      (value.includes('pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev') || value.includes('d8j0ntlcm91z4.cloudfront.net'))
     ) {
-      let normalizedVal = value;
-      for (const mirror of JSDELIVR_MIRRORS) {
-        if (value.includes(mirror)) {
-          normalizedVal = value.replace(mirror, 'https://cdn.jsdelivr.net/gh/');
-          break;
-        }
-      }
-      value = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
+      this.src = value;
+      return;
     }
+
     return originalSetAttribute.call(this, name, value);
   };
 }

@@ -4,9 +4,27 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
 }
 
-export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = "auto", ...props }) => {
+export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = "auto", onError, ...props }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
+  const [activeSrc, setActiveSrc] = useState(src);
+  const [hasFailedDirect, setHasFailedDirect] = useState(false);
+
+  useEffect(() => {
+    setActiveSrc(src);
+    setHasFailedDirect(false);
+  }, [src]);
+
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    if (!hasFailedDirect && activeSrc && !activeSrc.includes('/api/video-proxy')) {
+      setHasFailedDirect(true);
+      const proxyUrl = `/api/video-proxy?url=${encodeURIComponent(src)}`;
+      setActiveSrc(proxyUrl);
+    }
+    if (onError) {
+      onError(e);
+    }
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -47,8 +65,9 @@ export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = 
     <video
       ref={videoRef}
       className={className}
-      src={shouldLoad ? src : undefined}
+      src={shouldLoad ? activeSrc : undefined}
       preload={preload}
+      onError={handleVideoError}
       {...props}
     />
   );

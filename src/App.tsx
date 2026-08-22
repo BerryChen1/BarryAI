@@ -1168,7 +1168,7 @@ export default function App() {
       {/* 2. HERO SECTION */}
       <header id="hero-section" className="relative w-full h-screen flex flex-col items-center justify-start overflow-hidden bg-black pt-16 pb-6">
         {/* Background MP4 loop - Offset using a matching negative top positioning to prevent empty space at the top while keeping it shifted downward */}
-        <video 
+        <LazyVideo 
           className="absolute -top-[10vh] md:-top-[14vh] left-0 w-full h-[110vh] md:h-[114vh] object-cover object-bottom translate-y-[10vh] md:translate-y-[14vh] opacity-100 z-0 pointer-events-none transform-gpu will-change-transform"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_120549_0cd82c36-56b3-4dd9-b190-069cfc3a623f.mp4"
           autoPlay 
