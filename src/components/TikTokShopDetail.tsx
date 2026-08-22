@@ -55,7 +55,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           </div>
           <div className="flex flex-col">
             <span className="text-zinc-500 text-xs uppercase tracking-wider">{t("实习时间", "Internship Period")}</span>
-            <span className="text-zinc-200 font-light mt-0.5">{t("2026.04 — 至今", "April 2026 — Present")}</span>
+            <span className="text-zinc-200 font-light mt-0.5">{t("2026.04 — 2026.07", "April 2026 — July 2026")}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-zinc-500 text-xs uppercase tracking-wider">{t("地点", "Location")}</span>

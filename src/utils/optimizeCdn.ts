@@ -7,19 +7,16 @@
 import { PRELOAD_IMAGES_LIST } from './preloadList';
 
 export const JSDELIVR_MIRRORS = [
-  "https://cdn.jsdmirror.com/gh/",     // Jsdmirror CDN - stable and extremely fast in China (No jsdelivr in domain!)
-  "https://jsdelivr.b-cdn.net/gh/",    // Bunny.net premium corporate CDN, clean & blazing fast inside China
-  "https://gcore.jsdelivr.net/gh/",    // GCore premium global CDN, exceptional China direct routing
+  "https://cdn.jsdmirror.com/gh/",     // Jsdmirror CDN - stable and extremely fast in China & globally
   "https://fastly.jsdelivr.net/gh/",   // Fastly high-speed global CDN
+  "https://gcore.jsdelivr.net/gh/",    // GCore premium global CDN
+  "https://jsdelivr.b-cdn.net/gh/",    // Bunny.net corporate CDN
   "https://testingcf.jsdelivr.net/gh/",// Cloudflare-backed alternative routing
-  "https://cdn.jsdelivr.net/gh/",      // Native jsDelivr default fallback
-  "https://jsd.onmicrosoft.cn/gh/"     // Miaoruan Public CDN - backup fallback
+  "https://cdn.jsdelivr.net/gh/"       // Native jsDelivr default fallback
 ];
 
-// Default to a highly-resilient, fast, China-friendly mirror (Jsdmirror)
+// Default directly to ultra-fast CDN mirror
 let selectedMirror = "https://cdn.jsdmirror.com/gh/";
-let useImageProxy = false; // Disable image proxy by default to prevent slow loads inside China
-let proxyBaseUrl = "https://wsrv.nl/"; // Optimized faster modern alias for images.weserv.nl
 
 export function getOptimizedUrl(url: string | null | undefined): string {
   if (!url || typeof url !== 'string') return url || '';
@@ -38,22 +35,21 @@ export function getOptimizedUrl(url: string | null | undefined): string {
   return url;
 }
 
-// Low-overhead background latency test to find the mathematically fastest connection path
+// Low-overhead background check to ensure mirror is alive without blocking
 export async function detectFastestCDN() {
-  const testPath = "BerryChen1/img-bed/images/20260613171852678.png"; // Tiny reference image (under 5KB)
+  const testPath = "BerryChen1/img-bed/images/20260613171852678.png";
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 2000); // Strict 2sec cap
+  const timeoutId = setTimeout(() => controller.abort(), 1800);
 
-  // 1. Immediately inject preconnect links to speed up initial TCP handshakes
+  // Immediately inject preconnect links
   try {
     [
       "https://cdn.jsdmirror.com",
-      "https://jsdelivr.b-cdn.net",
-      "https://gcore.jsdelivr.net",
       "https://fastly.jsdelivr.net",
-      "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev", // Preconnect directly to R2 for instant video streams!
-      "https://wsrv.nl",
-      "https://images.weserv.nl"
+      "https://gcore.jsdelivr.net",
+      "https://jsdelivr.b-cdn.net",
+      "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev",
+      "https://d8j0ntlcm91z4.cloudfront.net"
     ].forEach(domain => {
       const link = document.createElement('link');
       link.rel = 'preconnect';
@@ -63,81 +59,44 @@ export async function detectFastestCDN() {
     });
   } catch (e) {}
 
-  // 2. Measure latency to determine fastest mirror
-  const promises = JSDELIVR_MIRRORS.map(async (mirror) => {
-    const startTime = performance.now();
-    try {
-      await fetch(`${mirror}${testPath}`, {
-        method: "HEAD",
-        mode: "no-cors",
-        signal: controller.signal,
-        cache: "no-store"
-      });
-      const duration = performance.now() - startTime;
-      return { mirror, duration };
-    } catch (e) {
-      return { mirror, duration: 9999 };
-    }
-  });
-
-  // 3. Measure latency of the WebP image compressors (wsrv.nl vs images.weserv.nl vs Direct load)
-  const proxyPromise = (async () => {
-    const testProxyStart = performance.now();
-    try {
-      // Use wsrv.nl to load a tiny image asset from a global CDN backbone to verify proxy speed
-      const testUrl = "https://fastly.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png";
-      await fetch(`https://wsrv.nl/?url=${encodeURIComponent(testUrl)}&w=16`, {
-        method: "HEAD",
-        mode: "no-cors",
-        signal: controller.signal,
-        cache: "no-store"
-      });
-      const duration = performance.now() - testProxyStart;
-      return { ok: true, duration, url: "https://wsrv.nl/" };
-    } catch (e) {
-      // Inline alternate fallback
-      try {
-        const testUrlFallback = "https://fastly.jsdelivr.net/gh/BerryChen1/img-bed/images/20260613171852678.png";
-        await fetch(`https://images.weserv.nl/?url=${encodeURIComponent(testUrlFallback)}&w=16`, {
-          method: "HEAD",
-          mode: "no-cors",
-          signal: controller.signal,
-          cache: "no-store"
-        });
-        return { ok: true, duration: 800, url: "https://images.weserv.nl/" };
-      } catch (e2) {
-        return { ok: false, duration: 9999, url: "" };
-      }
-    }
-  })();
-
   try {
-    const [results, proxyResult] = await Promise.all([
+    const promises = [
+      "https://cdn.jsdmirror.com/gh/",
+      "https://fastly.jsdelivr.net/gh/",
+      "https://gcore.jsdelivr.net/gh/"
+    ].map(async (mirror) => {
+      const startTime = performance.now();
+      try {
+        const img = new Image();
+        const promise = new Promise<number>((resolve, reject) => {
+          img.onload = () => resolve(performance.now() - startTime);
+          img.onerror = () => reject(new Error('load error'));
+          img.src = `${mirror}${testPath}?t=${Date.now()}`;
+        });
+        const duration = await promise;
+        return { mirror, duration };
+      } catch (e) {
+        return { mirror, duration: 9999 };
+      }
+    });
+
+    const results = await Promise.race([
       Promise.all(promises),
-      proxyPromise
+      new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 1500))
     ]);
     clearTimeout(timeoutId);
-    
-    // Choose fastest CDN mirror
-    const activeResults = results.filter(r => r.duration < 9999);
-    if (activeResults.length > 0) {
-      activeResults.sort((a, b) => a.duration - b.duration);
-      selectedMirror = activeResults[0].mirror;
-    }
 
-    // Set fallback rules if the compression proxy is unreachable/throttled
-    if (proxyResult.ok && proxyResult.duration < 350) { // require < 350ms to enable proxy, avoiding slow connections inside China
-      useImageProxy = true;
-      proxyBaseUrl = proxyResult.url;
-    } else {
-      useImageProxy = false;
+    const activeResults = results.filter((r: any) => r && r.duration < 9000);
+    if (activeResults.length > 0) {
+      activeResults.sort((a: any, b: any) => a.duration - b.duration);
+      selectedMirror = activeResults[0].mirror;
     }
   } catch (err) {
     clearTimeout(timeoutId);
   }
 }
 
-// Global DOM and Prototype Interception
+// Global DOM and Prototype Interception for automatic fault tolerance
 if (typeof window !== 'undefined') {
   // 1. Intercept property setter of HTMLImageElement.prototype.src
   const originalImgGet = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src')?.get;
@@ -150,7 +109,6 @@ if (typeof window !== 'undefined') {
       },
       set(val) {
         if (typeof val === 'string' && (val.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => val.includes(m)))) {
-          // Normalize back to base jsdelivr URL first
           let normalizedVal = val;
           for (const mirror of JSDELIVR_MIRRORS) {
             if (val.includes(mirror)) {
@@ -160,33 +118,21 @@ if (typeof window !== 'undefined') {
           }
 
           const directMirrorUrl = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
-          const isImageFile = /\.(jpg|jpeg|png|webp|gif|bmp)(\?.*)?$/i.test(normalizedVal);
-          const isWebp = /\.webp(\?.*)?$/i.test(normalizedVal);
 
           const elem = this as any;
           if (elem._cleanupCdnListeners) {
             elem._cleanupCdnListeners();
           }
 
-          // Gather unique fallback strategies/URLs
+          // Build clean list of fast direct CDN mirrors without slow proxy resizers
           const triedUrls = new Set<string>();
           const fallbackUrls: string[] = [];
 
-          // 1. Try Image compression proxy if available (skip WebP files as they are already fully compressed)
-          if (isImageFile && useImageProxy && !isWebp) {
-            const sourceUrlForProxy = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
-            const compressedUrl = `${proxyBaseUrl}?url=${encodeURIComponent(sourceUrlForProxy)}&w=1200&output=webp&q=80`;
-            fallbackUrls.push(compressedUrl);
-            triedUrls.add(compressedUrl);
-          }
-
-          // 2. Try the preferred mirror selected by our latency test
           if (!triedUrls.has(directMirrorUrl)) {
             fallbackUrls.push(directMirrorUrl);
             triedUrls.add(directMirrorUrl);
           }
 
-          // 3. Try other mirrors in priority order
           JSDELIVR_MIRRORS.forEach(mirror => {
             const mirrorUrl = normalizedVal.replace('https://cdn.jsdelivr.net/gh/', mirror);
             if (!triedUrls.has(mirrorUrl)) {
@@ -203,7 +149,6 @@ if (typeof window !== 'undefined') {
               currentAttemptIndex++;
               originalImgSet.call(this, nextUrl);
             } else {
-              console.error(`[CDN Optimizer] All image loading strategies failed for: ${normalizedVal}`);
               cleanup();
             }
           };
@@ -215,8 +160,6 @@ if (typeof window !== 'undefined') {
           };
 
           const errorHandler = () => {
-            // Log as debug to keep console clean for recoverable fallback attempts
-            console.debug(`[CDN Optimizer] Image load failed for: ${this.src}. Trying next fallback.`);
             loadNextUrl();
           };
 
@@ -238,7 +181,7 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  // 2. Intercept property setter of HTMLSourceElement.prototype.src (for responsive images/videos)
+  // 2. Intercept property setter of HTMLSourceElement.prototype.src
   const originalSourceGet = Object.getOwnPropertyDescriptor(HTMLSourceElement.prototype, 'src')?.get;
   const originalSourceSet = Object.getOwnPropertyDescriptor(HTMLSourceElement.prototype, 'src')?.set;
 
@@ -260,7 +203,7 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  // 3. Intercept property setter of HTMLVideoElement/HTMLMediaElement.prototype.src (for direct video src updates)
+  // 3. Intercept property setter of HTMLVideoElement/HTMLMediaElement.prototype.src
   const interceptMediaSrc = (proto: any) => {
     const originalGet = Object.getOwnPropertyDescriptor(proto, 'src')?.get;
     const originalSet = Object.getOwnPropertyDescriptor(proto, 'src')?.set;
@@ -291,7 +234,7 @@ if (typeof window !== 'undefined') {
     interceptMediaSrc(HTMLMediaElement.prototype);
   }
 
-  // 4. Intercept Element.prototype.setAttribute to catch manual DOM manipulations or React Virtual DOM updates
+  // 4. Intercept Element.prototype.setAttribute
   const originalSetAttribute = Element.prototype.setAttribute;
   Element.prototype.setAttribute = function(name, value) {
     if (
@@ -300,8 +243,6 @@ if (typeof window !== 'undefined') {
       typeof value === 'string' &&
       (value.includes('cdn.jsdelivr.net/gh/') || JSDELIVR_MIRRORS.some(m => value.includes(m)))
     ) {
-      // Dispatch to the customized property setter above.
-      // This ensures it gets optimized to WebP and has the fallback error handler correctly mounted!
       this.src = value;
       return;
     }
@@ -419,14 +360,7 @@ export function warmUpImage(url: string | null | undefined): void {
 
     let finalUrl = normalizedUrl;
     if (normalizedUrl.includes('cdn.jsdelivr.net/gh/')) {
-      const directMirrorUrl = normalizedUrl.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
-      const isWebp = /\.webp(\?.*)?$/i.test(normalizedUrl);
-      if (useImageProxy && !isWebp) {
-        const sourceUrlForProxy = normalizedUrl.replace('https://cdn.jsdelivr.net/gh/', 'https://fastly.jsdelivr.net/gh/');
-        finalUrl = `${proxyBaseUrl}?url=${encodeURIComponent(sourceUrlForProxy)}&w=1200&output=webp&q=80`;
-      } else {
-        finalUrl = directMirrorUrl;
-      }
+      finalUrl = normalizedUrl.replace('https://cdn.jsdelivr.net/gh/', selectedMirror);
     }
 
     const img = new Image();

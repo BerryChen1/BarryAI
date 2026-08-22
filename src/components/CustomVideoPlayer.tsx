@@ -215,7 +215,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
     <div 
       ref={containerRef}
       className={`group/player relative w-full ${aspectRatio} rounded-3xl overflow-hidden border border-white/10 bg-black shadow-[0_0_50px_rgba(0,0,0,0.85)] select-none transition-all duration-300 ${
-        isFullscreen ? 'rounded-none border-none' : 'hover:border-sky-500/30'
+        isFullscreen ? 'rounded-none border-none !aspect-auto !w-screen !h-screen flex items-center justify-center' : 'hover:border-sky-500/30'
       }`}
       onContextMenu={(e) => e.preventDefault()}
       id="custom-video-player"
@@ -238,7 +238,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         playsInline
         preload={hasBeenInView ? "auto" : "none"}
         controlsList="nodownload"
-        className={`w-full h-full object-cover transition-all duration-500 will-change-transform transform-gpu ${
+        className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'} transition-all duration-500 will-change-transform transform-gpu ${
           isPlaying ? 'brightness-100' : 'brightness-[0.7]'
         }`}
         referrerPolicy="no-referrer"

@@ -1,6 +1,6 @@
 {
   "name": "Remix: Barry1.0（New）",
-  "description": "A minimalist, dark monochrome landing page for Mindloop, a premium newsletter and content platform built with React, Vite, Tailwind CSS, and Framer Motion.",
+  "description": "Barry's personal AIGC visual design & creative portfolio, featuring animated showreels, commercial case studies, and workflow breakdowns.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

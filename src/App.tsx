@@ -19,8 +19,12 @@ import {
 import { HlsPlayer } from './components/HlsPlayer';
 import { ScrollRevealParagraph } from './components/ScrollRevealParagraph';
 import { InfoModal } from './components/InfoModal';
+import { TikTokDetail } from './components/TikTokDetail';
 import { TikTokShopDetail } from './components/TikTokShopDetail';
 import { TencentIEGDetail } from './components/TencentIEGDetail';
+import { OddityClubDetail } from './components/OddityClubDetail';
+import { ChillaxCampaignDetail } from './components/ChillaxCampaignDetail';
+import { WukongCampaignDetail } from './components/WukongCampaignDetail';
 import { ZoomableLightbox } from './components/ZoomableLightbox';
 import { CustomVideoPlayer } from './components/CustomVideoPlayer';
 import { LazyVideo } from './components/LazyVideo';
@@ -37,10 +41,10 @@ const PORTFOLIO_DETAILS = [
   {
     title: "董柏辰/Barry",
     enTitle: "Bochen Dong / Barry",
-    subtitle: "新片场AI平台Shotlab签约创作人\n即梦/可灵/LibLib等AI平台扶持计划优质创作者",
-    enSubtitle: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibLib",
-    tagline: "新片场AI平台Shotlab签约创作人\n即梦/可灵/LibLib等AI平台扶持计划优质创作者",
-    enTagline: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibLib",
+    subtitle: "新片场AI平台Shotlab签约创作人\n即梦/可灵/LibTV/TapNow等AI平台扶持计划优质创作者",
+    enSubtitle: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibTV/TapNow",
+    tagline: "新片场AI平台Shotlab签约创作人\n即梦/可灵/LibTV/TapNow等AI平台扶持计划优质创作者",
+    enTagline: "Contracted Creator of Xinpianchang AI Platform Shotlab\n& Featured Creator of Dreamina/Kling/LibTV/TapNow",
     coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623215213891.webp",
     innerBgImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623220043652.webp",
     stats: [
@@ -126,13 +130,61 @@ const PORTFOLIO_DETAILS = [
     largeAchievementImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260626222446052.webp"
   },
   {
+    title: "字节跳动·抖音TikTok",
+    enTitle: "ByteDance • Douyin TikTok",
+    subtitle: "AIGC工作流设计 / AI短剧内容迭代优化 / SOP沉淀 / 视觉项目支持 / TikTok Crate社区运营支持",
+    enSubtitle: "AIGC Workflow Design / AI Drama Iteration / SOP / Visual Support / TikTok Crate Community Ops",
+    tagline: "TikTok Crate 一站式 AI 创作平台：AI 短剧全链路 SOP、三条视觉工作流与社区资产规模化沉淀",
+    enTagline: "TikTok Crate All-in-One AI Platform: AI Drama Pipeline SOP, 3 Visual Streams & Scaled Community Assets",
+    coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822190014482.webp",
+    innerBgImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822193002721.webp",
+    stats: [
+      { label: "核心短剧", enLabel: "AI DRAMA SOP", value: "30+ 集电影级", enValue: "30+ Cinematic Eps" },
+      { label: "视觉提效", enLabel: "DESIGN BOOST", value: "150% - 300%", enValue: "+150% to +300%" },
+      { label: "模型适配", enLabel: "MODEL SUPPORT", value: "Seedance 2.5", enValue: "Seedance 2.5 Ready" }
+    ],
+    paragraphs: [
+      "在新一轮生成式人工智能浪潮席卷内容生态时，我作为独立创作者率先全面接入各大顶尖 AI 视频及生图大模型。用极富视觉张力、镜头美学与超前叙事的 AIGC 创意短片，在主流社交平台收获了极大的多向关注与赞许。",
+      "通过定位东方神话重构、超现实流体装置等垂直细分之一，自主运营和撰写分镜，多条原创内容多次破圈，累计积累了上万次点赞投硬币收录。目前已打通了一条高敏捷性、极高美学产出的 AIGC 视频创作与商业落地渠道。"
+    ],
+    enParagraphs: [
+      "As an independent AI creator, I am at the forefront of the generative revolution, mastering top-tier image and video diffusion models to create visually striking, emotionally loaded, and highly narrative films.",
+      "Focusing on neo-Chinese myths and surreal fluid simulations, I direct and script original videos that have garnered tens of thousands of likes and saves. This established a fast-turnaround, high-aesthetic model for commercial video generation."
+    ],
+    features: [
+      { 
+        title: "顶级 AIGC 模型核心内测官", 
+        enTitle: "Top-Tier Model Beta Tester", 
+        desc: "作为字节跳动即梦与快手可灵 AI 先锋共创计划成员，参与产品功能内测反馈，能第一时间利用新升级节点的算力大片形成传播先发优势。", 
+        enDesc: "As a member of ByteDance Dreamina & Kuaishou KLING AI development groups, feeding early feedback and utilizing model upgrades for instant viral reach." 
+      },
+      { 
+        title: "网感主导极速内容运营", 
+        enTitle: "Fast-Paced Content Operation", 
+        desc: "对网络前沿潮流与视觉审美趋势有着天然的警觉性，懂得通过宏大叙事、声波卡点及光影设计捕捉核心情绪流，提高受众留存率。", 
+        enDesc: "Highly alert to internet visuals and aesthetic shifts, capturing core emotions via deep optics to boost viewer retention." 
+      },
+      { 
+        title: "品牌跨界 AIGC 案例共创", 
+        enTitle: "Commercial Cross-Over Collaborations", 
+        desc: "为多家新锐国潮汉服、国风配饰及潮流消费电子大厂提供高精度的 AIGC 视听概念视频与静态宣发绘卷，极大节约了客户前中期制片周期成本。", 
+        enDesc: "Providing premium AIGC promo reels and visuals for modern Hanfu brands, luxury accessories, and consumer tech, cutting production cycles by up to 40%." 
+      }
+    ],
+    works: [
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600"
+    ]
+  },
+  {
     title: "字节跳动·抖音TikTok Shop",
     enTitle: "ByteDance • Douyin TikTok Shop",
     subtitle: "TikTok Shop AIGC内容运营与设计",
     enSubtitle: "TikTok Shop AIGC Content Operations & Design",
     tagline: "深度参与国际电商 AIGC 自运营内容生态建设，全周期驱动双账号矩阵产能增长",
     enTagline: "Deeply involved in cross-border E-commerce self-developed AIGC systems, driving matrix volumetric growth",
-    coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623215238563.webp",
+    coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822190509902.webp",
     innerBgImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623201318986.webp",
     stats: [
       { label: "爆款点赞", enLabel: "VIRAL LIKES", value: "10,000+" },
@@ -180,7 +232,7 @@ const PORTFOLIO_DETAILS = [
     enSubtitle: "Visual Design & AIGC Exploration",
     tagline: "深度参与两大核心版本品牌视觉体系搭建，以 AIGC 技术探索游戏美术全链路提效",
     enTagline: "Deeply involved in building brand visual systems, exploring full-cycle AIGC workflows to accelerate game art",
-    coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623215308377.webp",
+    coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822191748620.webp",
     innerBgImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623211627790.webp",
     stats: [
       { label: "实习期间", enLabel: "INTERN PERIOD", value: "2024.03 - 2024.09" },
@@ -259,6 +311,21 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
     enDesc: "High-quality videos & creative shorts crafted with cutting-edge AI, focusing on narrative, camera work, and standard digital asset pipelines.",
     projects: [
       {
+        id: "vid-14",
+        title: "王者荣耀合作曲《墨染·天下》",
+        subtitle: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812013801238.webp",
+        tags: ["商业合作 MV", "3D水墨古风", "AIGC全工作流"],
+        tools: ["GPT", "Nano Banana", "Midjourney", "Seedance", "Kling", "Premiere"],
+        year: "2025",
+        client: "王者荣耀 Live音乐会",
+        role: "导演 / 视觉概念 / AI动画全流程SOP",
+        description: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
+        story: [],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/moran%20new.mp4"
+      },
+      {
         id: "vid-1",
         title: "《The Last》",
         subtitle: "赛博朋克AIGC动画短片",
@@ -282,6 +349,39 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623003000623.webp"
         ],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/one.mp4"
+      },
+      {
+        id: "vid-13",
+        title: "《超时空决战！英灵殿》",
+        subtitle: "AIGC全流程3D动画短片",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812002220584.webp",
+        tags: ["AIGC 3D动画", "UE5质感", "超时空写实"],
+        tools: ["ComfyUI", "Seed 1.0", "Runway", "Premiere"],
+        year: "2025",
+        client: "个人创作企划",
+        role: "全流程导演 / 3D视觉概念 / 剪辑",
+        description: "AIGC全流程3D动画短片\n《超时空决战！英灵殿》",
+        story: [],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%201.mp4"
+      },
+      {
+        id: "vid-5",
+        title: "《重返地球：42号远航队》",
+        subtitle: "AIGC散文影像集",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623004140742.webp",
+        tags: ["太空探索", "硬核科幻", "电影级CG"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
+        year: "2025",
+        client: "独立科幻艺术影像计划",
+        role: "导演 / 视觉概念 / 合成",
+        description: "“原子不会湮灭，我们终将再次相遇”",
+        story: [
+          "《重返地球：42 号远航队》第一集以散文式叙事开启归乡序章。身披战甲的仿生人踏入被草木吞噬的旧日都市“上海”，在爬满藤蔓的残垣与中式飞檐间缓步穿行，捡拾人类文明遗落的记忆碎片，于荒芜静默里叩问文明存续的温柔答案。",
+          "本片为全流程个人独立创作的 AI 影像作品，选用 Seedance 2.0、Kling、Midjourney 与 NanoBanana Pro 模型制作，以沉郁细腻的东方废土质感铺陈画面，用极简克制的叙事节奏，承载对文明与情感的深层探讨。"
+        ],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-2",
@@ -341,24 +441,6 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         ],
         gallery: [],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4"
-      },
-      {
-        id: "vid-5",
-        title: "《重返地球：42号远航队》",
-        subtitle: "AIGC散文影像集",
-        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623004140742.webp",
-        tags: ["太空探索", "硬核科幻", "电影级CG"],
-        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
-        year: "2025",
-        client: "独立科幻艺术影像计划",
-        role: "导演 / 视觉概念 / 合成",
-        description: "“原子不会湮灭，我们终将再次相遇”",
-        story: [
-          "《重返地球：42 号远航队》第一集以散文式叙事开启归乡序章。身披战甲的仿生人踏入被草木吞噬的旧日都市“上海”，在爬满藤蔓的残垣与中式飞檐间缓步穿行，捡拾人类文明遗落的记忆碎片，于荒芜静默里叩问文明存续的温柔答案。",
-          "本片为全流程个人独立创作的 AI 影像作品，选用 Seedance 2.0、Kling、Midjourney 与 NanoBanana Pro 模型制作，以沉郁细腻的东方废土质感铺陈画面，用极简克制的叙事节奏，承载对文明与情感的深层探讨。"
-        ],
-        gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-6",
@@ -479,23 +561,6 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
         ],
         gallery: [],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
-      },
-      {
-        id: "vid-13",
-        title: "《三国一梦》",
-        subtitle: "创作中...",
-        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010210369.webp",
-        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
-        tools: ["Houdini", "After Effects", "Midjourney"],
-        year: "2024",
-        client: "学术新媒体展演",
-        role: "动画艺术创意编排",
-        description: "创作中...",
-        story: [
-          "敬请期待"
-        ],
-        gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4"
       }
     ]
   },
@@ -685,6 +750,132 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
     enDesc: "Exploratory creative product experiments crafting unique brand IP & visual identities for business operations & sustainable growth.",
     projects: [
       {
+        id: "oth-2",
+        title: "ODDITY CLUB 怪奇研究所：AIGC视觉企划",
+        subtitle: "ODDITY CLUB 2037 怪奇研究所：AIGC 驱动下的复合新零售视觉与 IP 孵化企划",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223751589.webp",
+        tags: ["新零售视觉", "IP 孵化", "AIGC SOP", "2037 怪奇研究所"],
+        tools: ["LibTV 无限画布", "Midjourney", "ComfyUI", "SD"],
+        year: "2025",
+        client: "ODDITY CLUB 怪奇研究所",
+        role: "AIGC 视觉总监 & IP 架构师",
+        description: "“ODDITY CLUB 2037 怪奇研究所：AIGC 驱动下的复合新零售视觉与 IP 孵化企划”",
+        story: [
+          "本项目是一次面向国际电商与未来实体商业空间的视觉实验，旨在探索 AIGC 技术在“复合新零售业态”中的全链路自动化工作流应用。企划的核心实体“2037 怪奇研究所”，是一个融合了怪奇超市、高街潮玩（Art Toy）、限量服饰与生活方式配件的概念体验空间。",
+          "本案以标准化的 SOP（标准作业程序）形式，完整展示了从概念孵化、底层节点控制、多角色互动重构，到多品类商业资产开发与全场景落地的工业级创意管线。"
+        ],
+        gallery: [
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223751589.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223905962.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223929810.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224006618.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224137412.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224111423.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224217524.png",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224307248.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224331975.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224405477.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224432013.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224543802.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224603318.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224739445.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224653969.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224848320.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224926227.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224943401.webp"
+        ]
+      },
+      {
+        id: "brand-wukong",
+        title: "WUKONG'S 24H：adidas × 国潮大圣 限时快闪视觉企划",
+        subtitle: "WUKONG'S 24H：adidas × 国潮大圣 限时快闪视觉企划",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210257417.webp",
+        tags: ["快闪 Campaign", "国潮大圣", "adidas 联名", "AIGC SOP", "Img2Video"],
+        tools: ["LibTV 无限画布", "Midjourney", "ComfyUI", "SD", "Img2Video"],
+        year: "2025",
+        client: "adidas × 国潮大圣",
+        role: "AIGC 视觉总监 & Campaign 主架构",
+        description: "“WUKONG'S 24H：adidas × 国潮大圣 限时快闪视觉企划”",
+        story: [
+          "本项目是一次主打“文化碰撞与街头能量”的现象级限时快闪营销事件（Pop-up Campaign）。企划以“WUKONG'S 24H（大圣的 24 小时）”为核心营销话题，将中国传统文化符号“孙悟空”与 adidas 的街头运动基因深度融合，打造了一场极具视觉爆发力的跨界联名活动。",
+          "本案以标准化的 SOP（标准作业程序）形式，完整展示了从主视觉（KV）爆发、AIGC 底层节点工作流与精准重构、动态视频先导片生成，到全品类电商服饰与线下快闪周边落地的工业级视觉管线。"
+        ],
+        gallery: [
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210257417.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210327215.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210755058.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210810493.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210355806.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210436472.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210500199.webp"
+        ]
+      },
+      {
+        id: "brand-1",
+        title: "LIVE FREELY 2033 地球慵懒节：AIGC 情绪营销 Campaign 视觉企划",
+        subtitle: "LIVE FREELY 2033 地球慵懒节：AIGC 情绪营销 Campaign 视觉企划",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201007869.webp",
+        tags: ["情绪营销", "3D 治愈", "Campaign", "AIGC SOP"],
+        tools: ["LibTV 无限画布", "Midjourney", "ComfyUI", "SD"],
+        year: "2025",
+        client: "LIVE FREELY 2033",
+        role: "AIGC 视觉总监 & Campaign 主架构",
+        description: "“LIVE FREELY 2033 地球慵懒节：AIGC 情绪营销 Campaign 视觉企划”",
+        story: [
+          "本项目是一次主打“情绪价值”的现象级概念营销活动（Campaign）视觉企划。类似“地球一小时”倡导环保，本次活动以“2033 地球慵懒节”与“CHILLAX NOW 宇宙摸鱼季”为核心话题，将当代年轻人渴望松弛、拒绝内卷的情绪诉求，转化为一场极具治愈感与号召力的 3D 视觉盛宴。",
+          "本案以标准化的 SOP（标准作业程序）形式，完整展示了从活动基调探索、主视觉（KV）定调、物料模块化拆解，到最终线下媒介投放与活动文创周边开发的工业级 AIGC 视觉管线。"
+        ],
+        gallery: [
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201007869.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201026613.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201057668.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201213304.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201234896.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201313275.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201336478.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201400666.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201416773.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201559514.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202144888.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202155199.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202208113.webp"
+        ]
+      },
+      {
+        id: "brand-3",
+        title: "“Meow Tomorrow”爱心猫舍品牌作品",
+        subtitle: "青岛珍稀手艺贝雕与国风刺绣的现代化平面重组全案",
+        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013335975.webp",
+        tags: ["非遗再造", "偏光仿真", "品牌全案"],
+        tools: ["Stable Diffusion", "Photoshop", "Illustrator"],
+        year: "2024",
+        client: "非遗创新中心推广项目",
+        role: "品牌创意主策划",
+        description: "“守护流浪猫的明天”",
+        story: [
+          "本项目是「喵的明天（Meow Tomorrow）」流浪猫救助公益品牌全案 VI 与衍生品设计。项目先梳理流浪猫生存困境、救助资金缺口、人宠矛盾等真实痛点，以此为出发点搭建完整公益品牌体系。手绘猫咪小屋线条作为核心视觉符号，选用暖黄、浅蓝、柔粉柔和三色搭建规范色彩系统，完成品牌 LOGO、标准字体、吊牌、菜单、打包杯袋、围裙等全套视觉物料设计；同时延伸宠物洗护套装、牵引绳、便携外出包、食碗、猫粮包装等完整救助配套产品，兼顾救助站分阶段管理标识、公益周边落地应用，以年轻化温柔视觉降低大众抵触情绪，用商业化产品收益反哺流浪猫救助，实现公益品牌可持续运营。"
+        ],
+        gallery: [
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013353792.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013404756.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013417653.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013428313.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013439247.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013525945.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013537626.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013547490.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013556784.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013608118.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013620583.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013630575.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013640878.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013650209.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013702509.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013713343.webp",
+          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013724982.webp"
+        ]
+      },
+      {
         id: "oth-1",
         title: "AIGC卡通IP形象“究究”主题作品",
         subtitle: "极高质量微观金属、玻璃材质演替渲染",
@@ -717,68 +908,6 @@ export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
           "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623012919487.webp",
           "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623012930401.webp",
           "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623012947419.webp"
-        ]
-      },
-      {
-        id: "oth-2",
-        title: "AIGC“六一欢乐行”主题活动作品",
-        subtitle: "脑电呼吸触控交互与宏观流体视觉演绎",
-        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013007022.webp",
-        tags: ["新媒体交互", "粒子算法", "跨界实验"],
-        tools: ["TouchDesigner", "Kinect", "Ableton Live"],
-        year: "2025",
-        client: "学院美术馆新媒体实验厅",
-        role: "交互与视听总监",
-        description: "“云端逐童趣，六一欢乐行”",
-        story: [
-          "本项目是「六一欢乐行」儿童节线上运营全套视觉设计，依托 MJ、SD、GPT4o 等 AIGC 工具，搭配盲盒 LoRA 模型完成 3D 黏土卡通风格主视觉创作。画面以云端飞机、旋转木马构建梦幻童话场景，同步规划糖果巡游、矿车竞速四大趣味活动板块。整套视觉完整落地活动主 KV、多版本分支海报、APP 开屏页、弹窗、信息流 Banner、H5 活动页面等全渠道运营物料，色彩梦幻柔和、童趣氛围感饱满，适配儿童节全平台线上宣传推广需求，完整实现 AIGC 辅助商业运营视觉从创意生成、迭代筛选到落地应用的全流程闭环。"
-        ],
-        gallery: [
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013007022.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013030326.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013043292.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013140776.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013152572.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013203732.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013214300.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013300353.webp"
-        ]
-      },
-      {
-        id: "brand-3",
-        title: "“Meow Tomorrow”爱心猫舍品牌作品",
-        subtitle: "青岛珍稀手艺贝雕与国风刺绣的现代化平面重组全案",
-        coverImage: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013335975.webp",
-        tags: ["非遗再造", "偏光仿真", "品牌全案"],
-        tools: ["Stable Diffusion", "Photoshop", "Illustrator"],
-        year: "2024",
-        client: "非遗创新中心推广项目",
-        role: "品牌创意主策划",
-        description: "“守护流浪猫的明天”",
-        story: [
-          "本项目是「喵的明天（Meow Tomorrow）」流浪猫救助公益品牌全案 VI 与衍生品设计。项目先梳理流浪猫生存困境、救助资金缺口、人宠矛盾等真实痛点，以此为出发点搭建完整公益品牌体系。手绘猫咪小屋线条作为核心视觉符号，选用暖黄、浅蓝、柔粉柔和三色搭建规范色彩系统，完成品牌 LOGO、标准字体、吊牌、菜单、打包杯袋、围裙等全套视觉物料设计；同时延伸宠物洗护套装、牵引绳、便携外出包、食碗、猫粮包装等完整救助配套产品，兼顾救助站分阶段管理标识、公益周边落地应用，以年轻化温柔视觉降低大众抵触情绪，用商业化产品收益反哺流浪猫救助，实现公益品牌可持续运营。"
-        ],
-        gallery: [
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013353792.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013404756.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013417653.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013428313.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013439247.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013450847.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013504107.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013514388.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013525945.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013537626.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013547490.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013556784.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013608118.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013620583.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013630575.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013640878.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013650209.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013702509.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013713343.webp",
-          "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623013724982.webp"
         ]
       },
       {
@@ -1193,18 +1322,18 @@ export default function App() {
           <div className="text-neutral-300 text-base md:text-lg font-light max-w-5xl mx-auto mt-10 font-sans leading-relaxed flex flex-col gap-6 text-left md:text-justify">
             {t(
               <p className="tracking-wide">
-                我是<strong className="text-sky-400 font-medium font-sans">董柏辰</strong>，2002年出生于兰州市，在<strong className="text-sky-400 font-medium font-sans">山东工艺美术学院</strong>进行本硕连读，<strong className="text-sky-450 font-medium font-sans">艺术设计（视觉传达设计）</strong>专业。在校期间，获得过<strong className="text-sky-400 font-medium font-sans">一等硕士研究生学业奖学金</strong>荣誉及各种专业奖项，性格温和，善于团队协作，具备高度的责任心与执行能力，i人中的e人，懂需求，易沟通，好相处。
+                我是<strong className="text-sky-400 font-medium font-sans">董柏辰</strong>，2002年出生于兰州市，在<strong className="text-sky-400 font-medium font-sans">山东工艺美术学院</strong>进行本硕连读，<strong className="text-sky-450 font-medium font-sans">艺术设计（视觉传达）</strong>专业。在校期间，获得过<strong className="text-sky-400 font-medium font-sans">一等硕士研究生学业奖学金</strong>荣誉及各种专业奖项，性格温和，善于团队协作，具备高度的责任心与执行能力，i人中的e人，<strong className="text-sky-400 font-medium font-sans">腾讯→字节→字节</strong>，以AIGC赋能为主，涵盖短剧、视觉、UGC等。
               </p>,
               <p className="tracking-wide leading-relaxed font-sans font-light">
-                I am <strong className="text-sky-400 font-semibold font-sans">Bochen Dong</strong>, born in Lanzhou in 2002. I completed an integrated Bachelor-Master's program in <strong className="text-sky-400 font-semibold font-sans">Art and Design (Visual Communication Design)</strong> at <strong className="text-sky-400 font-semibold font-sans">Shandong University of Arts and Crafts</strong>. During my academic journey, I was honored with the <strong className="text-sky-400 font-semibold font-sans">First-Class Graduate Academic Scholarship</strong> and various professional design accolades. Known to be warm-hearted, responsible, and a highly collaborative "E" among "I"s, I am deeply sensible to business needs and extremely easy to cooperate with.
+                I am <strong className="text-sky-400 font-semibold font-sans">Bochen Dong</strong>, born in Lanzhou in 2002. I completed an integrated Bachelor-Master's program in <strong className="text-sky-400 font-semibold font-sans">Art and Design (Visual Communication)</strong> at <strong className="text-sky-400 font-semibold font-sans">Shandong University of Arts and Crafts</strong>. During my academic journey, I was honored with the <strong className="text-sky-400 font-semibold font-sans">First-Class Graduate Academic Scholarship</strong> and various professional design accolades. Known to be warm-hearted, responsible, and a highly collaborative "E" among "I"s, with track record across <strong className="text-sky-400 font-semibold font-sans">Tencent → ByteDance → ByteDance</strong>, primarily empowering workflows with AIGC across short dramas, visuals, and UGC.
               </p>
             )}
             {t(
               <p className="tracking-wide">
-                专注<strong className="text-sky-400 font-medium">AIGC</strong>创意视听内容创作，作品获得众多比赛奖项，入选<strong className="text-sky-400 font-medium">小红书精选</strong>、入选<strong className="text-sky-400 font-medium">新片场·精选周榜</strong>TOP10，凭借兼具设计审美、情感温度与个人风格的原创作品收获上万点赞，<strong className="text-sky-400 font-medium font-sans">新片场AI平台Shotlab签约创作人</strong>、<strong className="text-sky-400 font-medium font-sans">即梦/可灵/LibLib等AI平台扶持计划优质创作者</strong>，与众多平台展开合作，具备成熟的 AIGC 创作、内容运营、品牌合作及商业落地能力。
+                专注<strong className="text-sky-400 font-medium">AIGC</strong>创意视听内容创作，作品获得众多比赛奖项，入选<strong className="text-sky-400 font-medium">小红书精选</strong>、入选<strong className="text-sky-400 font-medium">新片场·精选周榜</strong>TOP10，凭借兼具设计审美、情感温度与个人风格的原创作品收获上万点赞，<strong className="text-sky-400 font-medium font-sans">新片场AI平台Shotlab签约创作人</strong>、<strong className="text-sky-400 font-medium font-sans">即梦/可灵/LibTV/TapNow等AI平台扶持计划优质创作者</strong>，与众多平台展开合作，具备成熟的 <strong className="text-sky-400 font-medium font-sans">AIGC 创作、工作流设计及搭建、内容运营、品牌合作及商业落地能力</strong>。
               </p>,
               <p className="tracking-wide leading-relaxed font-sans font-light">
-                Specializing in creative <strong className="text-sky-400 font-semibold font-sans">AIGC</strong> audiovisual creation, with works winning multiple contest awards, featured on <strong className="text-sky-400 font-semibold font-sans">Xiaohongshu</strong>, and selected for <strong className="text-sky-400 font-semibold font-sans">Xinpianchang Weekly Best Chart</strong> TOP 10. My original content blends exquisite aesthetic design, emotional warmth, and distinct personal styles which has garnered tens of thousands of likes. As a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator of Xinpianchang AI Platform Shotlab & Featured Creator of Dreamina/Kling/LibLib</strong>, I collaborate with numerous platforms, possessing mature capabilities in AIGC creation, content operation, brand collaboration, and commercial implementation.
+                Specializing in creative <strong className="text-sky-400 font-semibold font-sans">AIGC</strong> audiovisual creation, with works winning multiple contest awards, featured on <strong className="text-sky-400 font-semibold font-sans">Xiaohongshu</strong>, and selected for <strong className="text-sky-400 font-semibold font-sans">Xinpianchang Weekly Best Chart</strong> TOP 10. My original content blends exquisite aesthetic design, emotional warmth, and distinct personal styles which has garnered tens of thousands of likes. As a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator of Xinpianchang AI Platform Shotlab & Featured Creator of Dreamina/Kling/LibTV/TapNow</strong>, I collaborate with numerous platforms, possessing mature capabilities in <strong className="text-sky-400 font-semibold font-sans">AIGC creation, workflow design & architecture, content operations, brand collaboration, and commercial implementation</strong>.
               </p>
             )}
           </div>
@@ -1215,8 +1344,8 @@ export default function App() {
           <div 
             className="relative flex items-center justify-center select-none"
             style={{ 
-              width: isMobile ? '290px' : '940px', 
-              height: isMobile ? (isCardsHovered ? '1280px' : '430px') : '430px',
+              width: isMobile ? '290px' : '1240px', 
+              height: isMobile ? (isCardsHovered ? '1720px' : '430px') : '430px',
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
             onMouseEnter={() => !isMobile && setIsCardsHovered(true)}
@@ -1246,17 +1375,17 @@ export default function App() {
             <motion.div
               style={{ originX: 0.5, originY: 0.5 }}
               animate={isCardsHovered ? {
-                x: isMobile ? 0 : -320,
-                y: isMobile ? -420 : 0,
+                x: isMobile ? 0 : -450,
+                y: isMobile ? -630 : 0,
                 rotate: 0,
                 scale: 1,
-                zIndex: 30
+                zIndex: 40
               } : {
                 x: 0,
                 y: 0,
                 rotate: 0,
                 scale: 1,
-                zIndex: 30
+                zIndex: 40
               }}
               transition={{ type: "spring", stiffness: 120, damping: 20 }}
               onClick={() => {
@@ -1316,21 +1445,21 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* CARD 2: INTERNSHIP EXPERIENCE 1 CARD (Center in desktop row, beneath Card 1, tilted slightly left) */}
+            {/* CARD 2: 字节跳动·抖音TikTok */}
             <motion.div
               style={{ originX: 0.5, originY: 0.5 }}
               animate={isCardsHovered ? {
-                x: 0,
-                y: 0,
+                x: isMobile ? 0 : -150,
+                y: isMobile ? -210 : 0,
                 rotate: 0,
                 scale: 1,
-                zIndex: 20
+                zIndex: 30
               } : {
-                x: 10,
-                y: 12,
-                rotate: -4,
-                scale: 0.96,
-                zIndex: 20
+                x: 8,
+                y: 10,
+                rotate: -3,
+                scale: 0.97,
+                zIndex: 30
               }}
               transition={{ type: "spring", stiffness: 120, damping: 20 }}
               onClick={() => {
@@ -1349,7 +1478,81 @@ export default function App() {
               {/* Background conceptual AIGC workspace image */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260607215410483.png"
+                  src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822190014482.webp"
+                  alt="字节跳动·抖音TikTok"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] opacity-70 contrast-[1.1]"
+                  referrerPolicy="no-referrer"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-black/40 to-transparent z-10" />
+                <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent z-10" />
+              </div>
+
+              {/* Card content */}
+              <div className="relative z-20 flex flex-col items-center text-center w-full">
+                
+                {/* Title and subtitle labels */}
+                <h3 className="text-lg font-bold text-white tracking-wide mb-1 select-none font-sans">
+                  {t("字节跳动·抖音TikTok", "ByteDance • Douyin TikTok")}
+                </h3>
+                <p className="text-[11px] text-zinc-400 font-sans tracking-wider mb-4 font-light select-none">
+                  {t("多媒体设计（AIGC短剧方向）", "Multimedia Design (AIGC Short Drama Focus)")}
+                </p>
+
+                {/* Hidden details shown on card interaction */}
+                <p className="text-[11px] leading-relaxed text-zinc-350 font-sans font-light select-none mb-6 opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto overflow-hidden transition-all duration-500 text-center">
+                  {t("参与TikTok AI短剧工作流设计、生产SOP沉淀、视觉项目支持与社区运营推广。", "Participated in TikTok AI drama workflow design, production SOP formalization, visual project support, and community operations.")}
+                </p>
+
+                {/* Retro premium dark pill */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveDetailIndex(1);
+                  }}
+                  className="w-full py-2 bg-black/90 border border-white/10 rounded-full text-[10px] text-sky-300 font-sans font-semibold tracking-widest text-center select-none uppercase shadow-md transition-colors duration-300 group-hover:bg-white group-hover:text-black group-hover:border-white cursor-pointer"
+                >
+                  {t("点击查看详细内容", "View Details")}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* CARD 3: 字节跳动·抖音TikTok Shop */}
+            <motion.div
+              style={{ originX: 0.5, originY: 0.5 }}
+              animate={isCardsHovered ? {
+                x: isMobile ? 0 : 150,
+                y: isMobile ? 210 : 0,
+                rotate: 0,
+                scale: 1,
+                zIndex: 20
+              } : {
+                x: -8,
+                y: 20,
+                rotate: 3,
+                scale: 0.94,
+                zIndex: 20
+              }}
+              transition={{ type: "spring", stiffness: 120, damping: 20 }}
+              onClick={() => {
+                if (isMobile) {
+                  if (!isCardsHovered) {
+                    setIsCardsHovered(true);
+                  } else {
+                    setActiveDetailIndex(2);
+                  }
+                } else {
+                  setActiveDetailIndex(2);
+                }
+              }}
+              className="absolute left-[calc(50%-140px)] top-[15px] w-[280px] h-[400px] rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] cursor-pointer bg-neutral-950 border border-white/10 group flex flex-col justify-end p-6"
+            >
+              {/* Background conceptual AIGC workspace image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822190509902.webp"
                   alt="AIGC 头部平台合作"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] opacity-70 contrast-[1.1]"
                   referrerPolicy="no-referrer"
@@ -1381,7 +1584,7 @@ export default function App() {
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setActiveDetailIndex(1);
+                    setActiveDetailIndex(2);
                   }}
                   className="w-full py-2 bg-black/90 border border-white/10 rounded-full text-[10px] text-sky-300 font-sans font-semibold tracking-widest text-center select-none uppercase shadow-md transition-colors duration-300 group-hover:bg-white group-hover:text-black group-hover:border-white cursor-pointer"
                 >
@@ -1390,20 +1593,20 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* CARD 3: INTERNSHIP EXPERIENCE 2 CARD (Right in desktop row, bottom of stack, tilted slightly right) */}
+            {/* CARD 4: INTERNSHIP EXPERIENCE 2 CARD (Tencent IEG) */}
             <motion.div
               style={{ originX: 0.5, originY: 0.5 }}
               animate={isCardsHovered ? {
-                x: isMobile ? 0 : 320,
-                y: isMobile ? 420 : 0,
+                x: isMobile ? 0 : 450,
+                y: isMobile ? 630 : 0,
                 rotate: 0,
                 scale: 1,
                 zIndex: 10
               } : {
-                x: -10,
-                y: 24,
-                rotate: 4,
-                scale: 0.92,
+                x: 10,
+                y: 30,
+                rotate: -4,
+                scale: 0.91,
                 zIndex: 10
               }}
               transition={{ type: "spring", stiffness: 120, damping: 20 }}
@@ -1412,10 +1615,10 @@ export default function App() {
                   if (!isCardsHovered) {
                     setIsCardsHovered(true);
                   } else {
-                    setActiveDetailIndex(2);
+                    setActiveDetailIndex(3);
                   }
                 } else {
-                  setActiveDetailIndex(2);
+                  setActiveDetailIndex(3);
                 }
               }}
               className="absolute left-[calc(50%-140px)] top-[15px] w-[280px] h-[400px] rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] cursor-pointer bg-neutral-950 border border-white/10 group flex flex-col justify-end p-6"
@@ -1423,7 +1626,7 @@ export default function App() {
               {/* Background cinematic media vortex image */}
               <div className="absolute inset-0 z-0">
                 <img 
-                  src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260607215707204.png"
+                  src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260822191748620.webp"
                   alt="新媒体创意视听"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] opacity-70 contrast-[1.1]"
                   referrerPolicy="no-referrer"
@@ -1455,7 +1658,7 @@ export default function App() {
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setActiveDetailIndex(2);
+                    setActiveDetailIndex(3);
                   }}
                   className="w-full py-2 bg-black/90 border border-white/10 rounded-full text-[10px] text-sky-300 font-sans font-semibold tracking-widest text-center select-none uppercase shadow-md transition-colors duration-300 group-hover:bg-white group-hover:text-black group-hover:border-white cursor-pointer"
                 >
@@ -1738,7 +1941,7 @@ export default function App() {
                                       </span>
                                     </div>
                                   ) : (
-                                    <p className="text-zinc-400 text-xs font-light leading-relaxed font-sans line-clamp-2">
+                                    <p className="text-zinc-400 text-xs font-light leading-relaxed font-sans line-clamp-2 whitespace-pre-line">
                                       {proj.description}
                                     </p>
                                   )}
@@ -1940,7 +2143,9 @@ export default function App() {
                         </div>
                       )}
                       <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight select-none font-sans">
-                        {t(detail.title, detail.enTitle)}
+                        {activeDetailIndex === 1 
+                          ? t("字节跳动·抖音TikTok-Design-Creative", "ByteDance • Douyin TikTok-Design-Creative") 
+                          : t(detail.title, detail.enTitle)}
                       </h3>
                     </div>
                   </div>
@@ -1948,8 +2153,10 @@ export default function App() {
                   {/* Core Content Body */}
                   <div className="p-5 sm:p-8 md:p-12 flex flex-col gap-6 sm:gap-10">
                     {activeDetailIndex === 1 ? (
-                      <TikTokShopDetail language={language} t={t} setLightboxUrl={(url) => setLightboxState({images: [url], index: 0})} />
+                      <TikTokDetail language={language} t={t} setLightboxUrl={(url) => setLightboxState({images: [url], index: 0})} />
                     ) : activeDetailIndex === 2 ? (
+                      <TikTokShopDetail language={language} t={t} setLightboxUrl={(url) => setLightboxState({images: [url], index: 0})} />
+                    ) : activeDetailIndex === 3 ? (
                       <TencentIEGDetail language={language} t={t} setLightboxUrl={(url) => setLightboxState({images: [url], index: 0})} />
                     ) : (
                       <>
@@ -2201,7 +2408,7 @@ export default function App() {
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight font-sans mt-2 max-w-4xl text-left select-none">
                       {selectedProject.title}
                     </h1>
-                    {!["comm-3", "comm-4", "comm-1", "comm-2", "illus-1", "oth-1", "oth-2", "brand-3", "brand-4"].includes(selectedProject.id) && (
+                    {!["comm-3", "comm-4", "comm-1", "comm-2", "illus-1", "oth-1", "oth-2", "brand-1", "brand-3", "brand-4", "brand-wukong"].includes(selectedProject.id) && (
                       <p className="text-xs sm:text-sm text-zinc-350 tracking-wide font-sans font-light mt-1 max-w-3xl text-left">
                         {selectedProject.subtitle}
                       </p>
@@ -2216,7 +2423,7 @@ export default function App() {
                   <div className="space-y-12 pb-16">
 
                   {/* Cinematic Video Player Section */}
-                  {selectedProject.videoUrl && (
+                  {selectedProject.videoUrl && selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && (
                     <div className="space-y-6">
                       <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                         <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
@@ -2251,6 +2458,7 @@ export default function App() {
                   )}
                   
                   {/* Overview Block */}
+                  {selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && (
                   <div className="space-y-8">
                     {selectedProject.id !== "vid-4" && selectedProject.id !== "vid-5" && (
                       <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
@@ -2309,6 +2517,7 @@ export default function App() {
                       })}
                     </div>
                   </div>
+                  )}
 
                   {/* Curated Media Showcase/Gallery */}
                   <div className="space-y-8">
@@ -2422,6 +2631,27 @@ export default function App() {
                           })}
                         </div>
 
+                        {/* Text description under Art Assets */}
+                        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 text-left">
+                          <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+                            AIGC 视觉开发：从概念到资产的标准化输出
+                          </h3>
+                          <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            <p>
+                              <span className="font-semibold text-zinc-100">角色一致性控制 (Character Consistency)：</span>
+                              突破 AIGC 随机性痛点。通过提示词与场景画风多通道约束，实现高精度的角色三视图输出。确保角色在不同视角、服饰下的面部特征与体型比例达到工业级资产标准。
+                            </p>
+                            <p>
+                              <span className="font-semibold text-zinc-100">世界观视觉构建 (World-building Design)：</span>
+                              高效确立项目的美术基调。利用 Midjourney 配合Nano banana后期重绘，快速产出废土/赛博朋克等复杂场景的概念氛围图。将传统需数周的概念探索期压缩，为后续的分镜与 3D 资产化提供准确的视觉蓝图。
+                            </p>
+                            <p>
+                              <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                              适用于游戏前期开发、动画 PV 视觉定调以及品牌虚拟 IP 的快速孵化，大幅降低前制阶段的时间与人力试错成本。
+                            </p>
+                          </div>
+                        </div>
+
                         {/* Prompt Assets Section */}
                         <div className="space-y-6 pt-6">
                           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
@@ -2455,6 +2685,27 @@ export default function App() {
                               );
                             })}
                           </div>
+
+                          {/* Text description under Prompt Assets */}
+                          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 text-left">
+                            <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+                              提示词工程 (Prompt Engineering)：风格锁定的底层逻辑
+                            </h3>
+                            <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                              <p>
+                                <span className="font-semibold text-zinc-100">模块化参数矩阵：</span>
+                                摒弃碎片化的提示词书写，建立包含“镜头语言、光影逻辑、材质细节、渲染引擎”的结构化提示词库。
+                              </p>
+                              <p>
+                                <span className="font-semibold text-zinc-100">跨平台参数迁移：</span>
+                                建立可跨工具复用的底层语法逻辑。确保无论是前期在 Midjourney中的风格探索，还是视频的精准生成，都能保持视觉风格（如 3D to 2D 赛璐璐风、电影级冷暖对比光影）的高度统一。
+                              </p>
+                              <p>
+                                <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                                形成可沉淀的团队数字资产。通过标准化的 Prompt SOP，即使是多账号矩阵或多人协作，也能保证最终视觉产出质量的标准与统一。
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -2480,7 +2731,7 @@ export default function App() {
                         </div>
                     )}
 
-                    {selectedProject.id !== "vid-2" && selectedProject.id !== "vid-11" && selectedProject.id !== "vid-12" && selectedProject.id !== "vid-13" && (
+                    {selectedProject.id !== "vid-2" && selectedProject.id !== "vid-11" && selectedProject.id !== "vid-12" && selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && (
                     <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                       <span className="w-2 h-2 rounded-full bg-sky-300" />
                       <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
@@ -2581,28 +2832,73 @@ export default function App() {
                       </div>
                     )}
 
-                    <div className={
-                      ["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "oth-2", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) 
-                        ? "flex flex-col gap-6 w-full" 
-                        : selectedProject.id === "vid-1"
-                          ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8"
-                          : "grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-                    }>
-                      {selectedProject.gallery.map((imgUrl, gIdx, arr) => (
-                        <div key={gIdx} className={`group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full ${["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "oth-2", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) ? "rounded-xl border border-white/5" : "aspect-video rounded-2xl border border-white/5"}`} onClick={() => setLightboxState({images: arr, index: gIdx})}>
-                          <img
-                            src={imgUrl}
-                            alt="Visual fragment"
-                            className={`w-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100 ${["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "oth-2", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) ? "h-auto" : "h-full"}`}
-                            referrerPolicy="no-referrer"
-                          />
-                          <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                          <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
-                            {t("点击查看大图", "Click to Zoom")}
+                    {selectedProject.id === "oth-2" ? (
+                      <OddityClubDetail
+                        language={language}
+                        t={t}
+                        setLightboxState={setLightboxState}
+                        gallery={selectedProject.gallery}
+                      />
+                    ) : selectedProject.id === "brand-1" ? (
+                      <ChillaxCampaignDetail
+                        language={language}
+                        t={t}
+                        setLightboxState={setLightboxState}
+                        gallery={selectedProject.gallery}
+                      />
+                    ) : selectedProject.id === "brand-wukong" ? (
+                      <WukongCampaignDetail
+                        language={language}
+                        t={t}
+                        setLightboxState={setLightboxState}
+                        gallery={selectedProject.gallery}
+                      />
+                    ) : (
+                      <div className={
+                        ["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) 
+                          ? "flex flex-col gap-6 w-full" 
+                          : selectedProject.id === "vid-1"
+                            ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8"
+                            : "grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+                      }>
+                        {selectedProject.gallery.map((imgUrl, gIdx, arr) => (
+                          <div key={gIdx} className={`group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full ${["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) ? "rounded-xl border border-white/5" : "aspect-video rounded-2xl border border-white/5"}`} onClick={() => setLightboxState({images: arr, index: gIdx})}>
+                            <img
+                              src={imgUrl}
+                              alt="Visual fragment"
+                              className={`w-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100 ${["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"].includes(selectedProject.id) ? "h-auto" : "h-full"}`}
+                              referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                            <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                              {t("点击查看大图", "Click to Zoom")}
+                            </div>
                           </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {selectedProject.id === "vid-1" && (
+                      <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 mt-6 text-left">
+                        <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+                          概念分镜预演 (Conceptual Storyboarding)：文本到画面的降维打击
+                        </h3>
+                        <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                          <p>
+                            <span className="font-semibold text-zinc-100">电影级视听转译：</span>
+                            将剧本文字转化为具象的视觉语言。严格控制画面景别（特写、广角）、机位（俯拍仰拍）与环境光影，确保每一帧都能准确传递角色的情绪张力与剧情冲突。
+                          </p>
+                          <p>
+                            <span className="font-semibold text-zinc-100">动态化前置准备：</span>
+                            在静态生成阶段即代入后期剪辑思维。画面的构图留白、焦外景深以及特效元素的图层剥离，也可为后续导入 After Effects 或 Premiere 进行动态化（Motion Graphic）或视频生成做好底层准备。
+                          </p>
+                          <p>
+                            <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                            为影视级 CG 短片、商业广告提案提供高质量的视觉预演（Previz）。让客户或投资人在项目立项初期，就能以直观、高品质的画面确认最终的叙事节奏与成片效果。
+                          </p>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    )}
 
                     {selectedProject.id === "vid-2" && (
                         <>
@@ -2631,6 +2927,31 @@ export default function App() {
                                   </div>
                                 ))}
                               </div>
+
+                              {/* Text description under Art Assets */}
+                              <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 mt-6 text-left">
+                                <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+                                  AIGC 资产开发：特定 IP 风格的深度复刻与工业化输出
+                                </h3>
+                                <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">目标风格深度锁定：</span>
+                                    针对项目需求，对标《无畏契约》（VALORANT）或《双生之战》（Arcane）等业界顶尖风格。深度还原其标志性的硬边缘阴影（Cel-shading with Hard Edges）、平面色块（Flat Colors）与丰富手绘纹理（Painted Textures）的 3D-to-2D 混合质感。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">角色资产量产标准：</span>
+                                    确保多角色、多皮肤在严格的 3D-to-2D 风格约束下达到可复用的资产标准。通过 ControlNet 精确控制视角与 Pose，输出符合工业流程的完整三视图。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">场景概念风格化整合：</span>
+                                    不仅复刻人物，更将特定的美术风格应用到复杂环境概念中。快速探索不同功能的室内空间（如公寓室内细节）与宏大室外场景，确保世界观视觉风格的高度统一。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                                    极速提升项目前期美术风格探索与定型效率。为需要特定高品质美术风格的游戏、动画 PV 或品牌虚拟形象提供可量产、可沉淀的风格资产库，极大地降低前制研发成本。
+                                  </p>
+                                </div>
+                              </div>
                           </div>
   
                           <div className="space-y-8 pt-6">
@@ -2657,6 +2978,31 @@ export default function App() {
                                     </div>
                                   </div>
                                 ))}
+                              </div>
+
+                              {/* Text description under Storyboard Assets */}
+                              <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 mt-6 text-left">
+                                <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+                                  AIGC 概念分镜：高保真风格叙事与视觉一致性预演
+                                </h3>
+                                <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">跨镜头风格稳定性：</span>
+                                    在复杂的六帧叙事流程中，确保角色形象、服装细节以及环境光影在特写、中景、远景、静止与动态战斗镜头下始终保持高度统一的品牌风格。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">情感表达的风格化：</span>
+                                    将角色的复杂情感（如睡眼惺忪、惊讶、严肃、愤怒、战斗时的张力）融入到特定的美术风格中。利用 AIGC 快速尝试不同的视听语言方案，同时确保每一帧都是“完成品”级的高保真概念。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">战斗演绎预演：</span>
+                                    针对《无畏契约》这类战斗题材，快速产出符合该风格的战斗概念分镜（如最后一帧的双人对决），为动作设计、特效层级分离与后期合成提供直观的视觉参考。
+                                  </p>
+                                  <p>
+                                    <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                                    为需要高度定制化美术风格的影视级 PV、游戏预告片提案提供最具说服力的视觉样片。通过高保真的概念预演，让客户在项目初期就能确认最终的视听效果，大幅提升提案成功率。
+                                  </p>
+                                </div>
                               </div>
                           </div>
                         </>
@@ -2730,37 +3076,497 @@ export default function App() {
                     )}
 
                     {selectedProject.id === "vid-13" && (
-                      <div className="space-y-8 -mt-4 md:-mt-6">
-                        <div className="space-y-6">
+                      <div className="space-y-12">
+                        {/* Title Header */}
+                        <div className="flex items-center gap-2.5 border-b border-white/10 pb-3">
+                          <span className="w-2.5 h-2.5 rounded-full bg-sky-300 animate-pulse" />
+                          <h2 className="text-base sm:text-lg md:text-xl uppercase tracking-[0.2em] font-bold text-zinc-100">
+                            AIGC 3D写实动画短片
+                          </h2>
+                        </div>
+
+                        {/* 自媒体收获 / MEDIA ACHIEVEMENTS */}
+                        <div className="space-y-4">
                           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                             <span className="w-2 h-2 rounded-full bg-sky-300" />
                             <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
-                              {t("美术资产 / ART ASSETS", "ART ASSETS")}
+                              {t("自媒体收获 / MEDIA ACHIEVEMENTS", "MEDIA ACHIEVEMENTS")}
                             </h2>
                           </div>
-
-                          {/* Row 1: 3 cards */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+                          
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 w-full">
                             {[
-                              "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010226522.webp",
-                              "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010302570.webp",
-                              "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010317896.webp"
-                            ].map((imgUrl, idx) => {
-                              const arr = [
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260823021808148.webp",
+                                pos: "object-top"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260823021829914.webp",
+                                pos: "object-[center_65%]"
+                              }
+                            ].map((item, idx, arr) => (
+                              <div
+                                key={`valhalla-achieve-${idx}`}
+                                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl border border-white/5"
+                                onClick={() => setLightboxState({ images: arr.map(i => i.url), index: idx })}
+                              >
+                                <img
+                                  src={item.url}
+                                  alt={`Media Achievement ${idx + 1}`}
+                                  className={`w-full h-full object-cover ${item.pos} group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100`}
+                                  referrerPolicy="no-referrer"
+                                />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                  {t("点击查看大图", "Click to Zoom")}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 第一部分：动态场景视频生成 */}
+                        <div className="space-y-6">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            动态场景视频生成
+                          </h3>
+
+                          {/* Two Videos */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%201.mp4" language={language} aspectRatio="aspect-[21/9]" />
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%202.mp4" language={language} aspectRatio="aspect-[21/9]" />
+                          </div>
+
+                          {/* Descriptive Bullet List */}
+                          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-2.5 text-left text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            <p>
+                              <span className="font-semibold text-zinc-100">镜头与运镜：</span>
+                              采用极速推轨结合手持摄影机震动效果，实现无剪辑点的一镜到底连续动态视觉。
+                            </p>
+                            <p>
+                              <span className="font-semibold text-zinc-100">环境与特效：</span>
+                              设定宏大的废墟城市与天空裂痕背景，辅以暗红色天火、陨石坠落及剧烈爆炸的粒子特效。
+                            </p>
+                            <p>
+                              <span className="font-semibold text-zinc-100">主体动作：</span>
+                              角色在极度昏暗的废墟中高速穿梭，执行跃起与机械手臂重击地面的物理破坏动作，激起巨大冲击波震碎周遭悬浮物。
+                            </p>
+                            <p>
+                              <span className="font-semibold text-zinc-100">视觉基调：</span>
+                              锁定高对比度的暗黑写实CG风格，以强烈的爆点白光与低音轰鸣感完成场景的视觉收尾。
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* 第二部分：角色资产升维与场景锚定 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            角色资产升维与场景锚定
+                          </h3>
+
+                          {/* 角色 2D 转 3D */}
+                          <div className="space-y-4">
+                            <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                              <span className="font-semibold text-zinc-100">角色 2D 转 3D：</span>
+                              以前期2D人物设定图为视觉锚点，提取核心特征（如特定材质长袍、机械义肢）。通过图像生成模型与风格转化，赋予角色“真实皮肤纹理”、“UE5引擎渲染”及“超高清”的3D立体光影与物理材质表现。
+                            </div>
+
+                            {/* 9宫格 */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                              {[
                                 "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010226522.webp",
                                 "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010302570.webp",
-                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010317896.webp"
-                              ];
-                              return (
-                                <div key={`${selectedProject.id}-r1-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
-                                  <img src={imgUrl} alt="Art Asset" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260623010317896.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001803954.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001817685.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001829062.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001844238.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001908765.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001930770.webp"
+                              ].map((imgUrl, idx, arr) => (
+                                <div key={`vid13-grid9-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                                  <img src={imgUrl} alt={`Asset ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                                   <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                                     {t("点击查看大图", "Click to Zoom")}
                                   </div>
                                 </div>
-                              );
-                            })}
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* 场景环境构建 */}
+                          <div className="space-y-4 pt-4">
+                            <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                              <span className="font-semibold text-zinc-100">场景环境构建：</span>
+                              使用高精度提示词架构锁定画面参数。通过固定“极暗宫殿废墟”、“冷调工业暗光”以及“21:9电影画幅”等限制词，生成具有真实景深、低饱和度且带轻微胶片颗粒感的电影级场景，确保人物与场景的光影逻辑高度自洽。
+                            </div>
+
+                            {/* 3张场景图 */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                              {[
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812001957119.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812002010944.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812002028317.webp"
+                              ].map((imgUrl, idx, arr) => (
+                                <div key={`vid13-scene3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                                  <img src={imgUrl} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* 第三部分：音频驱动与复杂场景提示词控制 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            音频驱动与复杂场景提示词控制
+                          </h3>
+
+                          {/* Seed 1.0 音频制作 */}
+                          <div className="space-y-4">
+                            <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                              <span className="font-semibold text-zinc-100">Seed 1.0 音频制作：</span>
+                              为3D化角色注入音频表现。接入 Seed 1.0 音频大模型，通过输入台词并配置对应的人物性格参数，生成具备情绪起伏与呼吸感的拟真旁白。结合视频生成技术，驱动角色生成自然的口型与面部微表情。
+                            </div>
+
+                            {/* 一排3张 */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                              {[
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812004202017.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812002052189.webp",
+                                "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812002105760.webp"
+                              ].map((imgUrl, idx, arr) => (
+                                <div key={`vid13-audio3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                                  <img src={imgUrl} alt={`Audio Control ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* 多人场景工作流控制 */}
+                          <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            <span className="font-semibold text-zinc-100">多人场景工作流控制：</span>
+                            针对多人同框场景，采用高度模块化的节点连线工作流与区域控制（Region Control）技术。通过划分精确的画面坐标区块，将特定的角色参考图与提示词独立定向到指定区域。此流程可有效避免多角色特征混淆、色彩溢出及画风崩塌，在实现复杂调度的同时维持全局统一的写实CG画风。
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedProject.id === "vid-14" && (
+                      <div className="space-y-12">
+                        {/* Title & Main Video Player */}
+                        <div className="space-y-6">
+                          <div className="flex items-center gap-2.5 border-b border-white/10 pb-3">
+                            <span className="w-2.5 h-2.5 rounded-full bg-sky-300 animate-pulse" />
+                            <h2 className="text-base sm:text-lg md:text-xl uppercase tracking-[0.2em] font-bold text-zinc-100">
+                              王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》 — AI短片创作企划与SOP
+                            </h2>
+                          </div>
+                          <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/moran%20new.mp4" language={language} aspectRatio="aspect-[21/9]" />
+                        </div>
+
+                        {/* 一、 项目概述与核心风格 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            一、 项目概述与核心风格
+                          </h3>
+                          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            <p>
+                              本项目为“王者荣耀Live音乐会企划”的商业合作 MV。视频将基于【王者英雄x音乐】的主题，打造一支以战斗、热血为主，且具备强音乐性的视觉短片。（角色、音乐为官方授权）
+                            </p>
+                            <p className="font-semibold text-zinc-100">
+                              核心视觉风格：3D古风 CG 动画 + 强水墨画结合。
+                            </p>
+                          </div>
+
+                          {/* 三图并排 */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                            {[
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011702131.webp",
+                                desc: "视频风格参考（展现3D古风与水墨特效结合的高燃战斗张力）"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011722241.webp",
+                                desc: "视频风格参考（展现画面的色彩质感与实验性美术风格）"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011735636.webp",
+                                desc: "视频风格参考（整体群像的海报构图与古风审美调性）"
+                              }
+                            ].map((item, idx, arr) => (
+                              <div key={`vid14-style-${idx}`} className="space-y-2">
+                                <div
+                                  className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                                  onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
+                                >
+                                  <img src={item.url} alt={`Style ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                                </div>
+                                <p className="text-xs text-zinc-400 font-light px-1 text-center sm:text-left">{item.desc}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 二、 核心角色设定与羁绊 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            二、 核心角色设定与羁绊
+                          </h3>
+                          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            故事围绕公孙离与李信展开，明世隐作为反派推动情节。公孙离对李信是“坚定又柔软”的单向暗恋，而李信虽视其为最重要的光，却因复仇执念与“美强惨”的宿命，将其推开。此次短片重点展现李信为了守护阿离，打破理智堕入修罗的悲剧美学。
+                          </div>
+
+                          {/* 并排三张新图 */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                            {[
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812013331604.jpg",
+                                desc: "核心角色关系与情感羁绊"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812013348788.jpg",
+                                desc: "水墨风格角色对峙概念"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812013359790.jpg",
+                                desc: "关键场景角色剧照与视觉呈现"
+                              }
+                            ].map((item, idx, arr) => (
+                              <div key={`vid14-bond-${idx}`} className="space-y-2">
+                                <div
+                                  className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                                  onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
+                                >
+                                  <img src={item.url} alt={`Bond ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                                </div>
+                                <p className="text-xs text-zinc-400 font-light px-1 text-center sm:text-left">{item.desc}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 三、 场景概念与氛围构建 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            三、 场景概念与氛围构建
+                          </h3>
+                          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+                            全片场景基调契合“墨染江湖”，环境的明暗色彩将随着李信的形态转换与剧情走向发生剧烈变化。
+                          </div>
+
+                          {/* 三图并列 */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+                            {[
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011923732.webp",
+                                desc: "场景概念1：茂密的翠绿竹林/枫林与破败小屋（用于第一幕【绞杀】的开场）"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011947029.webp",
+                                desc: "场景概念2：遮天蔽日的暗黑杀阵与巨大锁链（用于第二幕【死局】明世隐发力时）"
+                              },
+                              {
+                                url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011957304.webp",
+                                desc: "场景概念3：硝烟散去、微风与红叶交织的废墟（用于尾声【余温】的情感落幅）"
+                              }
+                            ].map((item, idx, arr) => (
+                              <div key={`vid14-scene-${idx}`} className="space-y-2">
+                                <div
+                                  className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                                  onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
+                                >
+                                  <img src={item.url} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                  <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                    {t("点击查看大图", "Click to Zoom")}
+                                  </div>
+                                </div>
+                                <p className="text-xs text-zinc-400 font-light px-1 text-center sm:text-left">{item.desc}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 四、 剧本分镜与叙事拆解 (核心主题：为她，挥剑断天涯) */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            四、 剧本分镜与叙事拆解 (核心主题：为她，挥剑断天涯)
+                          </h3>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                            {[
+                              { time: "0:00 - 0:30", title: "【绞杀】", desc: "第一幕开场：竹林枫林与破败小屋，危机四伏" },
+                              { time: "0:30 - 1:00", title: "【死局】", desc: "第二幕爆发：明世隐遮天杀阵与巨大锁链困局" },
+                              { time: "1:00 - 1:20", title: "【修罗】", desc: "第三幕高潮：李信打破理智，堕入狂暴修罗状态" },
+                              { time: "1:20 - 1:30", title: "【余温】", desc: "尾声落幅：硝烟散去，微风红叶废墟中的情感余温" }
+                            ].map((act, aIdx) => (
+                              <div key={`vid14-act-${aIdx}`} className="p-4 rounded-xl bg-zinc-900/60 border border-white/10 space-y-2">
+                                <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono bg-sky-500/20 text-sky-300 border border-sky-400/30">
+                                  {act.time}
+                                </span>
+                                <h4 className="text-sm md:text-base font-bold text-zinc-100">{act.title}</h4>
+                                <p className="text-xs text-zinc-400 font-light leading-relaxed">{act.desc}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* 五、 AI 动画商业制作 SOP 工作流 */}
+                        <div className="space-y-6 pt-4 border-t border-white/5">
+                          <h3 className="text-sm sm:text-base md:text-lg font-bold text-sky-300 tracking-wide flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                            五、 AI 动画商业制作 SOP 工作流
+                          </h3>
+                          <p className="text-xs sm:text-sm text-zinc-400 font-light">
+                            为了满足甲方的关键反馈节点要求，整个制作拆分为以下 4 个阶段进行：
+                          </p>
+
+                          <div className="space-y-6">
+                            {/* 阶段 1 */}
+                            <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+                              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                                <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
+                                  阶段 1
+                                </span>
+                                <h4 className="text-sm sm:text-base font-bold text-zinc-100">AI 设定阶段</h4>
+                              </div>
+                              <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 font-light list-disc list-inside leading-relaxed">
+                                <li>使用 GPT 和 Nano Banana 结合垫图，生成 3D+水墨画风下的公孙离、李信双形态、明世隐的定妆照。</li>
+                                <li>交付给甲方确认脸部特征与整体画风。</li>
+                              </ul>
+
+                              {/* 移过来的 4 张角色设定三视图网格 */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 pt-2">
+                                {[
+                                  {
+                                    url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011753353.webp",
+                                    title: "公孙离",
+                                    desc: "公孙离三视图（提取 AI 提示词：纸伞、兔耳、青色水墨、旗袍，展现坚定与柔软）"
+                                  },
+                                  {
+                                    url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011809631.webp",
+                                    title: "明世隐",
+                                    desc: "明世隐三视图（提取 AI 提示词：白发、牡丹法器、黑白长袍，展现优雅的幕后黑手）"
+                                  },
+                                  {
+                                    url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011859134.webp",
+                                    title: "李信（光信）",
+                                    desc: "李信（光信）三视图（提取 AI 提示词：金光、重剑、神明降临感，展现前期的克制与守护）"
+                                  },
+                                  {
+                                    url: "https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812011911807.webp",
+                                    title: "李信（暗信）",
+                                    desc: "李信（暗信）三视图（提取 AI 提示词：猩红魔气、银发狂舞、狂暴修罗，展现后期的彻底爆发）"
+                                  }
+                                ].map((item, idx, arr) => (
+                                  <div key={`vid14-char-${idx}`} className="space-y-2">
+                                    <div
+                                      className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                                      onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
+                                    >
+                                      <img src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                                      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                      <div className="absolute top-3 left-3 bg-black/70 border border-white/10 text-xs text-sky-300 font-medium px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                        {item.title}
+                                      </div>
+                                      <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                                        {t("点击查看大图", "Click to Zoom")}
+                                      </div>
+                                    </div>
+                                    <p className="text-xs text-zinc-400 font-light px-1">{item.desc}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* 阶段 2 */}
+                            <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3">
+                              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                                <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
+                                  阶段 2
+                                </span>
+                                <h4 className="text-sm sm:text-base font-bold text-zinc-100">AI 分镜阶段（关键帧生成）</h4>
+                              </div>
+                              <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 font-light list-disc list-inside leading-relaxed">
+                                <li>根据第四部分的剧本拆解，在 Midjourney 中跑出每个章节的核心画面（如：阿离挥伞、光信降临、暗信冲天、手捧金叶）。</li>
+                                <li>交付给甲方确认镜头景别、动作张力与水墨特效覆盖比重。</li>
+                              </ul>
+                            </div>
+
+                            {/* 阶段 3 */}
+                            <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+                              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                                <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
+                                  阶段 3
+                                </span>
+                                <h4 className="text-sm sm:text-base font-bold text-zinc-100">视频初稿阶段（动态生成与初剪）</h4>
+                              </div>
+                              <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 font-light list-disc list-inside leading-relaxed">
+                                <li>将确认好的静态分镜导入 seedance、kling 等视频模型。使用提示词控制水墨的炸裂与流动。</li>
+                                <li>交付给甲方确认整体叙事节奏、音乐情绪匹配度。</li>
+                              </ul>
+
+                              {/* 移过来的 SOP 流程图 */}
+                              <div
+                                className="group relative overflow-hidden bg-zinc-900 rounded-xl border border-white/10 max-w-xl cursor-pointer mt-2"
+                                onClick={() => setLightboxState({ images: ["https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812012228682.png"], index: 0 })}
+                              >
+                                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812012228682.png" alt="SOP Video Draft" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                                <div className="absolute bottom-3 right-3 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                                  {t("点击查看大图", "Click to Zoom")}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* 阶段 4 */}
+                            <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+                              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                                <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
+                                  阶段 4
+                                </span>
+                                <h4 className="text-sm sm:text-base font-bold text-zinc-100">终稿阶段（后期特效与润色）</h4>
+                              </div>
+                              <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 font-light list-disc list-inside leading-relaxed">
+                                <li>进入后期进行精修剪辑。补充 AI 生成细节不足的特效（如水墨点缀等）。</li>
+                                <li>将生成的动态素材导入 PR 或剪映，铺垫带有歌词的热血 BGM，完成基础的卡点剪辑。</li>
+                                <li>全片进行统一的“墨染江湖”色调校正，增加打斗音效与环境音，渲染输出最终 1分30秒 的成片交付。</li>
+                              </ul>
+
+                              {/* 阶段 4 补充说明图片 */}
+                              <div
+                                className="group relative overflow-hidden bg-zinc-900 rounded-xl border border-white/10 max-w-xl cursor-pointer mt-2"
+                                onClick={() => setLightboxState({ images: ["https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812015011486.png"], index: 0 })}
+                              >
+                                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260812015011486.png" alt="SOP Final Production" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+                                <div className="absolute bottom-3 right-3 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                                  {t("点击查看大图", "Click to Zoom")}
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
