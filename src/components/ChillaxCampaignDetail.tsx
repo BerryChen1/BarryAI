@@ -28,7 +28,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             onClick={() => openZoom(0)}
           >
             <img 
-              src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201007869.webp" 
+              src="/images/20260810201007869.webp" 
               alt="LIVE FREELY 2033 Hero KV" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" 
               referrerPolicy="no-referrer" 
@@ -75,7 +75,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-xl border border-white/10"
                 onClick={() => openZoom(1)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201026613.webp" alt="Step 1 情绪板与范式提取 A" className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260810201026613.webp" alt="Step 1 情绪板与范式提取 A" className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -84,7 +84,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-xl border border-white/10"
                 onClick={() => openZoom(2)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201057668.webp" alt="Step 1 情绪板与范式提取 B" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260810201057668.webp" alt="Step 1 情绪板与范式提取 B" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -127,7 +127,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(3)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201213304.webp" alt="Step 1 核心 KV 输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810201213304.webp" alt="Step 1 核心 KV 输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -144,7 +144,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(4)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201234896.webp" alt="Step 2 视觉资产网格化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810201234896.webp" alt="Step 2 视觉资产网格化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -161,7 +161,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(5)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201313275.webp" alt="Step 3 色彩与 UI 交互规范" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810201313275.webp" alt="Step 3 色彩与 UI 交互规范" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -195,7 +195,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(6)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201336478.webp" alt="Step 1 无限画布发散与阵列对比" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810201336478.webp" alt="Step 1 无限画布发散与阵列对比" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -213,7 +213,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(7)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201400666.webp" alt="Step 2 结构化提示词 SOP A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260810201400666.webp" alt="Step 2 结构化提示词 SOP A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -222,7 +222,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(8)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201416773.webp" alt="Step 2 结构化提示词 SOP B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260810201416773.webp" alt="Step 2 结构化提示词 SOP B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -257,7 +257,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(9)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810201559514.webp" alt="Step 1 主视觉与巨幅广告的无缝转化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810201559514.webp" alt="Step 1 主视觉与巨幅广告的无缝转化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -286,7 +286,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(10)}
           >
-            <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202144888.webp" alt="Phase 05 伴手礼延展 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img src="/images/20260810202144888.webp" alt="Phase 05 伴手礼延展 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
@@ -295,7 +295,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(11)}
           >
-            <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202155199.webp" alt="Phase 05 伴手礼延展 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img src="/images/20260810202155199.webp" alt="Phase 05 伴手礼延展 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
@@ -304,7 +304,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(12)}
           >
-            <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810202208113.webp" alt="Phase 05 伴手礼延展 C" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img src="/images/20260810202208113.webp" alt="Phase 05 伴手礼延展 C" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>

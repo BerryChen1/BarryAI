@@ -29,7 +29,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
             onClick={() => openZoom(0)}
           >
             <img 
-              src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210257417.webp" 
+              src="/images/20260810210257417.webp" 
               alt="WUKONG'S 24H Hero KV" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" 
               referrerPolicy="no-referrer" 
@@ -75,7 +75,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(0)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210257417.webp" alt="Step 1 破圈主视觉（KV）爆发" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810210257417.webp" alt="Step 1 破圈主视觉（KV）爆发" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -129,7 +129,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(1)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210327215.webp" alt="Step 2 潮鞋极速服务 UI 映射" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810210327215.webp" alt="Step 2 潮鞋极速服务 UI 映射" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -157,7 +157,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(2)}
           >
-            <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210755058.webp" alt="Phase 03 节点控制 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img src="/images/20260810210755058.webp" alt="Phase 03 节点控制 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
@@ -166,7 +166,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(3)}
           >
-            <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210810493.webp" alt="Phase 03 节点控制 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img src="/images/20260810210810493.webp" alt="Phase 03 节点控制 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
@@ -192,7 +192,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(4)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210355806.webp" alt="Step 2 设计过程五步拆解图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810210355806.webp" alt="Step 2 设计过程五步拆解图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -234,7 +234,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(5)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210436472.webp" alt="Step 2 全品类服饰与周边延展大图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810210436472.webp" alt="Step 2 全品类服饰与周边延展大图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -265,7 +265,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(6)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260810210500199.webp" alt="Step 1 大圣双手递鞋盒的互动视角图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260810210500199.webp" alt="Step 1 大圣双手递鞋盒的互动视角图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>

@@ -29,7 +29,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
             onClick={() => openZoom(0)}
           >
             <img 
-              src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223751589.webp" 
+              src="/images/20260809223751589.webp" 
               alt="ODDITY CLUB 2037 KV" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" 
               referrerPolicy="no-referrer" 
@@ -83,7 +83,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(1)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223905962.webp" alt="Step 1 提取排版范式" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809223905962.webp" alt="Step 1 提取排版范式" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -101,7 +101,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(2)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223929810.webp" alt="Step 2 初稿测试 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809223929810.webp" alt="Step 2 初稿测试 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -110,7 +110,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(3)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224006618.webp" alt="Step 2 初稿测试 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809224006618.webp" alt="Step 2 初稿测试 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -128,7 +128,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(4)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224137412.webp" alt="Step 3 风格锁定与材质降维" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224137412.webp" alt="Step 3 风格锁定与材质降维" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -162,7 +162,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(5)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224111423.webp" alt="Step 1 平行主理人设定" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224111423.webp" alt="Step 1 平行主理人设定" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -179,7 +179,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(6)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224217524.png" alt="Step 2 视觉矩阵发散" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224217524.png" alt="Step 2 视觉矩阵发散" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -213,7 +213,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(7)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224307248.webp" alt="Step 1 无限画布与全局调度" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224307248.webp" alt="Step 1 无限画布与全局调度" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -230,7 +230,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(8)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224331975.webp" alt="Step 2 语义约束与物理干预" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224331975.webp" alt="Step 2 语义约束与物理干预" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -248,7 +248,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(9)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224405477.webp" alt="Step 3 结构逆向工程 线稿" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809224405477.webp" alt="Step 3 结构逆向工程 线稿" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -257,7 +257,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(10)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224432013.webp" alt="Step 3 结构逆向工程 三维白模" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809224432013.webp" alt="Step 3 结构逆向工程 三维白模" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -289,7 +289,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(11)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809223751589.webp" alt="Step 1 核心视觉（KV）输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809223751589.webp" alt="Step 1 核心视觉（KV）输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -306,7 +306,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(12)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224543802.webp" alt="Step 2 复合场景压力测试" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224543802.webp" alt="Step 2 复合场景压力测试" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -323,7 +323,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(13)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224603318.webp" alt="Step 3 微观情绪渲染" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224603318.webp" alt="Step 3 微观情绪渲染" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -357,7 +357,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(14)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224739445.webp" alt="Step 1 服饰样机 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809224739445.webp" alt="Step 1 服饰样机 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -366,7 +366,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(15)}
               >
-                <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224653969.webp" alt="Step 1 服饰周边 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img src="/images/20260809224653969.webp" alt="Step 1 服饰周边 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -378,7 +378,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10 mt-4"
               onClick={() => openZoom(16)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224848320.webp" alt="Step 1 服饰全资产展示板" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224848320.webp" alt="Step 1 服饰全资产展示板" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -395,7 +395,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(17)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224926227.webp" alt="Step 2 多色滑板与手机壳全家福" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224926227.webp" alt="Step 2 多色滑板与手机壳全家福" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -412,7 +412,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
               onClick={() => openZoom(18)}
             >
-              <img src="https://cdn.jsdmirror.com/gh/BerryChen1/img-bed/images/20260809224943401.webp" alt="Step 3 巨幅 LED 广告牌与地垫细节" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img src="/images/20260809224943401.webp" alt="Step 3 巨幅 LED 广告牌与地垫细节" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
