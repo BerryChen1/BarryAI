@@ -182,7 +182,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
           <div className="flex flex-col">
             <span className="text-zinc-500 text-xs uppercase tracking-wider">{t("职位", "Position")}</span>
             <span className="text-zinc-200 font-light mt-0.5">
-              {t("多媒体设计（AIGC短剧方向）", "Multimedia Design (AIGC Short Drama Focus)")}
+              {t("多媒体设计（AIGC方向）", "Multimedia Design (AIGC Focus)")}
             </span>
           </div>
           <div className="flex flex-col sm:col-span-2">

@@ -43,7 +43,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             {t("字节跳动抖音集团 · 实习履历", "ByteDance Douyin Group • Internship Experience")}
           </span>
           <h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide">
-            {t("抖音TikTok Shop AIGC内容运营与设计", "Douyin TikTok Shop AIGC Content Operations & Design")}
+            {t("抖音TikTok Shop AIGC内容创作与运营", "Douyin TikTok Shop AIGC Content Creation & Operations")}
           </h4>
         </div>
         
@@ -64,7 +64,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
           <div className="col-span-1 sm:col-span-3 flex flex-col">
             <span className="text-zinc-500 text-xs uppercase tracking-wider">{t("职位", "Position")}</span>
             <span className="text-zinc-200 font-light mt-0.5">
-              {t("AIGC内容运营与设计（TikTok Shop 美国站服饰品类）", "AIGC Content Operations & Design (TikTok Shop US Apparel)")}
+              {t("AIGC内容创作与运营（TikTok Shop 美国站服饰品类）", "AIGC Content Creation & Operations (TikTok Shop US Apparel)")}
             </span>
           </div>
           <div className="col-span-1 sm:col-span-3 flex flex-col">
@@ -87,8 +87,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         <div className="space-y-5 text-sm sm:text-base md:text-lg leading-[1.8] font-light text-justify text-zinc-200">
           <p>
             {t(
-              "作为 TikTok Shop 美国站服饰品类 AIGC内容运营与设计，我深度参与国际电商 AIGC 自运营内容生态建设，独立负责双账号矩阵的全流程运营工作，覆盖从创意策划、AI 视频生成 to 数据复盘的完整链路。",
-              "As a TikTok Shop US Apparel AIGC Content Operations & Design lead, I was deeply involved in establishing the self-operated AIGC content ecosystem for cross-border e-commerce, taking sole responsibility for double-account matrix operations covering creative design, AI video generation, and analytics."
+              "作为 TikTok Shop 美国站服饰品类 AIGC内容创作与运营，我深度参与国际电商 AIGC 自运营内容生态建设，独立负责双账号矩阵的全流程运营工作，覆盖从创意策划、AI 视频生成 to 数据复盘的完整链路。",
+              "As a TikTok Shop US Apparel AIGC Content Creation & Operations lead, I was deeply involved in establishing the self-operated AIGC content ecosystem for cross-border e-commerce, taking sole responsibility for double-account matrix operations covering creative design, AI video generation, and analytics."
             )}
           </p>
           <p>

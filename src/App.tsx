@@ -180,8 +180,8 @@ const PORTFOLIO_DETAILS = [
   {
     title: "字节跳动·抖音TikTok Shop",
     enTitle: "ByteDance • Douyin TikTok Shop",
-    subtitle: "TikTok Shop AIGC内容运营与设计",
-    enSubtitle: "TikTok Shop AIGC Content Operations & Design",
+    subtitle: "TikTok Shop AIGC内容创作与运营",
+    enSubtitle: "TikTok Shop AIGC Content Creation & Operations",
     tagline: "深度参与国际电商 AIGC 自运营内容生态建设，全周期驱动双账号矩阵产能增长",
     enTagline: "Deeply involved in cross-border E-commerce self-developed AIGC systems, driving matrix volumetric growth",
     coverImage: "/images/20260822190509902.webp",
@@ -228,8 +228,8 @@ const PORTFOLIO_DETAILS = [
   {
     title: "腾讯·IEG国内发行线",
     enTitle: "Tencent • IEG Domestic Publishing",
-    subtitle: "视觉设计与AIGC探索",
-    enSubtitle: "Visual Design & AIGC Exploration",
+    subtitle: "AIGC美术视觉设计",
+    enSubtitle: "AIGC Art & Visual Design",
     tagline: "深度参与两大核心版本品牌视觉体系搭建，以 AIGC 技术探索游戏美术全链路提效",
     enTagline: "Deeply involved in building brand visual systems, exploring full-cycle AIGC workflows to accelerate game art",
     coverImage: "/images/20260822191748620.webp",
@@ -1196,11 +1196,13 @@ export default function App() {
             {/* Subscriber group visual - styled with liquid-glass matching the search input */}
             <motion.div 
               {...fadeUp(0.1)}
-              className="liquid-glass rounded-full px-5 py-2 backdrop-blur-md select-none text-xs flex items-center gap-2.5 text-white font-sans tracking-wide"
+              className="liquid-glass rounded-full px-5 py-2 backdrop-blur-md select-none text-xs flex flex-wrap justify-center items-center gap-2.5 text-white font-sans tracking-wide"
             >
-              <span className="font-medium text-white">{t("AIGC视听创作者", "AIGC Audiovisual Creator")}</span>
+              <span className="font-medium text-white">{t("AIGC创作人", "AIGC Creator")}</span>
               <span className="text-white/30">|</span>
-              <span className="font-normal text-white">{t("动画 视觉 内容创作", "Animation • Visual • Content")}</span>
+              <span className="font-normal text-white">{t("AI影视/动画内容创作者", "AI Film & Animation Content Creator")}</span>
+              <span className="text-white/30">|</span>
+              <span className="font-normal text-white">{t("AI视觉设计师", "AI Visual Designer")}</span>
             </motion.div>
 
             {/* Heading */}
@@ -1224,8 +1226,8 @@ export default function App() {
               className="text-base md:text-lg lg:text-xl text-[hsl(var(--hero-subtitle))] font-light leading-relaxed font-sans whitespace-pre-line"
             >
               {t(
-                "欢迎来到我的创作小宇宙。\n我想用AI打造高品质的动画、创意视觉和新媒体故事体验。",
-                "Welcome to my creative universe.\nI leverage AI to deliver high-quality animations, creative visuals, and new media storytelling."
+                "欢迎来到我的创作小宇宙。\n我想用AI打造高品质的视听、视觉作品。",
+                "Welcome to my creative universe.\nI leverage AI to deliver high-quality audiovisual and visual works."
               )}
             </motion.p>
 
@@ -1322,18 +1324,34 @@ export default function App() {
           <div className="text-neutral-300 text-base md:text-lg font-light max-w-5xl mx-auto mt-10 font-sans leading-relaxed flex flex-col gap-6 text-left md:text-justify">
             {t(
               <p className="tracking-wide">
-                我是<strong className="text-sky-400 font-medium font-sans">董柏辰</strong>，2002年出生于兰州市，在<strong className="text-sky-400 font-medium font-sans">山东工艺美术学院</strong>进行本硕连读，<strong className="text-sky-450 font-medium font-sans">艺术设计（视觉传达）</strong>专业。在校期间，获得过<strong className="text-sky-400 font-medium font-sans">一等硕士研究生学业奖学金</strong>荣誉及各种专业奖项，性格温和，善于团队协作，具备高度的责任心与执行能力，i人中的e人，<strong className="text-sky-400 font-medium font-sans">腾讯→字节→字节</strong>，以AIGC赋能为主，涵盖短剧、视觉、UGC等。
+                山东工艺美术学院艺术设计（视觉传达设计）专业本硕连读，硕士期间获得<strong className="text-sky-400 font-medium font-sans">硕士一等奖学金</strong>，具有“<strong className="text-sky-400 font-medium font-sans">腾讯→字节→字节</strong>”多段 <strong className="text-sky-400 font-medium font-sans">AIGC</strong> 相关<strong className="text-sky-400 font-medium font-sans">（视频/视觉）</strong>业务履历，具备扎实的美术基本功与出色的画面审美。
               </p>,
               <p className="tracking-wide leading-relaxed font-sans font-light">
-                I am <strong className="text-sky-400 font-semibold font-sans">Bochen Dong</strong>, born in Lanzhou in 2002. I completed an integrated Bachelor-Master's program in <strong className="text-sky-400 font-semibold font-sans">Art and Design (Visual Communication)</strong> at <strong className="text-sky-400 font-semibold font-sans">Shandong University of Arts and Crafts</strong>. During my academic journey, I was honored with the <strong className="text-sky-400 font-semibold font-sans">First-Class Graduate Academic Scholarship</strong> and various professional design accolades. Known to be warm-hearted, responsible, and a highly collaborative "E" among "I"s, with track record across <strong className="text-sky-400 font-semibold font-sans">Tencent → ByteDance → ByteDance</strong>, primarily empowering workflows with AIGC across short dramas, visuals, and UGC.
+                Completed an integrated Bachelor-Master's program in Art and Design (Visual Communication) at Shandong University of Arts and Crafts. During my master's studies, I was awarded the <strong className="text-sky-400 font-semibold font-sans">First-Class Graduate Scholarship</strong>. I have a strong track record across "<strong className="text-sky-400 font-semibold font-sans">Tencent → ByteDance → ByteDance</strong>" focusing on <strong className="text-sky-400 font-semibold font-sans">AIGC</strong>-related <strong className="text-sky-400 font-semibold font-sans">(video/visual)</strong> businesses, possessing solid artistic foundations and outstanding visual aesthetics.
               </p>
             )}
             {t(
               <p className="tracking-wide">
-                专注<strong className="text-sky-400 font-medium">AIGC</strong>创意视听内容创作，作品获得众多比赛奖项，入选<strong className="text-sky-400 font-medium">小红书精选</strong>、入选<strong className="text-sky-400 font-medium">新片场·精选周榜</strong>TOP10，凭借兼具设计审美、情感温度与个人风格的原创作品收获上万点赞，<strong className="text-sky-400 font-medium font-sans">新片场AI平台Shotlab签约创作人</strong>、<strong className="text-sky-400 font-medium font-sans">即梦/可灵/LibTV/TapNow等AI平台扶持计划优质创作者</strong>，与众多平台展开合作，具备成熟的 <strong className="text-sky-400 font-medium font-sans">AIGC 创作、工作流设计及搭建、内容运营、品牌合作及商业落地能力</strong>。
+                <strong className="text-sky-400 font-medium font-sans">独立闭环创作AI影视与漫剧作品</strong>，擅长从创意 → IP 内容理解 → 美术风格设定 → 分镜脚本 → AI 视频生成 → 成片的全流程创作。拥有系统化的<strong className="text-sky-400 font-medium font-sans">提示词工程</strong>与<strong className="text-sky-400 font-medium font-sans">工作流编排经验</strong>（剧本拆解 → 分镜 → 提示词SOP）。
               </p>,
               <p className="tracking-wide leading-relaxed font-sans font-light">
-                Specializing in creative <strong className="text-sky-400 font-semibold font-sans">AIGC</strong> audiovisual creation, with works winning multiple contest awards, featured on <strong className="text-sky-400 font-semibold font-sans">Xiaohongshu</strong>, and selected for <strong className="text-sky-400 font-semibold font-sans">Xinpianchang Weekly Best Chart</strong> TOP 10. My original content blends exquisite aesthetic design, emotional warmth, and distinct personal styles which has garnered tens of thousands of likes. As a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator of Xinpianchang AI Platform Shotlab & Featured Creator of Dreamina/Kling/LibTV/TapNow</strong>, I collaborate with numerous platforms, possessing mature capabilities in <strong className="text-sky-400 font-semibold font-sans">AIGC creation, workflow design & architecture, content operations, brand collaboration, and commercial implementation</strong>.
+                <strong className="text-sky-400 font-semibold font-sans">Independently producing AI-generated films and comic dramas end-to-end</strong>, specializing in the full creative workflow: Ideation → IP Content Comprehension → Art Style Direction → Storyboarding → AI Video Generation → Final Production. I have systematic experience in <strong className="text-sky-400 font-semibold font-sans">prompt engineering</strong> and <strong className="text-sky-400 font-semibold font-sans">workflow orchestration</strong> (Script Breakdown → Storyboarding → Prompt SOP).
+              </p>
+            )}
+            {t(
+              <p className="tracking-wide">
+                具备将 <strong className="text-sky-400 font-medium font-sans">AI 和商业品牌视觉结合</strong> 的能力，无论是做品牌资产落地、IP 孵化还是新零售视觉企划，都具有扎实的实操经验。
+              </p>,
+              <p className="tracking-wide leading-relaxed font-sans font-light">
+                Equipped with the ability to integrate <strong className="text-sky-400 font-semibold font-sans">AI with commercial brand visuals</strong>, possessing solid practical experience in brand asset implementation, IP incubation, and new retail visual planning.
+              </p>
+            )}
+            {t(
+              <p className="tracking-wide">
+                作品屡获多项AI奖项，现为新片场 <strong className="text-sky-400 font-medium font-sans">Shotlab 签约创作人</strong>，及即梦、LibTV、可灵、Lovart 等多家前沿 <strong className="text-sky-400 font-medium font-sans">AI 平台官方扶持创作者</strong>。与“<strong className="text-sky-400 font-medium font-sans">王者荣耀</strong>”等品牌IP进行<strong className="text-sky-400 font-medium font-sans">商业合作</strong>，“Seko”、“MVLAND”等前沿<strong className="text-sky-400 font-medium font-sans">AI创作平台</strong><strong className="text-sky-400 font-medium font-sans">达成合作</strong>，通过高质量内容创作推动 AIGC 生态共建。从创意 / 世界观到分镜故事板、再到成片的内容流程，能与多方及外部供应商高效协同推进项目。
+              </p>,
+              <p className="tracking-wide leading-relaxed font-sans font-light">
+                My works have won multiple AI awards. Currently a <strong className="text-sky-400 font-semibold font-sans">Contracted Creator for Xinpianchang Shotlab</strong>, and an <strong className="text-sky-400 font-semibold font-sans">officially supported creator by cutting-edge AI platforms</strong> such as Dreamina, LibTV, Kling, and Lovart. I have engaged in <strong className="text-sky-400 font-semibold font-sans">commercial collaborations</strong> with brand IPs like "<strong className="text-sky-400 font-semibold font-sans">Honor of Kings</strong>", and <strong className="text-sky-400 font-semibold font-sans">established partnerships</strong> with cutting-edge <strong className="text-sky-400 font-semibold font-sans">AI creation platforms</strong> such as "Seko" and "MVLAND", driving the co-creation of the AIGC ecosystem through high-quality content. From ideation / world-building to storyboards and final render, I can efficiently collaborate with various internal teams and external suppliers to drive projects forward.
               </p>
             )}
           </div>
@@ -1497,12 +1515,12 @@ export default function App() {
                   {t("字节跳动·抖音TikTok", "ByteDance • Douyin TikTok")}
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-sans tracking-wider mb-4 font-light select-none">
-                  {t("多媒体设计（AIGC短剧方向）", "Multimedia Design (AIGC Short Drama Focus)")}
+                  {t("多媒体设计（AIGC方向）", "Multimedia Design (AIGC Focus)")}
                 </p>
 
                 {/* Hidden details shown on card interaction */}
                 <p className="text-[11px] leading-relaxed text-zinc-350 font-sans font-light select-none mb-6 opacity-0 group-hover:opacity-100 h-0 group-hover:h-auto overflow-hidden transition-all duration-500 text-center">
-                  {t("参与TikTok AI短剧工作流设计、生产SOP沉淀、视觉项目支持与社区运营推广。", "Participated in TikTok AI drama workflow design, production SOP formalization, visual project support, and community operations.")}
+                  {t("参与TikTok AI视频工作流设计、生产SOP沉淀、视觉项目支持与社区运营推广。", "Participated in TikTok AI video workflow design, production SOP formalization, visual project support, and community operations.")}
                 </p>
 
                 {/* Retro premium dark pill */}
@@ -1571,7 +1589,7 @@ export default function App() {
                   {t("字节跳动·抖音TikTok Shop", "ByteDance • Douyin TikTok Shop")}
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-sans tracking-wider mb-4 font-light select-none">
-                  {t("AIGC内容运营与设计", "AIGC Content Operations & Design")}
+                  {t("AIGC内容创作与运营", "AIGC Content Creation & Operations")}
                 </p>
 
                 {/* Hidden details shown on card interaction */}
@@ -1645,7 +1663,7 @@ export default function App() {
                   {t("腾讯·IEG国内发行线", "Tencent • IEG Domestic Publishing")}
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-sans tracking-wider mb-4 font-light select-none">
-                  {t("视觉设计与AIGC探索", "Visual Design & AIGC Exploration")}
+                  {t("AIGC美术视觉设计", "AIGC Art & Visual Design")}
                 </p>
 
                 {/* Hidden details shown on card interaction */}

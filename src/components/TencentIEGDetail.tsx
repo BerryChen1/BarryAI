@@ -39,7 +39,7 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             {t("腾讯互动娱乐事业群 · 实习履历", "Tencent IEG • Internship Experience")}
           </span>
           <h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide">
-            {t("腾讯 IEG 国内发行线 视觉设计", "Tencent IEG Domestic Publishing Visual Design")}
+            {t("腾讯 IEG 国内发行线 AIGC美术视觉设计", "Tencent IEG Domestic Publishing AIGC Art & Visual Design")}
           </h4>
         </div>
         
@@ -73,8 +73,8 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
         <div className="space-y-5 text-sm sm:text-base md:text-lg leading-[1.8] font-light text-justify text-zinc-200">
           <p>
             {t(
-              "作为腾讯 IEG 国内发行线视觉设计实习生，我深度参与《地下城与勇士：起源》两大核心版本的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
-              "As a Visual Design Intern under the Tencent IEG Domestic Publishing team, I was deeply involved in building brand visual systems for two core major expansions of 'Dungeon & Fighter: Origins'. Concurrently, I drove graphic design execution for QQ Dance, internal staff conventions, and multiple multi-IP creative requests."
+              "作为腾讯 IEG 国内发行线 AIGC美术视觉设计实习生，我深度参与《地下城与勇士：起源》两大核心版本的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
+              "As an AIGC Art & Visual Design Intern under the Tencent IEG Domestic Publishing team, I was deeply involved in building brand visual systems for two core major expansions of 'Dungeon & Fighter: Origins'. Concurrently, I drove graphic design execution for QQ Dance, internal staff conventions, and multiple multi-IP creative requests."
             )}
           </p>
           <p>
