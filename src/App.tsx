@@ -113,6 +113,17 @@ export default function App() {
     return CATALOG_PORTFOLIO_DATA.map(c => c.name.replace('作品', ''));
   }, []);
 
+  useEffect(() => {
+    if (selectedProject !== null || selectedExperienceIndex !== null || lightboxState !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject, selectedExperienceIndex, lightboxState]);
+
   // Filter projects
   const filteredProjects = useMemo(() => {
     const cat = CATALOG_PORTFOLIO_DATA.find(c => c.name.replace('作品', '') === activeFilter);
@@ -225,8 +236,8 @@ export default function App() {
           </div>
 
           {/* Row 2 / Block 5-8 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -234,8 +245,8 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -288,8 +299,8 @@ export default function App() {
           </div>
 
           {/* Row 2 / Block 5-8 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -297,8 +308,8 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -497,7 +508,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className={`${["oth-2", "brand-wukong", "brand-1"].includes(selectedProject.id) ? "w-full max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24" : "max-w-5xl mx-auto px-6"} py-24`}>
               <motion.div 
                 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}
               >
@@ -505,62 +516,13 @@ export default function App() {
                   <div className="fixed inset-0 z-[160] bg-[#0a0b0f] w-screen h-[100dvh] overflow-hidden">
                     <iframe src={selectedProject.customHtml} className="w-full h-full border-none" title={selectedProject.title} />
                   </div>
-                ) : selectedProject.id === 'brand-1' ? (
-                  <ChillaxCampaignDetail language={language} t={t} setLightboxState={(state) => setLightboxState(state)} gallery={selectedProject.gallery || []} />
-                ) : selectedProject.id === 'oth-2' ? (
-                  <OddityClubDetail language={language} t={t} setLightboxState={(state) => setLightboxState(state)} gallery={selectedProject.gallery || []} />
-                ) : selectedProject.id === 'brand-wukong' ? (
-                  <WukongCampaignDetail language={language} t={t} setLightboxState={(state) => setLightboxState(state)} gallery={selectedProject.gallery || []} />
                 ) : (
                   <>
                     {/* Detail Header */}
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{selectedProject.title}</h2>
-                    {selectedProject.subtitle && !CATALOG_PORTFOLIO_DATA.find(c => c.id === 'illustration')?.projects.some(p => p.id === selectedProject?.id) && !CATALOG_PORTFOLIO_DATA.find(c => c.id === 'other')?.projects.some(p => p.id === selectedProject?.id) && <p className="text-xl text-zinc-400 font-light mb-12">{selectedProject.subtitle}</p>}
+                    {selectedProject.subtitle && !CATALOG_PORTFOLIO_DATA.find(c => c.id === 'illustration')?.projects.some(p => p.id === selectedProject?.id) && <p className="text-xl text-zinc-400 font-light mb-12">{selectedProject.subtitle}</p>}
                     
-                    {/* Meta Info */}
-                    {!CATALOG_PORTFOLIO_DATA.find(c => c.id === 'illustration')?.projects.some(p => p.id === selectedProject?.id) && !CATALOG_PORTFOLIO_DATA.find(c => c.id === 'other')?.projects.some(p => p.id === selectedProject?.id) && !(CATALOG_PORTFOLIO_DATA.find(c => c.id === 'video')?.projects.some(p => p.id === selectedProject?.id) && !['vid-14', 'vid-1', 'vid-13'].includes(selectedProject?.id)) && (
-                    <div className="flex flex-wrap gap-x-16 gap-y-8 mb-16 py-8 border-y border-white/10">
-                      {selectedProject.client && (
-                        <div>
-                          <p className="text-xs text-zinc-600 tracking-[0.2em] uppercase mb-2 font-semibold">Client</p>
-                          <p className="text-white font-medium">{selectedProject.client}</p>
-                        </div>
-                      )}
-                      {selectedProject.role && (
-                        <div>
-                          <p className="text-xs text-zinc-600 tracking-[0.2em] uppercase mb-2 font-semibold">Role</p>
-                          <p className="text-white font-medium">{selectedProject.role}</p>
-                        </div>
-                      )}
-                      {selectedProject.year && (
-                        <div>
-                          <p className="text-xs text-zinc-600 tracking-[0.2em] uppercase mb-2 font-semibold">Year</p>
-                          <p className="text-white font-medium">{selectedProject.year}</p>
-                        </div>
-                      )}
-                      {selectedProject.tools && selectedProject.tools.length > 0 && (
-                        <div>
-                          <p className="text-xs text-zinc-600 tracking-[0.2em] uppercase mb-2 font-semibold">Tools</p>
-                          <p className="text-white font-medium">{selectedProject.tools.join(' / ')}</p>
-                        </div>
-                      )}
-                      {selectedProject.tags && selectedProject.tags.length > 0 && (
-                        <div>
-                          <p className="text-xs text-zinc-600 tracking-[0.2em] uppercase mb-2 font-semibold">Tags</p>
-                          <div className="flex flex-wrap gap-2">
-                            {selectedProject.tags.map((tag, idx) => (
-                              <span key={idx} className="text-xs font-medium px-2 py-1 bg-white/5 border border-white/10 rounded-md text-zinc-300">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    )}
-
-                    
-                    {/* Cinematic Video Player Section */}
+                                        {/* Cinematic Video Player Section */}
                     {selectedProject.videoUrl && selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && (
                       <div className="space-y-6">
                         <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5 mb-6">
@@ -670,8 +632,11 @@ export default function App() {
                       {selectedProject.id === "vid-12" && <Vid12Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-13" && <Vid13Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-14" && <Vid14Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
+                      {selectedProject.id === "brand-1" && <ChillaxCampaignDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "oth-2" && <OddityClubDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "brand-wukong" && <WukongCampaignDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
 
-                      {selectedProject.gallery && selectedProject.gallery.length > 0 && !["vid-1", "vid-2", "vid-3", "vid-4", "vid-5", "vid-11", "vid-12", "vid-13", "vid-14"].includes(selectedProject.id) && (
+                      {selectedProject.gallery && selectedProject.gallery.length > 0 && !["vid-1", "vid-2", "vid-3", "vid-4", "vid-5", "vid-11", "vid-12", "vid-13", "vid-14", "brand-1", "oth-2", "brand-wukong"].includes(selectedProject.id) && (
                         <>
                           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                             <span className="w-2 h-2 rounded-full bg-sky-300" />

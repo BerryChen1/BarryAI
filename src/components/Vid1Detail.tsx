@@ -186,23 +186,62 @@ export function Vid1Detail({ selectedProject, language, t, setLightboxState }: a
           </div>
         </div>
 
-        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 mt-6 text-left">
-          <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
-            概念分镜预演 (Conceptual Storyboarding)：文本到画面的降维打击
-          </h3>
-          <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
-            <p>
-              <span className="font-semibold text-zinc-100">电影级视听转译：</span>
-              将剧本文字转化为具象的视觉语言。严格控制画面景别（特写、广角）、机位（俯拍仰拍）与环境光影，确保每一帧都能准确传递角色的情绪张力与剧情冲突。
-            </p>
-            <p>
-              <span className="font-semibold text-zinc-100">动态化前置准备：</span>
-              在静态生成阶段即代入后期剪辑思维。画面的构图留白、焦外景深以及特效元素的图层剥离，也可为后续导入 After Effects 或 Premiere 进行动态化（Motion Graphic）或视频生成做好底层准备。
-            </p>
-            <p>
-              <span className="font-semibold text-zinc-100">商业化应用价值：</span>
-              为影视级 CG 短片、商业广告提案提供高质量的视觉预演（Previz）。让客户或投资人在项目立项初期，就能以直观、高品质的画面确认最终的叙事节奏与成片效果。
-            </p>
+        {/* Storyboard Assets Section */}
+        <div className="space-y-6 pt-6">
+          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
+            <span className="w-2 h-2 rounded-full bg-sky-300" />
+            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
+              {t("概念分镜 / CONCEPTUAL STORYBOARD", "CONCEPTUAL STORYBOARD")}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+            {[
+              "/images/20260623002835096.webp",
+              "/images/20260623002909540.webp",
+              "/images/20260623002923337.webp",
+              "/images/20260623002936574.webp",
+              "/images/20260623002947032.webp",
+              "/images/20260623003000623.webp"
+            ].map((imgUrl, idx) => {
+              const arr = [
+                "/images/20260623002835096.webp",
+                "/images/20260623002909540.webp",
+                "/images/20260623002923337.webp",
+                "/images/20260623002936574.webp",
+                "/images/20260623002947032.webp",
+                "/images/20260623003000623.webp"
+              ];
+              return (
+                <div key={`vid-1-storyboard-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                  <img src={imgUrl} alt="Storyboard Asset" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                  <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 bg-black/60 border border-white/10 text-[8px] sm:text-[10px] text-zinc-400 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+                    {t("查看", "Zoom")}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 text-left">
+            <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-wide">
+              概念分镜预演 (Conceptual Storyboarding)：文本到画面的降维打击
+            </h3>
+            <div className="space-y-2 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+              <p>
+                <span className="font-semibold text-zinc-100">电影级视听转译：</span>
+                将剧本文字转化为具象的视觉语言。严格控制画面景别（特写、广角）、机位（俯拍仰拍）与环境光影，确保每一帧都能准确传递角色的情绪张力与剧情冲突。
+              </p>
+              <p>
+                <span className="font-semibold text-zinc-100">动态化前置准备：</span>
+                在静态生成阶段即代入后期剪辑思维。画面的构图留白、焦外景深以及特效元素的图层剥离，也可为后续导入 After Effects 或 Premiere 进行动态化（Motion Graphic）或视频生成做好底层准备。
+              </p>
+              <p>
+                <span className="font-semibold text-zinc-100">商业化应用价值：</span>
+                为影视级 CG 短片、商业广告提案提供高质量的视觉预演（Previz）。让客户或投资人在项目立项初期，就能以直观、高品质的画面确认最终的叙事节奏与成片效果。
+              </p>
+            </div>
           </div>
         </div>
 

@@ -241,7 +241,7 @@ export const CATALOG_PORTFOLIO_DATA = [
       },
       {
         id: "vid-2",
-        title: "《致命节奏》",
+        title: "《MVLAND 致命节奏》",
         subtitle: "AIMV合作曲先导片 & MVLAND平台",
         coverImage: "/images/20260912020316670.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
@@ -421,7 +421,7 @@ export const CATALOG_PORTFOLIO_DATA = [
     projects: [
       {
         id: "brand-xuanye",
-        title: "玄夜·引渡：东方异志概念视觉",
+        title: "《玄夜·引渡》: 东方志异录",
         subtitle: "阴阳交生，引渡魂灵越幽冥而归澄明",
         coverImage: "/images/20260912184251573.webp",
         tags: ["主视觉设计", "东方玄幻", "暗黑国风"],
@@ -509,8 +509,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         role: "AIGC 视觉总监 & Campaign 主架构",
         description: "“WUKONG'S 24H：adidas × 国潮大圣 限时快闪视觉企划”",
         story: [
-          "本项目是一次主打“文化碰撞与街头能量”的现象级限时快闪营销事件（Pop-up Campaign）。企划以“WUKONG'S 24H（大圣的 24 小时）”为核心营销话题，将中国传统文化符号“孙悟空”与 adidas 的街头运动基因深度融合，打造了一场极具视觉爆发力的跨界联名活动。",
-          "本案以标准化的 SOP（标准作业程序）形式，完整展示了从主视觉（KV）爆发、AIGC 底层节点工作流与精准重构、动态视频先导片生成，到全品类电商服饰与线下快闪周边落地的工业级视觉管线。"
+          
         ],
         gallery: [
           "/images/20260810210257417.webp",

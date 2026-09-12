@@ -25,6 +25,13 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
     "/images/20260626235543533.webp"
   ];
 
+  const screenshotImages = [
+    "/images/20260913033041780.webp",
+    "/images/20260913033052549.webp",
+    "/images/20260913033104592.webp",
+    "/images/20260913033120676.webp"
+  ];
+
   const otherImages = [
     "/images/20260623204651953.webp",
     "/images/20260623204703048.webp",
@@ -306,10 +313,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <div className="flex flex-col gap-2">
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">账号主页</span>
                   <div 
-                    onClick={() => setLightboxUrl("/images/20260629214436531.webp")}
+                    onClick={() => setLightboxUrl("/images/20260913032958431.webp")}
                     className="relative w-full max-w-sm rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                   >
-                    <img src="/images/20260629214436531.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
+                    <img src="/images/20260913032958431.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                        <span className="text-[11px] bg-black/60 px-3 py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-sky-400" /> 点击查看</span>
                     </div>
@@ -333,22 +340,37 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             {/* Case 3: 更多垂类 */}
             <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
               <div className="flex justify-between items-center border-b border-white/5 pb-2">
-                <h5 className="font-semibold text-white">案例三：其他矩阵号数据截影</h5>
+                <h5 className="font-semibold text-white">案例三：其他矩阵号数据截图</h5>
                 <span className="text-xs text-sky-300 font-mono">矩阵协同效应</span>
               </div>
               <p className="text-sm text-zinc-300 font-light">
                 针对其他垂类细分市场的矩阵账号，持续贡献着长尾 GMV，验证了由我们梳理的 AIGC 内容框架具有跨品类复用的高度兼容性。
               </p>
-              <div className="flex flex-col gap-2 mt-2">
+              
+              <div className="flex flex-col gap-4 mt-2">
+                <div className="flex flex-col gap-2">
+                  <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">矩阵账号数据截图</span>
+                  <div className="grid grid-cols-2 gap-4">
+                    {screenshotImages.map((url, idx) => (
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
+                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">人物资产库与图文素材</span>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {otherImages.map((url, idx) => (
-                  <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
-                    <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
+                    {otherImages.map((url, idx) => (
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
+                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
               </div>
             </div>
 

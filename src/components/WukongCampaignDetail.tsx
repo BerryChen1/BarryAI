@@ -16,39 +16,11 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
   return (
     <div className="space-y-10 text-left w-full font-sans">
       {/* Project Banner Title & Main Overview */}
-      <div className="p-6 md:p-8 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4 shadow-2xl">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
-          WUKONG'S 24H：
-          <span className="block sm:inline sm:ml-2">adidas × 国潮大圣 限时快闪视觉企划</span>
-        </h3>
+      <div className="space-y-6">
+        
         
         {/* Main Cover Key Visual */}
-        <div className="pt-2">
-          <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
-            onClick={() => openZoom(0)}
-          >
-            <img 
-              src="/images/20260810210257417.webp" 
-              alt="WUKONG'S 24H Hero KV" 
-              className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" 
-              referrerPolicy="no-referrer" 
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-            <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
-              {t("点击查看大图", "Click to Zoom")}
-            </div>
-          </div>
-        </div>
-
-        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-light pt-2">
-          本项目是一次主打“文化碰撞与街头能量”的现象级限时快闪营销事件（Pop-up Campaign）。企划以“WUKONG'S 24H（大圣的 24 小时）”为核心营销话题，将中国传统文化符号“孙悟空”与 adidas 的街头运动基因深度融合，打造了一场极具视觉爆发力的跨界联名活动。
-        </p>
-        <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-light">
-          本案以标准化的 SOP（标准作业程序）形式，完整展示了从主视觉（KV）爆发、AIGC 底层节点工作流与精准重构、动态视频先导片生成，到全品类电商服饰与线下快闪周边落地的工业级视觉管线。
-        </p>
       </div>
-
       {/* Phase 01 */}
       <div className="space-y-6 pt-2">
         <div className="border-l-4 border-red-500 pl-4 space-y-1">
@@ -60,7 +32,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
           </p>
         </div>
         <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-light">
-          作为一场短期的现象级营销事件，视觉的第一眼冲击力决定了活动的传播广度。
+          作为一场主打“文化碰撞与街头能量”的现象级限时快闪营销事件（Pop-up Campaign），“WUKONG'S 24H”将中国传统符号“孙悟空”与 adidas 街头基因深度融合。本案以标准化 SOP 展示了从主视觉爆发到线下周边落地的工业级视觉管线；而视觉的第一眼冲击力，更是决定了这场跨界联名活动的传播广度。
         </p>
 
         <div className="space-y-8 pl-1 md:pl-2">
