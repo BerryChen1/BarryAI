@@ -72,12 +72,12 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
           在商业 IP 孵化的初期，核心在于为“怪奇研究所”寻找差异化的视觉定位。通过对参考情绪板的解构与多轮 AIGC 迭代，最终锁定了极具辨识度的废土高街风格。
         </p>
 
-        <div className="space-y-8 pl-1 md:pl-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pl-1 md:pl-2 items-start">
           {/* Step 1 */}
-          <div className="space-y-3">
+          <div className="space-y-3 col-span-1">
             <h5 className="text-sm md:text-base font-semibold text-zinc-200">
-              <span className="text-sky-400 font-mono mr-2">Step 1</span>提取排版范式：
-              <span className="font-normal text-zinc-300 ml-1">引入外部商业海报作为构图参考，提炼 3:4 竖版多角色站位的空间关系与信息层级排布，建立底层结构基准。</span>
+              <span className="text-sky-400 font-mono mr-2 block mb-1">Step 1</span>提取排版范式：
+              <span className="font-normal text-zinc-300 ml-1 block mt-1 text-xs md:text-sm">引入外部商业海报作为构图参考，提炼 3:4 竖版多角色站位的空间关系与信息层级排布，建立底层结构基准。</span>
             </h5>
             <div 
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
@@ -91,12 +91,12 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
           </div>
 
           {/* Step 2 */}
-          <div className="space-y-3">
+          <div className="space-y-3 col-span-1 md:col-span-2">
             <h5 className="text-sm md:text-base font-semibold text-zinc-200">
-              <span className="text-sky-400 font-mono mr-2">Step 2</span>初稿测试与推翻：
-              <span className="font-normal text-zinc-300 ml-1">基于初始概念生成的首版测试图。因典型的平滑 3D 渲染质感以及过于沉闷的复古色调而缺乏商业辨识度，果断推翻此常规路径并进行优化</span>
+              <span className="text-sky-400 font-mono mr-2 block mb-1">Step 2</span>初稿测试与推翻：
+              <span className="font-normal text-zinc-300 ml-1 block mt-1 text-xs md:text-sm">基于初始概念生成的首版测试图。因典型的平滑 3D 渲染质感以及过于沉闷的复古色调而缺乏商业辨识度，果断推翻此常规路径并进行优化</span>
             </h5>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 w-full">
               <div 
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(2)}
@@ -119,10 +119,10 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
           </div>
 
           {/* Step 3 */}
-          <div className="space-y-3">
+          <div className="space-y-3 col-span-1">
             <h5 className="text-sm md:text-base font-semibold text-zinc-200">
-              <span className="text-sky-400 font-mono mr-2">Step 3</span>风格锁定与材质降维：
-              <span className="font-normal text-zinc-300 ml-1">最终定调，摒弃“塑料感”，追求极致的高级实体盲盒质感。怪奇的微缩比例配合复古穿搭，完美契合概念店的商业调性。</span>
+              <span className="text-sky-400 font-mono mr-2 block mb-1">Step 3</span>风格锁定与材质降维：
+              <span className="font-normal text-zinc-300 ml-1 block mt-1 text-xs md:text-sm">最终定调，摒弃“塑料感”，追求极致的高级实体盲盒质感。怪奇的微缩比例配合复古穿搭，完美契合概念店的商业调性。</span>
             </h5>
             <div 
               className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
@@ -352,7 +352,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
             </h5>
             
             {/* Two images side-by-side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-6 w-full">
               <div 
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(14)}

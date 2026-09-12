@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-serif: "Playfair Display", "Instrument Serif", Georgia, serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -88,4 +88,130 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+@keyframes sweep-text {
+  0% { background-position: -100% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.animate-text-shine:hover {
+  animation: text-shine 0.6s ease-in-out;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes cyber-glitch {
+  0%, 93%, 100% {
+    text-shadow: none;
+    transform: translate(0, 0) skew(0deg);
+  }
+  94% {
+    text-shadow: 4px 0px 0px rgba(255, 0, 50, 0.8), -4px 0px 0px rgba(0, 255, 255, 0.8);
+    transform: translate(-3px, 1px) skew(-3deg);
+  }
+  96% {
+    text-shadow: -4px 0px 0px rgba(255, 0, 50, 0.8), 4px 0px 0px rgba(0, 255, 255, 0.8);
+    transform: translate(3px, -1px) skew(3deg);
+  }
+  98% {
+    text-shadow: 2px 2px 0px rgba(0, 255, 0, 0.8), -2px -2px 0px rgba(0, 0, 255, 0.8);
+    transform: translate(0, 0) skew(0deg);
+  }
+}
+.animate-cyber-glitch {
+  animation: cyber-glitch 4s infinite;
+}
+
+@keyframes liquid-metal-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-liquid-metal {
+  animation: liquid-metal-flow 4s ease-in-out infinite;
+}
+
+@keyframes title-shine-sweep {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.animate-title-shine-sweep {
+  background-size: 300% auto;
+  animation: title-shine-sweep 8s linear infinite;
+}
+
+@keyframes letter-breathe {
+  0%, 100% { letter-spacing: 0.3em; }
+  50% { letter-spacing: 0.38em; }
+}
+.animate-letter-breathe {
+  animation: letter-breathe 6s ease-in-out infinite;
+}
+
+@keyframes separator-breathe {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.85; }
+}
+.animate-separator-breathe {
+  animation: separator-breathe 3.5s ease-in-out infinite;
+}
+
+@keyframes title-micro-glitch {
+  0%, 93%, 100% { text-shadow: none; transform: translate(0, 0); }
+  94% { text-shadow: 2px 0px 0px rgba(255, 0, 80, 0.6), -2px 0px 0px rgba(0, 255, 255, 0.6); transform: translate(-1px, 0.5px); }
+  96% { text-shadow: -2px 0px 0px rgba(255, 0, 80, 0.6), 2px 0px 0px rgba(0, 255, 255, 0.6); transform: translate(1px, -0.5px); }
+  98% { text-shadow: 1px 1px 0px rgba(0, 255, 0, 0.6), -1px -1px 0px rgba(0, 0, 255, 0.6); transform: translate(0, 0); }
+}
+.animate-title-combined {
+  background-size: 300% auto;
+  animation: title-shine-sweep 8s linear infinite, title-micro-glitch 4s infinite;
+}
+
+@keyframes subtitle-micro-glitch {
+  0%, 93%, 100% { text-shadow: none; transform: translate(0, 0); }
+  94% { text-shadow: 1.5px 0px 0px rgba(255, 0, 80, 0.5), -1.5px 0px 0px rgba(0, 255, 255, 0.5); transform: translate(-0.5px, 0); }
+  96% { text-shadow: -1.5px 0px 0px rgba(255, 0, 80, 0.5), 1.5px 0px 0px rgba(0, 255, 255, 0.5); transform: translate(0.5px, 0); }
+  98% { text-shadow: 1px 1px 0px rgba(0, 255, 0, 0.5), -1px -1px 0px rgba(0, 0, 255, 0.5); transform: translate(0, 0); }
+}
+.animate-subtitle-combined {
+  animation: letter-breathe 6s ease-in-out infinite, subtitle-micro-glitch 4s infinite;
+}
+
+@keyframes word-signal {
+  0%, 30% { color: #e4e4e7; text-shadow: 0 0 10px rgba(0, 255, 255, 0.35); }
+  35%, 100% { color: #71717a; text-shadow: none; }
+}
+.word-signal-1 { animation: word-signal 6s infinite 0s; }
+.word-signal-2 { animation: word-signal 6s infinite 2s; }
+.word-signal-3 { animation: word-signal 6s infinite 4s; }
+
+@keyframes separator-combined {
+  0%, 40%, 100% { opacity: 0.15; transform: translateY(0); text-shadow: none; }
+  20%, 60% { opacity: 0.85; transform: translateY(0); text-shadow: none; }
+  96% { opacity: 1; transform: translateY(-1px); text-shadow: 1px 0 rgba(255,0,50,0.5); }
+}
+.animate-separator-combined {
+  animation: separator-combined 3.5s ease-in-out infinite;
+}
+
+@keyframes third-line-breathe {
+  0%, 100% { opacity: 0.75; text-shadow: none; }
+  50% { opacity: 1; text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); }
+}
+.animate-third-line-combined {
+  animation: letter-breathe 6s ease-in-out infinite, third-line-breathe 4s ease-in-out infinite;
 }

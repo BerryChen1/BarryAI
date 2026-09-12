@@ -23,8 +23,8 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
     kvAnton: "/images/20260623213232521.webp", // Epic volcano lava, dark red & black atmosphere
     antonAIGCStatic: "/images/20260623213302775.webp", // Dark rocky volcano cracks
     comfyUIWorkflow: "/images/20260623213611261.webp", // Node-based computing screen mockup
-    antonOtherStatic: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600", // Abstract premium render
-    lavaVolcanoTheme: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600", // Threatening volcano glowing
+    antonOtherStatic: "/images/tencent_anton.jpg", // Abstract premium render
+    lavaVolcanoTheme: "/images/tencent_volcano.jpg", // Threatening volcano glowing
     qqDanceCards: "/images/20260623214008126.webp", // Cute anime card-styled illusts
     internCollage: "/images/20260623214026601.webp" // Interactive UX boards collage
   };

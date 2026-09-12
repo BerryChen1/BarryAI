@@ -70,7 +70,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">在项目初期，生成了一张极具慵懒氛围的概念图作为活动的视觉锚点。从中提取出本次 Campaign 的核心视觉符号：地球形状的懒人沙发、极度夸张的毛绒拖鞋、冒热气的马克杯以及云朵元素。</span>
             </h5>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-6 w-full">
               <div 
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-xl border border-white/10"
                 onClick={() => openZoom(1)}
@@ -208,7 +208,7 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="text-sky-400 font-mono mr-2">Step 2</span>结构化提示词 SOP (Prompt Engineering Framework)：
               <span className="font-normal text-zinc-300 ml-1">建立了一套严密的语义控制模板。从全局的 Split-screen layout (上下分屏布局)、Octane Render / 波普艺术 等风格约束，到针对单个活动素材的精准描述。这套标准化的框架，确保了在整个 Campaign 周期内，无论是生成新场景还是新道具，都能保持高度一致的商业 3D 质感。</span>
             </h5>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-6 w-full">
               <div 
                 className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
                 onClick={() => openZoom(7)}

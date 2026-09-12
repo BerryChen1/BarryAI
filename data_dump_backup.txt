@@ -1,0 +1,201 @@
+export const CATALOG_PORTFOLIO_DATA: CatalogCategory[] = [
+  {
+    id: "video",
+    index: "01",
+    name: "视频短片作品",
+    englishName: "CREATIVE VIDEOS",
+    desc: "运用前沿AI工具与模型制作的高质量视频、创意短片，注重叙事与镜头设计，搭建标准化数字资产与工作流。",
+    enDesc: "High-quality videos & creative shorts crafted with cutting-edge AI, focusing on narrative, camera work, and standard digital asset pipelines.",
+    projects: [
+      {
+        id: "vid-14",
+        title: "王者荣耀合作曲《墨染·天下》",
+        subtitle: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
+        coverImage: "/images/20260812013801238.webp",
+        tags: ["商业合作 MV", "3D水墨古风", "AIGC全工作流"],
+        tools: ["GPT", "Nano Banana", "Midjourney", "Seedance", "Kling", "Premiere"],
+        year: "2025",
+        client: "王者荣耀 Live音乐会",
+        role: "导演 / 视觉概念 / AI动画全流程SOP",
+        description: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
+        story: [],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/moran%20new.mp4"
+      },
+      {
+        id: "vid-1",
+        title: "《The Last》",
+        subtitle: "赛博朋克AIGC动画短片",
+        coverImage: "/images/20260623002718644.webp",
+        tags: ["独立制片", "AIGC流体", "声画联觉"],
+        tools: ["Runway Gen-3", "可灵 AI", "Suno", "Premiere"],
+        year: "2025",
+        client: "个人探索系列",
+        role: "独立编导 / 全管线制片人",
+        description: "“死亡不是我们的终点，遗忘才是”",
+        story: [
+          "霓虹流彩的赛博街巷里，一对恋人从温柔日常并肩走向末世烽烟。当机甲压境、城市崩塌，他们以血肉换机械义体，用牺牲守住彼此，让爱在钢铁废墟里成为永不熄灭的火种。",
+          "本片模型选用 Seedance 2.0、Midjourney 与 Nano Banana Pro等，以赛博朋克为底色铺陈爱与牺牲的内核。从牵手漫步的安宁岁月中到末日绝境的双向奔赴，二人以自身为代价完成蜕变，在崩坏的世界里共赴一场以爱为名的坚守。"
+        ],
+        gallery: [
+          "/images/20260623002835096.webp",
+          "/images/20260623002909540.webp",
+          "/images/20260623002923337.webp",
+          "/images/20260623002936574.webp",
+          "/images/20260623002947032.webp",
+          "/images/20260623003000623.webp"
+        ],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/one.mp4"
+      },
+      {
+        id: "vid-13",
+        title: "《超时空决战！英灵殿》",
+        subtitle: "AIGC全流程3D动画短片",
+        coverImage: "/images/20260812002220584.webp",
+        tags: ["AIGC 3D动画", "UE5质感", "超时空写实"],
+        tools: ["ComfyUI", "Seed 1.0", "Runway", "Premiere"],
+        year: "2025",
+        client: "个人创作企划",
+        role: "全流程导演 / 3D视觉概念 / 剪辑",
+        description: "AIGC全流程3D动画短片\n《超时空决战！英灵殿》",
+        story: [],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%201.mp4"
+      },
+      {
+        id: "vid-5",
+        title: "《重返地球：42号远航队》",
+        subtitle: "AIGC散文影像集",
+        coverImage: "/images/20260623004140742.webp",
+        tags: ["太空探索", "硬核科幻", "电影级CG"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
+        year: "2025",
+        client: "独立科幻艺术影像计划",
+        role: "导演 / 视觉概念 / 合成",
+        description: "“原子不会湮灭，我们终将再次相遇”",
+        story: [
+          "《重返地球：42 号远航队》第一集以散文式叙事开启归乡序章。身披战甲的仿生人踏入被草木吞噬的旧日都市“上海”，在爬满藤蔓的残垣与中式飞檐间缓步穿行，捡拾人类文明遗落的记忆碎片，于荒芜静默里叩问文明存续的温柔答案。",
+          "本片为全流程个人独立创作的 AI 影像作品，选用 Seedance 2.0、Kling、Midjourney 与 NanoBanana Pro 模型制作，以沉郁细腻的东方废土质感铺陈画面，用极简克制的叙事节奏，承载对文明与情感的深层探讨。"
+        ],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4"
+      },
+      {
+        id: "vid-2",
+        title: "《致命节奏》",
+        subtitle: "AIMV合作曲先导片 & MVLAND平台",
+        coverImage: "/images/20260623003438855.webp",
+        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
+        tools: ["Houdini", "After Effects", "Midjourney"],
+        year: "2024",
+        client: "学术新媒体展演",
+        role: "动画艺术创意编排",
+        description: "“在迷人的节奏中沦陷吧！”",
+        story: [
+          "从晨起安睡的松弛状态睁眼觉醒，女主利落整装奔赴战斗之约，在充满张力的对决中尽显飒爽本色，以极具感染力的状态释放独树一帜的个人魅力。",
+          "本片为与 MVLAND 平台合作打造的推广向 AIMV 短片，选用 Seedance 2.0、Kling 与 NanoBanana Pro 模型制作，以鲜明的美式动漫画风搭配炫彩故障视效，镜头节奏贴合音乐叙事，完成从日常松弛到战场热血的氛围跃迁，视觉记忆点突出。"
+        ],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/two.mp4"
+      },
+      {
+        id: "vid-3",
+        title: "《明天的前夜》",
+        subtitle: "AIGC未来叙事短片",
+        coverImage: "/images/20260623003834136.webp",
+        tags: ["科幻叙事", "情感共振", "末日美学"],
+        tools: ["Midjourney", "Runway Gen-3", "Premiere"],
+        year: "2025",
+        client: "独立短片计划",
+        role: "导演 / 视觉概念 / 剪辑",
+        description: "“你会温和的走入那一夜吗?\"",
+        story: [
+          "“你会温和的走入那一夜吗?\"",
+          "冷调压抑的房间中，女孩的平静被录音机传来的诡异声响击碎。她循声踏入幽暗无尽的长廊，一件件残破旧物接连浮现，录音里双胞胎的情感纠葛之下，暗涌着一场关于自我分裂与拉扯的精神迷局，长廊尽头的门后，藏着自我认同的终极真相。",
+          "本片为个人独立全流程创作的AI动画短片，以黑塞的文字开启叙事，通过镜面构图、极速倒放蒙太奇等视听手法营造压抑诡谲的超现实质感。影片选用Seedance 2.0、Kling与 NanoBanana Pro 模型制作，借悬疑化的影像叙事，深入探讨自我认同的深层精神内核。"
+        ],
+        gallery: [
+          "/images/20260623003924128.webp",
+          "/images/20260623003934322.webp",
+          "/images/20260623003945977.webp"
+        ],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4"
+      },
+      {
+        id: "vid-4",
+        title: "《CyberpunkGO》",
+        subtitle: "AIGC未来都市概念片",
+        coverImage: "/images/20260623004019826.webp",
+        tags: ["赛博朋克", "夜景霓虹", "故障美学"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
+        year: "2025",
+        client: "个人创意实验",
+        role: "导演 / 视觉设计 / 剪辑",
+        description: "“嘿，你会想念夜之城吗？”",
+        story: [
+          "雨幕裹着霓虹漫过整座钢铁丛林，从高空俯瞰下去，摩天楼的灯海在水汽里沉浮，在楼宇夹缝与架空廊道间穿梭俯冲，在这机械与人性撕扯的霓虹都市里，守着夜之城最后一点摇摇欲坠的底线。",
+          "短片选用 Seedance 2.0、Midjourney 与 NanoBanana Pro 模型制作，以浓烈的色彩笔触渲染追缉行动的紧张氛围，通过独处沉思与街巷穿行的画面切换，刻画出赛博世界里猎手的生存状态与使命。"
+        ],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4"
+      },
+      {
+        id: "vid-6",
+        title: "《信》",
+        subtitle: "AIGC中式动画短片",
+        coverImage: "/images/20260623004412687.webp",
+        tags: ["情感叙事", "超现实意象", "胶片美学"],
+        tools: ["Midjourney", "Runway Gen-3", "Premiere"],
+        year: "2025",
+        client: "个人艺术创作 / 独立短片计划",
+        role: "导演 / 视觉概念 / 剪辑",
+        description: "“一纸愿，见风雪，却也暖尽人间”",
+        story: [
+          "风雪交加的寒夜村落，村民将写满新年祝福与朴素期盼的祈愿信交予神秘送信人。怀揣着孩童顺遂成长、家人平安康健的心愿，他顶风冒雪踏上艰险路途，终将信件送达高塔；当塔中暖光次第亮起，风雪与黑暗被悄然驱散，为整片土地降下希望与暖意。",
+          "本片基于 ComfyUI 搭建全流程工作流创作，以冷冽沉郁的画面基调铺陈寒冬氛围感，借灯火微光与苍茫夜色的视觉反差，勾勒出关于信念与传递的东方诗意叙事，让平凡的人间祈愿拥有治愈人心的温度。"
+        ],
+        gallery: [
+          "/images/20260623004624136.webp",
+          "/images/20260623004609678.webp"
+        ],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/six.mp4"
+      },
+      {
+        id: "vid-7",
+        title: "《灵狐夜游》",
+        subtitle: "AIGC东方奇幻叙事短片",
+        coverImage: "/images/20260623005318193.webp",
+        tags: ["国风奇幻", "夜景渲染", "光影粒子"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
+        year: "2025",
+        client: "独立艺术短片项目",
+        role: "导演 / 视觉概念 / 合成",
+        description: "“人心虔诚神灵现，口口相传存正念”",
+        story: [
+          "年末祭祀的烟火散尽，西桥村的石雕黑狐于深夜化灵而出，踏雾穿行灵境险境。为护佑善良人家的患病孩童，它历尽艰险求取狐神庇佑，终换得孩童病愈安康，这段奇遇也化作村中代代相传的向善传说。",
+          "本片为个人独立全流程创作的 AI 动画短片，以中国传统绘画美学为创作基底，配音与歌曲改编均借助 AI 工具完成，背景音乐出处标注于片末。作品借灵狐夜游的意象寄寓东方哲思，传递心诚念正、行善福至的处世之道，以现代科技重焕传统民俗与东方美学的生命力。"
+        ],
+        gallery: [
+          "/images/20260623005430012.webp",
+          "/images/20260623005446033.webp"
+        ],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/seven.mp4"
+      },
+      {
+        id: "vid-8",
+        title: "《赤壁·新年篇》",
+        subtitle: "王者荣耀AIGC新春短片 & 红薯游戏制片厂",
+        coverImage: "/images/20260623005548580.webp",
+        tags: ["史诗国风", "历史重构", "战争美学"],
+        tools: ["Midjourney", "Runway Gen-3", "After Effects"],
+        year: "2026",
+        client: "新年国风艺术展映",
+        role: "导演 / 视觉概念 / 合成",
+        description: "“江东的风裹着烽烟，却也吹向团圆”",
+        story: [
+          "赤壁大战一触即发，孙权因战前局势深陷焦灼难安。孙策与孙尚香奔赴前线相伴左右，家人的暖意驱散了军营紧绷的氛围，更牵动全军将士共赴新春之约。江东长风裹挟着烽烟火气，也将团圆与年味吹进了铁马冰河的深处。",
+          "本片为与小红书「红薯游戏制片厂」合作打造的王者荣耀春节贺岁 AIGC 动画短片，以软萌 Q 版画风重塑三国经典角色，将家国豪情与新春暖意相融，在烽火叙事的底色里，铺陈出充满烟火温度的新年团圆内核。"
+        ],
+        gallery: [
+          "/images/20260623005625667.webp"
+        ],

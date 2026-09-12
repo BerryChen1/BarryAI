@@ -152,7 +152,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
           满足大厂级别的商业需求，必须深入到底层工作流的物理逻辑中。本环节以多图网格排版（Grid collage layout），展示了同场景下 AIGC 设计的严谨推演 SOP。
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-6 w-full">
           <div 
             className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
             onClick={() => openZoom(2)}

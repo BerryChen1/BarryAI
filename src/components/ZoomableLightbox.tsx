@@ -166,7 +166,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 z-[250] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md select-none touch-none"
+      className="fixed inset-0 z-[400] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md select-none touch-none"
     >
       {/* Top Bar Indicators & Close */}
       <div className="absolute top-0 inset-x-0 h-16 pointer-events-none px-6 flex items-center justify-between z-10 bg-gradient-to-b from-black/60 to-transparent">
