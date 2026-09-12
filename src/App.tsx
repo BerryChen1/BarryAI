@@ -22,6 +22,7 @@ import { Vid13Detail } from './components/Vid13Detail';
 import { Vid14Detail } from './components/Vid14Detail';
 import { VidGalleryDetail } from './components/VidGalleryDetail';
 import { Xuanye } from './components/Xuanye';
+import { LazyVideo } from './components/LazyVideo';
 
 
 
@@ -196,7 +197,7 @@ export default function App() {
             <div className="w-[200vw] lg:w-[100vw] h-full grid grid-cols-4 grid-rows-2 gap-0.5 pr-0.5 shrink-0 bg-[#0A0A0A]">
               {/* Row 1 / Block 1-4 */}
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -207,7 +208,7 @@ export default function App() {
           <CyberText lines={["FRAME", "BY", "FRAME."]} />
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-13')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -216,7 +217,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-1')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -235,7 +236,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -244,7 +245,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('comm-3')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -259,7 +260,7 @@ export default function App() {
             <div className="w-[200vw] lg:w-[100vw] h-full grid grid-cols-4 grid-rows-2 gap-0.5 pr-0.5 shrink-0 bg-[#0A0A0A]" aria-hidden="true">
               {/* Row 1 / Block 1-4 */}
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -270,7 +271,7 @@ export default function App() {
           <CyberText lines={["FRAME", "BY", "FRAME."]} />
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-13')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -279,7 +280,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-1')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -298,7 +299,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
@@ -307,7 +308,7 @@ export default function App() {
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('comm-3')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <LazyVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
                 <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />

@@ -4,7 +4,7 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
 }
 
-export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = "auto", onError, ...props }) => {
+export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = "metadata", onError, autoPlay, ...props }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
   const [activeSrc, setActiveSrc] = useState(src);
@@ -30,36 +30,34 @@ export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = 
     const video = videoRef.current;
     if (!video) return;
 
-    // Use a highly generous rootMargin (1000px) so background loops load well in advance
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.unobserve(video);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            if (autoPlay) {
+              video.play().catch(() => {});
+            }
+          } else {
+            // When out of view, pause it to save GPU decoding resources
+            if (autoPlay) {
+              video.pause();
+            }
+          }
+        });
       },
-      { rootMargin: '1000px' }
+      // Start loading slightly before it enters the viewport
+      { rootMargin: '250px' }
     );
 
     observer.observe(video);
 
-    // Elegant idle optimization: if the user remains on the site after 2 seconds,
-    // they are engaged. We can gracefully proceed to load the atmospheric loops
-    // in the background to ensure instantaneous layout playback when they scroll.
-    const idleTimer = setTimeout(() => {
-      setShouldLoad(true);
-      if (video) {
-        observer.unobserve(video);
-      }
-    }, 2000);
-
     return () => {
-      clearTimeout(idleTimer);
       if (video) {
         observer.unobserve(video);
       }
     };
-  }, []);
+  }, [autoPlay]);
 
   return (
     <video
@@ -68,6 +66,7 @@ export const LazyVideo: React.FC<LazyVideoProps> = ({ src, className, preload = 
       src={shouldLoad ? activeSrc : undefined}
       preload={preload}
       onError={handleVideoError}
+      autoPlay={shouldLoad ? autoPlay : false}
       {...props}
     />
   );
