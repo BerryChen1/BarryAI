@@ -326,7 +326,7 @@ export const Xuanye = () => {
       <div className="ph-label">Position A · Hero Key Visual</div>
       <img src="/images/20260912184251573.webp" alt="图1" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
       <div style={{ marginTop: '2rem' }}>
-        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/shouye/7.mp4" />
+        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/yindu.mp4" />
       </div>
     </div>
   </header>
