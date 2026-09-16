@@ -699,7 +699,7 @@ export default function App() {
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                           {PORTFOLIO_DETAILS[0].achievements.map((img, i) => (
                             <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievements!, index: i})}>
-                              <img loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                              <img alt="Portfolio Work" loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             </div>
                           ))}
                         </div>
@@ -707,14 +707,14 @@ export default function App() {
                           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-4">
                             {PORTFOLIO_DETAILS[0].achievementsRow2.map((img, i) => (
                               <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievementsRow2!, index: i})}>
-                                <img loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                                <img alt="Portfolio Work" loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                               </div>
                             ))}
                           </div>
                         )}
                         {PORTFOLIO_DETAILS[0].largeAchievementImage && (
                           <div className="w-full rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: [PORTFOLIO_DETAILS[0].largeAchievementImage!], index: 0})}>
-                             <img loading="lazy" decoding="async" src={PORTFOLIO_DETAILS[0].largeAchievementImage} className="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-700" />
+                             <img alt="Portfolio Work" loading="lazy" decoding="async" src={PORTFOLIO_DETAILS[0].largeAchievementImage} className="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-700" />
                           </div>
                         )}
                       </div>

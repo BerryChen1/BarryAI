@@ -196,7 +196,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   onClick={() => setLightboxUrl(url)}
                   className="relative aspect-[9/16] rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <img alt="Portfolio Design Work" loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Eye className="w-4 h-4 text-white" />
                   </div>
@@ -248,7 +248,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div className="flex justify-center mt-2">
               <div onClick={() => setLightboxUrl("/images/20260629214145260.webp")} className="cursor-pointer max-w-xl group relative rounded-none overflow-hidden border border-white/5">
-                <img loading="lazy" decoding="async" src="/images/20260629214145260.webp" className="w-full" referrerPolicy="no-referrer" />
+                <img alt="Portfolio Design Work" loading="lazy" decoding="async" src="/images/20260629214145260.webp" className="w-full" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
                   <Eye className="w-5 h-5 text-white" />
                 </div>
@@ -278,7 +278,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                     onClick={() => setLightboxUrl("/images/20260629214547440.webp")}
                     className="relative w-full max-w-sm rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                   >
-                    <img loading="lazy" decoding="async" src="/images/20260629214547440.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
+                    <img alt="Portfolio Design Work" loading="lazy" decoding="async" src="/images/20260629214547440.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                        <span className="text-[11px] bg-black/60 px-3 py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-sky-400" /> 点击查看</span>
                     </div>
@@ -290,7 +290,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {sarahImages.map((url, idx) => (
                       <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
-                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <img alt="Portfolio Design Work" loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -316,7 +316,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                     onClick={() => setLightboxUrl("/images/20260913032958431.webp")}
                     className="relative w-full max-w-sm rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                   >
-                    <img loading="lazy" decoding="async" src="/images/20260913032958431.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
+                    <img alt="Portfolio Design Work" loading="lazy" decoding="async" src="/images/20260913032958431.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                        <span className="text-[11px] bg-black/60 px-3 py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-sky-400" /> 点击查看</span>
                     </div>
@@ -328,7 +328,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {momImages.map((url, idx) => (
                       <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
-                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <img alt="Portfolio Design Work" loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -353,7 +353,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <div className="grid grid-cols-2 gap-4">
                     {screenshotImages.map((url, idx) => (
                       <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
-                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <img alt="Portfolio Design Work" loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -365,7 +365,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {otherImages.map((url, idx) => (
                       <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
-                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                        <img alt="Portfolio Design Work" loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}

@@ -334,7 +334,7 @@ export const Xuanye = () => {
     
     <div className="ph-block reveal" style={{ marginTop: '60px' }}>
       <div className="ph-label mb-6 text-zinc-500 text-xs tracking-widest uppercase">Animated Showreel</div>
-      <div className="w-full relative mx-auto my-10 max-w-7xl px-4 sm:px-6">
+      <div style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)","marginBottom":"20px"}}>
         <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/yindu.mp4" aspectRatio="aspect-[16/9]" />
       </div>
     </div>
