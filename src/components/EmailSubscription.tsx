@@ -73,7 +73,7 @@ export function EmailSubscription({ id, placeholder = "Enter your email address.
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-4 flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 border border-white/10 text-emerald-400 text-sm md:text-base font-light"
+            className="mt-4 flex items-center gap-2 px-6 py-3 rounded-none bg-neutral-900 border border-white/10 text-emerald-400 text-sm md:text-base font-light"
           >
             <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 shrink-0">
               <Check className="w-3 h-3 text-emerald-400" />
@@ -87,7 +87,7 @@ export function EmailSubscription({ id, placeholder = "Enter your email address.
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-4 px-6 py-3 rounded-xl bg-red-950/40 border border-red-500/25 text-red-300 text-xs md:text-sm font-light text-left"
+            className="mt-4 px-6 py-3 rounded-none bg-red-950/40 border border-red-500/25 text-red-300 text-xs md:text-sm font-light text-left"
           >
             <span>{message}</span>
           </motion.div>

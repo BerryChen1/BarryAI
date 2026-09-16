@@ -63,7 +63,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
     <div className="flex flex-col gap-6 text-zinc-300 font-sans">
       
       {/* Title & Metadata Panel */}
-      <div className="p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.02] flex flex-col gap-6">
+      <div className="p-6 sm:p-8 rounded-none border border-white/5 bg-white/[0.02] flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <span className="text-xs text-sky-400 tracking-wider font-mono font-semibold uppercase">
             {t("字节跳动抖音集团 · 上海", "ByteDance Douyin Group • Shanghai")}
@@ -93,12 +93,12 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex overflow-x-auto no-scrollbar gap-2 p-1 bg-white/[0.02] rounded-xl border border-white/5">
+      <div className="flex overflow-x-auto no-scrollbar gap-2 p-1 bg-white/[0.02] rounded-none border border-white/5">
         {tabs.map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-none text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === tab.id 
                 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' 
                 : 'text-zinc-400 hover:bg-white/5 hover:text-zinc-200 border border-transparent'
@@ -113,7 +113,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
       {/* Tab Content: 项目概述 */}
       {activeTab === 'overview' && (
         <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+          <div className="p-6 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Compass className="w-5 h-5 text-sky-400" /> 协作破局：打造 AIGC 电商内容生态
             </h3>
@@ -123,10 +123,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             
             <div 
               onClick={() => setLightboxUrl("/images/20260627001230912.webp")}
-              className="relative mt-2 rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full max-w-2xl mx-auto"
+              className="relative mt-2 rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer w-full max-w-2xl mx-auto"
               title={t("点按查看大图", "Click to zoom")}
             >
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="/images/20260627001230912.webp" 
                 alt="内容升级链路" 
                 className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
@@ -140,19 +140,19 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
                 <span className="text-sky-300 font-bold">产能升级：全流程制作</span>
                 <p className="text-xs text-zinc-400">将海内外主流 AI 工具组合应用，完成从商品卖点提炼、自动化脚本到成片剪辑的全流程，累计参与产出带货短视频 500+ 条。</p>
               </div>
-              <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
                 <span className="text-sky-300 font-bold">精细运营：账号矩阵化</span>
                 <p className="text-xs text-zinc-400">结合受众画像，制定了覆盖全年龄段与全身材类型的矩阵号策略，打透垂直领域推荐算法。</p>
               </div>
-              <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
                 <span className="text-sky-300 font-bold">策略迭代：数据驱动</span>
                 <p className="text-xs text-zinc-400">每天复盘后台数据，提炼高转化率爆款视频共性，反哺为可复制的结构化脚本模板。</p>
               </div>
-              <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
                 <span className="text-sky-300 font-bold">团队配合：跨部门协同</span>
                 <p className="text-xs text-zinc-400">向上承接行业招买团队的货品特性，向下联调工具研发侧优化反馈，确保内容调性贴合商品特征。</p>
               </div>
@@ -173,10 +173,10 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
               根据不同的受众年龄和身材，我们跑通了多个账号的从0到1孵化。下面展示的是我们孵化的四个代表性爆款视频，以及整体视觉资产输出成效。
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-black/20 p-4 rounded-2xl border border-white/5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-black/20 p-4 rounded-none border border-white/5">
               {viralVideos.map((url, idx) => (
                 <div key={idx} className="flex flex-col gap-2">
-                  <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-900">
+                  <div className="rounded-none overflow-hidden border border-white/10 bg-zinc-900">
                     <CustomVideoPlayer src={url} language={language} aspectRatio="aspect-[9/16]" />
                   </div>
                   <span className="text-xs text-zinc-400 text-center font-mono">爆款实测 0{idx + 1}</span>
@@ -194,9 +194,9 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                 <div 
                   key={index} 
                   onClick={() => setLightboxUrl(url)}
-                  className="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                  className="relative aspect-[9/16] rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                 >
-                  <img src={url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Eye className="w-4 h-4 text-white" />
                   </div>
@@ -217,22 +217,22 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-sky-400" /> 数据成果：用精细化运营撬动高倍转化
             </h3>
-            <div className="p-4 rounded-xl bg-sky-500/[0.04] border border-sky-500/10 flex flex-col gap-4">
+            <div className="p-4 rounded-none bg-sky-500/[0.04] border border-sky-500/10 flex flex-col gap-4">
               <h5 className="text-sm font-semibold text-sky-300 tracking-wide">
                 账号矩阵整体大盘表现
               </h5>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex flex-col">
+                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-none flex flex-col">
                   <span className="text-xs text-zinc-500 uppercase tracking-wider">成交规模 (GMV)</span>
                   <span className="text-xl font-bold text-white mt-1">$40,000+</span>
                   <span className="text-xs text-zinc-400 shrink-0 mt-1">服饰品类整体归因</span>
                 </div>
-                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl flex flex-col">
+                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-none flex flex-col">
                   <span className="text-xs text-zinc-500 uppercase tracking-wider">单日GMV峰值</span>
                   <span className="text-xl font-bold text-white mt-1">突破 $2000+</span>
                   <span className="text-xs text-zinc-400 shrink-0 mt-1">爆款期最高值</span>
                 </div>
-                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-xl col-span-2 md:col-span-1 flex flex-col">
+                <div className="p-4 bg-white/[0.02] border border-white/5 rounded-none col-span-2 md:col-span-1 flex flex-col">
                   <span className="text-xs text-zinc-500 uppercase tracking-wider">多维总数据表现</span>
                   <div className="flex items-baseline gap-1 mt-1">
                     <span className="text-xl font-bold text-white">341.1K</span>
@@ -247,8 +247,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
             
             <div className="flex justify-center mt-2">
-              <div onClick={() => setLightboxUrl("/images/20260629214145260.webp")} className="cursor-pointer max-w-xl group relative rounded-xl overflow-hidden border border-white/5">
-                <img src="/images/20260629214145260.webp" className="w-full" referrerPolicy="no-referrer" />
+              <div onClick={() => setLightboxUrl("/images/20260629214145260.webp")} className="cursor-pointer max-w-xl group relative rounded-none overflow-hidden border border-white/5">
+                <img loading="lazy" decoding="async" src="/images/20260629214145260.webp" className="w-full" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
                   <Eye className="w-5 h-5 text-white" />
                 </div>
@@ -262,7 +262,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </h4>
 
             {/* Case 1: CurvySarah */}
-            <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+            <div className="p-5 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
               <div className="flex justify-between items-center border-b border-white/5 pb-2">
                 <h5 className="font-semibold text-white">案例一：成熟大码女装 (CurvySarah)</h5>
                 <span className="text-xs text-sky-300 font-mono">度假长裙与通勤套装</span>
@@ -276,9 +276,9 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">账号主页</span>
                   <div 
                     onClick={() => setLightboxUrl("/images/20260629214547440.webp")}
-                    className="relative w-full max-w-sm rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                    className="relative w-full max-w-sm rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                   >
-                    <img src="/images/20260629214547440.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="/images/20260629214547440.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                        <span className="text-[11px] bg-black/60 px-3 py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-sky-400" /> 点击查看</span>
                     </div>
@@ -289,8 +289,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">人物资产库与图文素材</span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {sarahImages.map((url, idx) => (
-                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
-                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
+                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -300,7 +300,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
 
             {/* Case 2: TheBossMomFits */}
-            <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+            <div className="p-5 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
               <div className="flex justify-between items-center border-b border-white/5 pb-2">
                 <h5 className="font-semibold text-white">案例二：时尚职场宝妈 (TheBossMomFits)</h5>
                 <span className="text-xs text-sky-300 font-mono">美式辣妹与极简职场</span>
@@ -314,9 +314,9 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">账号主页</span>
                   <div 
                     onClick={() => setLightboxUrl("/images/20260913032958431.webp")}
-                    className="relative w-full max-w-sm rounded-xl overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
+                    className="relative w-full max-w-sm rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
                   >
-                    <img src="/images/20260913032958431.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src="/images/20260913032958431.webp" className="w-full h-auto object-contain group-hover:scale-[1.01] transition-all" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center">
                        <span className="text-[11px] bg-black/60 px-3 py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5"><Eye className="w-3.5 h-3.5 text-sky-400" /> 点击查看</span>
                     </div>
@@ -327,8 +327,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">人物资产库与图文素材</span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {momImages.map((url, idx) => (
-                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
-                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
+                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -338,7 +338,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
             </div>
 
             {/* Case 3: 更多垂类 */}
-            <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+            <div className="p-5 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
               <div className="flex justify-between items-center border-b border-white/5 pb-2">
                 <h5 className="font-semibold text-white">案例三：其他矩阵号数据截图</h5>
                 <span className="text-xs text-sky-300 font-mono">矩阵协同效应</span>
@@ -352,8 +352,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">矩阵账号数据截图</span>
                   <div className="grid grid-cols-2 gap-4">
                     {screenshotImages.map((url, idx) => (
-                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
-                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
+                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}
@@ -364,8 +364,8 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
                   <span className="text-xs text-zinc-400 font-mono tracking-wider uppercase">人物资产库与图文素材</span>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {otherImages.map((url, idx) => (
-                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-lg overflow-hidden border border-white/5 cursor-pointer group">
-                        <img src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
+                      <div key={idx} onClick={() => setLightboxUrl(url)} className="relative aspect-auto rounded-none overflow-hidden border border-white/5 cursor-pointer group">
+                        <img loading="lazy" decoding="async" src={url} className="w-full h-full object-cover group-hover:scale-[1.02] transition-all" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center"><Eye className="w-4 h-4 text-white"/></div>
                       </div>
                     ))}

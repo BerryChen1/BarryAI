@@ -45,12 +45,12 @@ const ImageSlot: React.FC<ImageSlotProps> = ({
           setLightboxUrl(src);
         }
       }}
-      className={`group relative rounded-xl overflow-hidden border border-white/10 bg-black/40 hover:border-sky-500/40 transition-all duration-300 ${hasValidSrc ? 'cursor-pointer' : 'cursor-default'} ${className}`}
+      className={`group relative rounded-none overflow-hidden border border-white/10 bg-black/40 hover:border-sky-500/40 transition-all duration-300 ${hasValidSrc ? 'cursor-pointer' : 'cursor-default'} ${className}`}
     >
       <div className={`w-full ${aspectRatio !== 'aspect-auto' ? aspectRatio : ''} flex flex-col items-center justify-center relative overflow-hidden`}>
         {hasValidSrc ? (
           <>
-            <img 
+            <img loading="lazy" decoding="async" 
               src={src} 
               alt={alt} 
               className={`w-full h-auto max-h-[85vh] ${fitMode === 'cover' ? 'h-full object-cover' : 'object-contain'} group-hover:scale-[1.01] transition-transform duration-500`}
@@ -157,7 +157,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
   return (
     <div className="flex flex-col gap-6 text-zinc-350 font-sans">
       {/* Header Info */}
-      <div className="p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.02] flex flex-col gap-6">
+      <div className="p-6 sm:p-8 rounded-none border border-white/5 bg-white/[0.02] flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <span className="text-xs text-sky-400 font-mono font-semibold uppercase tracking-wider">
             {t("字节跳动抖音集团 · 北京", "ByteDance Douyin Group • Beijing")}
@@ -187,12 +187,12 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
       </div>
 
       {/* Tabs Navigation */}
-      <div className="flex overflow-x-auto no-scrollbar gap-2 p-1 bg-white/[0.02] rounded-xl border border-white/5">
+      <div className="flex overflow-x-auto no-scrollbar gap-2 p-1 bg-white/[0.02] rounded-none border border-white/5">
         {tabs.map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-none text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === tab.id 
                 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' 
                 : 'text-zinc-400 hover:bg-white/5 hover:text-zinc-200 border border-transparent'
@@ -207,7 +207,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
       {/* Tab Content: 项目概述 */}
       {activeTab === 'overview' && (
         <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+          <div className="p-6 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Compass className="w-5 h-5 text-sky-400" /> 协作视角下的业务挑战
             </h3>
@@ -215,15 +215,15 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
               TikTok Crate 是字节内部的一站式 AI 创作平台。我的核心工作是协助团队解决“如何把零散的 AIGC 技巧变成稳定、可复用的高效团队工作流”的问题。通过与各业务方的紧密配合，推动工作流在实际业务中跑通。
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-              <div className="p-4 rounded-xl border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-sky-500/20 bg-sky-500/[0.03] flex flex-col gap-2">
                 <span className="text-sky-300 font-bold">1. AI 短剧标准共建</span>
                 <p className="text-xs text-zinc-400">帮助团队梳理出七步协同工作流与五条核心画质约束，实现从单集 Demo 到 30+ 集批量矩阵的高品质交付。</p>
               </div>
-              <div className="p-4 rounded-xl border border-purple-500/20 bg-purple-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-purple-500/20 bg-purple-500/[0.03] flex flex-col gap-2">
                 <span className="text-purple-300 font-bold">2. 视觉流提效落地</span>
                 <p className="text-xs text-zinc-400">总结出三条业务高频适用的生产链路，配合选型与提示词规范，使运营设计的交付效率大幅攀升。</p>
               </div>
-              <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] flex flex-col gap-2">
+              <div className="p-4 rounded-none border border-emerald-500/20 bg-emerald-500/[0.03] flex flex-col gap-2">
                 <span className="text-emerald-300 font-bold">3. 沉淀社区资产库</span>
                 <p className="text-xs text-zinc-400">参与平台社区建设，将沉淀好的 SOP 与模块化组件分发给全团队，推动创作工具的普及与常态化活跃。</p>
               </div>
@@ -263,14 +263,14 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
           </div>
 
           {/* Section: 七步拆解 (Stepper) */}
-          <div className="flex flex-col gap-4 p-5 rounded-2xl border border-white/5 bg-white/[0.015]">
+          <div className="flex flex-col gap-4 p-5 rounded-none border border-white/5 bg-white/[0.015]">
             <h4 className="text-base font-bold text-white">深入拆解：七步工作流的每环细节</h4>
             <div className="flex overflow-x-auto no-scrollbar gap-2 pb-2">
               {[1,2,3,4,5,6,7].map(step => (
                 <button
                   key={step}
                   onClick={() => setActiveStep(step)}
-                  className={`flex-shrink-0 px-4 py-2 rounded-lg text-xs font-mono font-bold transition-all ${
+                  className={`flex-shrink-0 px-4 py-2 rounded-none text-xs font-mono font-bold transition-all ${
                     activeStep === step 
                       ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' 
                       : 'bg-black/40 text-zinc-500 border border-white/10 hover:bg-white/5 hover:text-zinc-300'
@@ -287,7 +287,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
                   <div className="space-y-3">
                     <h5 className="text-lg font-bold text-white">Step 1: 剧本适配拆解</h5>
                     <p className="text-sm text-zinc-300">把原始长篇剧本改写成可开拍的演绎剧底稿。提取主线冲突，梳理人物情绪钩子，按短剧节奏重组为强开场、密集反转的结构。</p>
-                    <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl">
+                    <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-none">
                       <span className="text-xs text-rose-300 font-semibold">底线要求：</span>
                       <p className="text-xs text-rose-200/70 mt-1">底稿必须自洽（人物、空间无矛盾），全篇称谓统一，作为后续所有步骤的唯一事实来源。</p>
                     </div>
@@ -400,7 +400,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* 对比：海报与视频 */}
-              <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+              <div className="p-5 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
                 <h4 className="text-sm font-semibold text-sky-300">品质跨越：直观对比与去油腻策略</h4>
                 <p className="text-xs text-zinc-400">通过五条硬约束（统一风格后缀、空间坐标锁、活人感微表情描写等），让画面摆脱塑料感，实现电影级质感。</p>
                 <div className="grid grid-cols-2 gap-2">
@@ -418,7 +418,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
               </div>
 
               {/* 落地：账号矩阵图集 */}
-              <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.015] flex flex-col gap-4">
+              <div className="p-5 rounded-none border border-white/5 bg-white/[0.015] flex flex-col gap-4">
                 <h4 className="text-sm font-semibold text-sky-300">规模落地：跑通矩阵账号与 30+ 爆款剧</h4>
                 <p className="text-xs text-zinc-400">我们将全流程封装入 Crate 平台看板，打通批量出图出片通道，成功推送到实际业务端的 TikTok 短剧账号矩阵中。</p>
                 {/* 网格对齐展示 */}
@@ -469,21 +469,21 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
               <div className="flex flex-col gap-3">
                 <h4 className="text-sm font-semibold text-purple-300">三条高优自动化工作流</h4>
                 <div className="space-y-2">
-                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg flex gap-3">
+                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-none flex gap-3">
                     <span className="text-purple-400 font-bold">1</span>
                     <div>
                       <p className="text-sm font-medium text-zinc-200">高质量运营图工作流 (提效 150%)</p>
                       <p className="text-xs text-zinc-400 mt-1">多模型生图 → 细节精修 → 静帧输出及抠图 → 动效转化。</p>
                     </div>
                   </div>
-                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg flex gap-3">
+                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-none flex gap-3">
                     <span className="text-purple-400 font-bold">2</span>
                     <div>
                       <p className="text-sm font-medium text-zinc-200">IP 全案延展工作流 (提效 200%)</p>
                       <p className="text-xs text-zinc-400 mt-1">三视图定角 → 换装与姿势泛化 → 场景适配 → 动态赋予。</p>
                     </div>
                   </div>
-                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-lg flex gap-3">
+                  <div className="p-3 bg-white/[0.02] border border-white/5 rounded-none flex gap-3">
                     <span className="text-purple-400 font-bold">3</span>
                     <div>
                       <p className="text-sm font-medium text-zinc-200">标题物料生成工作流 (提效 200%)</p>
@@ -501,7 +501,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 p-5 rounded-2xl border border-white/5 bg-white/[0.015]">
+          <div className="flex flex-col gap-4 p-5 rounded-none border border-white/5 bg-white/[0.015]">
             <h4 className="text-sm font-semibold text-purple-300">实战中的“选型与提示词”方法论</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <ImageSlot src={imageMap.modelSeedream3D} alt="m1" label="Seedream 3D" setLightboxUrl={setLightboxUrl} />

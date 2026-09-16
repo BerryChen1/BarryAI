@@ -13,7 +13,7 @@ export function VidGalleryDetail({ selectedProject, language, t, setLightboxStat
           : "grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
     }>
       {selectedProject.gallery.map((imgUrl: string, gIdx: number, arr: string[]) => (
-        <div key={gIdx} className={`group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full ${isBorderedArray.includes(selectedProject.id) ? "rounded-xl border border-white/5" : "aspect-video rounded-2xl border border-white/5"}`} onClick={() => setLightboxState({images: arr, index: gIdx})}>
+        <div key={gIdx} className={`group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full ${isBorderedArray.includes(selectedProject.id) ? "rounded-sm border border-white/5" : "aspect-video rounded-sm border border-white/5"}`} onClick={() => setLightboxState({images: arr, index: gIdx})}>
           <img
             src={imgUrl}
             alt="Visual fragment"

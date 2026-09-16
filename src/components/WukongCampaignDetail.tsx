@@ -44,10 +44,10 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
             </h5>
             
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(0)}
             >
-              <img src="/images/20260810210257417.webp" alt="Step 1 破圈主视觉（KV）爆发" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810210257417.webp" alt="Step 1 破圈主视觉（KV）爆发" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -60,7 +60,7 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               <span className="text-red-400 font-mono mr-2">Step 2</span>动态短片赋能（Img2Video 视觉延展）：
             </h5>
             
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-black/60 shadow-2xl p-1 sm:p-2">
+            <div className="rounded-none overflow-hidden border border-white/10 bg-black/60 shadow-2xl p-1 sm:p-2">
               <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/eleven.mp4" language={language} />
             </div>
 
@@ -98,10 +98,10 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               <span className="font-normal text-zinc-300 ml-1">将 3D 视觉与数字 UI 界面相融合。在海报中植入了时间地点信息框（TIME 14:00, 4F-407）及搜索引导（国潮大圣小店计划），将单纯的视觉图转化为带有“O2O（线上到线下）导览功能”的电商服务界面，凸显了商业设计师的交互思维。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(1)}
             >
-              <img src="/images/20260810210327215.webp" alt="Step 2 潮鞋极速服务 UI 映射" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810210327215.webp" alt="Step 2 潮鞋极速服务 UI 映射" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -126,19 +126,19 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
 
         <div className="flex flex-col gap-6 w-full">
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(2)}
           >
-            <img src="/images/20260810210755058.webp" alt="Phase 03 节点控制 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img loading="lazy" decoding="async" src="/images/20260810210755058.webp" alt="Phase 03 节点控制 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
           </div>
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(3)}
           >
-            <img src="/images/20260810210810493.webp" alt="Phase 03 节点控制 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img loading="lazy" decoding="async" src="/images/20260810210810493.webp" alt="Phase 03 节点控制 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
@@ -161,10 +161,10 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               <span className="font-normal text-zinc-300 ml-1">在确认无误的骨骼基础上，进行基础底色（Basic Color）铺设，并最终输出带有极高细节的写实材质光影（高清底图）。最后叠加亮黄色的电商促销横幅与排版设计，完成最终商业成品。整个流程环环相扣，展现了顶级的 3D 视觉推演能力。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(4)}
             >
-              <img src="/images/20260810210355806.webp" alt="Step 2 设计过程五步拆解图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810210355806.webp" alt="Step 2 设计过程五步拆解图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -203,10 +203,10 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               <span className="font-normal text-zinc-300 ml-1">将主视觉中的大圣面部特写与联名 Logo 提取，完美适配于手机壳、斜挎包、棒球帽、保温杯、马克杯等高频消费品。并设计了包含模切线的贴纸包与高规格硬质礼盒，直接满足了线下快闪店“打卡-购买-开箱”的完整消费者体验链路。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(5)}
             >
-              <img src="/images/20260810210436472.webp" alt="Step 2 全品类服饰与周边延展大图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810210436472.webp" alt="Step 2 全品类服饰与周边延展大图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -234,10 +234,10 @@ export function WukongCampaignDetail({ language, t, setLightboxState, gallery }:
               <span className="font-normal text-zinc-300 ml-1">除了广角的震撼海报，针对线下快闪店的体验环节，专门生成了第一人称视角（POV）的视觉图。大圣在带有发光霓虹灯的赛博朋克鞋店柜台后，双手捧着打开的联名鞋盒递向顾客，极大地拉近了虚拟角色与真实消费者的心理距离。这张图完美呼应了“大圣出列，为你服务”的 Campaign 核心主题，为整场 24 小时限时快闪活动画上了圆满的句号。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(6)}
             >
-              <img src="/images/20260810210500199.webp" alt="Step 1 大圣双手递鞋盒的互动视角图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810210500199.webp" alt="Step 1 大圣双手递鞋盒的互动视角图" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>

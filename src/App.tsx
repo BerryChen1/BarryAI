@@ -1,20 +1,19 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ChevronRight, X, ArrowUpRight, Copy, Check, Eye } from 'lucide-react';
 import { PORTFOLIO_DETAILS, CATALOG_PORTFOLIO_DATA } from './data';
 import { ProjectItem } from './types';
 import { CustomVideoPlayer } from './components/CustomVideoPlayer';
-import { TikTokDetail } from './components/TikTokDetail';
-import { TikTokShopDetail } from './components/TikTokShopDetail';
-import { TencentIEGDetail } from './components/TencentIEGDetail';
+const TikTokDetail = React.lazy(() => import('./components/TikTokDetail').then(module => ({ default: module.TikTokDetail })));
+const TikTokShopDetail = React.lazy(() => import('./components/TikTokShopDetail').then(module => ({ default: module.TikTokShopDetail })));
+const TencentIEGDetail = React.lazy(() => import('./components/TencentIEGDetail').then(module => ({ default: module.TencentIEGDetail })));
 import { ChillaxCampaignDetail } from './components/ChillaxCampaignDetail';
 import { OddityClubDetail } from './components/OddityClubDetail';
 import { WukongCampaignDetail } from './components/WukongCampaignDetail';
-import { ZoomableLightbox } from './components/ZoomableLightbox';
+const ZoomableLightbox = React.lazy(() => import('./components/ZoomableLightbox').then(module => ({ default: module.ZoomableLightbox })));
 import { Vid1Detail } from './components/Vid1Detail';
 import { Vid2Detail } from './components/Vid2Detail';
 import { Vid3Detail } from './components/Vid3Detail';
-import { Vid4Detail } from './components/Vid4Detail';
 import { Vid5Detail } from './components/Vid5Detail';
 import { Vid11Detail } from './components/Vid11Detail';
 import { Vid12Detail } from './components/Vid12Detail';
@@ -26,40 +25,56 @@ import { Xuanye } from './components/Xuanye';
 
 
 const CyberText = ({ lines, noWrapLast = false }: { lines: string[], noWrapLast?: boolean }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-  const letterVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.01 } }
-  };
+  const [charIndex, setCharIndex] = useState(-1);
+
+  useEffect(() => {
+    let frame: number;
+    
+    const update = () => {
+      const now = Date.now();
+      // Total cycle duration: 5500ms (5.5 seconds)
+      const cycleTime = now % 5500;
+      
+      // Phase 1: 0ms - 1000ms -> Hidden (Blank)
+      if (cycleTime < 1000) {
+        setCharIndex(-1);
+      } 
+      // Phase 2 & 3: 1000ms - 5500ms -> Typing and Holding
+      else {
+        // 1 char every 100ms
+        const typed = Math.floor((cycleTime - 1000) / 100);
+        setCharIndex(typed);
+      }
+      
+      frame = requestAnimationFrame(update);
+    };
+    
+    frame = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  let charsRendered = 0;
 
   return (
-    <div className="animate-cyber-glitch w-full h-full relative bg-[#0A0A0A] flex flex-col items-start justify-center text-left p-4 md:p-8 xl:p-12 overflow-hidden">
-      <motion.h2
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
-        variants={containerVariants}
-        className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.05] uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 via-zinc-100 to-zinc-500 bg-[length:200%_auto] animate-liquid-metal cursor-default flex flex-col items-start drop-shadow-sm"
-      >
+    <div className="w-full h-full relative bg-[#0A0A0A] flex flex-col items-start justify-center text-left p-4 md:p-8 xl:p-12 overflow-hidden">
+      <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.05] uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 via-zinc-100 to-zinc-500 bg-[length:200%_auto] animate-cyber-glitch-combined cursor-default flex flex-col items-start drop-shadow-sm">
         {lines.map((line, i) => {
           const isLast = i === lines.length - 1;
           return (
             <span key={i} className={isLast && noWrapLast ? "whitespace-nowrap" : "block"}>
-              {line.split("").map((char, j) => (
-                <motion.span key={j} variants={letterVariants} className="inline-block">
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+              {line.split("").map((char, j) => {
+                const isVisible = charsRendered <= charIndex;
+                charsRendered++;
+                return (
+                  <span key={j} style={{ visibility: isVisible ? "visible" : "hidden" }} className="inline-block">
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                );
+              })}
             </span>
           );
         })}
-      </motion.h2>
+      </h2>
     </div>
   );
 };
@@ -162,8 +177,8 @@ export default function App() {
         <nav className="fixed top-0 left-0 right-0 w-full z-[200] bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5 flex justify-between items-center px-6 md:px-12 py-2.5 md:py-3.5 shrink-0 transition-all">
           {/* Left: Avatar & Name */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <img src={PORTFOLIO_DETAILS[0].coverImage} alt="BarryC" className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover border border-white/20" />
-            <span className="text-white font-bold text-base md:text-lg tracking-wide">BarryC</span>
+            <img loading="lazy" decoding="async" src="/images/20260917004311360.webp" alt="BarryC" className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover border border-white/20" />
+            <span className="text-white font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "'Caveat', cursive" }}>BarryC.</span>
           </div>
 
           {/* Right: Links & Xiaohongshu */}
@@ -178,7 +193,7 @@ export default function App() {
             
             <a href="https://xhslink.cn/o/6MSzBnU332q" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-1.5 md:gap-2 hover:text-white transition-colors" title="前往小红书查看更多">
               <span className="hidden lg:inline-block text-xs font-medium mr-1 opacity-60 group-hover:opacity-100 transition-opacity">Follow</span>
-              <img src="/images/20260912213639645.webp" alt="小红书" className="w-5 h-5 md:w-6 md:h-6 object-contain group-hover:scale-110 transition-transform shrink-0 drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]" />
+              <img loading="lazy" decoding="async" src="/images/20260912213639645.webp" alt="小红书" className="w-5 h-5 md:w-6 md:h-6 object-contain group-hover:scale-110 transition-transform shrink-0 drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]" />
               <ArrowUpRight className="w-3 h-3 md:w-3.5 md:h-3.5 opacity-50 group-hover:opacity-100 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 shrink-0" />
             </a>
           </div>
@@ -192,45 +207,48 @@ export default function App() {
           <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] font-black text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 via-zinc-100 to-zinc-500 leading-[0.8] tracking-tighter uppercase text-center w-full animate-title-combined">
             BOCHEN'S AI ROOM
           </h1>
-          <h2 className="text-xs md:text-xl font-bold tracking-[0.3em] text-zinc-400 mt-3 md:mt-4 uppercase text-center animate-letter-breathe whitespace-nowrap">
+          <h2 className="text-xs md:text-xl font-bold tracking-[0.3em] text-zinc-400 mt-3 md:mt-4 uppercase text-center whitespace-nowrap">
             AIGC Video & Visual Creator
           </h2>
-          <p className="text-zinc-400 tracking-[0.2em] text-[9px] md:text-xs mt-1.5 md:mt-2 uppercase text-center animate-third-line-combined whitespace-nowrap">
-            AIGC 影视 | 动画 | 视觉
+          <p className="text-zinc-400 tracking-[0.2em] text-[9px] md:text-xs mt-1.5 md:mt-2 uppercase text-center whitespace-nowrap">
+            AIGC 影视 · 动画 · 视觉
           </p>
         </header>
 
         {/* Hero Grid Section */}
-        <section id="home" className="w-full flex-1 min-h-0 relative overflow-hidden bg-zinc-900 flex group">
-          <div className="flex animate-marquee h-full w-[400vw] lg:w-[200vw] group-hover:[animation-play-state:paused]">
+        <section id="home" className="w-full flex-1 min-h-0 relative overflow-hidden bg-zinc-900 flex">
+          <div className="flex h-full w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory">
             {/* Grid 1 */}
-            <div className="w-[200vw] lg:w-[100vw] h-full grid grid-cols-4 grid-rows-2 gap-0.5 pr-0.5 shrink-0 bg-[#0A0A0A]">
+            <div className="w-[200vw] lg:w-full h-full grid grid-cols-4 grid-rows-2 gap-0.5 shrink-0 bg-[#0A0A0A] snap-start">
               {/* Row 1 / Block 1-4 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《玄夜·引渡》</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
           
           <CyberText lines={["FRAME", "BY", "FRAME."]} />
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-13')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《墨染·天下》</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-1')}>
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《The Last》</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
@@ -238,90 +256,30 @@ export default function App() {
           {/* Row 2 / Block 5-8 */}
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">怪奇研究所</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
-
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('comm-3')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <CyberText lines={["READY", "WHEN", "YOU ARE."]} noWrapLast={true} />
-            </div>
-
-            {/* Grid 2 */}
-            <div className="w-[200vw] lg:w-[100vw] h-full grid grid-cols-4 grid-rows-2 gap-0.5 pr-0.5 shrink-0 bg-[#0A0A0A]" aria-hidden="true">
-              {/* Row 1 / Block 1-4 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-          
-          <CyberText lines={["FRAME", "BY", "FRAME."]} />
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-13')}>
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-1')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2 / Block 5-8 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《超时空决战！英灵殿》</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
 
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('comm-3')}>
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex items-center justify-center pointer-events-none">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500">
-                <Eye className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《五音傩神》</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
@@ -337,7 +295,7 @@ export default function App() {
         
         {/* About Column */}
         <div className="w-full lg:w-1/2 flex flex-col">
-          <motion.h3 {...fadeUp(0)} className="text-zinc-500 text-sm tracking-[0.2em] font-medium mb-4 uppercase">ABOUT</motion.h3>
+          <motion.h3 {...fadeUp(0)} className="text-zinc-500 text-sm tracking-[0.2em] font-medium mb-4 uppercase">ABOUT ME</motion.h3>
           <motion.h2 {...fadeUp(0.1)} className="text-4xl md:text-5xl font-bold text-white mb-12 tracking-tight">关于我</motion.h2>
           
           <div className="flex flex-col gap-8 text-base md:text-lg text-zinc-400 font-light leading-relaxed mb-12">
@@ -355,20 +313,27 @@ export default function App() {
           {/* Personal Intro Card */}
           <motion.div 
             {...fadeUp(0.5)}
-            className="group relative flex items-center gap-5 p-4 md:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-colors cursor-pointer w-full max-w-sm"
+            className="group relative flex items-center gap-5 p-4 md:p-5 rounded-sm bg-zinc-900/50 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 cursor-pointer w-full max-w-sm shadow-xl hover:shadow-sky-500/10 overflow-hidden"
             onClick={() => setSelectedExperienceIndex(0)}
           >
-            {/* Dot indicator (matches internship styling visually) */}
-            <div className="absolute -left-2 w-3 h-3 rounded-full bg-zinc-800 group-hover:bg-zinc-300 transition-colors hidden md:block border border-zinc-700" />
-            
-            <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-white/5 group-hover:border-white/20 transition-colors">
-              <img src={PORTFOLIO_DETAILS[0].coverImage} alt={PORTFOLIO_DETAILS[0].title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
+            {/* Ambient Glow */}
+            <div className="absolute -inset-x-10 -top-10 h-20 bg-sky-500/20 blur-[40px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+            <div className="w-16 h-16 rounded-sm overflow-hidden shrink-0 border border-white/10 group-hover:border-sky-400/30 transition-colors shadow-lg z-10">
+              <img loading="lazy" decoding="async" src={PORTFOLIO_DETAILS[0].coverImage} alt={PORTFOLIO_DETAILS[0].title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <div className="flex flex-col flex-1">
-              <h4 className="text-xl font-bold text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">{PORTFOLIO_DETAILS[0].title}</h4>
-              <p className="text-zinc-400 text-sm line-clamp-1 group-hover:text-zinc-300 group-hover:translate-x-1 transition-all duration-300">{PORTFOLIO_DETAILS[0].tagline || "个人详细履历、荣誉与成就"}</p>
-              <span className="inline-flex items-center gap-1 text-[10px] tracking-widest uppercase text-zinc-500 mt-2 group-hover:text-white transition-colors">
-                <ChevronRight className="w-3 h-3 text-zinc-400" /> 探索个人卡片
+            
+            <div className="flex flex-col flex-1 z-10">
+              <div className="flex justify-between items-start mb-1">
+                <h4 className="text-xl font-bold text-zinc-200 group-hover:text-white transition-colors">{PORTFOLIO_DETAILS[0].title}</h4>
+                <div className="w-5 h-5 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                  <ArrowUpRight className="w-3 h-3 text-sky-400" />
+                </div>
+              </div>
+              <p className="text-zinc-400 text-xs md:text-sm line-clamp-1 group-hover:text-zinc-300 transition-colors">{PORTFOLIO_DETAILS[0].tagline || "个人详细履历、荣誉与成就"}</p>
+              
+              <span className="inline-flex items-center gap-1 text-[10px] tracking-widest uppercase text-white/80 mt-2.5 group-hover:text-sky-400 transition-colors">
+                探索详细履历 <ChevronRight className="w-3 h-3" />
               </span>
             </div>
           </motion.div>
@@ -401,12 +366,12 @@ export default function App() {
                 {/* Thumbnail */}
                 {/* @ts-ignore */}
                 {exp.detail.logo ? (
-                  <div className="w-24 h-7 md:w-28 md:h-8 shrink-0 flex items-center justify-center -mt-0.5 md:mt-0 relative rounded-md md:rounded-lg overflow-hidden border border-white/5 group-hover:border-white/15 shadow-md transition-colors">
-                    <img src={(exp.detail as any).logo} alt={exp.detail.title} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 origin-center" />
+                  <div className="w-24 h-7 md:w-28 md:h-8 shrink-0 flex items-center justify-center -mt-0.5 md:mt-0 relative rounded-md md:rounded-sm overflow-hidden border border-white/5 group-hover:border-white/15 shadow-md transition-colors">
+                    <img loading="lazy" decoding="async" src={(exp.detail as any).logo} alt={exp.detail.title} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 origin-center" />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 transition-colors mt-1 flex items-center justify-center border border-white/5 group-hover:border-white/20">
-                    <img src={exp.detail.coverImage} alt={exp.detail.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="w-16 h-16 rounded-sm overflow-hidden shrink-0 transition-colors mt-1 flex items-center justify-center border border-white/5 group-hover:border-white/20">
+                    <img loading="lazy" decoding="async" src={exp.detail.coverImage} alt={exp.detail.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
                   </div>
                 )}
 
@@ -466,7 +431,7 @@ export default function App() {
               >
                 <div className="relative w-full aspect-video bg-[#111] overflow-hidden mb-4 md:mb-5">
                   {proj.coverImage ? (
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src={proj.coverImage} 
                       alt={proj.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
@@ -508,7 +473,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className={`${["oth-2", "brand-wukong", "brand-1"].includes(selectedProject.id) ? "w-full max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24" : "max-w-5xl mx-auto px-6"} py-24`}>
+            <div className={`w-full max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 py-24`}>
               <motion.div 
                 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}
               >
@@ -518,6 +483,14 @@ export default function App() {
                   </div>
                 ) : (
                   <>
+                    {/* Commercial Visual Works - Top Cover Image */}
+                    {["brand-1", "brand-wukong", "oth-2"].includes(selectedProject.id) && selectedProject.coverImage && (
+                      <div className="w-full mb-12 -mt-6 group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer rounded-none border border-white/10" onClick={() => setLightboxState({ images: selectedProject.gallery || [selectedProject.coverImage], index: 0 })}>
+                        <img loading="lazy" decoding="async" src={selectedProject.coverImage} alt={selectedProject.title} className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                      </div>
+                    )}
+                    
                     {/* Detail Header */}
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{selectedProject.title}</h2>
                     {selectedProject.subtitle && !CATALOG_PORTFOLIO_DATA.find(c => c.id === 'illustration')?.projects.some(p => p.id === selectedProject?.id) && <p className="text-xl text-zinc-400 font-light mb-12">{selectedProject.subtitle}</p>}
@@ -535,7 +508,7 @@ export default function App() {
                         </div>
                         
                         {selectedProject.id === "vid-11" || selectedProject.id === "vid-12" || selectedProject.id === "vid-13" ? (
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-16">
+                          <div className="flex flex-col gap-6 w-full mb-16">
                             <CustomVideoPlayer src={
                               selectedProject.id === "vid-11" 
                                 ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4" 
@@ -579,34 +552,24 @@ export default function App() {
                         {selectedProject.story && selectedProject.story.map((para, pIdx) => {
                           const isWuyinPara = para.includes("夜幕幻境之中五音傩神齐聚亮相");
                           const isNandouPara = para.includes("作品以南斗六星君为创作原型");
-                          const isDnfPara = para.includes("整套设计覆盖版本主 KV、角色分镜海报、团本场景界面等多类应用画面");
                           const isJiujiuPara = para.includes("山东工艺美术学院研究生学会 AIGC 卡通 IP 形象「究究」完整设计方案");
                           return (
                             <React.Fragment key={pIdx}>
                               <p className="tracking-wide">{para}</p>
                               {isWuyinPara && (
-                                <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                <div className="my-6 rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
                                   <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4" language={language} />
                                 </div>
                               )}
                               {isNandouPara && (
-                                <div className="my-6 rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                <div className="my-6 rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
                                   <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4" language={language} />
                                 </div>
                               )}
-                              {isDnfPara && (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                                  <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                    <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
-                                  </div>
-                                  <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                                    <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
-                                  </div>
-                                </div>
-                              )}
+                              
                               {isJiujiuPara && (
                                 <div className="my-6 flex flex-col items-center">
-                                  <div className="w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                                  <div className="w-full max-w-2xl rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
                                     <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4" language={language} />
                                   </div>
                                   <p className="text-xs md:text-sm text-zinc-400 mt-3 font-sans tracking-wide text-center">
@@ -622,11 +585,10 @@ export default function App() {
                     )}
 
                     {/* Curated Media Showcase/Gallery */}
-                    <div className="space-y-8">
+<div className="space-y-8">
                       {selectedProject.id === "vid-1" && <Vid1Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-2" && <Vid2Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-3" && <Vid3Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-4" && <Vid4Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-5" && <Vid5Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-11" && <Vid11Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
                       {selectedProject.id === "vid-12" && <Vid12Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
@@ -648,6 +610,24 @@ export default function App() {
                           </div>
                           <VidGalleryDetail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />
                         </>
+                      )}
+
+                      {/* DNF Videos at the very bottom */}
+                      {selectedProject.id === "comm-2" && (
+                        <div className="flex flex-col gap-6 w-full mt-12 mb-6">
+                          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
+                            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
+                              动态视效展示 / DYNAMIC VISUALS
+                            </h2>
+                          </div>
+                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
+                          </div>
+                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
+                          </div>
+                        </div>
                       )}
                     </div>
                   </>
@@ -676,7 +656,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className="max-w-5xl mx-auto px-6 py-24">
+            <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-24 py-24">
               <motion.div 
                 initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}
               >
@@ -718,23 +698,23 @@ export default function App() {
                         </h3>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                           {PORTFOLIO_DETAILS[0].achievements.map((img, i) => (
-                            <div key={i} className="aspect-square bg-zinc-900 rounded-xl overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievements!, index: i})}>
-                              <img src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                            <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievements!, index: i})}>
+                              <img loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             </div>
                           ))}
                         </div>
                         {PORTFOLIO_DETAILS[0].achievementsRow2 && (
                           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-4">
                             {PORTFOLIO_DETAILS[0].achievementsRow2.map((img, i) => (
-                              <div key={i} className="aspect-square bg-zinc-900 rounded-xl overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievementsRow2!, index: i})}>
-                                <img src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                              <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievementsRow2!, index: i})}>
+                                <img loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                               </div>
                             ))}
                           </div>
                         )}
                         {PORTFOLIO_DETAILS[0].largeAchievementImage && (
-                          <div className="w-full rounded-xl overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: [PORTFOLIO_DETAILS[0].largeAchievementImage!], index: 0})}>
-                             <img src={PORTFOLIO_DETAILS[0].largeAchievementImage} className="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-700" />
+                          <div className="w-full rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: [PORTFOLIO_DETAILS[0].largeAchievementImage!], index: 0})}>
+                             <img loading="lazy" decoding="async" src={PORTFOLIO_DETAILS[0].largeAchievementImage} className="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-700" />
                           </div>
                         )}
                       </div>
@@ -774,11 +754,30 @@ export default function App() {
                           </ul>
                         </div>
                       )}
+
+                      {/* DNF Videos at the very bottom */}
+                      {selectedProject.id === "comm-2" && (
+                        <div className="flex flex-col gap-6 w-full mt-12 mb-6">
+                          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
+                            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
+                              动态视效展示 / DYNAMIC VISUALS
+                            </h2>
+                          </div>
+                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
+                          </div>
+                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
                 {/* Render the legacy detailed components */}
-                {selectedExperienceIndex === 1 && (
+                <Suspense fallback={<div className="flex items-center justify-center p-12 text-zinc-500">Loading...</div>}>
+{selectedExperienceIndex === 1 && (
                   <TikTokDetail language={language} t={t} setLightboxUrl={(url) => url ? setLightboxState({images: [url], index: 0}) : setLightboxState(null)} />
                 )}
                 {selectedExperienceIndex === 2 && (
@@ -787,6 +786,7 @@ export default function App() {
                 {selectedExperienceIndex === 3 && (
                   <TencentIEGDetail language={language} t={t} setLightboxUrl={(url) => url ? setLightboxState({images: [url], index: 0}) : setLightboxState(null)} />
                 )}
+</Suspense>
               </motion.div>
             </div>
           </motion.div>
@@ -796,7 +796,7 @@ export default function App() {
       {/* Lightbox for both Modals */}
       <AnimatePresence>
         {lightboxState && (
-          <ZoomableLightbox
+          <Suspense fallback={null}><ZoomableLightbox
             url={lightboxState.images[lightboxState.index]}
             onClose={() => setLightboxState(null)}
             language={language}
@@ -805,7 +805,7 @@ export default function App() {
             hasPrev={lightboxState.index > 0}
             onNext={() => setLightboxState({ ...lightboxState, index: lightboxState.index + 1 })}
             onPrev={() => setLightboxState({ ...lightboxState, index: lightboxState.index - 1 })}
-          />
+          /></Suspense>
         )}
       </AnimatePresence>
 

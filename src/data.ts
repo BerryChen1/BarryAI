@@ -78,7 +78,7 @@ export const PORTFOLIO_DETAILS = [
     largeAchievementImage: "/images/20260626222446052.webp"
   },
   {
-    logo: "/images/20260912222402001.webp",
+    logo: "/images/20260917003942067.webp",
     title: "字节跳动·TikTok-Design(北京)",
     enTitle: "ByteDance • Douyin TikTok",
     subtitle: "多媒体设计(AIGC向)",
@@ -104,7 +104,7 @@ export const PORTFOLIO_DETAILS = [
     works: []
   },
   {
-    logo: "/images/20260912222402001.webp",
+    logo: "/images/20260917003942067.webp",
     title: "字节跳动·TikTok Shop(上海)",
     enTitle: "ByteDance • Douyin TikTok Shop",
     subtitle: "AIGC内容创作与运营",
@@ -130,7 +130,7 @@ export const PORTFOLIO_DETAILS = [
     works: []
   },
   {
-    logo: "/images/20260912222413550.webp",
+    logo: "/images/20260917003954707.webp",
     title: "腾讯·IEG国内发行线(深圳)",
     enTitle: "Tencent • IEG Domestic Publishing",
     subtitle: "AIGC美术视觉设计",
@@ -174,7 +174,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-14",
         title: "王者荣耀合作曲《墨染·天下》",
         subtitle: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
-        coverImage: "/images/20260912020233443.webp",
+        coverImage: "/images/20260917011456973.webp",
         tags: ["商业合作 MV", "3D水墨古风", "AIGC全工作流"],
         tools: ["GPT", "Nano Banana", "Midjourney", "Seedance", "Kling", "Lovart"],
         client: "王者荣耀 Live音乐会",
@@ -186,9 +186,9 @@ export const CATALOG_PORTFOLIO_DATA = [
       },
       {
         id: "vid-1",
-        title: "《The Last》",
+        title: "《The Last》赛博风格化短片",
         subtitle: "“死亡不是我们的终点，遗忘才是”",
-        coverImage: "/images/20260912020245422.webp",
+        coverImage: "/images/20260917011519795.webp",
         tags: ["独立制片", "AIGC流体", "声画联觉"],
         tools: ["Runway Gen-3", "可灵 AI", "Suno", "Lovart"],
         client: "个人探索系列",
@@ -212,7 +212,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-13",
         title: "《超时空决战！英灵殿》",
         subtitle: "“走，我们一起打回英灵殿！”",
-        coverImage: "/images/20260912020255830.webp",
+        coverImage: "/images/20260917011541513.webp",
         tags: ["AIGC 3D动画", "UE5质感", "超时空写实"],
         tools: ["ComfyUI", "Seed 1.0", "Runway", "Lovart"],
         client: "个人创作企划",
@@ -226,7 +226,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-5",
         title: "《重返地球：42号远航队》",
         subtitle: "“原子不会湮灭，我们终将再次相遇”",
-        coverImage: "/images/20260912020307910.webp",
+        coverImage: "/images/20260917011556621.webp",
         tags: ["太空探索", "硬核科幻", "电影级CG"],
         tools: ["Midjourney", "Runway Gen-3", "ACE"],
         client: "独立科幻艺术影像计划",
@@ -243,7 +243,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-2",
         title: "《MVLAND 致命节奏》",
         subtitle: "AIMV合作曲先导片 & MVLAND平台",
-        coverImage: "/images/20260912020316670.webp",
+        coverImage: "/images/20260917011342760.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Tapnow", "ACE", "Midjourney"],
         client: "学术新媒体展演",
@@ -260,7 +260,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-3",
         title: "《明天的前夜》",
         subtitle: "“你会温和的走入那一夜吗?”",
-        coverImage: "/images/20260912020325687.webp",
+        coverImage: "/images/20260917011636449.webp",
         tags: ["科幻叙事", "情感共振", "末日美学"],
         tools: ["Midjourney", "Runway Gen-3", "Lovart"],
         client: "独立短片计划",
@@ -278,24 +278,23 @@ export const CATALOG_PORTFOLIO_DATA = [
         ],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4"
       },
-      {
-        id: "vid-4",
-        title: "《CyberpunkGO》",
-        subtitle: "AIGC未来都市概念片",
-        coverImage: "/images/20260912020339116.webp",
-        tags: ["赛博朋克", "夜景霓虹", "故障美学"],
-        tools: ["Midjourney", "Runway Gen-3", "ACE"],
-        client: "个人创意实验",
-        role: "导演 / 视觉设计 / 剪辑",
-        description: "“嘿，你会想念夜之城吗？”",
+            {
+        id: "vid-11",
+        title: "《聊斋·罗刹梦回》",
+        subtitle: "创作中...",
+        coverImage: "/images/20260917011811080.webp",
+        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
+        tools: ["Tapnow", "ACE", "Midjourney"],
+        client: "学术新媒体展演",
+        role: "动画艺术创意编排",
+        description: "创作中...",
         story: [
-          "雨幕裹着霓虹漫过整座钢铁丛林，从高空俯瞰下去，摩天楼的灯海在水汽里沉浮，在楼宇夹缝与架空廊道间穿梭俯冲，在这机械与人性撕扯的霓虹都市里，守着夜之城最后一点摇摇欲坠的底线。",
-          "短片选用 Seedance 2.0、Midjourney 与 NanoBanana Pro 模型制作，以浓烈的色彩笔触渲染追缉行动的紧张氛围，通过独处沉思与街巷穿行的画面切换，刻画出赛博世界里猎手的生存状态与使命。"
+          "敬请期待"
         ],
         gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4"
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4"
       },
-      {
+{
         id: "vid-6",
         title: "《信》",
         subtitle: "AIGC中式动画短片",
@@ -377,23 +376,7 @@ export const CATALOG_PORTFOLIO_DATA = [
 
 
 
-      {
-        id: "vid-11",
-        title: "《聊斋·罗刹梦回》",
-        subtitle: "创作中...",
-        coverImage: "/images/20260912020429297.webp",
-        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
-        tools: ["Tapnow", "ACE", "Midjourney"],
-        client: "学术新媒体展演",
-        role: "动画艺术创意编排",
-        description: "创作中...",
-        story: [
-          "敬请期待"
-        ],
-        gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4"
-      },
-      {
+            {
         id: "vid-12",
         title: "《迷城》",
         subtitle: "创作中...",

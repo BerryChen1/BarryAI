@@ -21,10 +21,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
         {/* Main Cover Key Visual */}
         <div className="pt-2">
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(0)}
           >
-            <img 
+            <img loading="lazy" decoding="async" 
               src="/images/20260810201007869.webp" 
               alt="LIVE FREELY 2033 Hero KV" 
               className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" 
@@ -65,19 +65,19 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             
             <div className="grid grid-cols-2 gap-4 w-full">
               <div 
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-xl border border-white/10"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-none border border-white/10"
                 onClick={() => openZoom(1)}
               >
-                <img src="/images/20260810201026613.webp" alt="Step 1 情绪板与范式提取 A" className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src="/images/20260810201026613.webp" alt="Step 1 情绪板与范式提取 A" className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
               </div>
               <div 
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-xl border border-white/10"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[16/10] rounded-none border border-white/10"
                 onClick={() => openZoom(2)}
               >
-                <img src="/images/20260810201057668.webp" alt="Step 1 情绪板与范式提取 B" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src="/images/20260810201057668.webp" alt="Step 1 情绪板与范式提取 B" className="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -117,10 +117,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">生成了符合“地球慵懒节 2033”主题的男版主视觉。画面色彩采用高饱和的波普对比色，文字排版融入了膨胀气球质感的 3D 字体，确保了活动海报在第一眼就能产生极强的视觉冲击力。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(3)}
             >
-              <img src="/images/20260810201213304.webp" alt="Step 1 核心 KV 输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810201213304.webp" alt="Step 1 核心 KV 输出" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -134,10 +134,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">将复杂的 KV 场景拆解为独立的、白底抠图级别的 UI 卡片素材（角色表情特写、马克杯、毛绒拖鞋、捏星星的手、地球沙发等）。这种标准化的素材库构建，极大提升了后续宣发海报、H5 页面的设计效率。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(4)}
             >
-              <img src="/images/20260810201234896.webp" alt="Step 2 视觉资产网格化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810201234896.webp" alt="Step 2 视觉资产网格化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -151,10 +151,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">制定了严格的活动品牌色卡（Colorways），并将 3D 资产与数字 UI 界面（如社交媒体点赞框、3D 膨胀字体排版）进行无缝融合，验证了其在社交媒体传播端的适配性。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(5)}
             >
-              <img src="/images/20260810201313275.webp" alt="Step 3 色彩与 UI 交互规范" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810201313275.webp" alt="Step 3 色彩与 UI 交互规范" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -185,10 +185,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">采用无限画布作为核心工作台。将不同的海报排版布局、场景变体（如不同角度的户外广告牌）以节点阵列的形式平铺，进行高效的视觉 A/B 测试。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(6)}
             >
-              <img src="/images/20260810201336478.webp" alt="Step 1 无限画布发散与阵列对比" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810201336478.webp" alt="Step 1 无限画布发散与阵列对比" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -203,19 +203,19 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
             </h5>
             <div className="grid grid-cols-2 gap-4 w-full">
               <div 
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
                 onClick={() => openZoom(7)}
               >
-                <img src="/images/20260810201400666.webp" alt="Step 2 结构化提示词 SOP A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src="/images/20260810201400666.webp" alt="Step 2 结构化提示词 SOP A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
               </div>
               <div 
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
                 onClick={() => openZoom(8)}
               >
-                <img src="/images/20260810201416773.webp" alt="Step 2 结构化提示词 SOP B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src="/images/20260810201416773.webp" alt="Step 2 结构化提示词 SOP B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
                 </div>
@@ -247,10 +247,10 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
               <span className="font-normal text-zinc-300 ml-1">活动海报必须兼顾数字端的精细度与户外端的视觉冲击力。在画面上半部分，高饱和的波普色彩与 3D 膨胀字体奠定了 KV 的情绪基调；在下半部分，该视觉被无缝合成至阳光明媚的街头巨幅白皮布广告牌中。在自然光影的照射下，毛绒材质与黏土的体积感被完美凸显，证明了该视觉既能扛得住线上高清展现，也能胜任线下大促级别的巨幅宣发。</span>
             </h5>
             <div 
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
               onClick={() => openZoom(9)}
             >
-              <img src="/images/20260810201559514.webp" alt="Step 1 主视觉与巨幅广告的无缝转化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260810201559514.webp" alt="Step 1 主视觉与巨幅广告的无缝转化" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -276,28 +276,28 @@ export function ChillaxCampaignDetail({ language, t, setLightboxState, gallery }
 
         <div className="space-y-4">
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(10)}
           >
-            <img src="/images/20260810202144888.webp" alt="Phase 05 伴手礼延展 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img loading="lazy" decoding="async" src="/images/20260810202144888.webp" alt="Phase 05 伴手礼延展 A" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
           </div>
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(11)}
           >
-            <img src="/images/20260810202155199.webp" alt="Phase 05 伴手礼延展 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img loading="lazy" decoding="async" src="/images/20260810202155199.webp" alt="Phase 05 伴手礼延展 B" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>
           </div>
           <div 
-            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-xl border border-white/10"
+            className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10"
             onClick={() => openZoom(12)}
           >
-            <img src="/images/20260810202208113.webp" alt="Phase 05 伴手礼延展 C" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+            <img loading="lazy" decoding="async" src="/images/20260810202208113.webp" alt="Phase 05 伴手礼延展 C" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}
             </div>

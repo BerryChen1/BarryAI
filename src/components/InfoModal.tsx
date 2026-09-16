@@ -28,7 +28,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="w-full max-w-lg bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl relative z-10"
+            className="w-full max-w-lg bg-neutral-950 border border-white/10 rounded-none overflow-hidden shadow-2xl relative z-10"
           >
             {/* Header */}
             <div className="flex justify-between items-center px-5 sm:px-8 py-4 sm:py-5 border-b border-white/5 bg-neutral-900/40">
@@ -105,7 +105,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
               {type === 'use-cases' && (
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-xl border border-white/5 bg-neutral-900/30">
+                    <div className="p-4 rounded-none border border-white/5 bg-neutral-900/30">
                       <span className="text-xs font-mono text-muted-foreground block mb-2">01 / DISCOVERY</span>
                       <h4 className="text-foreground text-sm font-semibold mb-1">Independent Researchers</h4>
                       <p className="text-muted-foreground text-xs leading-normal">
@@ -113,7 +113,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-xl border border-white/5 bg-neutral-900/30">
+                    <div className="p-4 rounded-none border border-white/5 bg-neutral-900/30">
                       <span className="text-xs font-mono text-muted-foreground block mb-2">02 / INTERFACE</span>
                       <h4 className="text-foreground text-sm font-semibold mb-1">Tech Founders</h4>
                       <p className="text-muted-foreground text-xs leading-normal">
@@ -121,7 +121,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-xl border border-white/5 bg-neutral-900/30 font-sans">
+                    <div className="p-4 rounded-none border border-white/5 bg-neutral-900/30 font-sans">
                       <span className="text-xs font-mono text-muted-foreground block mb-2">03 / CREATION</span>
                       <h4 className="text-foreground text-sm font-semibold mb-1">Digital Publishers</h4>
                       <p className="text-muted-foreground text-xs leading-normal">
@@ -129,7 +129,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-xl border border-white/5 bg-neutral-900/30">
+                    <div className="p-4 rounded-none border border-white/5 bg-neutral-900/30">
                       <span className="text-xs font-mono text-muted-foreground block mb-2">04 / ARCHIVE</span>
                       <h4 className="text-foreground text-sm font-semibold mb-1">Curators & Scholars</h4>
                       <p className="text-muted-foreground text-xs leading-normal">
@@ -145,7 +145,7 @@ export function InfoModal({ isOpen, onClose, title, type }: InfoModalProps) {
             <div className="px-5 sm:px-8 py-4 sm:py-5 border-t border-white/5 bg-neutral-900/40 flex justify-end">
               <button
                 onClick={onClose}
-                className="bg-foreground text-background font-semibold text-xs py-2 px-6 rounded-lg hover:bg-neutral-200 transition-colors cursor-pointer"
+                className="bg-foreground text-background font-semibold text-xs py-2 px-6 rounded-none hover:bg-neutral-200 transition-colors cursor-pointer"
               >
                 CLOSE
               </button>

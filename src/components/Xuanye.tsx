@@ -1,8 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ZoomableLightbox } from './ZoomableLightbox';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
 
 export const Xuanye = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [lightboxState, setLightboxState] = useState<{ images: string[], index: number } | null>(null);
+
+  const gallery = [
+    "/images/20260912184251573.webp",
+    "/images/20260912190045556.webp",
+    "/images/20260912184325915.webp",
+    "/images/20260912184337215.webp",
+    "/images/20260912184348720.webp",
+    "/images/20260912184410665.webp",
+    "/images/20260912184422016.webp"
+  ];
+
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -75,24 +88,20 @@ export const Xuanye = () => {
     background-position:0 0;
   }
 
-  .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  .wrap{position:relative;z-index:1;width:100%;max-width:1600px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
 
-  /* ============ 竖排侧签 ============ */
-  .rail{
-    position:fixed;top:0;right:clamp(8px,2vw,28px);height:100vh;
-    display:flex;align-items:center;z-index:5;pointer-events:none;
-  }
-  .rail span{
-    writing-mode:vertical-rl;font-family:var(--brush);
-    font-size:clamp(20px,2vw,30px);color:var(--gold);
-    letter-spacing:.5em;opacity:.55;text-shadow:0 0 22px rgba(200,164,92,.35);
-  }
-  @media(max-width:820px){.rail{display:none}}
+  
 
   /* ============ 页眉 / HERO ============ */
   header{
-    min-height:100vh;display:flex;flex-direction:column;justify-content:center;
     position:relative;padding:120px 0 50px;
+  }
+  .hero-img {
+    width: 100%;
+    margin-bottom: 60px;
+    border: 1px solid var(--line);
+    display: block;
+    box-shadow: 0 0 60px rgba(0,0,0,.6);
   }
   .kicker{
     display:flex;align-items:center;gap:16px;margin-bottom:38px;
@@ -200,7 +209,7 @@ export const Xuanye = () => {
   .el .el-en{font-family:var(--latin);font-style:italic;color:var(--jade-lit);font-size:.92rem;margin-bottom:18px}
   .el p{font-size:.98rem;color:var(--yue-dim);line-height:1.95}
   .el .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .el .tags span{font-family:var(--latin);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:4px 11px;border-radius:20px}
+  .el .tags span{font-family:var(--latin);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:4px 11px;border-radius:0px}
 
   /* ============ 字体系统 ============ */
   .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
@@ -236,7 +245,7 @@ export const Xuanye = () => {
     position:absolute;font-family:var(--latin);font-size:.7rem;letter-spacing:.16em;
     text-transform:uppercase;color:var(--yue-dim);
   }
-  .canvas .chip{position:absolute;border:1px solid var(--jade);width:12%;aspect-ratio:1;border-radius:4px}
+  .canvas .chip{position:absolute;border:1px solid var(--jade);width:12%;aspect-ratio:1;border-radius:0px}
   .principles{list-style:none}
   .principles li{padding:20px 0;border-bottom:1px solid var(--line-2);display:flex;gap:18px;align-items:baseline}
   .principles li b{font-family:var(--latin);color:var(--zhu-lit);font-size:1.1rem;min-width:34px}
@@ -301,32 +310,32 @@ export const Xuanye = () => {
 `}</style>
       
 
-<div className="rail"><span>玄 夜 引 渡</span></div>
+
 
 <div className="wrap">
 
   
   <header>
-    <div className="kicker">Key Visual Design Specification · 主视觉设计说明</div>
-    <h1 className="title-cn">
+    <img loading="lazy" decoding="async" src="/images/20260912184251573.webp" alt="Hero Key Visual" className="hero-img reveal cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 0 })} />
+    <div className="kicker reveal">Key Visual Design Specification · 主视觉设计说明</div>
+    <h1 className="title-cn reveal">
       <span className="glyph">玄</span><span className="glyph yin">夜</span><span className="seal-inline">☯</span><span className="glyph">引</span><span className="glyph yin">渡</span>
     </h1>
-    <p className="title-en">
+    <p className="title-en reveal">
       Through <b>light</b> comes clarity, through <b>darkness</b> comes divining.<br />
       阴阳交生，引渡魂灵越幽冥而归澄明。
     </p>
-    <dl className="hero-meta">
+    <dl className="hero-meta reveal">
       <div><dt>Genre</dt><dd>东方玄幻 · 暗黑国风</dd></div>
       <div><dt>Format</dt><dd>横版主视觉 16:9</dd></div>
       <div><dt>Mood</dt><dd>幽邃 · 华贵 · 仪式感</dd></div>
       <div><dt>Palette</dt><dd>玄 / 朱 / 金 / 碧</dd></div>
     </dl>
-
-    <div className="ph-block reveal">
-      <div className="ph-label">Position A · Hero Key Visual</div>
-      <img src="/images/20260912184251573.webp" alt="图1" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
-      <div style={{ marginTop: '2rem' }}>
-        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/yindu.mp4" />
+    
+    <div className="ph-block reveal" style={{ marginTop: '60px' }}>
+      <div className="ph-label mb-6 text-zinc-500 text-xs tracking-widest uppercase">Animated Showreel</div>
+      <div className="w-full relative mx-auto my-10 max-w-7xl px-4 sm:px-6">
+        <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/yindu.mp4" aspectRatio="aspect-[16/9]" />
       </div>
     </div>
   </header>
@@ -351,10 +360,10 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position B · Mood Portrait</div>
-      <img src="/images/20260912190045556.webp" alt="新增顶图" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)","marginBottom":"20px"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912190045556.webp" alt="新增顶图" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 1 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)","marginBottom":"20px"}} />
       <div style={{"display":"flex","justifyContent":"center","gap":"20px"}}>
-        <img src="/images/20260912184325915.webp" alt="图3" style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
-        <img src="/images/20260912184337215.webp" alt="图4新加" style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+        <img loading="lazy" decoding="async" src="/images/20260912184325915.webp" alt="图3" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 2 })} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+        <img loading="lazy" decoding="async" src="/images/20260912184337215.webp" alt="图4新加" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 3 })} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
       </div>
     </div>
   </section>
@@ -407,7 +416,7 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position C · Design Board Overview</div>
-      <img src="/images/20260912184348720.webp" alt="图5" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184348720.webp" alt="图5" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 4 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
 
     <div className="elements reveal">
@@ -563,12 +572,12 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position F · Character Sheet</div>
-      <img src="/images/20260912184410665.webp" alt="图6" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184410665.webp" alt="图6" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 5 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
 
     <div className="ph-block reveal">
       <div className="ph-label">Position G · Applications Board</div>
-      <img src="/images/20260912184422016.webp" alt="图7" style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184422016.webp" alt="图7" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 6 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
   </section>
 
@@ -582,6 +591,21 @@ export const Xuanye = () => {
 </div>
 
 
+
+
+
+      {lightboxState && (
+        <ZoomableLightbox
+          url={lightboxState.images[lightboxState.index]}
+          onClose={() => setLightboxState(null)}
+          t={(zh, en) => zh}
+          onNext={lightboxState.index < lightboxState.images.length - 1 ? () => setLightboxState({ ...lightboxState, index: lightboxState.index + 1 }) : undefined}
+          onPrev={lightboxState.index > 0 ? () => setLightboxState({ ...lightboxState, index: lightboxState.index - 1 }) : undefined}
+          hasNext={lightboxState.index < lightboxState.images.length - 1}
+          hasPrev={lightboxState.index > 0}
+        />
+      )}
     </div>
   );
 };
+

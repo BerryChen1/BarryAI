@@ -133,7 +133,10 @@ body {
   }
 }
 .animate-cyber-glitch {
-  animation: cyber-glitch 4s infinite;
+  animation: cyber-glitch 3s infinite;
+}
+.animate-cyber-glitch-combined {
+  animation: liquid-metal-flow 4s ease-in-out infinite, cyber-glitch 3s infinite;
 }
 
 @keyframes liquid-metal-flow {
@@ -178,7 +181,7 @@ body {
 }
 .animate-title-combined {
   background-size: 300% auto;
-  animation: title-shine-sweep 8s linear infinite, title-micro-glitch 4s infinite;
+  animation: title-shine-sweep 8s linear infinite, title-micro-glitch 3s infinite;
 }
 
 @keyframes subtitle-micro-glitch {

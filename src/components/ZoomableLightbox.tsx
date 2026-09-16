@@ -168,27 +168,60 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
       onClick={onClose}
       className="fixed inset-0 z-[400] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md select-none touch-none"
     >
-      {/* Top Bar Indicators & Close */}
-      <div className="absolute top-0 inset-x-0 h-16 pointer-events-none px-6 flex items-center justify-between z-10 bg-gradient-to-b from-black/60 to-transparent">
-        <div className="text-zinc-400 text-xs font-mono font-light pointer-events-auto">
-          {scale > 1 ? (
-            <span className="bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded-full border border-sky-500/20">
+      {/* Top Left Controls */}
+      <div className="absolute top-4 left-6 pointer-events-none z-20">
+        
+        {/* Unified Control Cluster */}
+        <div className="flex flex-col items-start gap-2 pointer-events-none z-20">
+          {/* Controls Capsule */}
+          <div className="flex items-center gap-2 bg-black/30 border border-white/5 px-2 py-1.5 rounded-full shadow-lg backdrop-blur-md hover:bg-black/50 transition-colors pointer-events-auto">
+            <button
+              onClick={(e) => { e.stopPropagation(); handleZoomOut(); }}
+              disabled={scale <= 1}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              title={t("缩小", "Zoom Out")}
+            >
+              <ZoomOut className="w-3.5 h-3.5" />
+            </button>
+
+            <span className="text-[11px] font-mono text-zinc-300 min-w-[36px] text-center font-medium">
               {Math.round(scale * 100)}%
             </span>
-          ) : (
-            <span className="bg-white/5 text-zinc-400 px-2.5 py-1 rounded-full border border-white/5">
-              {t("标准尺寸", "Default View")}
-            </span>
-          )}
+
+            <button
+              onClick={(e) => { e.stopPropagation(); handleZoomIn(); }}
+              disabled={scale >= 4}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              title={t("放大", "Zoom In")}
+            >
+              <ZoomIn className="w-3.5 h-3.5" />
+            </button>
+
+            <div className="w-[1px] h-3 bg-white/10" />
+
+            <button
+              onClick={(e) => { e.stopPropagation(); handleReset(); }}
+              disabled={scale === 1 && position.x === 0 && position.y === 0}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              title={t("重置", "Reset")}
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Text Tips */}
+          <div className="text-[10px] text-zinc-500 font-sans tracking-wide md:block hidden animate-fade-in pl-2">
+            {scale > 1 
+              ? t("拖动查看细节 • 双击重置", "Drag to pan • Double click to reset") 
+              : t("双击或滚轮放大", "Double click or scroll to zoom")
+            }
+          </div>
         </div>
-        <button
-          onClick={onClose}
-          className="pointer-events-auto w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white hover:bg-neutral-900 flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer shadow-lg"
-          title={t("关闭", "Close")}
-        >
-          <X className="w-5 h-5" />
-        </button>
+
+
       </div>
+
+      
 
       {/* Main Image Container */}
       <div
@@ -252,7 +285,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
               loop
               playsInline
               onError={handleMediaError}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/5"
+              className="max-w-[95vw] max-h-[95vh] object-contain rounded-none shadow-2xl border border-white/5"
               onClick={(e) => e.stopPropagation()}
             />
           ) : (
@@ -260,7 +293,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
               ref={imageRef}
               src={activeMediaUrl}
               alt="Large detailed zoomable view"
-              className="max-w-full max-h-[80vh] object-contain rounded-lg select-none shadow-2xl border border-white/5"
+              className="max-w-[95vw] max-h-[95vh] object-contain rounded-none select-none shadow-2xl border border-white/5"
               draggable={false}
               onError={handleMediaError}
               referrerPolicy="no-referrer"
@@ -268,7 +301,7 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
           )}
 
           {/* BarryAI Repeated Faint Watermark Overlay */}
-          <div className="absolute inset-0 pointer-events-none rounded-lg overflow-hidden select-none z-10 flex flex-col justify-between py-8 md:py-12">
+          <div className="absolute inset-0 pointer-events-none rounded-none overflow-hidden select-none z-10 flex flex-col justify-between py-8 md:py-12">
             {Array.from({ length: 3 }).map((_, rowIdx) => (
               <div 
                 key={rowIdx} 
@@ -294,49 +327,9 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
         </motion.div>
       </div>
 
-      {/* Floating Control Toolbar */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3 bg-neutral-900/95 border border-white/10 px-5 py-2.5 rounded-full shadow-2xl backdrop-blur-md">
-        <button
-          onClick={(e) => { e.stopPropagation(); handleZoomOut(); }}
-          disabled={scale <= 1}
-          className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          title={t("缩小", "Zoom Out")}
-        >
-          <ZoomOut className="w-4 h-4" />
-        </button>
+      
 
-        <span className="text-[11px] font-mono text-zinc-300 min-w-[36px] text-center font-medium">
-          {Math.round(scale * 100)}%
-        </span>
-
-        <button
-          onClick={(e) => { e.stopPropagation(); handleZoomIn(); }}
-          disabled={scale >= 4}
-          className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          title={t("放大", "Zoom In")}
-        >
-          <ZoomIn className="w-4 h-4" />
-        </button>
-
-        <div className="w-[1px] h-4 bg-white/10" />
-
-        <button
-          onClick={(e) => { e.stopPropagation(); handleReset(); }}
-          disabled={scale === 1 && position.x === 0 && position.y === 0}
-          className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 active:scale-90 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          title={t("重置", "Reset")}
-        >
-          <RotateCcw className="w-4 h-4" />
-        </button>
-      </div>
-
-      {/* Navigation overlay tips */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-[10px] text-zinc-500 font-sans tracking-wide text-center pointer-events-none md:block hidden animate-fade-in">
-        {scale > 1 
-          ? t("可拖动图片查看细节 • 双击重置", "Drag to pan • Double click to reset") 
-          : t("双击图片或使用滚轮可快速放大 • 滚轮上下滚动调焦", "Double click or scroll wheel to zoom • Scroll up/down to adjust focus")
-        }
-      </div>
+      
     </motion.div>
   );
 }

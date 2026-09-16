@@ -13,13 +13,13 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
         </h3>
 
         {/* Two Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <div className="flex flex-col gap-6 w-full">
           <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%201.mp4" language={language} aspectRatio="aspect-[21/9]" />
           <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%202.mp4" language={language} aspectRatio="aspect-[21/9]" />
         </div>
 
         {/* Descriptive Bullet List */}
-        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-2.5 text-left text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+        <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-2.5 text-left text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
           <p>
             <span className="font-semibold text-zinc-100">镜头与运镜：</span>
             采用极速推轨结合手持摄影机震动效果，实现无剪辑点的一镜到底连续动态视觉。
@@ -61,7 +61,7 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
           ].map((item, idx, arr) => (
             <div
               key={`valhalla-achieve-${idx}`}
-              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl border border-white/5"
+              className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-[4/3] sm:aspect-[16/10] rounded-none border border-white/5"
               onClick={() => setLightboxState({ images: arr.map(i => i.url), index: idx })}
             >
               <img
@@ -88,7 +88,7 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
 
         {/* 角色 2D 转 3D */}
         <div className="space-y-4">
-          <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+          <div className="p-4 rounded-none bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
             <span className="font-semibold text-zinc-100">角色 2D 转 3D：</span>
             以前期2D人物设定图为视觉锚点，提取核心特征（如特定材质长袍、机械义肢）。通过图像生成模型与风格转化，赋予角色“真实皮肤纹理”、“UE5引擎渲染”及“超高清”的3D立体光影与物理材质表现。
           </div>
@@ -106,8 +106,8 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
               "/images/20260812001908765.webp",
               "/images/20260812001930770.webp"
             ].map((imgUrl, idx, arr) => (
-              <div key={`vid13-grid9-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
-                <img src={imgUrl} alt={`Asset ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+              <div key={`vid13-grid9-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                <img loading="lazy" decoding="async" src={imgUrl} alt={`Asset ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -119,7 +119,7 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
 
         {/* 场景环境构建 */}
         <div className="space-y-4 pt-4">
-          <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+          <div className="p-4 rounded-none bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
             <span className="font-semibold text-zinc-100">场景环境构建：</span>
             使用高精度提示词架构锁定画面参数。通过固定“极暗宫殿废墟”、“冷调工业暗光”以及“21:9电影画幅”等限制词，生成具有真实景深、低饱和度且带轻微胶片颗粒感的电影级场景，确保人物与场景的光影逻辑高度自洽。
           </div>
@@ -131,8 +131,8 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
               "/images/20260812002010944.webp",
               "/images/20260812002028317.webp"
             ].map((imgUrl, idx, arr) => (
-              <div key={`vid13-scene3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
-                <img src={imgUrl} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+              <div key={`vid13-scene3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                <img loading="lazy" decoding="async" src={imgUrl} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -152,7 +152,7 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
 
         {/* Seed 1.0 音频制作 */}
         <div className="space-y-4">
-          <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+          <div className="p-4 rounded-none bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
             <span className="font-semibold text-zinc-100">Seed 1.0 音频制作：</span>
             为3D化角色注入音频表现。接入 Seed 1.0 音频大模型，通过输入台词并配置对应的人物性格参数，生成具备情绪起伏与呼吸感的拟真旁白。结合视频生成技术，驱动角色生成自然的口型与面部微表情。
           </div>
@@ -164,8 +164,8 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
               "/images/20260812002052189.webp",
               "/images/20260812002105760.webp"
             ].map((imgUrl, idx, arr) => (
-              <div key={`vid13-audio3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
-                <img src={imgUrl} alt={`Audio Control ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+              <div key={`vid13-audio3-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
+                <img loading="lazy" decoding="async" src={imgUrl} alt={`Audio Control ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -176,10 +176,27 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
         </div>
 
         {/* 多人场景工作流控制 */}
-        <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+        <div className="p-4 rounded-none bg-zinc-900/50 border border-white/5 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
           <span className="font-semibold text-zinc-100">多人场景工作流控制：</span>
           针对多人同框场景，采用高度模块化的节点连线工作流与区域控制（Region Control）技术。通过划分精确的画面坐标区块，将特定的角色参考图与提示词独立定向到指定区域。此流程可有效避免多角色特征混淆、色彩溢出及画风崩塌，在实现复杂调度的同时维持全局统一的写实CG画风。
         </div>
+      </div>
+    
+      {/* Poster Design Showcase */}
+      <div className="space-y-8 pt-6">
+          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
+            <span className="w-2 h-2 rounded-full bg-sky-300" />
+            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
+              {t("海报设计展示 / POSTER DESIGN SHOWCASE", "POSTER DESIGN SHOWCASE")}
+            </h2>
+          </div>
+          <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/5" onClick={() => setLightboxState({images: ["/images/20260917011541513.webp"], index: 0})}>
+            <img loading="lazy" decoding="async" src="/images/20260917011541513.webp" alt="Poster Design" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+            <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+              {t("点击查看大图", "Click to Zoom")}
+            </div>
+          </div>
       </div>
     </div>
   );

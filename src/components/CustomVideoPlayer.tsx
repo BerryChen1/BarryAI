@@ -14,6 +14,21 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleVideoClick = (e: React.MouseEvent) => {
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+      toggleFullscreen();
+    } else {
+      clickTimeoutRef.current = setTimeout(() => {
+        togglePlay();
+        clickTimeoutRef.current = null;
+      }, 250);
+    }
+  };
+
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
@@ -231,8 +246,8 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   return (
     <div 
       ref={containerRef}
-      className={`group/player relative w-full ${aspectRatio} rounded-3xl overflow-hidden border border-white/10 bg-black shadow-[0_0_50px_rgba(0,0,0,0.85)] select-none transition-all duration-300 ${
-        isFullscreen ? 'rounded-none border-none !aspect-auto !w-screen !h-screen flex items-center justify-center' : 'hover:border-sky-500/30'
+      className={`group/player relative w-full ${aspectRatio} rounded-sm overflow-hidden bg-black select-none transition-all duration-300 ${
+        isFullscreen ? 'rounded-sm border-none !aspect-auto !w-screen !h-screen flex items-center justify-center' : 'border border-white/5 hover:border-white/20'
       }`}
       onContextMenu={(e) => e.preventDefault()}
       id="custom-video-player"
@@ -251,8 +266,8 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onSeeked={() => setIsBuffering(false)}
         onCanPlay={() => setIsBuffering(false)}
         onError={handleVideoError}
-        onClick={togglePlay}
-        onDoubleClick={toggleFullscreen}
+        onClick={handleVideoClick}
+        onDoubleClick={(e) => { if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current); toggleFullscreen(); }}
         playsInline
         preload={hasBeenInView ? "auto" : "none"}
         controlsList="nodownload"
@@ -261,6 +276,13 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         }`}
         referrerPolicy="no-referrer"
       />
+
+      {/* Double-click Tooltip */}
+      <div className={`absolute top-6 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/40 backdrop-blur-md border border-white/10 rounded-full text-white/80 text-[10px] md:text-xs tracking-widest pointer-events-none transition-all duration-500 z-50 ${
+        showControls ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+      }`}>
+        {isFullscreen ? '双击退出全屏' : '双击全屏'}
+      </div>
 
       {/* BarryAI Repeated Faint Watermark Overlay */}
       <div className="absolute inset-0 pointer-events-none select-none z-[8] flex flex-col justify-between py-6 md:py-10 overflow-hidden">
@@ -374,26 +396,26 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         </div>
 
         {/* Dashboard Actions Panel - now placed underneath the seekbar */}
-        <div className="flex items-center justify-between gap-4 mt-1">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-4 mt-2 px-1">
+          <div className="flex items-center gap-4">
             {/* Play / Pause button */}
             <button 
               onClick={togglePlay}
-              className="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/5 hover:border-white/10 text-white transition-all duration-300 focus:outline-none"
+              className="p-1 text-zinc-300 hover:text-white transition-all duration-300 focus:outline-none hover:scale-110"
               title={isPlaying ? t("暂停", "Pause") : t("播放", "Play")}
             >
               {isPlaying ? (
-                <Pause className="w-4 h-4 md:w-5 md:h-5 text-sky-400 fill-sky-400" />
+                <Pause className="w-5 h-5 md:w-6 md:h-6 text-sky-400 fill-sky-400" />
               ) : (
-                <Play className="w-4 h-4 md:w-5 md:h-5 text-white fill-white" />
+                <Play className="w-5 h-5 md:w-6 md:h-6 fill-current" />
               )}
             </button>
 
             {/* Volume Control widget */}
-            <div className="flex items-center gap-2 group/volume bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl px-2.5 py-1.5 transition-all duration-300">
+            <div className="flex items-center gap-2 group/volume transition-all duration-300">
               <button 
                 onClick={toggleMute}
-                className="text-zinc-300 hover:text-white focus:outline-none"
+                className="p-1 text-zinc-300 hover:text-white transition-all duration-300 focus:outline-none hover:scale-110"
                 title={isMuted ? t("取消静音", "Unmute") : t("静音", "Mute")}
               >
                 {isMuted ? (
@@ -429,24 +451,24 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
             </div>
 
             {/* Time counter details */}
-            <span className="hidden sm:inline text-xs text-zinc-350 font-mono tracking-wider ml-1 bg-black/35 px-2.5 py-1 rounded-lg border border-white/5">
-              {formatTime(progress)} <span className="text-zinc-500">/</span> {formatTime(duration)}
+            <span className="hidden sm:inline text-xs text-zinc-400 font-mono tracking-wider ml-2">
+              <span className="text-zinc-200">{formatTime(progress)}</span> / {formatTime(duration)}
             </span>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-zinc-300">
+          <div className="flex items-center gap-3 text-xs text-zinc-300">
             {/* Playback speed selector */}
             <div className="relative">
               <button
                 onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-                className="px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/5 text-[10px] md:text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all duration-300 focus:outline-none"
+                className="px-2 py-1 text-[10px] md:text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 text-zinc-300 hover:text-white transition-all duration-300 focus:outline-none"
               >
-                <FastForward className="w-3.5 h-3.5 text-zinc-400" />
+                <FastForward className="w-3.5 h-3.5" />
                 {playbackRate.toFixed(1)}x
               </button>
 
               {showSpeedMenu && (
-                <div className="absolute bottom-full right-0 mb-2 py-1 w-20 rounded-xl bg-zinc-950/95 border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col z-30 transform origin-bottom animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="absolute bottom-full right-0 mb-2 py-1 w-20 rounded-sm bg-zinc-950/95 border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col z-30 transform origin-bottom animate-in fade-in slide-in-from-bottom-2 duration-300">
                   {[0.5, 1.0, 1.25, 1.5, 2.0].map((rate) => (
                     <button
                       key={rate}
@@ -465,7 +487,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
             {/* Fullscreen Button */}
             <button
               onClick={toggleFullscreen}
-              className="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/5 hover:border-white/10 text-white transition-all duration-300 focus:outline-none"
+              className="p-1 text-zinc-300 hover:text-white transition-all duration-300 focus:outline-none hover:scale-110"
               title={isFullscreen ? t("退出全屏", "Exit Fullscreen") : t("全屏", "Fullscreen")}
             >
               {isFullscreen ? (
@@ -475,7 +497,6 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
               )}
             </button>
           </div>
-
         </div>
 
       </div>

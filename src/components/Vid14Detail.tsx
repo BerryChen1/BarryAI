@@ -21,7 +21,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
           一、 项目概述与核心风格
         </h3>
-        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+        <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-3 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
           <p>
             本项目为“王者荣耀Live音乐会企划”的商业合作 MV。视频将基于【王者英雄x音乐】的主题，打造一支以战斗、热血为主，且具备强音乐性的视觉短片。（角色、音乐为官方授权）
           </p>
@@ -48,10 +48,10 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           ].map((item, idx, arr) => (
             <div key={`vid14-style-${idx}`} className="space-y-2">
               <div
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5"
                 onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
               >
-                <img src={item.url} alt={`Style ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={item.url} alt={`Style ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -69,7 +69,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
           二、 核心角色设定与羁绊
         </h3>
-        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+        <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
           故事围绕公孙离与李信展开，明世隐作为反派推动情节。公孙离对李信是“坚定又柔软”的单向暗恋，而李信虽视其为最重要的光，却因复仇执念与“美强惨”的宿命，将其推开。此次短片重点展现李信为了守护阿离，打破理智堕入修罗的悲剧美学。
         </div>
 
@@ -91,10 +91,10 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           ].map((item, idx, arr) => (
             <div key={`vid14-bond-${idx}`} className="space-y-2">
               <div
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5"
                 onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
               >
-                <img src={item.url} alt={`Bond ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={item.url} alt={`Bond ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -112,7 +112,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
           三、 场景概念与氛围构建
         </h3>
-        <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
+        <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 text-xs sm:text-sm md:text-base text-zinc-300 font-light leading-relaxed">
           全片场景基调契合“墨染江湖”，环境的明暗色彩将随着李信的形态转换与剧情走向发生剧烈变化。
         </div>
 
@@ -134,10 +134,10 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           ].map((item, idx, arr) => (
             <div key={`vid14-scene-${idx}`} className="space-y-2">
               <div
-                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5"
                 onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
               >
-                <img src={item.url} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={item.url} alt={`Scene ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}
@@ -162,7 +162,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
             { time: "1:00 - 1:20", title: "【修罗】", desc: "第三幕高潮：李信打破理智，堕入狂暴修罗状态" },
             { time: "1:20 - 1:30", title: "【余温】", desc: "尾声落幅：硝烟散去，微风红叶废墟中的情感余温" }
           ].map((act, aIdx) => (
-            <div key={`vid14-act-${aIdx}`} className="p-4 rounded-xl bg-zinc-900/60 border border-white/10 space-y-2">
+            <div key={`vid14-act-${aIdx}`} className="p-4 rounded-none bg-zinc-900/60 border border-white/10 space-y-2">
               <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono bg-sky-500/20 text-sky-300 border border-sky-400/30">
                 {act.time}
               </span>
@@ -185,7 +185,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
 
         <div className="space-y-6">
           {/* 阶段 1 */}
-          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+          <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-4">
             <div className="flex items-center gap-3 border-b border-white/5 pb-3">
               <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
                 阶段 1
@@ -223,10 +223,10 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
               ].map((item, idx, arr) => (
                 <div key={`vid14-char-${idx}`} className="space-y-2">
                   <div
-                    className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-2xl border border-white/5"
+                    className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5"
                     onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
                   >
-                    <img src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                     <div className="absolute top-3 left-3 bg-black/70 border border-white/10 text-xs text-sky-300 font-medium px-2.5 py-1 rounded-md backdrop-blur-sm">
                       {item.title}
@@ -242,7 +242,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           </div>
 
           {/* 阶段 2 */}
-          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-3">
+          <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-3">
             <div className="flex items-center gap-3 border-b border-white/5 pb-3">
               <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
                 阶段 2
@@ -256,7 +256,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           </div>
 
           {/* 阶段 3 */}
-          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+          <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-4">
             <div className="flex items-center gap-3 border-b border-white/5 pb-3">
               <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
                 阶段 3
@@ -270,10 +270,10 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
 
             {/* 移过来的 SOP 流程图 */}
             <div
-              className="group relative overflow-hidden bg-zinc-900 rounded-xl border border-white/10 max-w-xl cursor-pointer mt-2"
+              className="group relative overflow-hidden bg-zinc-900 rounded-none border border-white/10 max-w-xl cursor-pointer mt-2"
               onClick={() => setLightboxState({ images: ["/images/20260812012228682.png"], index: 0 })}
             >
-              <img src="/images/20260812012228682.png" alt="SOP Video Draft" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260812012228682.png" alt="SOP Video Draft" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
               <div className="absolute bottom-3 right-3 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
@@ -281,7 +281,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
           </div>
 
           {/* 阶段 4 */}
-          <div className="p-5 md:p-6 rounded-xl bg-zinc-900/70 border border-white/10 space-y-4">
+          <div className="p-5 md:p-6 rounded-none bg-zinc-900/70 border border-white/10 space-y-4">
             <div className="flex items-center gap-3 border-b border-white/5 pb-3">
               <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-semibold border border-sky-400/30">
                 阶段 4
@@ -296,16 +296,33 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
 
             {/* 阶段 4 补充说明图片 */}
             <div
-              className="group relative overflow-hidden bg-zinc-900 rounded-xl border border-white/10 max-w-xl cursor-pointer mt-2"
+              className="group relative overflow-hidden bg-zinc-900 rounded-none border border-white/10 max-w-xl cursor-pointer mt-2"
               onClick={() => setLightboxState({ images: ["/images/20260812015011486.png"], index: 0 })}
             >
-              <img src="/images/20260812015011486.png" alt="SOP Final Production" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260812015011486.png" alt="SOP Final Production" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" referrerPolicy="no-referrer" />
               <div className="absolute bottom-3 right-3 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>
             </div>
           </div>
         </div>
+      </div>
+    
+      {/* Poster Design Showcase */}
+      <div className="space-y-8 pt-6">
+          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
+            <span className="w-2 h-2 rounded-full bg-sky-300" />
+            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
+              {t("海报设计展示 / POSTER DESIGN SHOWCASE", "POSTER DESIGN SHOWCASE")}
+            </h2>
+          </div>
+          <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/5" onClick={() => setLightboxState({images: ["/images/20260917011456973.webp"], index: 0})}>
+            <img loading="lazy" decoding="async" src="/images/20260917011456973.webp" alt="Poster Design" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+            <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
+              {t("点击查看大图", "Click to Zoom")}
+            </div>
+          </div>
       </div>
     </div>
   );
