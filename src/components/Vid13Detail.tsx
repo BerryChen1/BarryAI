@@ -12,10 +12,11 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
           片段展示
         </h3>
 
-        {/* Two Videos */}
+        {/* Three Videos */}
         <div className="flex flex-col gap-6 w-full">
           <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%201.mp4" language={language} aspectRatio="aspect-[21/9]" />
           <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yinglindian%202.mp4" language={language} aspectRatio="aspect-[21/9]" />
+          <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/yld-jiewei.mp4" language={language} aspectRatio="aspect-[21/9]" />
         </div>
 
         {/* Descriptive Bullet List */}
@@ -190,8 +191,8 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
               {t("海报设计展示 / POSTER DESIGN SHOWCASE", "POSTER DESIGN SHOWCASE")}
             </h2>
           </div>
-          <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/5" onClick={() => setLightboxState({images: ["/images/20260917011541513.webp"], index: 0})}>
-            <img loading="lazy" decoding="async" src="/images/20260917011541513.webp" alt="Poster Design" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+          <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/5" onClick={() => setLightboxState({images: ["/images/20260918003015260.webp"], index: 0})}>
+            <img loading="lazy" decoding="async" src="/images/20260918003015260.webp" alt="Poster Design" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
             <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
               {t("点击查看大图", "Click to Zoom")}

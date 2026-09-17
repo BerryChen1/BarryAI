@@ -507,22 +507,16 @@ export default function App() {
                           </h2>
                         </div>
                         
-                        {selectedProject.id === "vid-11" || selectedProject.id === "vid-12" || selectedProject.id === "vid-13" ? (
+                        {selectedProject.id === "vid-11" ? (
                           <div className="flex flex-col gap-6 w-full mb-16">
-                            <CustomVideoPlayer src={
-                              selectedProject.id === "vid-11" 
-                                ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4" 
-                                : selectedProject.id === "vid-13"
-                                ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4"
-                                : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
-                            } language={language} />
-                            <CustomVideoPlayer src={
-                              selectedProject.id === "vid-11" 
-                                ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4" 
-                                : selectedProject.id === "vid-13"
-                                ? "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%882%EF%BC%89.mp4"
-                                : "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4"
-                            } language={language} />
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/hainan.mp4" language={language} />
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4" language={language} />
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4" language={language} />
+                          </div>
+                        ) : selectedProject.id === "vid-12" ? (
+                          <div className="flex flex-col gap-6 w-full mb-16">
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4" language={language} />
+                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4" language={language} />
                           </div>
                         ) : (
                           <div className="mb-16 bg-[#111]">
@@ -603,7 +597,7 @@ export default function App() {
                           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                             <span className="w-2 h-2 rounded-full bg-sky-300" />
                             <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
-                              {(selectedProject.id === "vid-6" || selectedProject.id === "vid-7" || selectedProject.id === "vid-8" || selectedProject.id === "vid-9")
+                              {(selectedProject.id === "vid-6" || selectedProject.id === "vid-7" )
                                     ? t("作品详细 / WORK DETAILS", "WORK DETAILS")
                                     : t("精选创作成品 / VISUAL GALLERY", "VISUAL GALLERY")}
                             </h2>

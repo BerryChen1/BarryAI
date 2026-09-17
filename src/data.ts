@@ -174,7 +174,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-14",
         title: "王者荣耀合作曲《墨染·天下》",
         subtitle: "王者荣耀农音节“LIVE音乐会”官方合作短片《墨染·天下》",
-        coverImage: "/images/20260917011456973.webp",
+        coverImage: "/images/20260918002937353.webp",
         tags: ["商业合作 MV", "3D水墨古风", "AIGC全工作流"],
         tools: ["GPT", "Nano Banana", "Midjourney", "Seedance", "Kling", "Lovart"],
         client: "王者荣耀 Live音乐会",
@@ -188,7 +188,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-1",
         title: "《The Last》赛博风格化短片",
         subtitle: "“死亡不是我们的终点，遗忘才是”",
-        coverImage: "/images/20260917011519795.webp",
+        coverImage: "/images/20260918002956161.webp",
         tags: ["独立制片", "AIGC流体", "声画联觉"],
         tools: ["Runway Gen-3", "可灵 AI", "Suno", "Lovart"],
         client: "个人探索系列",
@@ -212,7 +212,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-13",
         title: "《超时空决战！英灵殿》",
         subtitle: "“走，我们一起打回英灵殿！”",
-        coverImage: "/images/20260917011541513.webp",
+        coverImage: "/images/20260918003015260.webp",
         tags: ["AIGC 3D动画", "UE5质感", "超时空写实"],
         tools: ["ComfyUI", "Seed 1.0", "Runway", "Lovart"],
         client: "个人创作企划",
@@ -226,7 +226,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-5",
         title: "《重返地球：42号远航队》",
         subtitle: "“原子不会湮灭，我们终将再次相遇”",
-        coverImage: "/images/20260917011556621.webp",
+        coverImage: "/images/20260918003027318.webp",
         tags: ["太空探索", "硬核科幻", "电影级CG"],
         tools: ["Midjourney", "Runway Gen-3", "ACE"],
         client: "独立科幻艺术影像计划",
@@ -243,7 +243,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-2",
         title: "《MVLAND 致命节奏》",
         subtitle: "AIMV合作曲先导片 & MVLAND平台",
-        coverImage: "/images/20260917011342760.webp",
+        coverImage: "/images/20260918003057078.webp",
         tags: ["先锋影像", "抽象情绪", "动力学粒子"],
         tools: ["Tapnow", "ACE", "Midjourney"],
         client: "学术新媒体展演",
@@ -260,7 +260,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-3",
         title: "《明天的前夜》",
         subtitle: "“你会温和的走入那一夜吗?”",
-        coverImage: "/images/20260917011636449.webp",
+        coverImage: "/images/20260918003043807.webp",
         tags: ["科幻叙事", "情感共振", "末日美学"],
         tools: ["Midjourney", "Runway Gen-3", "Lovart"],
         client: "独立短片计划",
@@ -298,7 +298,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "vid-6",
         title: "《信》",
         subtitle: "AIGC中式动画短片",
-        coverImage: "/images/20260912020349612.webp",
+        coverImage: "/images/20260918003136030.webp",
         tags: ["情感叙事", "超现实意象", "胶片美学"],
         tools: ["Midjourney", "Runway Gen-3", "Lovart"],
         client: "个人艺术创作 / 独立短片计划",
@@ -313,6 +313,26 @@ export const CATALOG_PORTFOLIO_DATA = [
           "/images/20260623004609678.webp"
         ],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/six.mp4"
+      },
+
+
+
+
+            {
+        id: "vid-12",
+        title: "《迷城》",
+        subtitle: "创作中...",
+        coverImage: "/images/20260918003152866.webp",
+        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
+        tools: ["Tapnow", "ACE", "Midjourney"],
+        client: "学术新媒体展演",
+        role: "动画艺术创意编排",
+        description: "创作中...",
+        story: [
+          "敬请期待"
+        ],
+        gallery: [],
+        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
       },
       {
         id: "vid-7",
@@ -334,64 +354,6 @@ export const CATALOG_PORTFOLIO_DATA = [
         ],
         videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/seven.mp4"
       },
-      {
-        id: "vid-8",
-        title: "《赤壁·新年篇》",
-        subtitle: "王者荣耀AIGC新春短片 & 红薯游戏制片厂",
-        coverImage: "/images/20260912020409852.webp",
-        tags: ["史诗国风", "历史重构", "战争美学"],
-        tools: ["Midjourney", "Runway Gen-3", "ACE"],
-        client: "新年国风艺术展映",
-        role: "导演 / 视觉概念 / 合成",
-        description: "“江东的风裹着烽烟，却也吹向团圆”",
-        story: [
-          "赤壁大战一触即发，孙权因战前局势深陷焦灼难安。孙策与孙尚香奔赴前线相伴左右，家人的暖意驱散了军营紧绷的氛围，更牵动全军将士共赴新春之约。江东长风裹挟着烽烟火气，也将团圆与年味吹进了铁马冰河的深处。",
-          "本片为与小红书「红薯游戏制片厂」合作打造的王者荣耀春节贺岁 AIGC 动画短片，以软萌 Q 版画风重塑三国经典角色，将家国豪情与新春暖意相融，在烽火叙事的底色里，铺陈出充满烟火温度的新年团圆内核。"
-        ],
-        gallery: [
-          "/images/20260623005625667.webp"
-        ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/eight.mp4"
-      },
-      {
-        id: "vid-9",
-        title: "《归雁·春》",
-        subtitle: "AIGC新春贺岁短片 & Seko平台",
-        coverImage: "/images/20260912020419981.webp",
-        tags: ["东方意象", "国风美学", "诗意镜头"],
-        tools: ["Midjourney", "Runway Gen-3", "Lovart"],
-        client: "江南水乡数字艺术节",
-        role: "导演 / 视觉概念 / 剪辑",
-        description: "“雁携春来，正好赴一场新年之约”",
-        story: [
-          "归雁衔来新春暖意，张灯结彩的市井长街间舞龙翻腾、烟火升腾。阖家相伴漫步于热闹年俗市集，孩童提灯嬉闹，满是团圆温馨；白马踏光穿行于巷陌灯火，携祥瑞奔赴人间，为新岁送上岁岁安康的美好祈愿。",
-          "本片为新年国风动画短片，以温润雅致的东方插画笔触铺陈年俗盛景，以浓醇正红底色晕染新春氛围，将归雁、舞龙、白马等传统祥瑞意象融入阖家团圆的叙事，尽显中式新年的温情底蕴与诗意浪漫。"
-        ],
-        gallery: [
-          "/images/20260623005708947.webp"
-        ],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nine.mp4"
-      },
-
-
-
-
-            {
-        id: "vid-12",
-        title: "《迷城》",
-        subtitle: "创作中...",
-        coverImage: "/images/20260912020441476.webp",
-        tags: ["先锋影像", "抽象情绪", "动力学粒子"],
-        tools: ["Tapnow", "ACE", "Midjourney"],
-        client: "学术新媒体展演",
-        role: "动画艺术创意编排",
-        description: "创作中...",
-        story: [
-          "敬请期待"
-        ],
-        gallery: [],
-        videoUrl: "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4"
-      }
     ]
   },
   {
