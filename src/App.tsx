@@ -107,6 +107,14 @@ const CopyableContact = ({ label, value }: { label: string, value: string }) => 
   );
 };
 
+const findProjectById = (id: string): ProjectItem | null => {
+  for (const category of CATALOG_PORTFOLIO_DATA) {
+    const project = category.projects.find(item => item.id === id);
+    if (project) return project;
+  }
+  return null;
+};
+
 export default function App() {
   if (window.location.search === '?route=xuanye') return <Xuanye />;
   const defaultFilter = CATALOG_PORTFOLIO_DATA.length > 0 ? CATALOG_PORTFOLIO_DATA[0].name.replace('作品', '') : '';
@@ -128,6 +136,38 @@ export default function App() {
     return CATALOG_PORTFOLIO_DATA.map(c => c.name.replace('作品', ''));
   }, []);
 
+  const openProject = (project: ProjectItem) => {
+    window.history.pushState(
+      { ...(window.history.state ?? {}), portfolioProjectId: project.id },
+      '',
+      window.location.href,
+    );
+    setSelectedProject(project);
+  };
+
+  const closeProject = () => {
+    if (window.history.state?.portfolioProjectId === selectedProject?.id) {
+      window.history.back();
+    } else {
+      setSelectedProject(null);
+    }
+  };
+
+  useEffect(() => {
+    const syncProjectWithHistory = (state: unknown) => {
+      const projectId = (state as { portfolioProjectId?: string } | null)?.portfolioProjectId;
+      setSelectedProject(projectId ? findProjectById(projectId) : null);
+    };
+
+    const handlePopState = (event: PopStateEvent) => {
+      syncProjectWithHistory(event.state);
+    };
+
+    syncProjectWithHistory(window.history.state);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   useEffect(() => {
     if (selectedProject !== null || selectedExperienceIndex !== null || lightboxState !== null) {
       document.body.style.overflow = 'hidden';
@@ -147,13 +187,8 @@ export default function App() {
 
   // Helper to open project by ID
   const openProjectById = (id: string) => {
-    for (const cat of CATALOG_PORTFOLIO_DATA) {
-      const proj = cat.projects.find(p => p.id === id);
-      if (proj) {
-        setSelectedProject(proj);
-        return;
-      }
-    }
+    const project = findProjectById(id);
+    if (project) openProject(project);
   };
 
   const scrollToSection = (id: string) => {
@@ -254,6 +289,16 @@ export default function App() {
           </div>
 
           {/* Row 2 / Block 5-8 */}
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-rednote-city-party')}>
+            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/8.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">城市生活派对｜小红书视觉设计</h3>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
+                <Eye className="w-4 h-4 text-white" />
+              </div>
+            </div>
+          </div>
+
           <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
@@ -268,16 +313,6 @@ export default function App() {
             <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《超时空决战！英灵殿》</h3>
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
-                <Eye className="w-4 h-4 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('comm-3')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/5.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
-              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《五音傩神》</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
                 <Eye className="w-4 h-4 text-white" />
               </div>
@@ -427,7 +462,7 @@ export default function App() {
                 transition={{ duration: 0.5 }}
                 key={proj.id}
                 className="group cursor-pointer relative"
-                onClick={() => setSelectedProject(proj)}
+                onClick={() => openProject(proj)}
               >
                 <div className="relative w-full aspect-video bg-[#111] overflow-hidden mb-4 md:mb-5">
                   {proj.coverImage ? (
@@ -466,7 +501,8 @@ export default function App() {
             {/* Header / Close button fixed on top */}
             <div className="fixed top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent z-[310] pointer-events-none flex justify-end items-start pt-6 pr-8 md:pr-16">
               <button 
-                onClick={() => setSelectedProject(null)}
+                onClick={closeProject}
+                aria-label="关闭作品详情"
                 className="p-3 md:p-4 bg-white/10 hover:bg-white hover:text-black border border-white/20 backdrop-blur-md rounded-full text-white transition-colors pointer-events-auto shadow-lg"
               >
                 <X className="w-5 h-5" />

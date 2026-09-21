@@ -416,6 +416,19 @@ export const CATALOG_PORTFOLIO_DATA = [
         ]
       },
       {
+        id: "brand-rednote-city-party",
+        title: "城市生活派对｜小红书 2027 校招视觉设计方案",
+        cardTitle: "城市生活派对｜小红书视觉设计",
+        subtitle: "CITY IS FUN · 城市生活有意思",
+        coverImage: "/projects/redtest/assets/keyvisual.jpg",
+        tags: ["品牌视觉", "主视觉设计", "AIGC", "动态视觉"],
+        tools: ["Visual Design", "AIGC", "Motion Design"],
+        client: "小红书 2027 校招笔试",
+        role: "视觉设计 / 创意策划",
+        description: "以「城市生活有意思」为核心概念，构建兼具年轻感、社交感与动态叙事的城市生活派对视觉方案。",
+        customHtml: "/projects/redtest/index.html"
+      },
+      {
         id: "comm-1",
         title: "《地下城与勇士：起源》马年春节主题视觉",
         subtitle: "“唐纹承岁，侠启新春”",

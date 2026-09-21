@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>城市生活派对 · 小红书 2027 校招笔试 · 设计方案说明</title>
+<meta name="description" content="多媒体动态设计师 · 设计方案说明 — 主视觉海报 ×1 · 主视觉动态 ×1 · 设计说明 · 董柏辰 2026.09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF2442'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23F4F1E8' font-family='Arial Black,Arial' font-weight='900'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=7">
+</head>
+<body data-index="0">
+
+<!-- ====== HUD ====== -->
+<div class="progress" id="progress"></div>
+<header class="hud hud-top">
+  <div class="hud-brand"><span class="brand-dot"></span>RED · 你的生活指南</div>
+  <div class="hud-right">
+    <span class="hud-chap" id="hudChap">封面</span>
+    <span class="hud-count"><b id="curNum">01</b> / 14</span>
+    <button class="hud-btn" id="fsBtn" title="全屏 (F)" aria-label="全屏">⛶</button>
+  </div>
+</header>
+<nav class="hud hud-bottom" aria-label="翻页">
+  <div class="dots" id="dots"></div>
+  <div class="navbtns">
+    <button class="navbtn" id="prevBtn" aria-label="上一页">←</button>
+    <button class="navbtn" id="nextBtn" aria-label="下一页">→</button>
+  </div>
+</nav>
+<div class="toast" id="toast">已复制</div>
+
+<main class="deck" id="deck">
+
+<!-- ========== 01 · COVER ========== -->
+<section class="slide s-cover active" data-chap="封面">
+  <div class="bgword cv-word" aria-hidden="true">PARTY</div>
+
+  <div class="cv-doodle cd-1" aria-hidden="true">
+    <svg viewBox="0 0 40 40"><path d="M20 2l4.5 13.5L38 20l-13.5 4.5L20 38l-4.5-13.5L2 20l13.5-4.5z" fill="#FFE050" stroke="#171717" stroke-width="2"/></svg>
+  </div>
+  <div class="cv-doodle cd-2" aria-hidden="true">
+    <svg viewBox="0 0 92 34"><path d="M4 22c10-14 20-14 28 0s18 14 28 0 18-14 28 0" fill="none" stroke="#FF2442" stroke-width="3.5" stroke-linecap="round"/></svg>
+  </div>
+  <div class="cv-doodle cd-3" aria-hidden="true">
+    <svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="17" fill="none" stroke="#C7FF3D" stroke-width="5"/></svg>
+  </div>
+  <div class="cv-doodle cd-4" aria-hidden="true">
+    <svg viewBox="0 0 40 40"><path d="M20 4v32M4 20h32M9 9l22 22M31 9L9 31" stroke="#8B8B86" stroke-width="3" stroke-linecap="round"/></svg>
+  </div>
+
+  <div class="cv-grid">
+    <div class="cv-info">
+      <span class="cv-topchip st" style="--i:0"><i>✦</i> 粘土城市派对 <i>✦</i></span>
+      <h1 class="cv-title st" style="--i:1">城市生活<br><em>有意思!</em></h1>
+      <span class="cv-hand st" style="--i:2">City is Fun !</span>
+      <div class="cover-tags st" style="--i:3">
+        <span class="tag-chip" style="--r:-3deg"># CITYWALK</span>
+        <span class="tag-chip" style="--r:2deg"># 生活新趋势</span>
+        <span class="tag-chip" style="--r:-1.5deg"># 城市指南</span>
+      </div>
+      <ul class="cv-meta st" style="--i:4">
+        <li>主视觉海报 × 1</li>
+        <li>主视觉动态 × 1</li>
+        <li>设计说明</li>
+      </ul>
+      <div class="cv-cta st" style="--i:5">
+        <button class="cover-start" id="startBtn">开始浏览 <span>→</span></button>
+        <button class="cover-video" id="coverVideoBtn"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg> 先看动态视频</button>
+      </div>
+      <p class="cv-credit st" style="--i:6">多媒体动态设计师 · 设计方案说明 — 董柏辰 / 2026.09</p>
+    </div>
+
+    <figure class="cv-art st" style="--i:2;--r:-1.2deg">
+      <span class="tape tape-l" aria-hidden="true"></span>
+      <span class="tape tape-r" aria-hidden="true"></span>
+      <img src="assets/keyvisual.jpg" alt="主视觉海报：粘土城市派对">
+      <div class="cover-badge" aria-hidden="true">
+        <svg viewBox="0 0 130 130">
+          <defs><path id="badgeCirc" d="M65,65 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0"/></defs>
+          <g class="badge-spin">
+            <text class="badge-ringtext"><textPath href="#badgeCirc">FINAL KEY VISUAL · 城市生活派对 · CITY IS FUN ·</textPath></text>
+          </g>
+          <circle cx="65" cy="65" r="32" class="badge-core"/>
+          <text x="65" y="61" class="badge-t1">生活</text>
+          <text x="65" y="79" class="badge-t2">派对</text>
+        </svg>
+      </div>
+      <span class="cv-flag2">FINAL KEY VISUAL</span>
+    </figure>
+  </div>
+
+  <div class="marquee cover-marquee st" style="--i:7" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mgroup">BarryC · 城市生活有意思 · 粘土派对 · <strong>City is Fun！</strong> · 多媒体动态设计 · 全流程 ·&nbsp;</span>
+      <span class="mgroup">BarryC · 城市生活有意思 · 粘土派对 · <strong>City is Fun！</strong> · 多媒体动态设计 · 全流程 ·&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="vmodal" id="vmodal" aria-hidden="true">
+    <div class="vmodal-mask" id="vmodalMask"></div>
+    <figure class="vmodal-box">
+      <button class="vmodal-close" id="vmodalClose" aria-label="关闭">✕</button>
+      <video id="coverVideo" preload="none" playsinline poster="assets/media/image4.jpg">
+        <source src="assets/keyvisual.mp4" type="video/mp4">
+      </video>
+      <figcaption>主视觉动态 · 城市生活有意思 · 10s</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== 02 · WORKFLOW ========== -->
+<section class="slide s-workflow" data-chap="工作流">
+  <div class="bgword" aria-hidden="true">WORKFLOW</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">00 / OVERVIEW + WORKFLOW</span>
+    <h2>一页看懂：从设计思路到视频成片</h2>
+  </div>
+
+  <div class="flow">
+    <div class="flow-row r1">
+      <article class="fcard st" style="--i:1;--r:-1.2deg">
+        <div class="fhead"><div class="fnum">01</div><span class="ftool t-red">Codex</span><h3>前期策划与洞察</h3></div>
+        <ul class="fdesc">
+          <li>拆解需求与限制条件</li>
+          <li>提炼用户洞察与核心概念</li>
+          <li>拆解提示词和视觉风格</li>
+          <li>规划 PPT 叙事与交付结构</li>
+        </ul>
+        <div class="fout">产出：需求框架 / 创意 / Prompt / 风格 / PPT</div>
+      </article>
+      <div class="farrow st" style="--i:2" aria-hidden="true">→</div>
+      <article class="fcard st" style="--i:2;--r:.9deg">
+        <div class="fhead"><div class="fnum">02</div><span class="ftool t-neon">Image-2</span><h3>生图探索</h3></div>
+        <p class="fdesc">根据拆解后的提示词生成灰阶粘土城市构图、地标建筑与都市角色候选。</p>
+        <div class="fout">产出：构图与元素候选</div>
+      </article>
+      <div class="farrow st" style="--i:3" aria-hidden="true">→</div>
+      <article class="fcard st" style="--i:3;--r:-.8deg">
+        <div class="fhead"><div class="fnum">03</div><span class="ftool t-yellow">Nano Banana</span><h3>生图与统一</h3></div>
+        <p class="fdesc">结合参考图继续生图，统一角色、手捏材质和奶白灰阶视觉风格。</p>
+        <div class="fout">产出：一致化视觉素材</div>
+      </article>
+    </div>
+    <div class="flow-row r2">
+      <article class="fcard st" style="--i:4;--r:1deg">
+        <div class="fhead"><div class="fnum">04</div><span class="ftool t-gray">Photoshop</span><h3>人工细化</h3></div>
+        <p class="fdesc">构图微调与素材合成，文字排版和品牌信息，完成画面细节精修。</p>
+        <div class="fout">产出：定稿主视觉</div>
+      </article>
+      <div class="farrow st" style="--i:5" aria-hidden="true">→</div>
+      <article class="fcard st" style="--i:5;--r:-1deg">
+        <div class="fhead"><div class="fnum">05</div><span class="ftool t-red">MiniMax H3</span><h3>视频制作</h3></div>
+        <p class="fdesc">基于定稿主视觉，生成建筑生长、角色弹入与标签跳动效果。</p>
+        <div class="fout">产出：动态主视觉成片</div>
+      </article>
+    </div>
+  </div>
+
+  <div class="pathline st" style="--i:6">
+    <span class="pl-label">完整路径</span>
+    <span class="pl-step">洞察与概念</span><i>→</i>
+    <span class="pl-step">生图探索</span><i>→</i>
+    <span class="pl-step">风格统一</span><i>→</i>
+    <span class="pl-step">人工细化</span><i>→</i>
+    <span class="pl-step">动态成片</span>
+  </div>
+</section>
+
+<!-- ========== 03 · BRIEF ========== -->
+<section class="slide s-brief" data-chap="BRIEF">
+  <div class="bgword" aria-hidden="true">BRIEF</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">01 / BRIEF</span>
+    <h2>先把题目翻译成设计目标</h2>
+    <span class="chip chip-line">使用 coding 工具：Codex · Trae</span>
+  </div>
+  <p class="lead st" style="--i:1">重点不只是视觉完成度，更在于<b>概念推导、信息设计与动态流程</b>。</p>
+
+  <div class="g6">
+    <article class="bcard st" style="--i:1;--r:-.7deg">
+      <span class="bnum">01</span>
+      <svg class="bicon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+      <div class="bbody"><h3>品牌目标</h3><p>呈现「生活新趋势尽在小红书」</p></div>
+    </article>
+    <article class="bcard st" style="--i:2;--r:.6deg">
+      <span class="bnum">02</span>
+      <svg class="bicon" viewBox="0 0 24 24"><path d="M12 21s-7-5.4-7-11a7 7 0 1 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <div class="bbody"><h3>内容范围</h3><p>城市吃喝玩乐、打卡探索与真实生活方式</p></div>
+    </article>
+    <article class="bcard st" style="--i:3;--r:-.5deg">
+      <span class="bnum">03</span>
+      <svg class="bicon" viewBox="0 0 24 24"><path d="M12 2l2.2 6.2L20.5 10l-6.3 1.8L12 18l-2.2-6.2L3.5 10l6.3-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+      <div class="bbody"><h3>视觉调性</h3><p>年轻 / 潮流 / 粘土手作 / 小红书品牌感</p></div>
+    </article>
+    <article class="bcard st" style="--i:4;--r:.8deg">
+      <span class="bnum">04</span>
+      <svg class="bicon" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
+      <div class="bbody"><h3>动态要求</h3><p>8–10 秒；包含概念、故事板与过程</p></div>
+    </article>
+    <article class="bcard st" style="--i:5;--r:-.6deg">
+      <span class="bnum">05</span>
+      <svg class="bicon" viewBox="0 0 24 24"><path d="M3.5 11.5L12 3h8.5v8.5L12 20.5z"/><circle cx="16.2" cy="7.2" r="1.4" fill="currentColor" stroke="none"/></svg>
+      <div class="bbody"><h3>硬性信息</h3><p>标题、Slogan 与小红书 Logo</p></div>
+    </article>
+    <article class="bcard st" style="--i:6;--r:.5deg">
+      <span class="bnum">06</span>
+      <svg class="bicon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M9 9v10"/></svg>
+      <div class="bbody"><h3>呈现方式</h3><p>PPT；主视觉与动态内置</p></div>
+    </article>
+  </div>
+
+  <div class="respond st" style="--i:7;--r:-.4deg">
+    <span class="respond-tag">设计回应</span>
+    用「<b>粘土城市派对</b>」统一静态视觉、动态叙事与生成式工具流程。
+  </div>
+</section>
+
+<!-- ========== 04 · KEY VISUAL ========== -->
+<section class="slide s-kv" data-chap="主视觉">
+  <div class="bgword" aria-hidden="true">KEY VISUAL</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-red">FINAL KEY VISUAL</span>
+    <span class="chip chip-line">主视觉海报 × 1</span>
+  </div>
+
+  <figure class="kvframe st" style="--i:1;--r:-.4deg">
+    <span class="tape tape-l" aria-hidden="true"></span>
+    <span class="tape tape-r" aria-hidden="true"></span>
+    <img src="assets/keyvisual.jpg" alt="主视觉海报定稿：城市生活有意思 — 粘土城市派对">
+    <span class="kv-flag">城市生活有意思！</span>
+  </figure>
+
+  <figcaption class="kv-caption st" style="--i:2;--r:1deg">
+    吃喝玩乐全攻略，发现城市新生活方式。<span class="kv-hand">Let's CITYWALK !</span>
+  </figcaption>
+</section>
+
+<!-- ========== 05 · INSIGHT + CONCEPT ========== -->
+<section class="slide s-insight" data-chap="洞察概念">
+  <div class="bgword" aria-hidden="true">INSIGHT</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">01 / INSIGHT + CONCEPT</span>
+    <h2>从城市灵感洞察，到可探索的「生活派对」</h2>
+  </div>
+
+  <div class="ins-row">
+    <article class="icard c-red st" style="--i:1;--r:-.8deg">
+      <span class="ic-tag">INSIGHT</span>
+      <h3>发现真实需求</h3>
+      <p>用户不缺选择，而是缺少<b>一眼想去、可以立刻行动</b>的城市灵感</p>
+    </article>
+    <div class="ins-arrow st" style="--i:2" aria-hidden="true">→</div>
+    <article class="icard c-neon st" style="--i:2;--r:.7deg">
+      <span class="ic-tag">CONCEPT</span>
+      <h3>城市成为舞台</h3>
+      <p>把地标、人物与吃喝玩乐<b>捏成一场可探索的生活派对</b></p>
+    </article>
+    <div class="ins-arrow st" style="--i:3" aria-hidden="true">→</div>
+    <article class="icard c-yellow st" style="--i:3;--r:-.6deg">
+      <span class="ic-tag">ACTION</span>
+      <h3>小红书成为指南</h3>
+      <p>用真实笔记降低决策成本，让发现<b>自然转化为城市行动</b></p>
+    </article>
+  </div>
+
+  <div class="ins-path st" style="--i:4">
+    <span class="pl-label">路径</span>
+    <span class="pl-step">发现</span><i>→</i>
+    <span class="pl-step">决策</span><i>→</i>
+    <span class="pl-step">体验</span><i>→</i>
+    <span class="pl-step">分享</span>
+    <span class="stamp st" style="--i:5;--r:-6deg">真实可行动</span>
+  </div>
+</section>
+
+<!-- ========== 06 · VISUAL SYSTEM ========== -->
+<section class="slide s-system" data-chap="视觉系统">
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">02 / VISUAL SYSTEM</span>
+    <h2>三层叙事，把粘土城市变成一眼可玩的生活指南</h2>
+  </div>
+
+  <div class="sys-grid">
+    <div class="sys-layers">
+      <article class="lcard st" style="--i:1;--r:-.5deg">
+        <span class="lnum">01</span>
+        <div><h3>主信息层 <em>主题标题 + Slogan</em></h3><p>以清晰层级锁定第一眼记忆</p></div>
+      </article>
+      <article class="lcard st" style="--i:2;--r:.6deg">
+        <span class="lnum">02</span>
+        <div><h3>生活叙事层 <em>人物 + 地标 + 城市玩乐场景</em></h3><p>建立探索代入感与派对氛围</p></div>
+      </article>
+      <article class="lcard st" style="--i:3;--r:-.4deg">
+        <span class="lnum">03</span>
+        <div><h3>品牌交互层 <em>搜索框 + 数据标签 + 品牌信息</em></h3><p>把视觉现场接回小红书内容生态</p></div>
+      </article>
+      <div class="sys-route st" style="--i:4">
+        <span class="pl-label">视觉动线</span>
+        <span class="pl-step">主题标题</span><i>→</i>
+        <span class="pl-step">粘土城市</span><i>→</i>
+        <span class="pl-step">角色互动</span><i>→</i>
+        <span class="pl-step">数据与搜索信息</span>
+      </div>
+    </div>
+
+    <figure class="sys-demo st" style="--i:2;--r:1.1deg">
+      <span class="tape tape-l" aria-hidden="true"></span>
+      <span class="tape tape-r" aria-hidden="true"></span>
+      <img src="assets/media/image3.jpg" alt="视觉系统应用示例：主视觉海报">
+    </figure>
+  </div>
+
+  <div class="palette st" style="--i:5">
+    <span class="pal-title">品牌色卡</span>
+    <button class="swatch" data-hex="#FF2442"><span class="sw-c" style="background:#FF2442"></span><b>小红书红</b><code>#FF2442</code></button>
+    <button class="swatch" data-hex="#C7FF3D"><span class="sw-c" style="background:#C7FF3D"></span><b>荧光绿</b><code>#C7FF3D</code></button>
+    <button class="swatch" data-hex="#8B8B86"><span class="sw-c" style="background:#8B8B86"></span><b>水泥灰</b><code>#8B8B86</code></button>
+    <button class="swatch" data-hex="#171717"><span class="sw-c" style="background:#171717"></span><b>炭黑</b><code>#171717</code></button>
+    <button class="swatch" data-hex="#F4F1E8"><span class="sw-c sw-cream" style="background:#F4F1E8"></span><b>奶油米</b><code>#F4F1E8</code></button>
+    <button class="swatch" data-hex="#FFE050"><span class="sw-c" style="background:#FFE050"></span><b>高光黄</b><code>#FFE050</code></button>
+  </div>
+</section>
+
+<!-- ========== 07 · MOTION CONCEPT ========== -->
+<section class="slide s-motion dark" data-chap="动态成片">
+  <div class="bgword bgword-dark" aria-hidden="true">MOTION</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-neon">MOTION CONCEPT</span>
+    <span class="chip chip-ghost">DYNAMIC KEY VISUAL · 主视觉动态 · 成片</span>
+  </div>
+  <div class="motion-title st" style="--i:1">
+    <h2>让城市变得更有意思</h2>
+    <span class="motion-hand">CITY IS FUN</span>
+  </div>
+
+  <div class="vwrap st" style="--i:2" id="vwrap">
+    <video id="kv" preload="metadata" playsinline poster="assets/media/image4.jpg">
+      <source src="assets/keyvisual.mp4" type="video/mp4">
+    </video>
+    <button class="vplay" id="vplay" aria-label="播放视频">
+      <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+    </button>
+    <span class="vchip">点击画面播放</span>
+  </div>
+  <p class="vcap st" style="--i:3">城市派对正在发生 <span class="blink">▮</span> 10s · 建筑生长 × 角色弹入 × 标签跳动</p>
+</section>
+
+<!-- ========== 08 · STORYBOARD ========== -->
+<section class="slide s-story dark" data-chap="故事板">
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-neon">03 / STORYBOARD</span>
+    <h2>故事板 · 关键分镜</h2>
+    <div class="spec-chips">
+      <span class="spec">横向 2560×1440</span>
+      <span class="spec">24fps</span>
+      <span class="spec">约 10s</span>
+      <span class="spec spec-ok">满足题目 8–10 秒要求</span>
+    </div>
+  </div>
+
+  <div class="film">
+    <div class="film-holes" aria-hidden="true"></div>
+    <div class="film-row">
+      <figure class="frame st" style="--i:1">
+        <img src="assets/media/image5.jpeg" alt="分镜1">
+        <span class="ft">0.4–1.2s</span>
+        <figcaption>奶茶人物特写</figcaption>
+      </figure>
+      <figure class="frame st down" style="--i:2">
+        <img src="assets/media/image6.jpeg" alt="分镜2">
+        <span class="ft">1.2–2.6s</span>
+        <figcaption>粘土城市搭建</figcaption>
+      </figure>
+      <figure class="frame st" style="--i:3">
+        <img src="assets/media/image7.jpeg" alt="分镜3">
+        <span class="ft">2.6–4.3s</span>
+        <figcaption>摄影快门爆闪</figcaption>
+      </figure>
+      <figure class="frame st down" style="--i:4">
+        <img src="assets/media/image8.jpeg" alt="分镜4">
+        <span class="ft">4.3–6.0s</span>
+        <figcaption>滑板疾驰穿梭</figcaption>
+      </figure>
+      <figure class="frame st" style="--i:5">
+        <img src="assets/media/image9.jpeg" alt="分镜5">
+        <span class="ft">6.0–8.6s</span>
+        <figcaption>霓虹符号引爆</figcaption>
+      </figure>
+      <figure class="frame st down" style="--i:6">
+        <img src="assets/media/image10.jpeg" alt="分镜6">
+        <span class="ft">8.6–10s</span>
+        <figcaption>品牌海报落版</figcaption>
+      </figure>
+    </div>
+    <div class="film-holes" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ========== 09 · MOTION LOGIC ========== -->
+<section class="slide s-logic dark" data-chap="动效逻辑">
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-neon">03 / MOTION LOGIC</span>
+    <h2>用「拆解 — 激活 — 落版」完成动效叙事</h2>
+  </div>
+
+  <div class="tl">
+    <div class="tl-bar st" style="--i:1">
+      <span class="tl-dot" style="left:0%"></span>
+      <span class="tl-dot" style="left:26%"></span>
+      <span class="tl-dot" style="left:60%"></span>
+      <span class="tl-dot" style="left:100%"></span>
+    </div>
+    <div class="tl-times st" style="--i:1">
+      <span style="left:0%">0s</span>
+      <span style="left:26%">2.6s</span>
+      <span style="left:60%">6.0s</span>
+      <span style="left:100%">10s</span>
+    </div>
+
+    <div class="tl-cards">
+      <article class="tcard st" style="--i:2;--r:-.5deg;--w:26">
+        <span class="tc-time">0–2.6s</span>
+        <h3>拆解并搭建城市</h3>
+        <p>主视觉闪现后切入奶茶特写，建筑逐步搭成城市舞台</p>
+        <div class="tc-tags"><span>反差</span><span>生长</span></div>
+      </article>
+      <article class="tcard st" style="--i:3;--r:.4deg;--w:34">
+        <span class="tc-time">2.6–6.0s</span>
+        <h3>激活生活切片</h3>
+        <p>喝奶茶、拍照与滑板接力出现，快门和速度线制造节拍</p>
+        <div class="tc-tags"><span>快切</span><span>高能</span></div>
+      </article>
+      <article class="tcard st" style="--i:4;--r:-.4deg;--w:40">
+        <span class="tc-time">6.0–10s</span>
+        <h3>群像聚合与落版</h3>
+        <p>角色汇入城市，霓虹绿符号爆发，最终压平成品牌海报</p>
+        <div class="tc-tags"><span>聚合</span><span>转化</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10 · DIVIDER ========== -->
+<section class="slide s-divider" data-chap="基础题">
+  <div class="divider-big" aria-hidden="true">05</div>
+  <div class="div-center">
+    <div class="st" style="--i:0"><span class="chip chip-cream">BASIC QUESTIONS</span></div>
+    <h2 class="div-title st" style="--i:1">审美判断与技术观</h2>
+    <span class="div-sticker st" style="--i:3;--r:-4deg">✦ 寻找最会玩的你 ✦</span>
+  </div>
+  <div class="div-deco dd-1" aria-hidden="true"></div>
+  <div class="div-deco dd-2" aria-hidden="true"></div>
+  <div class="div-deco dd-3" aria-hidden="true"></div>
+</section>
+
+<!-- ========== 11 · BASIC 01 ========== -->
+<section class="slide s-brands" data-chap="品牌与网站">
+  <div class="bgword" aria-hidden="true">TASTE</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">05 / BASIC 01</span>
+    <h2>我认为设计最出色的品牌，与最喜欢的网站</h2>
+  </div>
+
+  <div class="brands-grid">
+    <article class="brcard st" style="--i:1;--r:-.7deg">
+      <span class="brcat cat-red">BRAND</span>
+      <h3>MUJI 无印良品</h3>
+      <p class="br-tag">系统性的克制</p>
+      <p class="br-desc">从产品、包装到空间都坚持一致逻辑；优秀来自删去多余后仍保有识别与温度。</p>
+    </article>
+    <article class="brcard st" style="--i:2;--r:.6deg">
+      <span class="brcat cat-red">BRAND</span>
+      <h3>Spotify</h3>
+      <p class="br-tag">让数据变成文化</p>
+      <p class="br-desc">高饱和色、动态图形和个性化数据共同把产品行为转化为可分享叙事。</p>
+    </article>
+    <article class="brcard st" style="--i:3;--r:.5deg">
+      <span class="brcat cat-neon">WEBSITE</span>
+      <h3>A24 Films</h3>
+      <p class="br-tag">让品牌气质先于功能</p>
+      <p class="br-desc">网站把电影物料当作策展内容，以大图、留白与节奏让品牌气质先于功能。</p>
+      <span class="br-url">a24films.com</span>
+    </article>
+    <article class="brcard st" style="--i:4;--r:-.6deg">
+      <span class="brcat cat-neon">WEBSITE</span>
+      <h3>It's Nice That</h3>
+      <p class="br-tag">图像优先的编辑结构</p>
+      <p class="br-desc">图像优先、编辑结构清楚，持续呈现平面、插画、影像与数字艺术的新表达。</p>
+      <span class="br-url">itsnicethat.com</span>
+    </article>
+  </div>
+</section>
+
+<!-- ========== 12 · BASIC 02 ========== -->
+<section class="slide s-redbook" data-chap="小红书视觉">
+  <div class="bgword" aria-hidden="true">ALIVE</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">05 / BASIC 02</span>
+    <h2>我眼中的好设计：活人感至上</h2>
+    <span class="stamp stamp-head" style="--r:-5deg">活人感</span>
+  </div>
+
+  <div class="rb-grid">
+    <article class="rbcard rb-neon st" style="--i:1;--r:-.6deg">
+      <div class="rb-head">
+        <svg class="bicon" viewBox="0 0 24 24"><path d="M7 11v9H4.5A1.5 1.5 0 0 1 3 18.5V12.5A1.5 1.5 0 0 1 4.5 11H7zm0 0l3.2-7.4A1.8 1.8 0 0 1 13.5 4.4V9h4.9a2 2 0 0 1 2 2.4l-1.2 6a2 2 0 0 1-2 1.6H7"/></svg>
+        <h3>优势</h3>
+      </div>
+      <ul>
+        <li>品牌红识别度高</li>
+        <li>贴近 UGC 的真实语境</li>
+        <li>内容适配能力强</li>
+        <li>视觉更新速度快</li>
+      </ul>
+    </article>
+    <article class="rbcard rb-yellow st" style="--i:2;--r:.5deg">
+      <div class="rb-head">
+        <svg class="bicon" viewBox="0 0 24 24"><path d="M14.5 6.5a4.2 4.2 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4.2 4.2 0 0 0 5.3-5.3l-2.7 2.7-2.3-2.3 2.7-2.7z"/></svg>
+        <h3>避免</h3>
+      </div>
+      <ul>
+        <li>热点视觉易趋同</li>
+        <li>高密度信息可能造成阅读疲劳</li>
+        <li>跨业务一致性仍需更细的治理</li>
+      </ul>
+    </article>
+    <article class="rbcard rb-red st" style="--i:3;--r:.5deg">
+      <div class="rb-head">
+        <svg class="bicon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+        <h3>我擅长</h3>
+      </div>
+      <ul>
+        <li>叙事型主视觉、信息层级与动态节奏</li>
+        <li>能用生成式工具提升概念到成片的效率</li>
+      </ul>
+    </article>
+    <article class="rbcard rb-ink st" style="--i:4;--r:-.5deg">
+      <div class="rb-head">
+        <svg class="bicon" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.3a5.2 5.2 0 0 1 9.3 5.2c-1.8 4.3-9.3 9-9.3 9z"/></svg>
+        <h3>我喜欢</h3>
+      </div>
+      <ul>
+        <li>年轻中性的编辑设计</li>
+        <li>高对比色、手工材质、清晰网格和有生命力的不规则图形</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ========== 13 · BASIC 03 ========== -->
+<section class="slide s-ai" data-chap="AI 与设计">
+  <div class="bgword" aria-hidden="true">AIGC</div>
+  <div class="shead st" style="--i:0">
+    <span class="chip chip-ink">05 / BASIC 03</span>
+    <h2>AI 与 Vibe Coding：设计师从「做图」转向「导演系统」</h2>
+  </div>
+
+  <div class="ai-grid">
+    <div class="ai-left">
+      <article class="acard st" style="--i:1;--r:-.5deg">
+        <span class="anum">变化 1</span>
+        <div><h3>探索效率提升</h3><p>更快比较视觉方向、镜头与变体</p></div>
+      </article>
+      <article class="acard st" style="--i:2;--r:.4deg">
+        <span class="anum">变化 2</span>
+        <div><h3>工作重心变化</h3><p>从单点执行转向判断、编排与审核</p></div>
+      </article>
+      <article class="acard st" style="--i:3;--r:-.4deg">
+        <span class="anum">变化 3</span>
+        <div><h3>重复流程可辅助</h3><p>Codex 可协助批处理、版本整理与交付检查</p></div>
+      </article>
+      <div class="ai-core st" style="--i:4;--r:-.5deg">
+        <span class="core-tag">核心</span>
+        <b>审美与责任</b> — 洞察、取舍和品牌边界仍由设计师负责
+      </div>
+    </div>
+
+    <aside class="artist st" style="--i:2;--r:.8deg">
+      <span class="chip chip-red">关注的 AIGC 艺术家</span>
+      <div class="artist-name">
+        <h3>Gizem Akdag</h3>
+        <span class="artist-role">插画家 · 图形设计师 · Perplexity AI 创意大使</span>
+      </div>
+      <p class="artist-bio">土耳其艺术家、插画家和图形设计师，作品曾在 Saatchi Art 等平台展出。近年来她将 AI 工具（如 Midjourney）与传统艺术技巧相结合。</p>
+      <div class="artist-shots">
+        <figure><img src="assets/media/image11.jpeg" alt="Gizem Akdag 作品一"><span class="tape tape-s" aria-hidden="true"></span></figure>
+        <figure><img src="assets/media/image12.jpeg" alt="Gizem Akdag 作品二"><span class="tape tape-s tape-s2" aria-hidden="true"></span></figure>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ========== 14 · THANK YOU ========== -->
+<section class="slide s-thanks" data-chap="致谢">
+  <div class="bgword" aria-hidden="true">PARTY</div>
+  <div class="float-tag ft-1" aria-hidden="true"># CITYWALK</div>
+  <div class="float-tag ft-2" aria-hidden="true">CITY IS FUN</div>
+  <div class="float-tag ft-3" aria-hidden="true"># 生活新趋势</div>
+  <div class="float-tag ft-4" aria-hidden="true"># 城市指南</div>
+
+  <div class="thx-center">
+    <h2 class="thx-title st" style="--i:0">THANK <span>YOU</span></h2>
+    <p class="thx-quote st" style="--i:1">「城市从不缺灵感，我们要做的是让每一次出发都有新发现。」</p>
+    <span class="stamp stamp-big st" style="--i:2;--r:-5deg">寻找最会玩的你</span>
+    <p class="thx-name st" style="--i:3">董柏辰 · 多媒体设计师</p>
+    <p class="thx-party st" style="--i:4"><span class="thx-cn">城市派对</span><span class="thx-en">CITY · LIFE · PARTY</span></p>
+    <button class="thx-restart st" style="--i:5" id="restartBtn">↺ 回到开头</button>
+  </div>
+
+  <div class="marquee thx-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mgroup">城市生活有意思 · CITY IS FUN · 生活新趋势 尽在小红书 · # CITYWALK · # 生活新趋势 · # 城市指南 · 董柏辰 · 2026.09 ·&nbsp;</span>
+      <span class="mgroup">城市生活有意思 · CITY IS FUN · 生活新趋势 尽在小红书 · # CITYWALK · # 生活新趋势 · # 城市指南 · 董柏辰 · 2026.09 ·&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="deck.js?v=5"></script>
+</body>
+</html>
