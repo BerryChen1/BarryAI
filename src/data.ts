@@ -145,19 +145,15 @@ export const PORTFOLIO_DETAILS = [
       { label: "核心算法", enLabel: "MAIN STACK", value: "Stable Diffusion / Midjourney" }
     ],
     paragraphs: [
-      "作为腾讯 IEG 国内发行线视觉设计实习生，我深度参与《地下城与勇士：起源》两大核心版本的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
+      "作为腾讯 IEG 国内发行线视觉设计实习生，参与《地下城与勇士：起源》的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
       "在此期间，我不断优化 AIGC 的生图和创意分镜插画设计工作流，用顶尖的 AI 工具赋能商业视觉体系搭建。我积极协助打通超级创意视听管线，推动海量自适应素材的高质量、高一致度输出，并在品牌宣传册 and 社交平台预热中实现高达 40% 的执行时长提效。"
     ],
     enParagraphs: [
-      "As a Visual Design Intern at Tencent IEG, I deeply engaged in scaffolding two core seasonal packages for Dungeon & Fighter (DNF) Mobile while supporting cross-IP projects.",
+      "As a Visual Design Intern at Tencent IEG, I worked on the Anton expansion's brand visual system for Dungeon & Fighter (DNF) Mobile while supporting cross-IP projects.",
       "During this internship, I optimized stable AIGC and prompt generation workstreams to empower commercial projects with robust visuals. I helped establish standard visual asset templates, ensuring design alignment across high-throughput social/advertising deliverables, lowering processing periods."
     ],
     
-    works: [
-      "/images/20260623212412611.webp",
-      "/images/20260623212431006.webp",
-      "/images/20260623212447253.webp"
-    ]
+    works: []
   }
 ];
 
@@ -368,7 +364,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         id: "brand-xuanye",
         title: "《玄夜·引渡》: 东方志异录",
         subtitle: "阴阳交生，引渡魂灵越幽冥而归澄明",
-        coverImage: "/images/20260912184251573.webp",
+        coverImage: "/images/20260912184251573-display.webp",
         tags: ["主视觉设计", "东方玄幻", "暗黑国风"],
         tools: ["HTML5", "CSS3", "Design Specification"],
         client: "玄夜引渡",
@@ -401,7 +397,7 @@ export const CATALOG_PORTFOLIO_DATA = [
           "/images/20260809224006618.webp",
           "/images/20260809224137412.webp",
           "/images/20260809224111423.webp",
-          "/images/20260809224217524.png",
+          "/images/20260809224217524.webp",
           "/images/20260809224307248.webp",
           "/images/20260809224331975.webp",
           "/images/20260809224405477.webp",
@@ -417,8 +413,8 @@ export const CATALOG_PORTFOLIO_DATA = [
       },
       {
         id: "brand-rednote-city-party",
-        title: "城市生活派对｜小红书 2027 校招视觉设计方案",
-        cardTitle: "城市生活派对｜小红书视觉设计",
+        title: "小红书“城市生活有意思：粘土派对”创意设计",
+        cardTitle: "小红书“城市生活有意思：粘土派对”创意设计",
         subtitle: "CITY IS FUN · 城市生活有意思",
         coverImage: "/projects/redtest/assets/keyvisual.jpg",
         tags: ["品牌视觉", "主视觉设计", "AIGC", "动态视觉"],
@@ -430,29 +426,34 @@ export const CATALOG_PORTFOLIO_DATA = [
       },
       {
         id: "comm-1",
-        title: "《地下城与勇士：起源》马年春节主题视觉",
-        subtitle: "“唐纹承岁，侠启新春”",
-        coverImage: "/images/20260623011625825.webp",
-        tags: ["先锋视听", "AIGC 视觉", "数字资产"],
-        tools: ["Stable Diffusion", "Midjourney", "LibTV"],
-        client: "LibTV 先锋媒体",
-        role: "核心AIGC视觉设计师",
-        description: "“唐纹承岁，侠启新春”",
+        title: "《地下城与勇士:起源》祈愿新春主题设计",
+        cardTitle: "《地下城与勇士:起源》祈愿新春主题设计",
+        subtitle: "“有锋芒的好运”",
+        coverImage: "/projects/dnf-spring-2026/01-main-visual.webp",
+        tags: ["新春主题视觉", "动态视觉系统", "角色资产", "品牌衍生"],
+        tools: ["AIGC 视觉", "动态设计", "品牌资产", "声音节奏"],
+        client: "DNF IP 新春概念提案",
+        role: "视觉概念 / 动态系统 / 全案呈现",
+        description: "以「有锋芒的好运」为核心，把新春祈愿转译成可被击发、腾跃、切分与定场的动作化视觉系统。",
         story: [
-          "本项目为《地下城与勇士・起源》马年春节全套视觉设计，本人独立负责整套纹样体系与素材图库搭建。设计溯源唐代马衔杯银壶、宝相花、忍冬纹等经典传统纹样，紧扣丙午马年新春主题，融合灯笼、牡丹等吉祥民俗元素，依托AIGC 辅助设计迭代，再经精细手绘定稿。",
-          "整套视觉完整落地主 KV、游戏弹窗、拍脸 UI、线下游园会场布置、实体周边礼盒多场景应用，将盛唐国风美学与游戏二次元画风相融，落地西安大唐芙蓉园线下实景活动，实现传统纹样数字化转译、线上线下视觉体系统一，让国风古韵赋能游戏新春运营活动。"
+          "传统新春视觉常以静态祝福与节庆装饰为主，本案选择从角色的战斗本能出发：愿望不是被动等待，而是在出击的一刻被点燃。金发、白羽、红黑金甲构成鲜明的角色识别，福牌、红绳与金属被重新组织为兼具年味与锋芒的视觉信物。",
+          "整套方案由主视觉、四组动作构图、材质实验、角色动作谱、限定潮玩与数码桌搭构成，并在后半部分进一步延展动态节奏与声音框架，形成从角色概念到品牌资产的完整视觉链路。"
         ],
         gallery: [
-          "/images/20260623011642952.webp",
-          "/images/20260623011656127.webp",
-          "/images/20260623011708732.webp",
-          "/images/20260623011722133.webp",
-          "/images/20260623011733357.webp",
-          "/images/20260623011744567.webp",
-          "/images/20260623011803663.webp",
-          "/images/20260623011823491.webp",
-          "/images/20260623011814723.webp",
-          "/images/20260623011834154.webp"
+          "/projects/dnf-spring-2026/01-main-visual.webp",
+          "/projects/dnf-spring-2026/02-visual-dna.webp",
+          "/projects/dnf-spring-2026/03-breakthrough-perspective.webp",
+          "/projects/dnf-spring-2026/04-airborne-motion.webp",
+          "/projects/dnf-spring-2026/05-joy-halftone.webp",
+          "/projects/dnf-spring-2026/06-wish-fulfilled.webp",
+          "/projects/dnf-spring-2026/07-motion-atlas.webp",
+          "/projects/dnf-spring-2026/08-metal-overexposure.webp",
+          "/projects/dnf-spring-2026/09-hidden-edge.webp",
+          "/projects/dnf-spring-2026/10-limited-collectible.webp",
+          "/projects/dnf-spring-2026/11-digital-desk-set.webp",
+          "/projects/dnf-spring-2026/12-motion-system.webp",
+          "/projects/dnf-spring-2026/13-sound-edit-rhythm.webp",
+          "/projects/dnf-spring-2026/14-case-summary.webp"
         ]
       },
       {
@@ -525,7 +526,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         ],
         gallery: [
           "/images/20260623013353792.webp",
-          "/images/20260623013404756.webp",
+          "/images/20260623013335975.webp",
           "/images/20260623013417653.webp",
           "/images/20260623013428313.webp",
           "/images/20260623013439247.webp",
@@ -557,7 +558,7 @@ export const CATALOG_PORTFOLIO_DATA = [
           "本项目为山东工艺美术学院研究生学会 AIGC 卡通 IP 形象「究究」完整设计方案。IP 定位热爱艺术、善于观察采风的研究生学子形象，圆脸蛋 + 眼镜 + 贝雷帽塑造亲和软萌的 3D 卡通造型，规范专属橙黄视觉配色与标准四视图。围绕四季踏青、林间采风等场景延展系列插画，同步配套多套表情包、手机壁纸等衍生视觉物料，依托 AIGC 完成形象迭代与场景拓展。IP 贴合美院研究生群体人设，兼具辨识度、情感亲和力与完整落地应用性，可用于学会宣传、文创延展、线上传播等多场景使用。"
         ],
         gallery: [
-          "/images/20260623012618637.webp",
+          "/images/20260623012602214.webp",
           "/images/20260623012629055.webp",
           "/images/20260623012641761.webp",
           "/images/20260623012654321.webp",
@@ -630,7 +631,7 @@ export const CATALOG_PORTFOLIO_DATA = [
         ],
         gallery: [
           "/images/20260623010501730.webp",
-          "/images/20260623010520107.webp",
+          "/images/20260623010433256.webp",
           "/images/20260623010537197.webp",
           "/images/20260623010552993.webp",
           "/images/20260623010608924.webp",
@@ -664,7 +665,7 @@ export const CATALOG_PORTFOLIO_DATA = [
           "作品以南斗六星君为创作原型，将传统神话底蕴与现代插画表现手法相融，塑造出典雅又充满神秘感的视觉气质。设计紧扣六位星君分管寿命、福禄、命途的神职职能，以多元视觉符号细化人物人设；流云环绕的画面意象打通仙境与人间，配色温润肃穆，既凸显神明的威仪祥瑞，也生动诠释了传统文化里祈愿安康、盼守福运的精神内核。"
         ],
         gallery: [
-          "/images/20260623011012066.webp",
+          "/images/20260623010922651.webp",
           "/images/20260623011028442.webp",
           "/images/20260623011043402.webp",
           "/images/20260623011059710.webp",
@@ -700,12 +701,12 @@ export const CATALOG_PORTFOLIO_DATA = [
         role: "创意视觉主指导",
         description: "“集合！决战安图恩”",
         story: [
-          "本项目为《地下城与勇士・起源》安徒恩团本版本全套视觉设计，本人负责项目素材图库搭建与全链路 AIGC 设计探索。作品锁定红黑工业末世风格，提取火山裂隙、故障 UI、力量肌理字体等核心视觉元素，依托 Midjourney 批量生成基础素材，再手绘统一质感、搭建标准化素材图库；同时借助 ComfyUI 搭建完整动态工作流，拆解动作分镜、特效流转逻辑，实现静态版式完整向动态短视频视觉落地。",
+          "作品锁定红黑工业末世风格，提取火山裂隙、故障 UI、力量肌理字体等核心视觉元素，依托 Midjourney 批量生成基础素材，再手绘统一质感、搭建标准化素材图库；同时借助 ComfyUI 搭建完整动态工作流，拆解动作分镜、特效流转逻辑，实现静态版式完整向动态短视频视觉落地。",
           "整套设计覆盖版本主 KV、角色分镜海报、团本场景界面等多类应用画面，以高张力暗黑硬核视觉，还原安徒恩 raid 热血攻坚的史诗对抗氛围，完整打通 AIGC 辅助静态设计、动态视效迭代的完整落地流程。"
         ],
         gallery: [
           "/images/20260623011927201.webp",
-          "/images/20260623011940701.webp",
+          "/images/20260623011912121.webp",
           "/images/20260623011956485.webp",
           "/images/20260623012009431.webp",
           "/images/20260623012029033.webp",

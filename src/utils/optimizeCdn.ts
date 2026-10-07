@@ -1,7 +1,7 @@
 /**
  * Asset optimization and progressive preloader.
  * All images are cleanly hosted same-origin under /images/ (zero third-party external image links).
- * Video stream acceleration and background pre-buffering are maintained for optimal playback.
+ * Video endpoints are preconnected and only a tiny set of critical videos is warmed up.
  */
 
 import { PRELOAD_IMAGES_LIST } from './preloadList';
@@ -20,21 +20,42 @@ export function getVideoStreamUrl(url: string | null | undefined): string {
   return url;
 }
 
+const VIDEO_ORIGINS = [
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev"
+];
+const preconnectedOrigins = new Set<string>();
+
+function ensurePreconnect(origin: string): void {
+  if (preconnectedOrigins.has(origin)) return;
+  preconnectedOrigins.add(origin);
+
+  const link = document.createElement('link');
+  link.rel = 'preconnect';
+  link.href = origin;
+  link.crossOrigin = 'anonymous';
+  document.head.appendChild(link);
+}
+
+function shouldSkipAssetWarmup(): boolean {
+  if (typeof navigator === 'undefined') return true;
+
+  const connection = (navigator as Navigator & {
+    connection?: { saveData?: boolean; effectiveType?: string };
+  }).connection;
+  const effectiveType = connection?.effectiveType?.toLowerCase();
+
+  return Boolean(
+    connection?.saveData ||
+    effectiveType === 'slow-2g' ||
+    effectiveType === '2g'
+  );
+}
+
 export async function detectFastestCDN() {
   // All images are now same-origin local assets.
   // Preconnect critical video streaming endpoints.
   try {
-    [
-      "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev",
-      "https://d8j0ntlcm91z4.cloudfront.net",
-      "https://stream.mux.com"
-    ].forEach(domain => {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = domain;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-    });
+    VIDEO_ORIGINS.forEach(ensurePreconnect);
   } catch (e) {}
 }
 
@@ -76,7 +97,7 @@ if (typeof window !== 'undefined') {
           return originalGet ? originalGet.call(this) : '';
         },
         set(val) {
-          if (typeof val === 'string' && (val.includes('pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev') || val.includes('d8j0ntlcm91z4.cloudfront.net'))) {
+          if (typeof val === 'string' && val.includes('pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev')) {
             const elem = this as any;
             if (elem._cleanupVideoCdnListeners) {
               elem._cleanupVideoCdnListeners();
@@ -139,45 +160,28 @@ const preloadedImages = new Set<string>();
 export function warmUpVideo(url: string | null | undefined): void {
   if (!url || typeof url !== 'string' || !url.startsWith('http')) return;
   if (preloadedVideos.has(url)) return;
-  
+
   preloadedVideos.add(url);
-  
+
   try {
     const origin = new URL(url).origin;
-    const existingLink = document.querySelector(`link[href^="${origin}"]`);
-    if (!existingLink) {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = origin;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-    }
+    ensurePreconnect(origin);
   } catch (e) {}
 
-  try {
-    const prefetchLink = document.createElement('link');
-    prefetchLink.rel = 'prefetch';
-    prefetchLink.as = 'video';
-    prefetchLink.href = url;
-    document.head.appendChild(prefetchLink);
-  } catch (e) {
-    try {
-      const helperVideo = document.createElement('video');
-      helperVideo.src = url;
-      helperVideo.preload = 'auto';
-      helperVideo.muted = true;
-      helperVideo.load();
-    } catch (err) {}
-  }
+  if (shouldSkipAssetWarmup() || document.visibilityState === 'hidden') return;
 
   if (typeof fetch !== 'undefined') {
-    fetch(url, { mode: 'cors', credentials: 'omit' })
+    fetch(url, {
+      mode: 'cors',
+      credentials: 'omit',
+      headers: { Range: 'bytes=0-65535' }
+    })
       .then(async (response) => {
         if (!response.ok || !response.body) return;
         const reader = response.body.getReader();
         let bytesLoaded = 0;
-        const maxBytes = 1.5 * 1024 * 1024; // 1.5MB
-        
+        const maxBytes = 64 * 1024;
+
         while (true) {
           const { done, value } = await reader.read();
           if (done || !value) break;
@@ -217,9 +221,11 @@ export function startProgressiveImagePreload(): void {
   if (preloadingStarted) return;
   preloadingStarted = true;
 
+  if (shouldSkipAssetWarmup()) return;
+
   setTimeout(() => {
     let index = 0;
-    const MAX_PRELOAD_ITEMS = 40;
+    const MAX_PRELOAD_ITEMS = 4;
     const preloadNext = () => {
       if (index >= PRELOAD_IMAGES_LIST.length || index >= MAX_PRELOAD_ITEMS) {
         return;
@@ -241,35 +247,10 @@ export function startProgressiveImagePreload(): void {
   }, 2000);
 }
 
-// Critical video portfolio assets to warm up during idle browser state
+// Only the first two homepage videos receive a tiny idle-time range warmup.
 export const PRELOAD_VIDEOS_LIST = [
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/one.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/two.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/four%EF%BC%881%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/five%EF%BC%881%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/six.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/seven.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/eight.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nine.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%881%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%881%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%881%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/liaozhai%EF%BC%882%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuxia%EF%BC%882%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/sanguo%EF%BC%882%EF%BC%89.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/logo.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/wuyin-nuo.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/nandou.mp4",
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_120549_0cd82c36-56b3-4dd9-b190-069cfc3a623f.mp4",
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_132944_a0d124bb-eaa1-4082-aa30-2310efb42b4b.mp4",
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_125119_8e5ae31c-0021-4396-bc08-f7aebeb877a2.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok1.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok2.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok3.mp4",
-  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/tiktok4.mp4"
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4",
+  "https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4"
 ];
 
 let videoPreloadingStarted = false;
@@ -280,6 +261,8 @@ let videoPreloadingStarted = false;
 export function startProgressiveVideoPreload(): void {
   if (videoPreloadingStarted) return;
   videoPreloadingStarted = true;
+
+  if (shouldSkipAssetWarmup()) return;
 
   setTimeout(() => {
     let index = 0;
@@ -295,11 +278,11 @@ export function startProgressiveVideoPreload(): void {
         const scheduler = (window as any).requestIdleCallback || (window as any).requestAnimationFrame || ((cb: any) => setTimeout(cb, 50));
         scheduler(() => {
           warmUpVideo(url);
-          setTimeout(preloadNextVideo, 1500);
+          setTimeout(preloadNextVideo, 1200);
         });
       }
     };
 
     preloadNextVideo();
-  }, 4500);
+  }, 1500);
 }

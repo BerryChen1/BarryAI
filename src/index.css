@@ -48,6 +48,11 @@ body {
   overflow-x: hidden;
 }
 
+[role="button"]:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
 /* Custom scrollbar to keep layout premium */
 ::-webkit-scrollbar {
   width: 6px;

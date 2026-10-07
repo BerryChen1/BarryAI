@@ -1,21 +1,8 @@
 import React from 'react';
-import { CustomVideoPlayer } from './CustomVideoPlayer';
 
 export function Vid3Detail({ selectedProject, language, t, setLightboxState }: any) {
   return (
     <div className="space-y-6">
-      <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/three.mp4" language={language} />
-
-      <div className="space-y-4">
-        <div className="pl-5 border-l-3 border-sky-400/80 italic text-zinc-250 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed py-2.5 bg-sky-400/[0.02]">
-          “你会温和的走入那一夜吗?”
-        </div>
-        <div className="space-y-4 text-zinc-350 text-sm sm:text-base md:text-lg lg:text-lg leading-[1.85] font-sans font-light text-justify">
-          <p className="tracking-wide">冷调压抑的房间中，女孩的平静被录音机传来的诡异声响击碎。她循声踏入幽暗无尽的长廊，一件件残破旧物接连浮现，录音里双胞胎的情感纠葛之下，暗涌着一场关于自我分裂与拉扯的精神迷局，长廊尽头的门后，藏着自我认同的终极真相。</p>
-          <p className="tracking-wide">本片为个人独立全流程创作的AI动画短片，以黑塞的文字开启叙事，通过镜面构图、极速倒放蒙太奇等视听手法营造压抑诡谲的超现实质感。影片选用Seedance 2.0、Kling与 NanoBanana Pro 模型制作，借悬疑化的影像叙事，深入探讨自我认同的深层精神内核。</p>
-        </div>
-      </div>
-
       <div className="space-y-8 pt-6">
           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
             <span className="w-2 h-2 rounded-full bg-sky-300" />

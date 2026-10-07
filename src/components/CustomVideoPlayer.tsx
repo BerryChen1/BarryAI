@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Play, Pause, Volume2, VolumeX, Maximize, Minimize, Settings, FastForward } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Maximize, Minimize, FastForward } from 'lucide-react';
 
 interface CustomVideoPlayerProps {
   src: string;
@@ -14,14 +14,17 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const fullscreenRequestRef = useRef(false);
 
   const handleVideoClick = (e: React.MouseEvent) => {
-    if (clickTimeoutRef.current) {
+    if (clickTimeoutRef.current !== null) {
       clearTimeout(clickTimeoutRef.current);
       clickTimeoutRef.current = null;
-      toggleFullscreen();
-    } else {
+    }
+    // The second click only cancels the single-click action. Fullscreen is
+    // dispatched once, by the browser's subsequent dblclick event.
+    if (e.detail < 2) {
       clickTimeoutRef.current = setTimeout(() => {
         togglePlay();
         clickTimeoutRef.current = null;
@@ -29,6 +32,17 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
     }
   };
 
+  const handleVideoDoubleClick = () => {
+    if (clickTimeoutRef.current !== null) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+    toggleFullscreen();
+  };
+
+  useEffect(() => () => {
+    if (clickTimeoutRef.current !== null) clearTimeout(clickTimeoutRef.current);
+  }, []);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
@@ -48,6 +62,10 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   useEffect(() => {
     setActiveVideoSrc(src);
     setHasFailedDirect(false);
+    setProgress(0);
+    setDuration(0);
+    setIsPlaying(false);
+    setIsBuffering(false);
   }, [src]);
 
   // Handle video loading failure (e.g. Mainland China direct network blocking r2.dev)
@@ -66,6 +84,19 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+    const pauseVideo = () => {
+      const video = videoRef.current;
+      if (video && !video.paused) video.pause();
+    };
+    const handleVisibilityChange = () => {
+      if (document.hidden) pauseVideo();
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setHasBeenInView(true);
+      return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -73,20 +104,17 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
           if (entry.isIntersecting) {
             setHasBeenInView(true);
           } else {
-            // Instantly pause playback if the player goes offscreen to reclaim CPU and Network resources
-            if (videoRef.current && !videoRef.current.paused) {
-              videoRef.current.pause();
-              setIsPlaying(false);
-            }
+            pauseVideo();
           }
         });
       },
-      { rootMargin: '800px' } // Preload when video player is within 800px of visible viewport
+      { rootMargin: '200px 0px' }
     );
 
     observer.observe(container);
     return () => {
-      observer.unobserve(container);
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -100,11 +128,18 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
 
   // Play / Pause Toggle
   const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
+    const video = videoRef.current;
+    if (!video) return;
+    if (!video.paused) {
+      video.pause();
     } else {
-      videoRef.current.play().catch(err => console.log("Video playback error: ", err));
+      // Keyboard/user activation can precede the observer callback. Attach the
+      // source synchronously so play() retains that user activation.
+      if (!video.getAttribute('src')) {
+        video.src = activeVideoSrc;
+        setHasBeenInView(true);
+      }
+      video.play().catch(err => console.log("Video playback error: ", err));
     }
   };
 
@@ -160,23 +195,22 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
 
   // Fullscreen toggle utilizing standard Cross-Browser APIs
   const toggleFullscreen = () => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container || fullscreenRequestRef.current) return;
+    const isCurrentFullscreen = document.fullscreenElement === container;
+    if (isCurrentFullscreen ? !document.exitFullscreen : !container.requestFullscreen) return;
 
-    if (!document.fullscreenElement) {
-      containerRef.current.requestFullscreen()
-        .then(() => setIsFullscreen(true))
-        .catch(err => console.error("Error entering fullscreen: ", err));
-    } else {
-      document.exitFullscreen()
-        .then(() => setIsFullscreen(false))
-        .catch(err => console.error("Error exiting fullscreen: ", err));
-    }
+    fullscreenRequestRef.current = true;
+    const request = isCurrentFullscreen ? document.exitFullscreen() : container.requestFullscreen();
+    request
+      .catch(err => console.error("Error changing fullscreen: ", err))
+      .finally(() => { fullscreenRequestRef.current = false; });
   };
 
   // Sync state if user exits fullscreen via ESC key natively
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
+      setIsFullscreen(document.fullscreenElement === containerRef.current);
     };
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
@@ -267,9 +301,9 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
         onCanPlay={() => setIsBuffering(false)}
         onError={handleVideoError}
         onClick={handleVideoClick}
-        onDoubleClick={(e) => { if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current); toggleFullscreen(); }}
+        onDoubleClick={handleVideoDoubleClick}
         playsInline
-        preload={hasBeenInView ? "auto" : "none"}
+        preload={hasBeenInView ? "metadata" : "none"}
         controlsList="nodownload"
         className={`w-full h-full ${isFullscreen ? 'object-contain' : 'object-cover'} transition-all duration-500 will-change-transform transform-gpu ${
           isPlaying ? 'brightness-100' : 'brightness-[0.7]'

@@ -7,6 +7,13 @@ import {
   ShoppingBag
 } from 'lucide-react';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
+import { useExperienceTabHistory } from '../utils/experienceTabHistory';
+
+const TAB_IDS = ['overview', 'workflow', 'video-cases', 'visual', 'community'] as const;
+
+const AiVideoWorkflowShowcase = React.lazy(() =>
+  import('./AiVideoWorkflowShowcase').then((module) => ({ default: module.AiVideoWorkflowShowcase }))
+);
 
 interface TikTokDetailProps {
   language: 'zh' | 'en';
@@ -83,7 +90,7 @@ const ImageSlot: React.FC<ImageSlotProps> = ({
 };
 
 export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps) {
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab, changeTab] = useExperienceTabHistory(1, TAB_IDS);
   const [activeStep, setActiveStep] = useState(1);
   const [imageMap] = useState<Record<string, string>>({
     // Part 1: AI Short Drama
@@ -144,12 +151,13 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
     // Part 3: Community Ops
     communityPlacement1: "/images/20260823005642828.webp",
     communityPlacement2: "/images/20260823005650942.webp",
-    communityPlacement3: "/images/20260823005700451.webp",
+    communityPlacement3: "/images/20260823005650942.webp",
   });
 
   const tabs = [
     { id: 'overview', label: t('项目概述', 'Overview'), icon: Compass },
     { id: 'workflow', label: t('AI短剧工作流', 'AI Drama Workflow'), icon: Film },
+    { id: 'video-cases', label: t('AI创意Skill设计', 'AI Creative Skill Design'), icon: Sparkles },
     { id: 'visual', label: t('AI视觉设计', 'AI Visual Design'), icon: Layers },
     { id: 'community', label: t('资产与社区沉淀', 'Community & Assets'), icon: Users }
   ];
@@ -191,7 +199,7 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
         {tabs.map(tab => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => changeTab(tab.id)}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-none text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === tab.id 
                 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' 
@@ -438,6 +446,19 @@ export function TikTokDetail({ language, t, setLightboxUrl }: TikTokDetailProps)
             </div>
           </div>
         </div>
+      )}
+
+      {/* Tab Content: AI 创意 Skill 设计 */}
+      {activeTab === 'video-cases' && (
+        <React.Suspense
+          fallback={(
+            <div className="flex min-h-64 items-center justify-center border border-white/5 bg-white/[0.015] text-sm text-zinc-500">
+              正在加载完整案例…
+            </div>
+          )}
+        >
+          <AiVideoWorkflowShowcase setLightboxUrl={setLightboxUrl} />
+        </React.Suspense>
       )}
 
       {/* Tab Content: AI视觉设计 */}

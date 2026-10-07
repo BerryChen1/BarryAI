@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ZoomableLightbox } from './ZoomableLightbox';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
+
+const ZoomableLightbox = React.lazy(() => import('./ZoomableLightbox').then(module => ({ default: module.ZoomableLightbox })));
 
 export const Xuanye = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,6 +16,48 @@ export const Xuanye = () => {
     "/images/20260912184410665.webp",
     "/images/20260912184422016.webp"
   ];
+
+  const openLightbox = (index: number) => {
+    window.history.pushState(
+      { ...(window.history.state ?? {}), xuanyeLightboxIndex: index },
+      '',
+      window.location.href,
+    );
+    setLightboxState({ images: gallery, index });
+  };
+
+  const closeLightbox = () => {
+    if (typeof window.history.state?.xuanyeLightboxIndex === 'number') {
+      window.history.back();
+    } else {
+      setLightboxState(null);
+    }
+  };
+
+  const moveLightbox = (index: number) => {
+    if (index < 0 || index >= gallery.length) return;
+    if (typeof window.history.state?.xuanyeLightboxIndex === 'number') {
+      window.history.replaceState(
+        { ...window.history.state, xuanyeLightboxIndex: index },
+        '',
+        window.location.href,
+      );
+    }
+    setLightboxState({ images: gallery, index });
+  };
+
+  useEffect(() => {
+    const syncLightbox = (state: unknown) => {
+      const index = (state as { xuanyeLightboxIndex?: number } | null)?.xuanyeLightboxIndex;
+      setLightboxState(typeof index === 'number' && Number.isInteger(index) && index >= 0 && index < gallery.length
+        ? { images: gallery, index }
+        : null);
+    };
+    const handlePopState = (event: PopStateEvent) => syncLightbox(event.state);
+    syncLightbox(window.history.state);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
 
   useEffect(() => {
@@ -38,6 +81,7 @@ export const Xuanye = () => {
 
   return (
     <div className="xuanye-container" ref={containerRef}>
+      <link rel="stylesheet" href="/fonts/xuanye.css" />
       <style>{`
   :root{
     --xuan:      #0a0b0f;   /* 玄黑 · 主底 */
@@ -316,7 +360,7 @@ export const Xuanye = () => {
 
   
   <header>
-    <img loading="lazy" decoding="async" src="/images/20260912184251573.webp" alt="Hero Key Visual" className="hero-img reveal cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 0 })} />
+    <img loading="lazy" decoding="async" src="/images/20260912184251573-display.webp" alt="Hero Key Visual" className="hero-img reveal cursor-pointer" onClick={() => openLightbox(0)} />
     <div className="kicker reveal">Key Visual Design Specification · 主视觉设计说明</div>
     <h1 className="title-cn reveal">
       <span className="glyph">玄</span><span className="glyph yin">夜</span><span className="seal-inline">☯</span><span className="glyph">引</span><span className="glyph yin">渡</span>
@@ -360,10 +404,10 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position B · Mood Portrait</div>
-      <img loading="lazy" decoding="async" src="/images/20260912190045556.webp" alt="新增顶图" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 1 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)","marginBottom":"20px"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912190045556.webp" alt="新增顶图" className="cursor-pointer" onClick={() => openLightbox(1)} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)","marginBottom":"20px"}} />
       <div style={{"display":"flex","justifyContent":"center","gap":"20px"}}>
-        <img loading="lazy" decoding="async" src="/images/20260912184325915.webp" alt="图3" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 2 })} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
-        <img loading="lazy" decoding="async" src="/images/20260912184337215.webp" alt="图4新加" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 3 })} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+        <img loading="lazy" decoding="async" src="/images/20260912184325915.webp" alt="图3" className="cursor-pointer" onClick={() => openLightbox(2)} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+        <img loading="lazy" decoding="async" src="/images/20260912184337215.webp" alt="图4新加" className="cursor-pointer" onClick={() => openLightbox(3)} style={{"width":"100%","maxWidth":"420px","objectFit":"cover","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
       </div>
     </div>
   </section>
@@ -416,7 +460,7 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position C · Design Board Overview</div>
-      <img loading="lazy" decoding="async" src="/images/20260912184348720.webp" alt="图5" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 4 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184348720-display.webp" alt="图5" className="cursor-pointer" onClick={() => openLightbox(4)} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
 
     <div className="elements reveal">
@@ -572,12 +616,12 @@ export const Xuanye = () => {
 
     <div className="ph-block reveal">
       <div className="ph-label">Position F · Character Sheet</div>
-      <img loading="lazy" decoding="async" src="/images/20260912184410665.webp" alt="图6" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 5 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184410665-display.webp" alt="图6" className="cursor-pointer" onClick={() => openLightbox(5)} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
 
     <div className="ph-block reveal">
       <div className="ph-label">Position G · Applications Board</div>
-      <img loading="lazy" decoding="async" src="/images/20260912184422016.webp" alt="图7" className="cursor-pointer" onClick={() => setLightboxState({ images: gallery, index: 6 })} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
+      <img loading="lazy" decoding="async" src="/images/20260912184422016-display.webp" alt="图7" className="cursor-pointer" onClick={() => openLightbox(6)} style={{"width":"100%","display":"block","border":"1px solid rgba(200,164,92,.18)"}} />
     </div>
   </section>
 
@@ -595,17 +639,18 @@ export const Xuanye = () => {
 
 
       {lightboxState && (
-        <ZoomableLightbox
-          url={lightboxState.images[lightboxState.index]}
-          onClose={() => setLightboxState(null)}
-          t={(zh, en) => zh}
-          onNext={lightboxState.index < lightboxState.images.length - 1 ? () => setLightboxState({ ...lightboxState, index: lightboxState.index + 1 }) : undefined}
-          onPrev={lightboxState.index > 0 ? () => setLightboxState({ ...lightboxState, index: lightboxState.index - 1 }) : undefined}
-          hasNext={lightboxState.index < lightboxState.images.length - 1}
-          hasPrev={lightboxState.index > 0}
-        />
+        <React.Suspense fallback={null}>
+          <ZoomableLightbox
+            url={lightboxState.images[lightboxState.index]}
+            onClose={closeLightbox}
+            t={(zh, en) => zh}
+            onNext={lightboxState.index < lightboxState.images.length - 1 ? () => moveLightbox(lightboxState.index + 1) : undefined}
+            onPrev={lightboxState.index > 0 ? () => moveLightbox(lightboxState.index - 1) : undefined}
+            hasNext={lightboxState.index < lightboxState.images.length - 1}
+            hasPrev={lightboxState.index > 0}
+          />
+        </React.Suspense>
       )}
     </div>
   );
 };
-

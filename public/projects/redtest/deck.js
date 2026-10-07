@@ -30,6 +30,7 @@
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   function go(n, skipHash) {
+    if (!skipHash && isModalOpen()) return;
     n = Math.max(0, Math.min(total - 1, n));
     // 按钮位置：封面/致谢页上移（先于早退判断执行）
     document.body.classList.toggle(
@@ -37,7 +38,6 @@
       slides[n].classList.contains('s-cover') || slides[n].classList.contains('s-thanks')
     );
     if (n === cur && slides[n].classList.contains('active')) return;
-    closeModal();
     slides.forEach(function (s, i) {
       s.classList.toggle('active', i === n);
       s.classList.toggle('passed', i < n);
@@ -46,7 +46,6 @@
     if (video && cur === 6 && n !== 6) {
       video.pause();
     }
-    var prev = cur;
     cur = n;
     progress.style.width = ((cur + 1) / total * 100) + '%';
     curNum.textContent = pad(cur + 1);
@@ -57,7 +56,9 @@
     // reset inner scroll (mobile)
     slides[cur].scrollTop = 0;
     if (!skipHash) {
-      try { history.replaceState(null, '', '#/' + (cur + 1)); } catch (e) {}
+      try {
+        history.replaceState(Object.assign({}, history.state, { redtestSlide: cur }), '', '#/' + (cur + 1));
+      } catch (e) {}
     }
   }
 
@@ -74,6 +75,10 @@
   /* ---------- keyboard ---------- */
   document.addEventListener('keydown', function (e) {
     if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if (isModalOpen()) {
+      if (e.key === 'Escape') { e.preventDefault(); closeModal(); }
+      return;
+    }
     switch (e.key) {
       case 'ArrowRight': case 'ArrowDown': case 'PageDown': case ' ': e.preventDefault(); next(); break;
       case 'ArrowLeft': case 'ArrowUp': case 'PageUp': e.preventDefault(); prev(); break;
@@ -87,6 +92,7 @@
   /* ---------- wheel (uniform page flip on every slide) ---------- */
   var wheelLock = 0, wheelAcc = 0;
   document.addEventListener('wheel', function (e) {
+    if (isModalOpen()) return;
     var now = Date.now();
     if (now < wheelLock) { e.preventDefault(); return; }
     wheelAcc += e.deltaY;
@@ -105,6 +111,7 @@
     tx = e.touches[0].clientX; ty = e.touches[0].clientY;
   }, { passive: true });
   document.addEventListener('touchend', function (e) {
+    if (isModalOpen()) return;
     if (e.changedTouches.length !== 1) return;
     var dx = e.changedTouches[0].clientX - tx;
     var dy = e.changedTouches[0].clientY - ty;
@@ -123,6 +130,11 @@
     var n = fromHash();
     if (n !== cur) go(n, true);
   });
+  window.addEventListener('popstate', function () {
+    modalClosing = false;
+    go(fromHash(), true);
+    syncModalWithHistory();
+  });
 
   /* ---------- fullscreen ---------- */
   var fsBtn = document.getElementById('fsBtn');
@@ -139,10 +151,17 @@
   function setPlaying(p) {
     if (vwrap) vwrap.classList.toggle('playing', p);
   }
+  function playVideo(target, onFailure) {
+    if (!target) return;
+    var playback = target.play();
+    if (playback && playback.catch) playback.catch(function () {
+      if (onFailure) onFailure();
+    });
+  }
   if (video) {
-    vplay.addEventListener('click', function () { video.play(); });
+    vplay.addEventListener('click', function () { playVideo(video); });
     video.addEventListener('click', function () {
-      video.paused ? video.play() : video.pause();
+      video.paused ? playVideo(video) : video.pause();
     });
     video.addEventListener('play', function () { setPlaying(true); });
     video.addEventListener('pause', function () { setPlaying(false); });
@@ -190,26 +209,61 @@
   var coverVideoBtn = document.getElementById('coverVideoBtn');
   var vmodalMask = document.getElementById('vmodalMask');
   var vmodalClose = document.getElementById('vmodalClose');
+  var modalClosing = false;
 
-  function closeModal() {
-    if (!vmodal || !vmodal.classList.contains('open')) return;
+  function isModalOpen() {
+    return !!vmodal && vmodal.classList.contains('open');
+  }
+  function hideModal() {
+    if (!isModalOpen()) return;
     vmodal.classList.remove('open');
     vmodal.setAttribute('aria-hidden', 'true');
     if (coverVideo) coverVideo.pause();
+    if (coverVideoBtn) coverVideoBtn.focus({ preventScroll: true });
   }
-  function openModal() {
+  function showModal(autoplay) {
     if (!vmodal) return;
     vmodal.classList.add('open');
     vmodal.setAttribute('aria-hidden', 'false');
-    if (coverVideo) coverVideo.play();
+    if (vmodalClose) vmodalClose.focus({ preventScroll: true });
+    if (coverVideo) {
+      // Forward/reload restores a paused player with controls: history traversal
+      // does not grant user activation for unmuted autoplay.
+      coverVideo.controls = !autoplay;
+      if (autoplay) playVideo(coverVideo, function () { coverVideo.controls = true; });
+    }
+  }
+  function closeModal() {
+    if (!isModalOpen() || modalClosing) return;
+    hideModal();
+    if (history.state && history.state.redtestVideoModal) {
+      modalClosing = true;
+      history.back();
+    }
+  }
+  function openModal() {
+    if (!vmodal || isModalOpen() || modalClosing) return;
+    history.pushState(Object.assign({}, history.state, {
+      redtestVideoModal: true,
+      redtestSlide: cur
+    }), '', location.href);
+    showModal(true);
+  }
+  function syncModalWithHistory() {
+    if (history.state && history.state.redtestVideoModal) showModal(false);
+    else hideModal();
   }
   if (coverVideoBtn) coverVideoBtn.addEventListener('click', openModal);
   if (vmodalMask) vmodalMask.addEventListener('click', closeModal);
   if (vmodalClose) vmodalClose.addEventListener('click', closeModal);
+  if (coverVideo) coverVideo.addEventListener('click', function () {
+    if (!coverVideo.controls) coverVideo.paused ? playVideo(coverVideo) : coverVideo.pause();
+  });
 
   /* ---------- init ---------- */
   if (new URLSearchParams(location.search).get('export') === '1') {
     document.body.classList.add('export');
   }
   go(fromHash(), true);
+  syncModalWithHistory();
 })();

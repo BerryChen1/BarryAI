@@ -4,10 +4,13 @@ import { ArrowDown, ChevronRight, X, ArrowUpRight, Copy, Check, Eye } from 'luci
 import { PORTFOLIO_DETAILS, CATALOG_PORTFOLIO_DATA } from './data';
 import { ProjectItem } from './types';
 import { CustomVideoPlayer } from './components/CustomVideoPlayer';
+import { VisibleLoopVideo } from './components/VisibleLoopVideo';
+import { useModalFocus } from './utils/useModalFocus';
 const TikTokDetail = React.lazy(() => import('./components/TikTokDetail').then(module => ({ default: module.TikTokDetail })));
 const TikTokShopDetail = React.lazy(() => import('./components/TikTokShopDetail').then(module => ({ default: module.TikTokShopDetail })));
 const TencentIEGDetail = React.lazy(() => import('./components/TencentIEGDetail').then(module => ({ default: module.TencentIEGDetail })));
 import { ChillaxCampaignDetail } from './components/ChillaxCampaignDetail';
+import { DnfSpringDetail } from './components/DnfSpringDetail';
 import { OddityClubDetail } from './components/OddityClubDetail';
 import { WukongCampaignDetail } from './components/WukongCampaignDetail';
 const ZoomableLightbox = React.lazy(() => import('./components/ZoomableLightbox').then(module => ({ default: module.ZoomableLightbox })));
@@ -115,6 +118,31 @@ const findProjectById = (id: string): ProjectItem | null => {
   return null;
 };
 
+type LightboxState = { images: string[]; index: number };
+type PortfolioHistoryState = {
+  portfolioProjectId?: string;
+  portfolioExperienceIndex?: number;
+  portfolioExperienceTab?: string;
+  portfolioExperienceDepth?: number;
+  portfolioLightbox?: LightboxState;
+};
+
+const currentPortfolioHistory = (): PortfolioHistoryState =>
+  (window.history.state ?? {}) as PortfolioHistoryState;
+
+const cardAction = (activate: () => void, label: string) => ({
+  role: 'button' as const,
+  tabIndex: 0,
+  'aria-label': label,
+  onClick: activate,
+  onKeyDown: (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.target === event.currentTarget && !event.repeat && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      activate();
+    }
+  },
+});
+
 export default function App() {
   if (window.location.search === '?route=xuanye') return <Xuanye />;
   const defaultFilter = CATALOG_PORTFOLIO_DATA.length > 0 ? CATALOG_PORTFOLIO_DATA[0].name.replace('作品', '') : '';
@@ -125,7 +153,10 @@ export default function App() {
   const [selectedExperienceIndex, setSelectedExperienceIndex] = useState<number | null>(null);
   
   // Lightbox State
-  const [lightboxState, setLightboxState] = useState<{ images: string[], index: number } | null>(null);
+  const [lightboxState, setLightboxState] = useState<LightboxState | null>(null);
+  const projectDialogRef = useRef<HTMLDivElement>(null);
+  const experienceDialogRef = useRef<HTMLDivElement>(null);
+  const isOverlayOpen = selectedProject !== null || selectedExperienceIndex !== null || lightboxState !== null;
 
   // Internationalization (for existing detailed components)
   const [language, setLanguage] = useState<'zh' | 'en'>('zh');
@@ -137,8 +168,13 @@ export default function App() {
   }, []);
 
   const openProject = (project: ProjectItem) => {
+    const nextState = { ...currentPortfolioHistory() };
+    delete nextState.portfolioExperienceIndex;
+    delete nextState.portfolioExperienceTab;
+    delete nextState.portfolioExperienceDepth;
+    delete nextState.portfolioLightbox;
     window.history.pushState(
-      { ...(window.history.state ?? {}), portfolioProjectId: project.id },
+      { ...nextState, portfolioProjectId: project.id },
       '',
       window.location.href,
     );
@@ -146,24 +182,95 @@ export default function App() {
   };
 
   const closeProject = () => {
-    if (window.history.state?.portfolioProjectId === selectedProject?.id) {
-      window.history.back();
+    if (currentPortfolioHistory().portfolioProjectId === selectedProject?.id) {
+      let embeddedDepth = 0;
+      try {
+        const childState = projectDialogRef.current?.querySelector('iframe')?.contentWindow?.history.state;
+        embeddedDepth = childState?.redtestVideoModal || typeof childState?.xuanyeLightboxIndex === 'number' ? 1 : 0;
+      } catch {
+        // The bundled project pages are same-origin; external frames have no local history contract.
+      }
+      window.history.go(-(embeddedDepth + 1));
     } else {
       setSelectedProject(null);
     }
   };
 
+  const openExperience = (index: number) => {
+    const nextState = { ...currentPortfolioHistory() };
+    delete nextState.portfolioProjectId;
+    delete nextState.portfolioLightbox;
+    window.history.pushState(
+      { ...nextState, portfolioExperienceIndex: index, portfolioExperienceTab: 'overview', portfolioExperienceDepth: 0 },
+      '',
+      window.location.href,
+    );
+    setSelectedExperienceIndex(index);
+  };
+
+  const closeExperience = () => {
+    const state = currentPortfolioHistory();
+    if (state.portfolioExperienceIndex === selectedExperienceIndex) {
+      window.history.go(-((state.portfolioExperienceDepth ?? 0) + 1));
+    } else {
+      setSelectedExperienceIndex(null);
+    }
+  };
+
+  const openLightbox = (next: LightboxState) => {
+    window.history.pushState(
+      { ...currentPortfolioHistory(), portfolioLightbox: next },
+      '',
+      window.location.href,
+    );
+    setLightboxState(next);
+  };
+
+  const closeLightbox = () => {
+    if (currentPortfolioHistory().portfolioLightbox) {
+      window.history.back();
+    } else {
+      setLightboxState(null);
+    }
+  };
+
+  const moveLightbox = (index: number) => {
+    if (!lightboxState || index < 0 || index >= lightboxState.images.length) return;
+    const next = { ...lightboxState, index };
+    if (currentPortfolioHistory().portfolioLightbox) {
+      window.history.replaceState(
+        { ...currentPortfolioHistory(), portfolioLightbox: next },
+        '',
+        window.location.href,
+      );
+    }
+    setLightboxState(next);
+  };
+
+  useModalFocus(projectDialogRef, selectedProject !== null, closeProject);
+  useModalFocus(experienceDialogRef, selectedExperienceIndex !== null, closeExperience);
+
   useEffect(() => {
-    const syncProjectWithHistory = (state: unknown) => {
-      const projectId = (state as { portfolioProjectId?: string } | null)?.portfolioProjectId;
-      setSelectedProject(projectId ? findProjectById(projectId) : null);
+    const syncWithHistory = (value: unknown) => {
+      const state = (value ?? {}) as PortfolioHistoryState;
+      setSelectedProject(state.portfolioProjectId ? findProjectById(state.portfolioProjectId) : null);
+      const experienceIndex = state.portfolioExperienceIndex;
+      setSelectedExperienceIndex(
+        typeof experienceIndex === 'number' && Number.isInteger(experienceIndex) && experienceIndex >= 0 && experienceIndex < PORTFOLIO_DETAILS.length
+          ? experienceIndex
+          : null,
+      );
+      const lightbox = state.portfolioLightbox;
+      setLightboxState(lightbox && Array.isArray(lightbox.images) && lightbox.images.length > 0 && lightbox.index >= 0 && lightbox.index < lightbox.images.length
+        ? lightbox
+        : null);
     };
 
     const handlePopState = (event: PopStateEvent) => {
-      syncProjectWithHistory(event.state);
+      syncWithHistory(event.state);
     };
 
-    syncProjectWithHistory(window.history.state);
+    syncWithHistory(window.history.state);
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
@@ -211,10 +318,10 @@ export default function App() {
         {/* Sticky Navigation */}
         <nav className="fixed top-0 left-0 right-0 w-full z-[200] bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5 flex justify-between items-center px-6 md:px-12 py-2.5 md:py-3.5 shrink-0 transition-all">
           {/* Left: Avatar & Name */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
+          <button type="button" className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')} aria-label="返回首页">
             <img loading="lazy" decoding="async" src="/images/20260917004311360.webp" alt="BarryC" className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover border border-white/20" />
             <span className="text-white font-bold text-xl md:text-2xl tracking-wider" style={{ fontFamily: "'Caveat', cursive" }}>BarryC.</span>
-          </div>
+          </button>
 
           {/* Right: Links & Xiaohongshu */}
           <div className="flex items-center gap-4 md:gap-8 text-[10px] md:text-sm font-medium tracking-widest text-zinc-400">
@@ -256,8 +363,8 @@ export default function App() {
             {/* Grid 1 */}
             <div className="w-[200vw] lg:w-full h-full grid grid-cols-4 grid-rows-2 gap-0.5 shrink-0 bg-[#0A0A0A] snap-start">
               {/* Row 1 / Block 1-4 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-xuanye')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('brand-xuanye'), '查看作品：玄夜·引渡')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/6.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《玄夜·引渡》</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
@@ -268,8 +375,8 @@ export default function App() {
           
           <CyberText lines={["FRAME", "BY", "FRAME."]} />
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-14')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('vid-14'), '查看作品：墨染·天下')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/1.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《墨染·天下》</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
@@ -278,8 +385,8 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-1')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('vid-1'), '查看作品：The Last')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/3.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《The Last》</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
@@ -289,18 +396,18 @@ export default function App() {
           </div>
 
           {/* Row 2 / Block 5-8 */}
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('brand-rednote-city-party')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/8.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('brand-rednote-city-party'), '查看作品：小红书城市生活有意思：粘土派对')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/8.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
-              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">城市生活派对｜小红书视觉设计</h3>
+              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">小红书“城市生活有意思：粘土派对”创意设计</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
                 <Eye className="w-4 h-4 text-white" />
               </div>
             </div>
           </div>
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('oth-2')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('oth-2'), '查看作品：怪奇研究所')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/4.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">怪奇研究所</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
@@ -309,8 +416,8 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer" onClick={() => openProjectById('vid-13')}>
-            <video src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" autoPlay loop muted playsInline />
+          <div className="w-full h-full relative overflow-hidden group/vid bg-[#0A0A0A] cursor-pointer focus-visible:outline-2 focus-visible:outline-sky-400 focus-visible:-outline-offset-2" {...cardAction(() => openProjectById('vid-13'), '查看作品：超时空决战！英灵殿')}>
+            <VisibleLoopVideo src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%20shoye/2.mp4" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/vid:scale-105" paused={isOverlayOpen} />
             <div className="absolute inset-0 bg-black/70 opacity-0 group-hover/vid:opacity-100 transition-all duration-500 flex flex-col items-center justify-center pointer-events-none p-4 text-center">
               <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-wider mb-2 transform translate-y-4 group-hover/vid:translate-y-0 transition-transform duration-500">《超时空决战！英灵殿》</h3>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transform scale-90 group-hover/vid:scale-100 transition-all duration-500 delay-75">
@@ -349,7 +456,7 @@ export default function App() {
           <motion.div 
             {...fadeUp(0.5)}
             className="group relative flex items-center gap-5 p-4 md:p-5 rounded-sm bg-zinc-900/50 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 cursor-pointer w-full max-w-sm shadow-xl hover:shadow-sky-500/10 overflow-hidden"
-            onClick={() => setSelectedExperienceIndex(0)}
+            {...cardAction(() => openExperience(0), '查看个人履历')}
           >
             {/* Ambient Glow */}
             <div className="absolute -inset-x-10 -top-10 h-20 bg-sky-500/20 blur-[40px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -393,7 +500,7 @@ export default function App() {
                 key={exp.id} 
                 {...fadeUp(0.2 + idx * 0.1)} 
                 className="relative group flex flex-col sm:flex-row items-start gap-3 sm:gap-4 cursor-pointer"
-                onClick={() => setSelectedExperienceIndex(exp.id)}
+                {...cardAction(() => openExperience(exp.id), `查看经历：${exp.detail.title}`)}
               >
                 {/* Dot */}
                 <div className="absolute -left-[37.5px] top-4 w-3 h-3 rounded-full bg-zinc-800 group-hover:bg-zinc-300 transition-colors border border-zinc-700" />
@@ -462,7 +569,7 @@ export default function App() {
                 transition={{ duration: 0.5 }}
                 key={proj.id}
                 className="group cursor-pointer relative"
-                onClick={() => openProject(proj)}
+                {...cardAction(() => openProject(proj), `查看作品：${proj.cardTitle || proj.title}`)}
               >
                 <div className="relative w-full aspect-video bg-[#111] overflow-hidden mb-4 md:mb-5">
                   {proj.coverImage ? (
@@ -482,7 +589,7 @@ export default function App() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-lg md:text-xl font-bold text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 truncate inline-block">{proj.cardTitle || proj.title}</h4>
+                  <h4 className={`text-lg md:text-xl font-bold text-zinc-300 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 inline-block ${proj.id === "comm-1" ? "line-clamp-2 leading-snug" : "truncate"}`}>{proj.cardTitle || proj.title}</h4>
                   {proj.subtitle && <p className="text-sm text-zinc-500 font-light truncate group-hover:text-zinc-400 group-hover:translate-x-1 transition-all duration-300 block">{proj.subtitle}</p>}
                 </div>
               </motion.div>
@@ -495,6 +602,11 @@ export default function App() {
       <AnimatePresence>
         {selectedProject && (
           <motion.div 
+            ref={projectDialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedProject.title}
+            tabIndex={-1}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-[300] bg-[#0A0A0A] overflow-y-auto"
           >
@@ -502,6 +614,7 @@ export default function App() {
             <div className="fixed top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent z-[310] pointer-events-none flex justify-end items-start pt-6 pr-8 md:pr-16">
               <button 
                 onClick={closeProject}
+                data-modal-close
                 aria-label="关闭作品详情"
                 className="p-3 md:p-4 bg-white/10 hover:bg-white hover:text-black border border-white/20 backdrop-blur-md rounded-full text-white transition-colors pointer-events-auto shadow-lg"
               >
@@ -521,7 +634,7 @@ export default function App() {
                   <>
                     {/* Commercial Visual Works - Top Cover Image */}
                     {["brand-1", "brand-wukong", "oth-2"].includes(selectedProject.id) && selectedProject.coverImage && (
-                      <div className="w-full mb-12 -mt-6 group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer rounded-none border border-white/10" onClick={() => setLightboxState({ images: selectedProject.gallery || [selectedProject.coverImage], index: 0 })}>
+                      <div className="w-full mb-12 -mt-6 group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer rounded-none border border-white/10" onClick={() => openLightbox({ images: selectedProject.gallery || [selectedProject.coverImage], index: 0 })}>
                         <img loading="lazy" decoding="async" src={selectedProject.coverImage} alt={selectedProject.title} className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                       </div>
@@ -563,7 +676,7 @@ export default function App() {
                     )}
 
                     {/* Overview Block */}
-                    {selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && (
+                    {selectedProject.id !== "vid-13" && selectedProject.id !== "vid-14" && selectedProject.id !== "comm-1" && (
                     <div className="space-y-8 mb-16">
                       {selectedProject.id !== "vid-4" && selectedProject.id !== "vid-5" && (
                         <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
@@ -616,19 +729,20 @@ export default function App() {
 
                     {/* Curated Media Showcase/Gallery */}
 <div className="space-y-8">
-                      {selectedProject.id === "vid-1" && <Vid1Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-2" && <Vid2Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-3" && <Vid3Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-5" && <Vid5Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-11" && <Vid11Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-12" && <Vid12Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-13" && <Vid13Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "vid-14" && <Vid14Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />}
-                      {selectedProject.id === "brand-1" && <ChillaxCampaignDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
-                      {selectedProject.id === "oth-2" && <OddityClubDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
-                      {selectedProject.id === "brand-wukong" && <WukongCampaignDetail language={language} t={t} setLightboxState={setLightboxState} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "vid-1" && <Vid1Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-2" && <Vid2Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-3" && <Vid3Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-5" && <Vid5Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-11" && <Vid11Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-12" && <Vid12Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-13" && <Vid13Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "vid-14" && <Vid14Detail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />}
+                      {selectedProject.id === "comm-1" && <DnfSpringDetail t={t} setLightboxState={openLightbox} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "brand-1" && <ChillaxCampaignDetail language={language} t={t} setLightboxState={openLightbox} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "oth-2" && <OddityClubDetail language={language} t={t} setLightboxState={openLightbox} gallery={selectedProject.gallery || []} />}
+                      {selectedProject.id === "brand-wukong" && <WukongCampaignDetail language={language} t={t} setLightboxState={openLightbox} gallery={selectedProject.gallery || []} />}
 
-                      {selectedProject.gallery && selectedProject.gallery.length > 0 && !["vid-1", "vid-2", "vid-3", "vid-4", "vid-5", "vid-11", "vid-12", "vid-13", "vid-14", "brand-1", "oth-2", "brand-wukong"].includes(selectedProject.id) && (
+                      {selectedProject.gallery && selectedProject.gallery.length > 0 && !["vid-1", "vid-2", "vid-3", "vid-4", "vid-5", "vid-11", "vid-12", "vid-13", "vid-14", "comm-1", "brand-1", "oth-2", "brand-wukong"].includes(selectedProject.id) && (
                         <>
                           <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5">
                             <span className="w-2 h-2 rounded-full bg-sky-300" />
@@ -638,7 +752,7 @@ export default function App() {
                                     : t("精选创作成品 / VISUAL GALLERY", "VISUAL GALLERY")}
                             </h2>
                           </div>
-                          <VidGalleryDetail selectedProject={selectedProject} language={language} t={t} setLightboxState={setLightboxState} />
+                          <VidGalleryDetail selectedProject={selectedProject} language={language} t={t} setLightboxState={openLightbox} />
                         </>
                       )}
 
@@ -659,6 +773,7 @@ export default function App() {
                           </div>
                         </div>
                       )}
+
                     </div>
                   </>
                 )}
@@ -673,13 +788,20 @@ export default function App() {
       <AnimatePresence>
         {selectedExperienceIndex !== null && (
           <motion.div 
+            ref={experienceDialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={PORTFOLIO_DETAILS[selectedExperienceIndex].title}
+            tabIndex={-1}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-[300] bg-[#0A0A0A] overflow-y-auto"
           >
             {/* Header / Close button */}
             <div className="fixed top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent z-[310] pointer-events-none flex justify-end items-start pt-6 pr-8 md:pr-16">
               <button 
-                onClick={() => setSelectedExperienceIndex(null)}
+                onClick={closeExperience}
+                data-modal-close
+                aria-label="关闭经历详情"
                 className="p-3 md:p-4 bg-white/10 hover:bg-white hover:text-black border border-white/20 backdrop-blur-md rounded-full text-white transition-colors pointer-events-auto shadow-lg"
               >
                 <X className="w-5 h-5" />
@@ -728,7 +850,7 @@ export default function App() {
                         </h3>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                           {PORTFOLIO_DETAILS[0].achievements.map((img, i) => (
-                            <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievements!, index: i})}>
+                            <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => openLightbox({images: PORTFOLIO_DETAILS[0].achievements!, index: i})}>
                               <img alt="Portfolio Work" loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                             </div>
                           ))}
@@ -736,14 +858,14 @@ export default function App() {
                         {PORTFOLIO_DETAILS[0].achievementsRow2 && (
                           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-4">
                             {PORTFOLIO_DETAILS[0].achievementsRow2.map((img, i) => (
-                              <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: PORTFOLIO_DETAILS[0].achievementsRow2!, index: i})}>
+                              <div key={i} className="aspect-square bg-zinc-900 rounded-sm overflow-hidden cursor-pointer group" onClick={() => openLightbox({images: PORTFOLIO_DETAILS[0].achievementsRow2!, index: i})}>
                                 <img alt="Portfolio Work" loading="lazy" decoding="async" src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                               </div>
                             ))}
                           </div>
                         )}
                         {PORTFOLIO_DETAILS[0].largeAchievementImage && (
-                          <div className="w-full rounded-sm overflow-hidden cursor-pointer group" onClick={() => setLightboxState({images: [PORTFOLIO_DETAILS[0].largeAchievementImage!], index: 0})}>
+                          <div className="w-full rounded-sm overflow-hidden cursor-pointer group" onClick={() => openLightbox({images: [PORTFOLIO_DETAILS[0].largeAchievementImage!], index: 0})}>
                              <img alt="Portfolio Work" loading="lazy" decoding="async" src={PORTFOLIO_DETAILS[0].largeAchievementImage} className="w-full h-auto opacity-80 group-hover:opacity-100 transition-all duration-700" />
                           </div>
                         )}
@@ -784,37 +906,19 @@ export default function App() {
                           </ul>
                         </div>
                       )}
-
-                      {/* DNF Videos at the very bottom */}
-                      {selectedProject.id === "comm-2" && (
-                        <div className="flex flex-col gap-6 w-full mt-12 mb-6">
-                          <div className="flex items-center gap-2.5 border-b border-white/5 pb-2.5 mb-6">
-                            <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
-                            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] font-bold text-zinc-200">
-                              动态视效展示 / DYNAMIC VISUALS
-                            </h2>
-                          </div>
-                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf1.mp4" language={language} />
-                          </div>
-                          <div className="w-full rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-950/40">
-                            <CustomVideoPlayer src="https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/new%EF%BC%88small%EF%BC%89/dnf2.mp4" language={language} />
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 )}
                 {/* Render the legacy detailed components */}
                 <Suspense fallback={<div className="flex items-center justify-center p-12 text-zinc-500">Loading...</div>}>
 {selectedExperienceIndex === 1 && (
-                  <TikTokDetail language={language} t={t} setLightboxUrl={(url) => url ? setLightboxState({images: [url], index: 0}) : setLightboxState(null)} />
+                  <TikTokDetail language={language} t={t} setLightboxUrl={(url) => url ? openLightbox({images: [url], index: 0}) : closeLightbox()} />
                 )}
                 {selectedExperienceIndex === 2 && (
-                  <TikTokShopDetail language={language} t={t} setLightboxUrl={(url) => url ? setLightboxState({images: [url], index: 0}) : setLightboxState(null)} />
+                  <TikTokShopDetail language={language} t={t} setLightboxUrl={(url) => url ? openLightbox({images: [url], index: 0}) : closeLightbox()} />
                 )}
                 {selectedExperienceIndex === 3 && (
-                  <TencentIEGDetail language={language} t={t} setLightboxUrl={(url) => url ? setLightboxState({images: [url], index: 0}) : setLightboxState(null)} />
+                  <TencentIEGDetail language={language} t={t} setLightboxUrl={(url) => url ? openLightbox({images: [url], index: 0}) : closeLightbox()} />
                 )}
 </Suspense>
               </motion.div>
@@ -828,13 +932,13 @@ export default function App() {
         {lightboxState && (
           <Suspense fallback={null}><ZoomableLightbox
             url={lightboxState.images[lightboxState.index]}
-            onClose={() => setLightboxState(null)}
+            onClose={closeLightbox}
             language={language}
             t={t}
             hasNext={lightboxState.index < lightboxState.images.length - 1}
             hasPrev={lightboxState.index > 0}
-            onNext={() => setLightboxState({ ...lightboxState, index: lightboxState.index + 1 })}
-            onPrev={() => setLightboxState({ ...lightboxState, index: lightboxState.index - 1 })}
+            onNext={() => moveLightbox(lightboxState.index + 1)}
+            onPrev={() => moveLightbox(lightboxState.index - 1)}
           /></Suspense>
         )}
       </AnimatePresence>

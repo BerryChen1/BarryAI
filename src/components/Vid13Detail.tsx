@@ -1,6 +1,15 @@
 import React, { Fragment } from 'react';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
 
+const displayImages: Record<string, string> = {
+  '/images/20260812001803954.webp': '/images/20260812001803954-display.webp',
+  '/images/20260812001817685.webp': '/images/20260812001817685-display.webp',
+  '/images/20260812001829062.webp': '/images/20260812001829062-display.webp',
+  '/images/20260812001844238.webp': '/images/20260812001844238-display.webp',
+  '/images/20260812001908765.webp': '/images/20260812001908765-display.webp',
+  '/images/20260812001930770.webp': '/images/20260812001930770-display.webp',
+};
+
 export function Vid13Detail({ selectedProject, language, t, setLightboxState }: any) {
   return (
     <div className="space-y-12">
@@ -108,7 +117,7 @@ export function Vid13Detail({ selectedProject, language, t, setLightboxState }: 
               "/images/20260812001930770.webp"
             ].map((imgUrl, idx, arr) => (
               <div key={`vid13-grid9-${idx}`} className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5" onClick={() => setLightboxState({images: arr, index: idx})}>
-                <img loading="lazy" decoding="async" src={imgUrl} alt={`Asset ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                <img loading="lazy" decoding="async" src={displayImages[imgUrl] ?? imgUrl} alt={`Asset ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 text-[10px] text-zinc-400 px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans tracking-wider uppercase backdrop-blur-sm">
                   {t("点击查看大图", "Click to Zoom")}

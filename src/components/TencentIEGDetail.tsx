@@ -11,15 +11,6 @@ interface TencentIEGDetailProps {
 export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDetailProps) {
   // Beautiful high-quality Unsplash image presets representing the game visuals & design workflows
   const images = {
-    kvChineseNewYear: "/images/20260623011642952.webp", // Festival visual style - Horse Year KV
-    tradPattern: "/images/20260623212412611.webp", // Antique traditional art - Tang Dynasty
-    aigcPatternWorkflow: "/images/20260623212431006.webp", // AI node & dynamic AIGC creative workflow
-    popInGame1: "/images/20260623212447253.webp", // 【图 4：AIGC 提效工作流】
-    popInGame2: "/images/20260623212525354.webp", // 【图 5：拍脸展示 1】
-    gamePopupUI: "/images/20260623212504966.webp", // 【图 6：拍脸展示 2】
-    exhibitionXiAn: "/images/20260623212920340.webp", // Grand red lanterns / Tang garden setting
-    giftBoxAI: "/images/20260623212942475.webp", // Multi-layer creative luxury package
-    visualManualCover: "/images/20260623213001654.webp", // Editorial design style bookcover
     kvAnton: "/images/20260623213232521.webp", // Epic volcano lava, dark red & black atmosphere
     antonAIGCStatic: "/images/20260623213302775.webp", // Dark rocky volcano cracks
     comfyUIWorkflow: "/images/20260623213611261.webp", // Node-based computing screen mockup
@@ -28,6 +19,54 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
     qqDanceCards: "/images/20260623214008126.webp", // Cute anime card-styled illusts
     internCollage: "/images/20260623214026601.webp" // Interactive UX boards collage
   };
+
+  const springFestivalHero = {
+    src: "/projects/dnf-spring-2026/01-main-visual.webp",
+    title: t("主视觉｜祈愿新春 · 有锋芒的好运", "Key Visual · New Year Wishes")
+  };
+
+  const springFestivalGroups = [
+    {
+      title: t("01｜视觉基因与动作构图", "01 · Visual DNA & Action"),
+      description: t(
+        "提取金发、白羽、红黑金甲与福牌信物，并以破阵、腾跃、狂喜、落定四组动作建立具有游戏力量感的新春叙事。",
+        "Blonde hair, white feathers, red-black-gold armor and fortune talismans establish the visual DNA, while four action beats shape the New Year narrative."
+      ),
+      items: [
+        { src: "/projects/dnf-spring-2026/02-visual-dna.webp", title: t("主题视觉基因", "Theme Visual DNA") },
+        { src: "/projects/dnf-spring-2026/03-breakthrough-perspective.webp", title: t("破阵｜超近透视", "Breakthrough · Extreme Perspective") },
+        { src: "/projects/dnf-spring-2026/04-airborne-motion.webp", title: t("天马行空｜腾空回旋", "Airborne · Spiraling Motion") },
+        { src: "/projects/dnf-spring-2026/05-joy-halftone.webp", title: t("狂喜｜双色网点", "Joy · Duotone Halftone") },
+        { src: "/projects/dnf-spring-2026/06-wish-fulfilled.webp", title: t("所愿皆成｜巨物留白", "Wish Fulfilled · Monumental Space") },
+        { src: "/projects/dnf-spring-2026/07-motion-atlas.webp", title: t("角色动作谱", "Character Pose Atlas") }
+      ]
+    },
+    {
+      title: t("02｜材质实验与品牌衍生", "02 · Material & Brand Extensions"),
+      description: t(
+        "通过金属过曝与漆夜裂金两种材质方向统一红、黑、金视觉语言，并延展至限定潮玩、摆件和数码桌搭。",
+        "Overexposed metal and fractured lacquered gold unify the red-black-gold language before it expands into collectibles and digital desk objects."
+      ),
+      items: [
+        { src: "/projects/dnf-spring-2026/08-metal-overexposure.webp", title: t("金属过曝｜扫描切片", "Metal Overexposure · Scan Slices") },
+        { src: "/projects/dnf-spring-2026/09-hidden-edge.webp", title: t("漆夜藏锋｜裂金悬浮", "Hidden Edge · Fractured Gold") },
+        { src: "/projects/dnf-spring-2026/10-limited-collectible.webp", title: t("限定潮玩与摆件", "Limited Collectibles") },
+        { src: "/projects/dnf-spring-2026/11-digital-desk-set.webp", title: t("数码桌搭周边", "Digital Desk Objects") }
+      ]
+    },
+    {
+      title: t("03｜动态节奏与全案收束", "03 · Motion Rhythm & Summary"),
+      description: t(
+        "最后以动态节奏、声音框架与全案收束页补齐体验链路，让静态主视觉继续延展为完整的传播系统。",
+        "Motion rhythm, a sound framework and the closing system page complete the experience and extend the key visual into a full communication system."
+      ),
+      items: [
+        { src: "/projects/dnf-spring-2026/12-motion-system.webp", title: t("动态视觉节奏｜30 SEC", "Motion System · 30 SEC") },
+        { src: "/projects/dnf-spring-2026/13-sound-edit-rhythm.webp", title: t("音乐与剪辑节奏｜132 BPM", "Sound & Edit Rhythm · 132 BPM") },
+        { src: "/projects/dnf-spring-2026/14-case-summary.webp", title: t("全案收束", "Case Summary") }
+      ]
+    }
+  ];
 
   return (
     <div className="flex flex-col gap-10 text-zinc-350 font-sans">
@@ -73,8 +112,8 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
         <div className="space-y-5 text-sm sm:text-base md:text-lg leading-[1.8] font-light text-justify text-zinc-200">
           <p>
             {t(
-              "作为腾讯 IEG 国内发行线 AIGC美术视觉设计实习生，我深度参与《地下城与勇士：起源》两大核心版本的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
-              "As an AIGC Art & Visual Design Intern under the Tencent IEG Domestic Publishing team, I was deeply involved in building brand visual systems for two core major expansions of 'Dungeon & Fighter: Origins'. Concurrently, I drove graphic design execution for QQ Dance, internal staff conventions, and multiple multi-IP creative requests."
+              "作为腾讯 IEG 国内发行线视觉设计实习生，参与《地下城与勇士：起源》的品牌视觉体系搭建，同时支撑 QQ 炫舞、员工大会等多项目设计需求。",
+              "As a Visual Design Intern under the Tencent IEG Domestic Publishing team, I contributed to the brand visual system for 'Dungeon & Fighter: Origins' while also supporting QQ Dance, internal staff conventions, and other project design needs."
             )}
           </p>
           <p>
@@ -86,281 +125,101 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
         </div>
       </div>
 
-      {/* 二、核心项目：《地下城与勇士：起源》马年春节版本主视觉设计 */}
+      {/* 二、参与项目：《地下城与勇士:起源》祈愿新春主题设计 */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2 border-b border-white/5 pb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-sky-300" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#e7442d]" />
           <h4 className="text-sm md:text-base uppercase tracking-[0.1em] font-bold text-white/95">
-            {t("二、核心项目：《地下城与勇士：起源》马年春节版本主视觉设计", "II. Core Project: Lunar New Year of the Horse Brand Visuals (DNF: Origins)")}
+            {t("二、参与项目：《地下城与勇士:起源》祈愿新春主题设计", "II. Participating Project: New Year Theme Design (DNF: Origins)")}
           </h4>
         </div>
 
-        {/* Big Key Visual (KV) display */}
-        <div className="flex flex-col gap-1.5">
-          <div 
-            onClick={() => setLightboxUrl(images.kvChineseNewYear)}
-            className="relative aspect-video rounded-none overflow-hidden border border-white/5 bg-zinc-955 group cursor-pointer"
-          >
-            <img loading="lazy" decoding="async" 
-              src={images.kvChineseNewYear} 
-              alt="Lunar New Year Main KV" 
-              className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 brightness-95 group-hover:brightness-100"
+        <p className="text-sm sm:text-base leading-[1.75] font-light text-justify text-zinc-300">
+          {t(
+            "以「有锋芒的好运」为核心，将角色战斗感与新春祈愿结合，围绕主视觉、角色动作、红黑金材质语言及品牌衍生，构建一套兼具节日氛围与游戏力量感的马年春节主题视觉。",
+            "Built around the idea of 'fortune with an edge,' this Year of the Horse visual system combines combat energy with Lunar New Year symbolism across the key visual, character poses, red-black-gold materials and branded extensions."
+          )}
+        </p>
+
+        <button
+          type="button"
+          onClick={() => setLightboxUrl(springFestivalHero.src)}
+          className="group flex w-full flex-col gap-1.5 text-left"
+          aria-label={t(`放大查看：${springFestivalHero.title}`, `Enlarge: ${springFestivalHero.title}`)}
+        >
+          <span className="relative aspect-video overflow-hidden border border-white/10 bg-[#111]">
+            <img
+              loading="lazy"
+              decoding="async"
+              src={springFestivalHero.src}
+              alt={springFestivalHero.title}
+              className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.01] group-hover:brightness-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
-                <Eye className="w-3.5 h-3.5 text-sky-400" />
-                {t("预览大图", "Preview Large Image")}
+            <span className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="flex items-center gap-1.5 border border-white/15 bg-black/65 px-3 py-1.5 text-[11px] text-white backdrop-blur-sm">
+                <Eye className="h-3.5 w-3.5" />
+                {t("查看主视觉大图", "View key visual")}
               </span>
-            </div>
-          </div>
-          <span className="text-[10px] text-zinc-500 text-center uppercase tracking-widest mt-1">{t("【图 1：马年春节主视觉 KV】", "Key Visual 1: Horse Lunar New Year Main Brand KV")}</span>
-        </div>
+            </span>
+          </span>
+          <span className="text-[10px] tracking-wide text-zinc-500 md:text-[11px]">{springFestivalHero.title}</span>
+        </button>
 
-        {/* 1. 核心纹样与图库设计 */}
-        <div className="mt-2 p-4 rounded-none bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <h5 className="text-xs md:text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
-            <span className="text-sky-405 font-mono">1.</span> {t("核心纹样与图库设计（AIGC 辅助提效）", "Core Patterning & Visual Library Construction (AIGC Workflow Boost)")}
-          </h5>
+        <div className="space-y-4">
+          {springFestivalGroups.map((group) => (
+            <div key={group.title} className="space-y-3 border border-white/5 bg-white/[0.01] p-3 md:p-4">
+              <div className="space-y-1.5">
+                <h5 className="text-xs font-semibold tracking-[0.08em] text-zinc-100 md:text-sm">{group.title}</h5>
+                <p className="max-w-5xl text-[11px] font-light leading-relaxed text-zinc-400 md:text-xs">{group.description}</p>
+              </div>
 
-          {/* Grid of Images 2 and 3 */}
-          <div className="grid grid-cols-2 gap-3.5">
-            <div className="flex flex-col gap-1.5">
-              <div 
-                onClick={() => setLightboxUrl(images.tradPattern)}
-                className="relative aspect-square md:aspect-video rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-              >
-                <img loading="lazy" decoding="async" src={images.tradPattern} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="relis" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 1：MDNF马年春节视觉大图】", "Img 1: MDNF Horse Lunar New Year Main Visual Map")}</span>
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <div 
-                onClick={() => setLightboxUrl(images.aigcPatternWorkflow)}
-                className="relative aspect-square md:aspect-video rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-              >
-                <img loading="lazy" decoding="async" src={images.aigcPatternWorkflow} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="wf" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 3：AIGC 辅助纹样生图流】", "Image 3: AI-driven Pattern Workflow")}</span>
-            </div>
-          </div>
-
-          <div className="space-y-3 mt-1.5 text-xs md:text-sm leading-relaxed text-zinc-300 font-light">
-            <div className="flex gap-2 items-start">
-              <div className="w-4 h-4 rounded-full bg-sky-305/10 border border-sky-400/20 text-sky-300 flex items-center justify-center font-mono text-[9px] mt-0.5 shrink-0">A</div>
-              <div>
-                <strong className="text-zinc-105 font-medium">{t("文化符号提炼与重构：", "Cultural Symbol Extraction & Reconstruction: ")}</strong>
-                {t("以唐代“舞马衔杯纹银壶”为灵感，提取“马衔印”核心元素，结合宝相花、忍冬纹、灯笼纹等传统纹样，构建“马年 + 大唐新春”主题纹样体系，实现历史文化与游戏 IP 的深度融合。", "Inspired by the Tang dynasty 'Silver Pot with Dancing Horses', extracted horse motif emblems combined with traditional floral medallions, honeysuckle borders, and lantern patterns to construct an authentic yet gaming-oriented aesthetic.")}
-              </div>
-            </div>
-            <div className="flex gap-2 items-start">
-              <div className="w-4 h-4 rounded-full bg-sky-305/10 border border-sky-400/20 text-sky-300 flex items-center justify-center font-mono text-[9px] mt-0.5 shrink-0">B</div>
-              <div>
-                <strong className="text-zinc-105 font-medium">{t("AIGC 驱动的纹样迭代：", "AIGC-accelerated Asset Iteration: ")}</strong>
-                {t("建立“关键词矩阵生成线稿→结构筛选优化→手绘精修落地”的标准化流程，通过 AIGC 工具将纹样设计的迭代周期缩短 60%，同时保持了传统纹样的繁复华丽与游戏视觉的规整秩序。", "Established an advanced workflow pipeline: 'prompt-to-vector outline sketch under Midjourney + structure refinement via custom ComfyUI workflows + precision digital painting hand-clean'. Shrunk iterations by over 60% while matching AAA game engine guidelines.")}
-              </div>
-            </div>
-            <div className="flex gap-2 items-start">
-              <div className="w-4 h-4 rounded-full bg-sky-305/10 border border-sky-400/20 text-sky-300 flex items-center justify-center font-mono text-[9px] mt-0.5 shrink-0">C</div>
-              <div>
-                <strong className="text-zinc-105 font-medium">{t("图库系统搭建：", "Re-usable Asset Library: ")}</strong>
-                {t("输出可复用的春节主题纹样底图、装饰元素库，为后续所有版本物料提供统一的视觉语言支撑，提升全链路设计效率。", "Prepared detailed guidelines of modular traditional borders, framing widgets, and color grading LUTs, aligning multi-designer production efficiency.")}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 2. 平面物料应用设计 */}
-        <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <h5 className="text-xs md:text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
-            <span className="text-sky-405 font-mono">2.</span> {t("平面物料应用设计", "In-game Campaign & Asset Adaptations")}
-          </h5>
-
-          {/* Grid of Images 4, 5, 6 */}
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5">
-              <div 
-                onClick={() => setLightboxUrl(images.popInGame1)}
-                className="relative rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center p-1"
-                title={t("点按查看大图", "Click to zoom")}
-              >
-                <img loading="lazy" decoding="async" 
-                  src={images.popInGame1} 
-                  className="w-full h-auto object-cover rounded-none group-hover:scale-[1.01] transition-transform duration-500 mx-auto" 
-                  alt="pop1" 
-                  referrerPolicy="no-referrer" 
-                />
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5 text-sky-400" />
-                    {t("点按查看清晰大图", "Click to zoom")}
-                  </span>
-                </div>
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 4：AIGC 提效工作流】", "Img 4: AIGC Efficiency Workflow")}</span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3.5">
-              <div className="flex flex-col gap-1.5">
-                <div 
-                  onClick={() => setLightboxUrl(images.popInGame2)}
-                  className="relative rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center p-1"
-                  title={t("点按查看大图", "Click to zoom")}
-                >
-                  <img loading="lazy" decoding="async" 
-                    src={images.popInGame2} 
-                    className="w-full h-auto object-contain max-h-[260px] rounded-none group-hover:scale-[1.01] transition-transform duration-500 mx-auto" 
-                    alt="pop2" 
-                    referrerPolicy="no-referrer" 
-                  />
-                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
-                      <Eye className="w-3 h-3 text-sky-400" />
-                      {t("查看", "View")}
+              <div className={`grid grid-cols-2 gap-2.5 md:gap-3 ${group.items.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+                {group.items.map((item) => (
+                  <button
+                    key={item.src}
+                    type="button"
+                    onClick={() => setLightboxUrl(item.src)}
+                    className="group flex min-w-0 flex-col gap-1.5 text-left"
+                    aria-label={t(`放大查看：${item.title}`, `Enlarge: ${item.title}`)}
+                  >
+                    <span className="relative aspect-video overflow-hidden border border-white/10 bg-[#111]">
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src={item.src}
+                        alt={item.title}
+                        className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.015] group-hover:brightness-110"
+                        referrerPolicy="no-referrer"
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
+                        <Eye className="h-4 w-4 text-white" />
+                      </span>
                     </span>
-                  </div>
-                </div>
-                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 5：拍脸展示 1】", "Img 5: In-Game Pop 1")}</span>
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <div 
-                  onClick={() => setLightboxUrl(images.gamePopupUI)}
-                  className="relative rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center p-1"
-                  title={t("点按查看大图", "Click to zoom")}
-                >
-                  <img loading="lazy" decoding="async" 
-                    src={images.gamePopupUI} 
-                    className="w-full h-auto object-contain max-h-[260px] rounded-none group-hover:scale-[1.01] transition-transform duration-500 mx-auto" 
-                    alt="ui" 
-                    referrerPolicy="no-referrer" 
-                  />
-                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="bg-black/60 text-white text-[10px] px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1">
-                      <Eye className="w-3 h-3 text-sky-400" />
-                      {t("查看", "View")}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 6：拍脸展示 2】", "Img 6: In-Game Pop 2")}</span>
+                    <span className="truncate text-[9px] tracking-wide text-zinc-500 md:text-[10px]">{item.title}</span>
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-
-          <div className="space-y-3 mt-1.5 text-xs md:text-sm leading-relaxed text-zinc-300 font-light">
-            <div className="flex gap-2">
-              <CheckCircle className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
-              <div>
-                <strong className="text-zinc-110 font-medium">{t("活动运营物料设计：", "Live-ops Banner Graphics: ")}</strong>
-                {t("基于核心纹样体系，完成春节版本拍脸图（女鬼剑新春礼包等）、活动弹窗、奖励界面等关键运营物料的设计，确保视觉语言在不同场景下的一致性与识别性。", "Created multiple in-game promotional cards, login calendars, and package panels. Guaranteed seamless art direction across varying characters and landscape formats.")}
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <CheckCircle className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
-              <div>
-                <strong className="text-zinc-110 font-medium">{t("视觉规范落地：", "Execution of Game UI Specifications: ")}</strong>
-                {t("根据游戏内 UI 规范，调整纹样的色彩、比例与细节，确保在不同设备、不同分辨率下的视觉呈现效果，同时兼顾节日氛围与游戏 IP 调性。", "Modified details according to user interaction layouts, making sure ornaments don't obstruct critical textual elements and scale cleanly on standard mobile screens.")}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3. 线下活动与周边设计 */}
-        <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <h5 className="text-xs md:text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
-            <span className="text-sky-405 font-mono">3.</span> {t("线下活动与周边设计", "Offline Festivals & Merchandise Branding")}
-          </h5>
-
-          {/* Grid of Images 7, 8 */}
-          <div className="grid grid-cols-2 gap-3.5">
-            <div className="flex flex-col gap-1.5">
-              <div 
-                onClick={() => setLightboxUrl(images.exhibitionXiAn)}
-                className="relative aspect-video rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-              >
-                <img loading="lazy" decoding="async" src={images.exhibitionXiAn} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="offline" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 7：UI与弹窗界面】", "Img 7: In-Game UI and Popups")}</span>
-            </div>
-            <div className="flex flex-col gap-1.5 font-sans">
-              <div 
-                onClick={() => setLightboxUrl(images.visualManualCover)}
-                className="relative aspect-video rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer"
-              >
-                <img loading="lazy" decoding="async" src={images.visualManualCover} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="product box" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors" />
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 8：新春礼盒包装设计（AI 辅助）】", "Img 8: AI-assisted Packaging Concept")}</span>
-            </div>
-          </div>
-
-          <div className="space-y-3 mt-1.5 text-xs md:text-sm leading-relaxed text-zinc-300 font-light">
-            <div className="flex gap-2">
-              <Zap className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
-              <div>
-                <strong className="text-zinc-110 font-medium">{t("线下活动视觉延展：", "Physical Space & Stage Design Adaptations: ")}</strong>
-                {t("参与西安大唐芙蓉园线下游园会主视觉的落地适配，将核心纹样应用于舞台背景、活动物料等大型场景，实现线上线下视觉语言的统一。", "Brought virtual textures into large architectural setups, ensuring color profile compatibility under natural and physical landscape lights.")}
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <Zap className="w-4 h-4 text-sky-400 mt-0.5 shrink-0" />
-              <div>
-                <strong className="text-zinc-110 font-medium">{t("衍生周边设计探索：", "Merchandise Package Exploration: ")}</strong>
-                {t("以春节纹样为核心，完成礼盒产品的结构设计与纹样适配，探索游戏 IP 衍生产品的设计可能性，同时验证纹样在不同材质、不同载体下的表现效果。", "Experimented with multi-layered gift containers drafting, exploring embossing depth, foil stamping guidelines, and texture material outputs.")}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 4. 主视觉效果 */}
-        <div className="p-4 rounded-none bg-white/[0.01] border border-white/5 flex flex-col gap-4">
-          <h5 className="text-xs md:text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
-            <span className="text-sky-405 font-mono">4.</span> {t("主视觉效果", "Main Visual Effect")}
-          </h5>
-
-          <div className="flex flex-col gap-4 w-full">
-            <div className="w-full flex flex-col gap-1.5">
-              <div 
-                onClick={() => setLightboxUrl(images.giftBoxAI)}
-                className="relative rounded-none overflow-hidden border border-white/5 bg-zinc-900 group cursor-pointer flex items-center justify-center p-1"
-                title={t("点按查看大图", "Click to zoom")}
-              >
-                <img loading="lazy" decoding="async" 
-                  src={images.giftBoxAI} 
-                  className="w-full h-auto object-cover rounded-none group-hover:scale-[1.01] transition-transform duration-500 mx-auto" 
-                  alt="giftbox" 
-                  referrerPolicy="no-referrer" 
-                />
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-black/60 text-white text-[11px] px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5 text-sky-400" />
-                    {t("点按查看清晰大图", "Click to zoom")}
-                  </span>
-                </div>
-              </div>
-              <span className="text-[10px] text-zinc-500 text-center uppercase tracking-wider mt-0.5">{t("【图 9：西安“大唐游园会”活动现场】", "Img 9: Xi'an 'Tang Dynasty Fair' Event Site")}</span>
-            </div>
-            <div className="text-[11px] md:text-xs leading-relaxed text-zinc-400 font-light flex flex-col justify-center">
-              <p className="border-l-2 border-sky-400/50 pl-3 md:pl-4 py-1.5 bg-white/[0.005]">
-                <strong className="text-white text-xs md:text-[13px] font-medium block mb-1.5">{t("视觉语言沉淀 & 统一传承", "Consolidating Identity Standards")}</strong>
-                {t("整理春节版本所有纹样、元素、色彩规范，输出完整视觉，为后续版本的设计延续提供标准化参考，保证长期品牌视觉资产的一致性。", "Consolidated all motifs, background layouts, and packaging palettes into a standard design system manual, providing a strong reference framework for ongoing live service iterations.")}
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* 三、核心项目：《地下城与勇士：起源》安徒恩版本视觉设计 */}
+      {/* 三、参与项目：《地下城与勇士：起源》安徒恩版本视觉设计 */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2 border-b border-white/5 pb-2">
           <span className="w-1.5 h-1.5 rounded-full bg-sky-300" />
           <h4 className="text-sm md:text-base uppercase tracking-[0.1em] font-bold text-white/95">
-            {t("三、核心项目：《地下城与勇士：起源》安徒恩版本视觉设计", "III. Core Project: Anton Raid Expansion Visual Designs (DNF: Origins)")}
+            {t("三、参与项目：《地下城与勇士：起源》安徒恩版本视觉设计", "III. Participating Project: Anton Raid Expansion Visual Designs (DNF: Origins)")}
           </h4>
         </div>
+
+        <p className="text-sm sm:text-base md:text-lg leading-[1.8] font-light text-justify text-zinc-200">
+          {t(
+            "本项目为《地下城与勇士・起源》安徒恩团本版本全套视觉设计视觉探索",
+            "This project presents a complete visual-design exploration for the Anton Raid expansion of Dungeon & Fighter: Origins."
+          )}
+        </p>
 
         {/* Anton Main KV Display */}
         <div className="flex flex-col gap-1.5">
@@ -787,15 +646,15 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs md:text-sm leading-relaxed text-zinc-300 font-light">
           <div className="p-3 rounded-none bg-white/[0.005] border border-white/5">
-            <strong className="text-white block mb-0.5">{t("前期灵感与线稿敏捷生成", "1. Creative Drafting & Line Arts")}</strong>
+            <strong className="text-white block mb-0.5">{t("前期灵感与场景草图敏捷生成", "1. Creative Drafting & Scene Exploration")}</strong>
             <p className="text-[11px] text-zinc-400">
-              {t("通过 Midjourney+ComfyUI 构建关键词控制矩阵，秒级产出数万种不同比例的纹样概念与场景构图大样，极大压缩了原创意构思周期。", "Build precise parameter grids utilizing image generators. Generate structural variants instantly, avoiding blank-screen blocks.")}
+              {t("通过 Midjourney+ComfyUI 构建关键词与构图控制矩阵，快速产出不同视角的场景概念和版式草图，显著压缩前期创意构思周期。", "Build precise prompt and composition controls to generate scene concepts and layout drafts quickly, shortening early ideation cycles.")}
             </p>
           </div>
           <div className="p-3 rounded-none bg-white/[0.005] border border-white/5">
             <strong className="text-white block mb-0.5">{t("元素优化与风格体系统一", "2. Vector Extraction & Uniform Style")}</strong>
             <p className="text-[11px] text-zinc-400">
-              {t("利用 Nano Pro 矢量引擎与本地端修型工作，剔除 AI 生成物中杂乱噪点并融合传统文物美感，使得美术风格具有绝佳商业落地的规范化特征。", "Purify loose artifacts, enhancing antique ornament balance to conform meticulously with target branding criteria.")}
+              {t("利用矢量工具与本地端修型工作，剔除 AI 生成物中的杂乱噪点，统一角色、场景的材质、色彩和光影，使视觉风格满足商业落地规范。", "Refine generated assets locally, removing artifacts and unifying material, color, and lighting for production-ready visual consistency.")}
             </p>
           </div>
           <div className="p-3 rounded-none bg-white/[0.005] border border-white/5">
@@ -826,25 +685,18 @@ export function TencentIEGDetail({ language, t, setLightboxUrl }: TencentIEGDeta
             <span className="text-sky-400 font-mono text-xs font-semibold">01</span>
             <div className="flex flex-col">
               <span className="text-zinc-100 font-medium">{t("游戏品牌视觉体系搭建", "Branding Design Systems")}</span>
-              <p className="text-xs text-zinc-400 mt-0.5">{t("负责版本核心底图、大唐新春以及安徒恩等关键概念的主视觉设计与传承规范整理。", "Spearheaded brand elements, Tang patterns and Anton visuals for high consistent identity execution.")}</p>
+              <p className="text-xs text-zinc-400 mt-0.5">{t("负责安徒恩版本核心底图、关键概念主视觉设计与规范整理。", "Developed the Anton expansion's core visual assets, key concepts, and design guidelines.")}</p>
             </div>
           </div>
           <div className="flex gap-2 p-3 bg-white/[0.01] border border-white/5 rounded-none">
             <span className="text-sky-400 font-mono text-xs font-semibold">02</span>
             <div className="flex flex-col">
               <span className="text-zinc-100 font-medium">{t("AIGC 新兴流程赋能提效", "Generative Workflow Integration")}</span>
-              <p className="text-xs text-zinc-400 mt-0.5">{t("熟练融入生图/AI动效算法，搭建高鲁棒性模板，使平均纹样草图和后期生成周期缩短60%以上。", "Applied stable AI algorithms and ComfyUI workflow queues, delivering a 60% compression in general production iterations.")}</p>
+              <p className="text-xs text-zinc-400 mt-0.5">{t("熟练融入生图/AI动效算法，搭建高鲁棒性模板，使平均场景草图和后期生成周期缩短60%以上。", "Applied stable AI algorithms and ComfyUI workflow queues, delivering a 60% compression in general production iterations.")}</p>
             </div>
           </div>
           <div className="flex gap-2 p-3 bg-white/[0.01] border border-white/5 rounded-none">
             <span className="text-sky-400 font-mono text-xs font-semibold">03</span>
-            <div className="flex flex-col">
-              <span className="text-zinc-100 font-medium">{t("全路径终端营销物料延展", "Full-channel Live-ops Collaterals")}</span>
-              <p className="text-xs text-zinc-400 mt-0.5">{t("推进拍脸图、UI活动弹窗、西安线下大型展会物料及春节文创礼袋设计适配，对落地印品把控精当。", "Delivered comprehensive banner variants, popup modules, physical stage layouts and premium printed packaging.")}</p>
-            </div>
-          </div>
-          <div className="flex gap-2 p-3 bg-white/[0.01] border border-white/5 rounded-none">
-            <span className="text-sky-400 font-mono text-xs font-semibold">04</span>
             <div className="flex flex-col">
               <span className="text-zinc-100 font-medium">{t("多线、多IP跨界协同", "Cross-IP Joint Contributions")}</span>
               <p className="text-xs text-zinc-400 mt-0.5">{t("支持 QQ 炫舞社区卡牌生图、明日方舟及集团员工大会趣味周边探索，沉淀可复用品牌美学档案。", "Supported high-impact projects including QQ Dance mobile cards, Arknights promos, and IEG badges.")}</p>

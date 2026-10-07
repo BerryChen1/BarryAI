@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ZoomIn, ZoomOut, RotateCcw, X, GripHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useModalFocus } from '../utils/useModalFocus';
 
 interface ZoomableLightboxProps {
   url: string;
@@ -22,6 +23,8 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
   const dragStart = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const imageRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useModalFocus(dialogRef, true, onClose, 400);
 
   // Reset scale, position, and media url when url changes
   useEffect(() => {
@@ -32,22 +35,19 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
   }, [url]);
 
   const handleMediaError = () => {
-    if (!hasFailedDirect && activeMediaUrl && !activeMediaUrl.includes('/api/video-proxy') && !activeMediaUrl.includes('/api/image-proxy')) {
+    const isVideo = /\.(mp4|webm|mov)(?:[?#]|$)/i.test(url);
+    const isApprovedRemoteVideo = url.startsWith('https://pub-0ffb6a41279f413d9d362b7df1b92573.r2.dev/');
+    if (isVideo && isApprovedRemoteVideo && !hasFailedDirect && !activeMediaUrl.includes('/api/video-proxy')) {
       setHasFailedDirect(true);
-      const isVideo = activeMediaUrl.toLowerCase().endsWith('.mp4') || activeMediaUrl.toLowerCase().endsWith('.webm') || activeMediaUrl.toLowerCase().endsWith('.mov');
-      const proxyUrl = isVideo 
-        ? `/api/video-proxy?url=${encodeURIComponent(url)}` 
-        : `/api/image-proxy?url=${encodeURIComponent(url)}`;
-      setActiveMediaUrl(proxyUrl);
+      setActiveMediaUrl(`/api/video-proxy?url=${encodeURIComponent(url)}`);
     }
   };
 
   // Handle keyboard shortcuts (Esc, Arrows)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      } else if (e.key === 'ArrowRight' && hasNext && onNext) {
+      if (e.defaultPrevented) return;
+      if (e.key === 'ArrowRight' && hasNext && onNext) {
         onNext();
       } else if (e.key === 'ArrowLeft' && hasPrev && onPrev) {
         onPrev();
@@ -162,6 +162,11 @@ export function ZoomableLightbox({ url, onClose, language = "zh", t, onNext, onP
 
   return (
     <motion.div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={t('作品放大预览', 'Enlarged artwork preview')}
+      tabIndex={-1}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

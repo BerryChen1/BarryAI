@@ -4,7 +4,7 @@ with open('src/components/VidGalleryDetail.tsx', 'r', encoding='utf-8') as f:
 new_content = """import React from 'react';
 
 export function VidGalleryDetail({ selectedProject, language, t, setLightboxState }: any) {
-  const isBorderedArray = ["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"];
+  const isBorderedArray = ["comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"];
   const isGrid = selectedProject.id === "vid-1";
   
   const showPoster = selectedProject.id.startswith("vid-");
@@ -58,4 +58,3 @@ export function VidGalleryDetail({ selectedProject, language, t, setLightboxStat
 
 with open('src/components/VidGalleryDetail.tsx', 'w', encoding='utf-8') as f:
     f.write(new_content)
-

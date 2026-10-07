@@ -1,6 +1,13 @@
 import React from 'react';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
 
+const displayImages: Record<string, string> = {
+  '/images/20260812011753353.webp': '/images/20260812011753353-display.webp',
+  '/images/20260812011809631.webp': '/images/20260812011809631-display.webp',
+  '/images/20260812011859134.webp': '/images/20260812011859134-display.webp',
+  '/images/20260812011911807.webp': '/images/20260812011911807-display.webp',
+};
+
 export function Vid14Detail({ selectedProject, language, t, setLightboxState }: any) {
   return (
     <div className="space-y-12">
@@ -226,7 +233,7 @@ export function Vid14Detail({ selectedProject, language, t, setLightboxState }: 
                     className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full aspect-video rounded-none border border-white/5"
                     onClick={() => setLightboxState({ images: arr.map(a => a.url), index: idx })}
                   >
-                    <img loading="lazy" decoding="async" src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
+                    <img loading="lazy" decoding="async" src={displayImages[item.url] ?? item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100" referrerPolicy="no-referrer" />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                     <div className="absolute top-3 left-3 bg-black/70 border border-white/10 text-xs text-sky-300 font-medium px-2.5 py-1 rounded-md backdrop-blur-sm">
                       {item.title}

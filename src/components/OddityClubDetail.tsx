@@ -127,7 +127,7 @@ export function OddityClubDetail({ language, t, setLightboxState, gallery }: Odd
               <span className="font-normal text-zinc-300 ml-1">在既定风格下，通过改变参考图与主题的权重，生成丰富的角色状态、怪奇配件与头像矩阵，完成 IP 库的初级积累，并且生成相应的2D手绘风格插画提高丰富度。</span>
             </h5>
             <div className="group relative overflow-hidden bg-zinc-900 shadow-xl cursor-pointer w-full rounded-none border border-white/10" onClick={() => openZoom(6)}>
-              <img loading="lazy" decoding="async" src="/images/20260809224217524.png" alt="Step 2 视觉矩阵发散" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
+              <img loading="lazy" decoding="async" src="/images/20260809224217524-display.webp" alt="Step 2 视觉矩阵发散" className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
               <div className="absolute bottom-4 right-4 bg-black/70 border border-white/10 text-[10px] text-zinc-300 px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
                 {t("点击查看大图", "Click to Zoom")}
               </div>

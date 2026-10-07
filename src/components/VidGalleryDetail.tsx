@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function VidGalleryDetail({ selectedProject, language, t, setLightboxState }: any) {
-  const isBorderedArray = ["comm-1", "comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"];
+  const isBorderedArray = ["comm-2", "comm-3", "comm-4", "illus-1", "oth-1", "brand-3", "brand-4", "vid-3", "vid-6", "vid-7", "vid-8", "vid-9"];
   const isGrid = selectedProject.id === "vid-1";
   
   const showPoster = selectedProject.id.startsWith("vid-");

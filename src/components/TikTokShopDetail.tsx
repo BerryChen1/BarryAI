@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Sparkles, TrendingUp, Users, ShoppingBag, Eye, MousePointerClick, ShieldCheck, Zap, Compass, Video, LayoutGrid } from 'lucide-react';
 import { CustomVideoPlayer } from './CustomVideoPlayer';
+import { useExperienceTabHistory } from '../utils/experienceTabHistory';
+
+const TAB_IDS = ['overview', 'matrix', 'data'] as const;
 
 interface TikTokShopDetailProps {
   language: 'zh' | 'en';
@@ -9,7 +12,7 @@ interface TikTokShopDetailProps {
 }
 
 export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDetailProps) {
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab, changeTab] = useExperienceTabHistory(2, TAB_IDS);
 
   const momImages = [
     "/images/20260623203034220.webp",
@@ -97,7 +100,7 @@ export function TikTokShopDetail({ language, t, setLightboxUrl }: TikTokShopDeta
         {tabs.map(tab => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => changeTab(tab.id)}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-none text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === tab.id 
                 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/30' 
